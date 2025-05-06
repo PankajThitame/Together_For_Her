@@ -1,0 +1,56 @@
+.colorful-user-card {
+  width: 385px;
+  margin: 1rem;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #fceabb, #f8b500);
+  color: #222;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.user-management{
+  background-color: rgb(186, 223, 255);
+  border-radius: 18px;
+  margin: 20px;
+
+
+}
+.colorful-user-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.user-management-title{
+  text-align: center;
+  border-radius: 18px;
+  padding: 10px;
+  background-color: #0063f8;
+}
+.user-info-name {
+  font-weight: 700;
+  color: #333;
+}
+
+.user-info-email {
+  margin: 8px 0;
+}
+
+.email-link {
+  color: #0c4a6e;
+  text-decoration: none;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+}
+
+.user-info-contact {
+  display: flex;
+  gap: 0.75rem;
+  margin: 0.5rem 0;
+}
+
+.user-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}

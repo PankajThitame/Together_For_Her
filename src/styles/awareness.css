@@ -1,0 +1,246 @@
+/* Global Styles */
+.awareness-container {
+    font-family: "Poppins", sans-serif;
+    color: #333;
+    background: linear-gradient(to right, #ffe6e6, #ffc3a0);
+     /* padding-left: 20px; */
+     padding-top: 10px;
+     align-content: center;
+    overflow: hidden;
+  }
+  
+  /* Background Shapes */
+  .awareness-container::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 150, 150, 0.3);
+    border-radius: 50%;
+    z-index: 0;
+  }
+  
+  .awareness-container::after {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 200, 150, 0.4);
+    border-radius: 50%;
+    z-index: 0;
+  }
+  
+  /* Hero Section */
+  .awareness-container .hero {
+    text-align: center;
+    padding: 50px;
+    background: linear-gradient(120deg, #720316, #ff7eb3);
+    color: white;
+    border-radius: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .awareness-container  h1 {
+    font-size: 2.8em;
+    text-shadow: 2px 2px 8px rgb(0, 0, 0, 243);
+    color: #f07229;
+  }
+  
+  .awareness-container .hero p {
+    font-size: 1.3em;
+    margin-top: 10px;
+    color: rgb(152, 149, 240);
+  }
+  
+  /* Importance Section */
+  .importance-section {
+    margin-top: 40px;
+    padding: 25px;
+    background: rgba(58, 220, 90, 0.14);
+    border-left: 8px solid #ff758c;
+    border-radius: 10px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+  }
+  
+  .importance-section:hover {
+    transform: scale(1.02);
+    transition: 0.3s;
+  }
+  
+  /* Myths & Facts Section */
+  .myths-section {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .myths-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .myth, .fact {
+    width: 45%;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.6);
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+    margin: 10px; /* Adds space around each box */
+}
+
+  
+  .myth:hover, .fact:hover {
+    transform: scale(1.05);
+  }
+  
+  .myth {
+    border-left: 6px solid red;
+  }
+  
+  .fact {
+    border-left: 6px solid green;
+  }
+  
+  /* FAQ Section */
+  .faq-section {
+    margin-top: 40px;
+    margin-left: 20px;
+    padding: 20px;
+  }
+  
+  .faq-container {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
+  }
+  .toggle-btn {
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #f07229;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .faq-item {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .faq-item:hover {
+    background: rgba(255, 120, 150, 0.2);
+  }
+  
+  .faq-question {
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .faq-answer {
+    margin-top: 5px;
+    color: #24432d;
+  }
+  
+  /* Video Section */
+  .video-section {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .awareness-video {
+    width: 60%;
+    height: 400px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Hygiene Tips Section */
+  .tips-section {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .tips-container {
+    display: flex;
+    padding-top: 20px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .tip-card {
+    width: 15%;
+    height: 100px;
+    background: rgba(152, 3, 134, 0.151);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .tip-card:hover {
+    transform: scale(1.1);
+    background: rgba(186, 121, 196, 0.389);
+  }
+  
+  .tip-icon {
+    font-size: 2.5em;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .awareness-container .hero {
+      padding: 30px;
+    }
+  
+    .hero h1 {
+      font-size: 2em;
+    }
+  
+    .hero p {
+      font-size: 1em;
+    }
+  
+    .importance-section {
+      padding: 20px;
+    }
+  
+    .myths-container {
+      flex-direction: column;
+    }
+  
+    .myth, .fact {
+      width: 90%;
+      margin: 10px auto;
+    }
+  
+    .tips-container {
+      flex-direction: column;
+    }
+  
+    .tip-card {
+      width: 80%;
+      margin-bottom: 15px;
+    }
+  }
+  

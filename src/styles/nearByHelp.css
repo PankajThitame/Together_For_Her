@@ -1,0 +1,40 @@
+.nearby-help-container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+    font-family: "Segoe UI", sans-serif;
+  }
+  
+  h2, h3 {
+    text-align: center;
+    position: relative;
+    color: #c2185b;
+  }
+  
+  .helper-section {
+    margin: 20px 0;
+  }
+  
+  .helper-card {
+    background: #fff1f5;
+    border: 1px solid #f8bbd0;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .helper-card h3 {
+    margin-top: 0;
+    color: #880e4f;
+  }
+  
+  .helper-card p {
+    margin: 5px 0;
+  }
+  
+  a {
+    color: #d81b60;
+    text-decoration: none;
+  }
+  
