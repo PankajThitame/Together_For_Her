@@ -1,0 +1,77 @@
+/* authDropdown.css */
+.auth-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 8px;
+}
+
+.icon {
+  margin-left: 8px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 54px;
+  background: rgba(137, 70, 150, 0.96);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 1000;
+  width: 190px;
+}
+
+.dropdown-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #b22c2c;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  gap: 10px;
+  padding-left: 20px;
+  width: 220px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dropdown-item:hover {
+  background: #c84d4d;
+}
+
+/* Dark Theme */
+.dark-theme {
+  background: #1a1a1a;
+  color: rgb(74, 31, 31);
+}
+
+.dark-theme .dropdown-menu {
+  background: #333;
+}
+
+.dark-theme .dropdown-item {
+  color: rgb(68, 22, 22);
+}
+
+.dark-theme .dropdown-item:hover {
+  background: #444;
+}

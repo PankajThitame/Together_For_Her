@@ -1,0 +1,70 @@
+.fund-container {
+    padding: 20px;
+    margin: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .fund-container h2 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  .error {
+    color: #e74c3c;
+    font-weight: bold;
+  }
+  
+  .fund-card {
+    background: #f4f6f9;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+  }
+  
+  .fund-card h3 {
+    font-size: 1.5rem;
+    color: #34495e;
+    margin-bottom: 10px;
+  }
+  
+  .fund-amount {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #27ae60;
+  }
+  
+  .recent-donors h3 {
+    font-size: 1.5rem;
+    color: #34495e;
+    margin-bottom: 10px;
+  }
+  
+  .recent-donors ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .recent-donors li {
+    display: flex;
+    justify-content: space-between;
+    background: #ecf0f1;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  }
+  
+  .recent-donors li span {
+    font-size: 1rem;
+    color: #2c3e50;
+  }
+  
+  .recent-donors li span:nth-child(2) {
+    font-weight: bold;
+    color: #2ecc71;
+  }
+  

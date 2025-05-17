@@ -1,0 +1,146 @@
+
+/* Logo */
+.logo {
+  padding-left:20px;
+    border-radius: 12px;
+      width: 100px; /* Adjust size as needed */
+      height: auto;
+      position: relative;
+      z-index: 1;
+  }
+
+/* Partner Logo Container */
+.main-logo {
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Partner Logos */
+.main-logo img {
+  width: 150px;
+  height: auto;
+  position: relative;
+  z-index: 1;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.partners-logos img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Hamburger menu */
+.menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+  padding-right: 40px;
+  padding-top: 25px;
+  display: none;
+}
+/* Navigation links */
+.nav-links {
+  display: flex;
+  padding-right: 40px;
+  padding-top: 20px;
+  list-style: none;
+}
+
+.nav-links li {
+  margin: 0 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Login tabs */
+.login-tabs {
+  display: relative;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.login-tabs button {
+  background: none;
+  border: 1px solid white;
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+.login-tabs button.active {
+  background-color: white;
+  color: #ff6b6b;
+}
+
+.login-content {
+  margin-top: 10px;
+}
+
+.login-link {
+  display: block;
+  text-decoration: none;
+  color: white;
+  background-color: #333;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.login-link:hover {
+  background-color: #555555;
+}
+
+/* Responsive Menu */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+    padding-right: 20px;
+  }
+  
+  .menu-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: #ff6b6b;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding-right: 20px;
+  }
+
+  .menu-container.active {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .login-tabs {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .login-tabs button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

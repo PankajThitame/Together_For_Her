@@ -1,0 +1,143 @@
+/* Main Right Side Panel */
+.right-side-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  max-height: 83vh; /* Full height of the viewport */
+  background: linear-gradient(135deg, #0e08099d, #ffc3a0);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Prevent external overflow */
+}
+
+/* Section Styling */
+.section {
+  flex: 1;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Enable independent scrolling */
+  /* scroll-behavior: smooth; Smooth scroll effect */
+}
+
+/* User Contributions Section */
+.user-content {
+  background: linear-gradient(135deg, #dbd4f9, #f13603);
+  max-height: 40vh; /* Fixed height for user content */
+}
+
+/* Women's Health News Section */
+.news-section {
+  background: linear-gradient(135deg, #c5eed4, #9005f3);
+  /* max-height: 50vh; Fixed height for news */
+}
+
+/* Auto-scroll Animation (slower and smoother) */
+@keyframes verticalScroll {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+/* Content & News Item Styling */
+.content-item,
+.news-item {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  background: rgba(255, 255, 255, 0.85);
+  animation: fadeIn 0.8s ease-in-out; /* Fade-in effect */
+}
+
+/* Hover Effect */
+.content-item:hover,
+.news-item:hover {
+  transform: scale(1.03);
+}
+
+/* Section Headers - Fixed but scrollable */
+h3 {
+  position: sticky;
+  top: 0; /* Ensure it stays on top */
+  z-index: 10; /* Ensure it remains above the content */
+  background: inherit; /* Match section background */
+  padding: 0.5rem 0;
+  color: #0b0b0b;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Links Styling */
+a {
+  text-decoration: none;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Date and User Information */
+small {
+  display: block;
+  margin-top: 0.5rem;
+  align-items: center;
+  text-align: left;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* Custom Scrollbar */
+.section::-webkit-scrollbar {
+  width: 8px;
+}
+
+.section::-webkit-scrollbar-track {
+  background: #fff;
+  border-radius: 10px;
+}
+
+.section::-webkit-scrollbar-thumb {
+  background: #ff7eb3;
+  border-radius: 10px;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .right-side-panel {
+    padding: 0.5rem;
+  }
+
+  .section {
+    max-height: 40vh; /* Smaller height on mobile */
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  .content-item,
+  .news-item {
+    padding: 0.5rem;
+  }
+
+  .news-section {
+    max-height: 30vh; /* Adjusted height for smaller screens */
+  }
+}
