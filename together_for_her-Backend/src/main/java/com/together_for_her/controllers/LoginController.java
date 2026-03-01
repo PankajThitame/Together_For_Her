@@ -32,17 +32,19 @@ public class LoginController {
 
         if (user == null) {
             System.out.println("DEBUG: User not found in database: [" + request.getUsername() + "]");
+            response.put("success", false);
+            response.put("message",
+                    "Login Failed: Check if username '" + request.getUsername() + "' exists in Database.");
+            return ResponseEntity.status(401).body(response);
         } else {
             System.out.println("DEBUG: User found. DB Password: [" + user.getPassword() + "] | Req Password: ["
                     + request.getPassword() + "]");
 
             if (user.getPassword().equals(request.getPassword())) {
                 System.out.println("DEBUG: Password match successful!");
-                String token = generateSessionToken(); // Generate a token
+                String token = generateSessionToken();
 
-                // Send only required user details (excluding password)
                 Map<String, Object> userData = new HashMap<>();
-
                 if (user.getUser() != null) {
                     userData.put("id", user.getUser().getId());
                     userData.put("name", user.getUser().getFirstName());
@@ -60,17 +62,27 @@ public class LoginController {
                 response.put("token", token);
                 response.put("success", true);
                 response.put("message", "Login successful!");
-                response.put("user", userData); // Send safe user details
+                response.put("user", userData);
 
                 return ResponseEntity.ok(response);
             } else {
                 System.out.println("DEBUG: Password mismatch for user: [" + request.getUsername() + "]");
+                response.put("success", false);
+                response.put("message", "Login Failed: Password mismatch for '" + request.getUsername() + "'.");
+                return ResponseEntity.status(401).body(response);
             }
         }
+    }
 
-        response.put("success", false);
-        response.put("message", "Invalid credentials!");
-        return ResponseEntity.status(401).body(response);
+    @GetMapping("/debug-users")
+    public ResponseEntity<?> debugUsers() {
+        java.util.List<UserCredentials> all = urepo.findAll();
+        java.util.List<String> usernames = all.stream().map(u -> u.getUsername())
+                .collect(java.util.stream.Collectors.toList());
+        Map<String, Object> res = new HashMap<>();
+        res.put("total", all.size());
+        res.put("usernames", usernames);
+        return ResponseEntity.ok(res);
     }
 
     private String generateSessionToken() {
