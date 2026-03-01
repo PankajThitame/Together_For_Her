@@ -6,16 +6,16 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - DB_URL=${DB_URL}
-      - DB_USERNAME=${DB_USERNAME}
-      - DB_PASSWORD=${DB_PASSWORD}
-      - TWILIO_ACCOUNT_SID=${TWILIO_ACCOUNT_SID}
-      - TWILIO_AUTH_TOKEN=${TWILIO_AUTH_TOKEN}
-      - TWILIO_PHONE_NUMBER=${TWILIO_PHONE_NUMBER}
-      - RAZORPAY_KEY_ID=${RAZORPAY_KEY_ID}
-      - RAZORPAY_KEY_SECRET=${RAZORPAY_KEY_SECRET}
-      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS}
-      - FILE_UPLOAD_DIR=${FILE_UPLOAD_DIR}
+      - DB_URL=${DB_URL:-jdbc:mysql://db:3306/together_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+      - DB_USERNAME=${DB_USERNAME:-root}
+      - DB_PASSWORD=${DB_PASSWORD:-root}
+      - TWILIO_ACCOUNT_SID=${TWILIO_ACCOUNT_SID:-AC_PLACEHOLDER}
+      - TWILIO_AUTH_TOKEN=${TWILIO_AUTH_TOKEN:-TOKEN_PLACEHOLDER}
+      - TWILIO_PHONE_NUMBER=${TWILIO_PHONE_NUMBER:-PHONE_PLACEHOLDER}
+      - RAZORPAY_KEY_ID=${RAZORPAY_KEY_ID:-rzp_test_PLACEHOLDER}
+      - RAZORPAY_KEY_SECRET=${RAZORPAY_KEY_SECRET:-SECRET_PLACEHOLDER}
+      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS:-http://localhost:3000}
+      - FILE_UPLOAD_DIR=${FILE_UPLOAD_DIR:-/app/uploads}
     depends_on:
       db:
         condition: service_healthy
@@ -26,7 +26,7 @@ services:
     build:
       context: ./Together_For_Her-Frontend
       args:
-        - REACT_APP_API_URL=${REACT_APP_API_URL}
+        - REACT_APP_API_URL=${REACT_APP_API_URL:-http://localhost:8080/api}
     container_name: together-frontend
     restart: always
     ports:
@@ -42,11 +42,11 @@ services:
     restart: always
     environment:
       MYSQL_DATABASE: together_db
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-root}
     volumes:
       - db_data:/var/lib/mysql
     healthcheck:
-      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${DB_PASSWORD}" ]
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${DB_PASSWORD:-root}" ]
       interval: 10s
       timeout: 5s
       retries: 5
