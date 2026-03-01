@@ -25,35 +25,47 @@ public class LoginController {
     public ResponseEntity<?> loginUser(@RequestBody UserCredentialsDto request) {
         Map<String, Object> response = new HashMap<>();
 
+        System.out.println("DEBUG: Login attempt for username: [" + request.getUsername() + "]");
+
         // Find user by username
         UserCredentials user = urepo.findByUsername(request.getUsername());
 
-        if (user != null && user.getPassword().equals(request.getPassword())) {
-            String token = generateSessionToken(); // Generate a token
+        if (user == null) {
+            System.out.println("DEBUG: User not found in database: [" + request.getUsername() + "]");
+        } else {
+            System.out.println("DEBUG: User found. DB Password: [" + user.getPassword() + "] | Req Password: ["
+                    + request.getPassword() + "]");
 
-            // Send only required user details (excluding password)
-            Map<String, Object> userData = new HashMap<>();
+            if (user.getPassword().equals(request.getPassword())) {
+                System.out.println("DEBUG: Password match successful!");
+                String token = generateSessionToken(); // Generate a token
 
-            if (user.getUser() != null) {
-                userData.put("id", user.getUser().getId());
-                userData.put("name", user.getUser().getFirstName());
-            } else if (user.getVolunteer() != null) {
-                userData.put("id", user.getVolunteer().getId());
-                userData.put("name", user.getVolunteer().getName());
+                // Send only required user details (excluding password)
+                Map<String, Object> userData = new HashMap<>();
+
+                if (user.getUser() != null) {
+                    userData.put("id", user.getUser().getId());
+                    userData.put("name", user.getUser().getFirstName());
+                } else if (user.getVolunteer() != null) {
+                    userData.put("id", user.getVolunteer().getId());
+                    userData.put("name", user.getVolunteer().getName());
+                } else {
+                    userData.put("id", user.getId());
+                    userData.put("name", user.getUsername());
+                }
+
+                userData.put("username", user.getUsername());
+                userData.put("role", user.getRole());
+
+                response.put("token", token);
+                response.put("success", true);
+                response.put("message", "Login successful!");
+                response.put("user", userData); // Send safe user details
+
+                return ResponseEntity.ok(response);
             } else {
-                userData.put("id", user.getId());
-                userData.put("name", user.getUsername());
+                System.out.println("DEBUG: Password mismatch for user: [" + request.getUsername() + "]");
             }
-
-            userData.put("username", user.getUsername());
-            userData.put("role", user.getRole());
-
-            response.put("token", token);
-            response.put("success", true);
-            response.put("message", "Login successful!");
-            response.put("user", userData); // Send safe user details
-
-            return ResponseEntity.ok(response);
         }
 
         response.put("success", false);
