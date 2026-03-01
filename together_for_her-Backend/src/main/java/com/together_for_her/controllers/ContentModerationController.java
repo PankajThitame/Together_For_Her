@@ -63,13 +63,15 @@ public class ContentModerationController {
         return ResponseEntity.ok(contentRepository.findByUploadedBy(username));
     }
 
+    @org.springframework.beans.factory.annotation.Value("${file.upload-dir}")
+    private String uploadDir;
+
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteContent(@PathVariable Long id) {
         UserContent content = contentRepository.findById(id).orElse(null);
         if (content != null) {
             try {
-                Path uploadDir = Paths.get("D:/uploads");
-                Path filePath = uploadDir.resolve(content.getFilePath()).normalize();
+                Path filePath = Paths.get(uploadDir).resolve(content.getFilePath()).normalize();
                 Files.deleteIfExists(filePath);
             } catch (IOException e) {
                 e.printStackTrace();

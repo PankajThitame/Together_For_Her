@@ -112,6 +112,9 @@ public class FeedbackServiceImpl implements FeedbackService {
 		return this.modelMapper.map(updatedUser, FeedbackDto.class);
 	}
 
+	@org.springframework.beans.factory.annotation.Value("${file.upload-dir}")
+	private String uploadDir;
+
 	// ✅ Save Feedback Content (Photo, Video, etc.) to Filesystem
 	@Override
 	public Feedback saveFeedbackContent(MultipartFile file, Integer userId,
@@ -119,7 +122,6 @@ public class FeedbackServiceImpl implements FeedbackService {
 		User user = this.userRepo.findById(userId)
 				.orElseThrow(() -> new ResourceNotFoundException("User", "Id", userId));
 
-		String uploadDir = "D:/uploads/feedback/";
 		java.nio.file.Path path = java.nio.file.Paths.get(uploadDir);
 		if (!java.nio.file.Files.exists(path)) {
 			java.nio.file.Files.createDirectories(path);

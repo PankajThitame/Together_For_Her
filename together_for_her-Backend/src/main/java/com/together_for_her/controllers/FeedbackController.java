@@ -82,9 +82,12 @@ public class FeedbackController {
 		return ResponseEntity.ok(counts);
 	}
 
+	@org.springframework.beans.factory.annotation.Value("${file.upload-dir}")
+	private String uploadDir;
+
 	@GetMapping("/files/{filename}")
 	public ResponseEntity<Resource> getFile(@PathVariable String filename) throws IOException {
-		Path file = Paths.get("D:/uploads/").resolve(filename).normalize();
+		Path file = Paths.get(uploadDir).resolve(filename).normalize();
 		Resource resource = new UrlResource(file.toUri());
 
 		if (resource.exists()) {

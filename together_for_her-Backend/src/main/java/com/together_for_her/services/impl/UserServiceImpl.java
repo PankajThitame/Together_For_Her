@@ -167,13 +167,15 @@ public class UserServiceImpl implements UserService {
 		return userStats;
 	}
 
+	@org.springframework.beans.factory.annotation.Value("${file.upload-dir}")
+	private String uploadDir;
+
 	@Override
 	public UserDto uploadProfilePhoto(Integer userId, org.springframework.web.multipart.MultipartFile file)
 			throws java.io.IOException {
 		User user = this.userRepo.findById(userId)
 				.orElseThrow(() -> new ResourceNotFoundException("User", "Id", userId));
 
-		String uploadDir = "D:/uploads/profiles/";
 		java.nio.file.Path path = java.nio.file.Paths.get(uploadDir);
 		if (!java.nio.file.Files.exists(path)) {
 			java.nio.file.Files.createDirectories(path);
