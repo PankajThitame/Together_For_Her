@@ -8,7 +8,7 @@ const Users = () => {
 
   useEffect(() => {
     axios
-      .get("${API_BASE_URL}/users")
+      .get(`${API_BASE_URL}/users`)
       .then((response) => {
         setUsers(response.data);
       })

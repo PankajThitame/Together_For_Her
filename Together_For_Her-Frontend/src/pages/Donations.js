@@ -6,7 +6,7 @@ const Donations = () => {
   const [donations, setDonations] = useState([]);
 
   useEffect(() => {
-    axios.get("${API_BASE_URL}/donations").then((response) => {
+    axios.get(`${API_BASE_URL}/donations`).then((response) => {
       setDonations(response.data);
     });
   }, []);
