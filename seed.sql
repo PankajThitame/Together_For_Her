@@ -62,16 +62,16 @@ INSERT INTO user_credentials (username, password, role, user_id, volunteer_id) V
 
 -- 4. Insert Products
 INSERT INTO product (product_name, description, price, category, stock, availability, image_url) VALUES 
-('Organic Sanitary Pads', 'Ultra-soft organic cotton pads, pack of 12', 150.00, 'Hygiene', 100, 'In Stock', 'https://via.placeholder.com/150'),
-('Menstrual Cup', 'Eco-friendly medical grade silicone cup', 450.00, 'Hygiene', 50, 'In Stock', 'https://via.placeholder.com/150'),
-('Prenatal Multivitamins', 'Essential vitamins for expectant mothers', 350.00, 'Health', 80, 'In Stock', 'https://via.placeholder.com/150'),
-('Iron Supplements', 'High absorption iron for anemia prevention', 200.00, 'Health', 120, 'In Stock', 'https://via.placeholder.com/150'),
-('Maternal Health Guide', 'Comprehensive book on wellness and nutrition', 100.00, 'Education', 200, 'In Stock', 'https://via.placeholder.com/150'),
-('Hygiene Awareness Kit', 'Includes soap, sanitizer, and educational flyers', 120.00, 'Education', 150, 'In Stock', 'https://via.placeholder.com/150'),
-('Postpartum Care Pack', 'Specially curated items for new mothers', 600.00, 'Health', 40, 'In Stock', 'https://via.placeholder.com/150'),
-('Disinfectant Surface Wipes', 'Pack of 50 anti-bacterial wipes', 180.00, 'Hygiene', 90, 'In Stock', 'https://via.placeholder.com/150'),
-('Reusable Cloth Pads', 'Set of 3 washable bamboo cloth pads', 300.00, 'Hygiene', 60, 'In Stock', 'https://via.placeholder.com/150'),
-('Nutrition Shake', 'Protein and mineral rich supplement for women', 400.00, 'Health', 70, 'In Stock', 'https://via.placeholder.com/150');
+('Organic Sanitary Pads', 'Ultra-soft organic cotton pads, pack of 12', 150.00, 'Hygiene', 100, 'In Stock', '/products/pads.png'),
+('Menstrual Cup', 'Eco-friendly medical grade silicone cup', 450.00, 'Hygiene', 50, 'In Stock', '/products/cup.png'),
+('Prenatal Multivitamins', 'Essential vitamins for expectant mothers', 350.00, 'Health', 80, 'In Stock', '/products/vitamins.png'),
+('Iron Supplements', 'High absorption iron for anemia prevention', 200.00, 'Health', 120, 'In Stock', '/products/vitamins.png'), -- Reuse vitamins or generic
+('Maternal Health Guide', 'Comprehensive book on wellness and nutrition', 100.00, 'Education', 200, 'In Stock', '/products/guide.png'),
+('Hygiene Awareness Kit', 'Includes soap, sanitizer, and educational flyers', 120.00, 'Education', 150, 'In Stock', '/products/kit.png'),
+('Postpartum Care Pack', 'Specially curated items for new mothers', 600.00, 'Health', 40, 'In Stock', '/products/box.png'),
+('Disinfectant Surface Wipes', 'Pack of 50 anti-bacterial wipes', 180.00, 'Hygiene', 90, 'In Stock', '/products/pads.png'), -- Placeholder for wipes
+('Reusable Cloth Pads', 'Set of 3 washable bamboo cloth pads', 300.00, 'Hygiene', 60, 'In Stock', '/products/pads.png'),
+('Nutrition Shake', 'Protein and mineral rich supplement for women', 400.00, 'Health', 70, 'In Stock', '/products/vitamins.png');
 
 -- 5. Insert Community Messages
 INSERT INTO community_messages (message, category, timestamp, sender_name, likes) VALUES 
