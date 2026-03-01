@@ -1,0 +1,61 @@
+services:
+  backend:
+    build: ./together_for_her-Backend
+    container_name: together-backend
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      - DB_URL=${DB_URL}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - TWILIO_ACCOUNT_SID=${TWILIO_ACCOUNT_SID}
+      - TWILIO_AUTH_TOKEN=${TWILIO_AUTH_TOKEN}
+      - TWILIO_PHONE_NUMBER=${TWILIO_PHONE_NUMBER}
+      - RAZORPAY_KEY_ID=${RAZORPAY_KEY_ID}
+      - RAZORPAY_KEY_SECRET=${RAZORPAY_KEY_SECRET}
+      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS}
+      - FILE_UPLOAD_DIR=${FILE_UPLOAD_DIR}
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - together-network
+
+  frontend:
+    build:
+      context: ./Together_For_Her-Frontend
+      args:
+        - REACT_APP_API_URL=${REACT_APP_API_URL}
+    container_name: together-frontend
+    restart: always
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - together-network
+
+  db:
+    image: mysql:8.0
+    container_name: together-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: together_db
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${DB_PASSWORD}" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - together-network
+
+networks:
+  together-network:
+    driver: bridge
+
+volumes:
+  db_data:

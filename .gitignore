@@ -1,0 +1,31 @@
+# Environment variables
+.env
+.env.local
+
+# IDEs
+.vscode/
+.idea/
+.classpath
+.project
+.settings/
+.factorypath
+
+# Common
+node_modules/
+build/
+dist/
+target/
+*.log
+uploads/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Frontend specific
+Together_For_Her-Frontend/node_modules/
+Together_For_Her-Frontend/build/
+
+# Backend specific
+together_for_her-Backend/target/
+together_for_her-Backend/.mvn/wrapper/maven-wrapper.jar
