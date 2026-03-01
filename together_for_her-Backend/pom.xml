@@ -15,11 +15,9 @@
 
 	
 	<groupId>com.together</groupId>
-	<artifactId>
-	together_for_her</artifactId>
+	<artifactId>together_for_her</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>
-	together_for_her</name>
+	<name>together_for_her</name>
 	<description>APIs for project together_for_her</description>
 
 	<properties>
