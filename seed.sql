@@ -24,21 +24,20 @@ INSERT INTO beneficiaries (id, user_name, age, contact_number, email, location, 
 (9, 'Lata Mangeshkar', 45, '9876543219', 'lata@example.com', 'Indore', 'Middle Class', 'USER', 'APPROVED', 'Hindi', 'None', 'VERIFIED'),
 (10, 'Asha Bhosle', 42, '9876543220', 'asha@example.com', 'Mumbai', 'Lower Income', 'USER', 'APPROVED', 'Marathi', 'None', 'VERIFIED');
 
--- 2. Insert Volunteers
+-- 2. Insert Volunteers (Corrected VolunteerType values to match Enum)
 INSERT INTO volunteers (id, name, email, contact_number, status, volunteer_type, experience, availability) VALUES 
-(1, 'Rahul Verma', 'rahul@example.com', '9876543212', 'APPROVED', 'FULL_TIME', 5, 'Weekdays'),
-(2, 'Sneha Patil', 'sneha@example.com', '9876543213', 'APPROVED', 'PART_TIME', 2, 'Weekends'),
-(3, 'Shubham Kumar', 'shubham@example.com', '8888888888', 'APPROVED', 'FULL_TIME', 3, 'Always'),
-(4, 'Amit Shah', 'amit@example.com', '8888888889', 'APPROVED', 'PART_TIME', 4, 'Weekends'),
-(5, 'Deepa Malik', 'deepa@example.com', '8888888890', 'APPROVED', 'FULL_TIME', 6, 'Weekdays'),
-(6, 'Vikram Seth', 'vikram@example.com', '8888888891', 'APPROVED', 'FULL_TIME', 1, 'Always'),
-(7, 'Pooja Hegde', 'pooja@example.com', '8888888892', 'APPROVED', 'PART_TIME', 3, 'Evening'),
-(8, 'Suresh Raina', 'suresh@example.com', '8888888893', 'APPROVED', 'FULL_TIME', 2, 'Morning'),
-(9, 'Mithali Raj', 'mithali@example.com', '8888888894', 'APPROVED', 'PART_TIME', 5, 'Weekends'),
-(10, 'Neeraj Chopra', 'neeraj@example.com', '8888888895', 'APPROVED', 'FULL_TIME', 3, 'Always');
+(1, 'Rahul Verma', 'rahul@example.com', '9876543212', 'APPROVED', 'LOCAL_HELPER', 5, 'Weekdays'),
+(2, 'Sneha Patil', 'sneha@example.com', '9876543213', 'APPROVED', 'SOCIAL_WORKER', 2, 'Weekends'),
+(3, 'Shubham Kumar', 'shubham@example.com', '8888888888', 'APPROVED', 'DOCTOR', 3, 'Always'),
+(4, 'Amit Shah', 'amit@example.com', '8888888889', 'APPROVED', 'PHARMACIST', 4, 'Weekends'),
+(5, 'Deepa Malik', 'deepa@example.com', '8888888890', 'APPROVED', 'TEACHER', 6, 'Weekdays'),
+(6, 'Vikram Seth', 'vikram@example.com', '8888888891', 'APPROVED', 'COUNSELOR', 1, 'Always'),
+(7, 'Pooja Hegde', 'pooja@example.com', '8888888892', 'APPROVED', 'EVENT_ORGANIZER', 3, 'Evening'),
+(8, 'Suresh Raina', 'suresh@example.com', '8888888893', 'APPROVED', 'FUNDRAISER', 2, 'Morning'),
+(9, 'Mithali Raj', 'mithali@example.com', '8888888894', 'APPROVED', 'OTHER', 5, 'Weekends'),
+(10, 'Neeraj Chopra', 'neeraj@example.com', '8888888895', 'APPROVED', 'LOCAL_HELPER', 3, 'Always');
 
--- 3. Insert Credentials (ONE credential per user/volunteer to avoid UNIQUE constraint violations)
--- Using SHORT NAMES as the primary username for ease of login
+-- 3. Insert Credentials
 INSERT INTO user_credentials (username, password, role, user_id, volunteer_id) VALUES 
 ('sunita', 'together123', 'ADMIN', 3, NULL),
 ('shubham', 'together123', 'VOLUNTEER', NULL, 3),
