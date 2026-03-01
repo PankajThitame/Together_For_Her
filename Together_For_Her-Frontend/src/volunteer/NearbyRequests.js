@@ -1,3 +1,4 @@
+import API_BASE_URL from "../apiConfig";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
@@ -25,7 +26,7 @@ const NearbyRequests = () => {
     const fetchRequests = async () => {
         try {
             // For now fetching all requests, in real app would be /api/requests/nearby
-            const res = await axios.get(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/requests`);
+            const res = await axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/requests`);
             // Filter for PENDING requests
             const pending = res.data.filter(r => r.status === "PENDING");
             setRequests(pending);
@@ -140,4 +141,3 @@ const NearbyRequests = () => {
 };
 
 export default NearbyRequests;
-

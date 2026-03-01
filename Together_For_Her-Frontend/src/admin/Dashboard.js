@@ -1,3 +1,4 @@
+import API_BASE_URL from "../apiConfig";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -20,11 +21,11 @@ const AdminPanel = () => {
           feedbackResponse,
           contentResponse,
         ] = await Promise.all([
-          axios.get(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/requests/count`),
-          axios.get(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/auth/count`),
-          axios.get(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/volunteers/count`),
-          axios.get(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/count`),
-          axios.get(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/content/stats`),
+          axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/requests/count`),
+          axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/auth/count`),
+          axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/volunteers/count`),
+          axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/count`),
+          axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/content/stats`),
         ]);
 
         setUserStats(userResponse.data);
@@ -146,4 +147,3 @@ const StatCard = ({ title, stats, gradient }) => (
 );
 
 export default AdminPanel;
-

@@ -3,6 +3,8 @@ import { useNavigate, useLocation, Link } from "react-router-dom";
 import { AuthContext } from "./AuthContext";
 import { Mail, Lock, Loader2, ArrowRight, ShieldCheck } from "lucide-react";
 
+import API_BASE_URL from "../apiConfig";
+
 const LoginForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -20,7 +22,7 @@ const LoginForm = () => {
     setError("");
 
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/auth/login-user`, {
+      const response = await fetch(`${API_BASE_URL}/auth/login-user`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

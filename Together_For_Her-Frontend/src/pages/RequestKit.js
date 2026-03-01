@@ -1,3 +1,4 @@
+import API_BASE_URL from "../apiConfig";
 import React, { useState } from "react";
 import axios from "axios";
 import Card, { CardBody } from "../components/ui/Card";
@@ -24,7 +25,7 @@ const RequestKit = () => {
     setIsSubmitting(true);
 
     try {
-      await axios.post(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/requests/${userId}`, formData);
+      await axios.post(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/requests/${userId}`, formData);
       alert("Kit request submitted successfully!");
 
       setFormData({

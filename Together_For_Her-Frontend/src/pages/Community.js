@@ -1,3 +1,4 @@
+import API_BASE_URL from "../apiConfig";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Card, { CardBody } from "../components/ui/Card";
@@ -29,7 +30,7 @@ const Community = () => {
 
   const handleLike = async (id, index) => {
     try {
-      await fetch(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/community/like/${id}`, { method: "PUT" });
+      await fetch(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/community/like/${id}`, { method: "PUT" });
       const updatedMessages = [...messages];
       updatedMessages[index].likes += 1;
       setMessages(updatedMessages);
@@ -58,7 +59,7 @@ const Community = () => {
     };
 
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/community/post`, {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/community/post`, {
         message: newMessage,
         category: selectedCategory,
         timestamp: newPost.timestamp,
@@ -79,7 +80,7 @@ const Community = () => {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/community/all`);
+        const response = await axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/community/all`);
         const data = response.data.map((item) => ({
           id: item.id,
           text: item.message,

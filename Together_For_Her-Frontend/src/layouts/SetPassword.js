@@ -1,3 +1,4 @@
+import API_BASE_URL from "../apiConfig";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -74,11 +75,11 @@ const SetPassword = () => {
       volunteer: passwordData.role === "VOLUNTEER" ? userData : null,
     };
 
-    let apiUrl = `${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/auth/register`;
+    let apiUrl = `${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/auth/register`;
     if (passwordData.role === "VOLUNTEER") {
-      apiUrl = `${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/volunteers/register`;
+      apiUrl = `${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/volunteers/register`;
     } else if (passwordData.role === "ADMIN") {
-      apiUrl = `${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/admin/register`;
+      apiUrl = `${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/admin/register`;
     }
 
     try {
@@ -141,4 +142,3 @@ const SetPassword = () => {
 };
 
 export default SetPassword;
-

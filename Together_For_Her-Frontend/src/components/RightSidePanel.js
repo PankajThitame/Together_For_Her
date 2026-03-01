@@ -4,6 +4,8 @@ import { DateTime } from "luxon";
 import { FaNewspaper, FaRegClock, FaExternalLinkAlt } from "react-icons/fa";
 import Card, { CardBody } from "./ui/Button"; // Reusing Card styles if possible or standardizing
 
+import API_BASE_URL from "../apiConfig";
+
 const RightSidePanel = () => {
   const [news, setNews] = useState([]);
   const newsRef = useRef(null);
@@ -12,7 +14,7 @@ const RightSidePanel = () => {
     const fetchHealthNews = async () => {
       try {
         const response = await axios.get(
-          "https://newsapi.org/v2/everything?q=women%20wellness&apiKey=f12d4c76b52748d9a51079701b97d49a"
+          `${API_BASE_URL}/news`
         );
         setNews(response.data.articles.slice(0, 5)); // Limit to top 5
       } catch (error) {

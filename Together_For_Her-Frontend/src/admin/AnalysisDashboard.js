@@ -1,3 +1,4 @@
+import API_BASE_URL from "../apiConfig";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {
@@ -27,7 +28,7 @@ const AnalyticsDashboard = () => {
   useEffect(() => {
     const fetchAnalyticsData = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/admin/analytics`);
+        const response = await axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/admin/analytics`);
         setAnalyticsData(response.data);
       } catch (error) {
         console.error("Error fetching analytics data:", error);
@@ -132,4 +133,3 @@ const AnalyticsDashboard = () => {
 };
 
 export default AnalyticsDashboard;
-

@@ -1,3 +1,4 @@
+import API_BASE_URL from "../apiConfig";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { DateTime } from "luxon";
@@ -10,7 +11,7 @@ const Reviews = () => {
 
   const renderFile = (filePath, fileType) => {
     const fileName = filePath.split("\\").pop().split("/").pop();
-    const fullPath = `${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/files/${encodeURIComponent(fileName)}`;
+    const fullPath = `${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/files/${encodeURIComponent(fileName)}`;
 
     if (fileType.startsWith("image/")) {
       return (

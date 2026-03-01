@@ -1,3 +1,4 @@
+import API_BASE_URL from "../apiConfig";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -7,7 +8,7 @@ const VolunteerManagement = () => {
   useEffect(() => {
     const fetchVolunteers = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/volunteers/`);
+        const response = await axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/volunteers/`);
         setVolunteers(response.data);
       } catch (error) {
         console.error("Error fetching volunteer data:", error);
@@ -18,7 +19,7 @@ const VolunteerManagement = () => {
 
   const updateVolunteerStatus = async (id, status) => {
     try {
-      await axios.put(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/volunteers/${id}`, { status });
+      await axios.put(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/volunteers/${id}`, { status });
       setVolunteers((prev) =>
         prev.map((volunteer) =>
           volunteer.id === id ? { ...volunteer, status } : volunteer
@@ -128,4 +129,3 @@ const VolunteerManagement = () => {
 };
 
 export default VolunteerManagement;
-

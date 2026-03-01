@@ -1,3 +1,4 @@
+import API_BASE_URL from "../apiConfig";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { FaTrash, FaCheckCircle, FaTimesCircle, FaClock, FaSearch, FaFilter, FaInfoCircle, FaExternalLinkAlt, FaFileAlt } from "react-icons/fa";
@@ -30,7 +31,7 @@ const ManageContent = () => {
 
     const fetchContent = async () => {
         try {
-            const response = await axios.get(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/content/all`);
+            const response = await axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/content/all`);
             setContentList(response.data);
             setFilteredList(response.data);
         } catch (err) {
@@ -43,7 +44,7 @@ const ManageContent = () => {
     const handleDelete = async (id) => {
         if (window.confirm("Are you sure you want to delete this content? This cannot be undone.")) {
             try {
-                await axios.delete(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/content/${id}`);
+                await axios.delete(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/content/${id}`);
                 setContentList(contentList.filter(item => item.id !== id));
             } catch (err) {
                 alert("Failed to delete content.");
@@ -121,7 +122,7 @@ const ManageContent = () => {
                                 <td className="px-8 py-6">
                                     <div className="w-20 h-12 rounded-xl bg-slate-100 dark:bg-slate-900 overflow-hidden shadow-inner flex items-center justify-center">
                                         {item.fileType?.startsWith("image/") ? (
-                                            <img src={`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/upload/${item.filePath.split(/[/\\]/).pop()}`} alt="" className="w-full h-full object-cover" />
+                                            <img src={`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/upload/${item.filePath.split(/[/\\]/).pop()}`} alt="" className="w-full h-full object-cover" />
                                         ) : (
                                             <FaFileAlt className="text-slate-300" />
                                         )}
@@ -141,7 +142,7 @@ const ManageContent = () => {
                                 <td className="px-8 py-6 text-right">
                                     <div className="flex items-center justify-end gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
                                         <button
-                                            onClick={() => window.open(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/upload/${item.filePath.split(/[/\\]/).pop()}`, '_blank')}
+                                            onClick={() => window.open(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/upload/${item.filePath.split(/[/\\]/).pop()}`, '_blank')}
                                             className="w-10 h-10 bg-slate-100 dark:bg-slate-700 text-slate-500 rounded-xl flex items-center justify-center hover:bg-pink-500 hover:text-white transition-all shadow-sm"
                                             title="View File"
                                         >
@@ -173,4 +174,3 @@ const ManageContent = () => {
 };
 
 export default ManageContent;
-

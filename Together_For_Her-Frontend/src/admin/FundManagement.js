@@ -1,3 +1,4 @@
+import API_BASE_URL from "../apiConfig";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -11,7 +12,7 @@ const FundManagement = () => {
   useEffect(() => {
     const fetchFundData = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/funds`);
+        const response = await axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/funds`);
         setFunds(response.data);
       } catch (err) {
         setError("Error fetching fund data.");
@@ -94,4 +95,3 @@ const FundManagement = () => {
 };
 
 export default FundManagement;
-

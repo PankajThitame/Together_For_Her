@@ -1,3 +1,4 @@
+import API_BASE_URL from "../apiConfig";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { X, Upload, MapPin, Loader2 } from "lucide-react";
@@ -108,7 +109,7 @@ const CombinedUserForm = ({ existingData, onCancel, onSuccess }) => {
 
     try {
       setUploading(true);
-      const url = `${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/auth/update/${userId}`;
+      const url = `${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/auth/update/${userId}`;
       await axios.put(url, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
@@ -278,4 +279,3 @@ const CombinedUserForm = ({ existingData, onCancel, onSuccess }) => {
 };
 
 export default CombinedUserForm;
-

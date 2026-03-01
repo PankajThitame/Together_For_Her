@@ -1,3 +1,4 @@
+import API_BASE_URL from "../apiConfig";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -20,7 +21,7 @@ const Donate = () => {
         amount = parseInt(customAmount) * 100;
       }
 
-      const response = await axios.post(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/payments/create`, { amount });
+      const response = await axios.post(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/payments/create`, { amount });
       const { id: orderId, amount: razorAmount, currency } = response.data;
 
       const options = {
@@ -160,4 +161,3 @@ const Donate = () => {
 };
 
 export default Donate;
-

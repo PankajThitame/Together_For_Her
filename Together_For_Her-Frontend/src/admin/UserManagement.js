@@ -1,3 +1,4 @@
+import API_BASE_URL from "../apiConfig";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { FaPhone, FaWhatsapp, FaMapMarkerAlt, FaCheckCircle, FaTimesCircle, FaEnvelope } from "react-icons/fa";
@@ -12,7 +13,7 @@ const UserManagement = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/auth/`);
+      const response = await axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/auth/`);
       setUsers(response.data);
     } catch (error) {
       console.error("Error fetching users:", error);
@@ -125,4 +126,3 @@ const UserManagement = () => {
 };
 
 export default UserManagement;
-

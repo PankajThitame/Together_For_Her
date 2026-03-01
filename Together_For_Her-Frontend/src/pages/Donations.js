@@ -1,3 +1,4 @@
+import API_BASE_URL from "../apiConfig";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -5,7 +6,7 @@ const Donations = () => {
   const [donations, setDonations] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:8080/api/donations").then((response) => {
+    axios.get("${API_BASE_URL}/donations").then((response) => {
       setDonations(response.data);
     });
   }, []);

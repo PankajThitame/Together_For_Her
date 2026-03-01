@@ -1,3 +1,4 @@
+import API_BASE_URL from "../apiConfig";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Card, { CardBody } from "../components/ui/Card";
@@ -14,7 +15,7 @@ const NearbyHelp = () => {
   const fetchHelpers = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/volunteers/`);
+      const response = await axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/volunteers/`);
       setHelpers(response.data);
     } catch (error) {
       console.error("Error fetching helpers:", error);
@@ -149,4 +150,3 @@ const NearbyHelp = () => {
 };
 
 export default NearbyHelp;
-

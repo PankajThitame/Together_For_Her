@@ -1,3 +1,4 @@
+import API_BASE_URL from "../apiConfig";
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -41,7 +42,7 @@ const UserContentUpload = () => {
 
     try {
       setUploading(true);
-      await axios.post(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/upload`, formData, {
+      await axios.post(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/upload`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setUploadSuccess(true);
@@ -195,4 +196,3 @@ const UserContentUpload = () => {
 };
 
 export default UserContentUpload;
-

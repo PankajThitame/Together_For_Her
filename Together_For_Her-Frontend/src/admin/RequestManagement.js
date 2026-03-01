@@ -1,3 +1,4 @@
+import API_BASE_URL from "../apiConfig";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {
@@ -16,7 +17,7 @@ const RequestManagement = () => {
 
   const fetchRequests = async () => {
     try {
-      const response = await axios.get(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/requests`);
+      const response = await axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/requests`);
       setRequests(response.data);
     } catch (error) {
       console.error("Error fetching requests:", error);
@@ -29,7 +30,7 @@ const RequestManagement = () => {
   const updateRequestStatus = async (id, status) => {
     try {
       console.log(`Updating request ID: ${id} with status: ${status}`);
-      await axios.put(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/requests/${id}/status`, { status });
+      await axios.put(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/requests/${id}/status`, { status });
 
       setRequests((prevRequests) =>
         prevRequests.map((request) =>

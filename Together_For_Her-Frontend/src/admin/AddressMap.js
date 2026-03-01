@@ -1,3 +1,4 @@
+import API_BASE_URL from "../apiConfig";
 import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
@@ -42,8 +43,8 @@ const AddressMap = () => {
   useEffect(() => {
     const fetchLocations = async () => {
       try {
-        const userResponse = await axios.get(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/auth/`);
-        const volunteerResponse = await axios.get(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/volunteers/`);
+        const userResponse = await axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/auth/`);
+        const volunteerResponse = await axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/volunteers/`);
         setUsers(userResponse.data);
         setVolunteers(volunteerResponse.data);
       } catch (err) {
@@ -145,4 +146,3 @@ const AddressMap = () => {
 };
 
 export default AddressMap;
-

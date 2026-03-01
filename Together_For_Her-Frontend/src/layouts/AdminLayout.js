@@ -1,6 +1,7 @@
+import API_BASE_URL from "../apiConfig";
 export const loginUser = async (username, password) => {
   try {
-    const response = await fetch(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/auth/login-user`, {
+    const response = await fetch(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/auth/login-user`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),
@@ -29,4 +30,3 @@ export const loginUser = async (username, password) => {
 };
 
 export default loginUser;
-

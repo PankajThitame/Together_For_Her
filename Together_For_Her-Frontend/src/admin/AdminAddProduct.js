@@ -1,3 +1,4 @@
+import API_BASE_URL from "../apiConfig";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {
@@ -34,7 +35,7 @@ const AdminAddProduct = () => {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/admin/marketplace/all`);
+      const res = await axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/admin/marketplace/all`);
       setProducts(res.data);
     } catch (err) {
       console.error("Fetch products error:", err);
@@ -50,10 +51,10 @@ const AdminAddProduct = () => {
     e.preventDefault();
     try {
       if (editingId) {
-        await axios.put(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/admin/marketplace/update/${editingId}`, product);
+        await axios.put(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/admin/marketplace/update/${editingId}`, product);
         setMessage("Product updated successfully!");
       } else {
-        await axios.post(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/admin/marketplace/add`, product);
+        await axios.post(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/admin/marketplace/add`, product);
         setMessage("Product added successfully!");
       }
 
@@ -82,7 +83,7 @@ const AdminAddProduct = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/admin/marketplace/delete/${id}`);
+      await axios.delete(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/admin/marketplace/delete/${id}`);
       setMessage("Product deleted successfully!");
       fetchProducts();
     } catch (err) {
@@ -160,4 +161,3 @@ const AdminAddProduct = () => {
 };
 
 export default AdminAddProduct;
-

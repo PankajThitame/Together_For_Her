@@ -1,3 +1,4 @@
+import API_BASE_URL from "../apiConfig";
 import React, { useEffect, useState } from "react";
 import UserProfile from "../layouts/UserProfile";
 import UserForm from "../layouts/UserForm";
@@ -13,7 +14,7 @@ const ProfilePage = () => {
       const userId = localStorage.getItem("userid");
       if (!userId) return;
 
-      const response = await fetch(`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/auth/${userId}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/auth/${userId}`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -64,4 +65,3 @@ const ProfilePage = () => {
 };
 
 export default ProfilePage;
-

@@ -1,3 +1,4 @@
+import API_BASE_URL from "../apiConfig";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -7,7 +8,7 @@ const Users = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/users")
+      .get("${API_BASE_URL}/users")
       .then((response) => {
         setUsers(response.data);
       })

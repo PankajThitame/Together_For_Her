@@ -1,3 +1,4 @@
+import API_BASE_URL from "../apiConfig";
 import React from "react";
 import { FaTimes, FaQuoteLeft, FaPlay, FaFileAlt, FaUser, FaCalendarAlt } from "react-icons/fa";
 import { formatDate } from "../utils/dateUtils";
@@ -22,14 +23,14 @@ const ExperienceDetailModal = ({ item, onClose }) => {
                 <div className="md:w-1/2 bg-slate-100 dark:bg-slate-950 flex items-center justify-center p-0 relative">
                     {item.fileType?.startsWith("image/") && (
                         <img
-                            src={`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/upload/${getFileName(item.filePath)}`}
+                            src={`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/upload/${getFileName(item.filePath)}`}
                             alt={item.title}
                             className="w-full h-full object-contain"
                         />
                     )}
                     {item.fileType?.startsWith("video/") && (
                         <video controls className="w-full h-full bg-black">
-                            <source src={`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/upload/${getFileName(item.filePath)}`} type={item.fileType} />
+                            <source src={`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/upload/${getFileName(item.filePath)}`} type={item.fileType} />
                         </video>
                     )}
                     {!item.fileType?.startsWith("image/") && !item.fileType?.startsWith("video/") && (
@@ -40,12 +41,12 @@ const ExperienceDetailModal = ({ item, onClose }) => {
                                 {item.fileType === "application/pdf" && (
                                     <div className="space-y-6 flex flex-col items-center">
                                         <iframe
-                                            src={`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/upload/${getFileName(item.filePath)}#toolbar=0`}
+                                            src={`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/upload/${getFileName(item.filePath)}#toolbar=0`}
                                             className="w-full h-[250px] rounded-xl border border-white/20 shadow-lg"
                                             title="PDF Preview"
                                         />
                                         <a
-                                            href={`${process.env.REACT_APP_API_URL || "http://localhost:8080/api"}/upload/${getFileName(item.filePath)}`}
+                                            href={`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/upload/${getFileName(item.filePath)}`}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="inline-flex items-center gap-2 px-6 py-3 bg-pink-500 text-white rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-rose-600 transition-all shadow-xl shadow-pink-200"
@@ -131,4 +132,3 @@ const ExperienceDetailModal = ({ item, onClose }) => {
 };
 
 export default ExperienceDetailModal;
-
