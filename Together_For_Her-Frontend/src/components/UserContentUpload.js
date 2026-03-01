@@ -42,7 +42,7 @@ const UserContentUpload = () => {
 
     try {
       setUploading(true);
-      await axios.post(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/upload`, formData, {
+      await axios.post(`${API_BASE_URL}/upload`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setUploadSuccess(true);

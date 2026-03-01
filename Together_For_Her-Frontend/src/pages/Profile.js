@@ -14,7 +14,7 @@ const ProfilePage = () => {
       const userId = localStorage.getItem("userid");
       if (!userId) return;
 
-      const response = await fetch(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/auth/${userId}`, {
+      const response = await fetch(`${API_BASE_URL}/auth/${userId}`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,

@@ -15,7 +15,7 @@ const NearbyHelp = () => {
   const fetchHelpers = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/volunteers/`);
+      const response = await axios.get(`${API_BASE_URL}/volunteers/`);
       setHelpers(response.data);
     } catch (error) {
       console.error("Error fetching helpers:", error);

@@ -25,7 +25,7 @@ const RequestKit = () => {
     setIsSubmitting(true);
 
     try {
-      await axios.post(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/requests/${userId}`, formData);
+      await axios.post(`${API_BASE_URL}/requests/${userId}`, formData);
       alert("Kit request submitted successfully!");
 
       setFormData({

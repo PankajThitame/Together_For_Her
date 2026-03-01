@@ -16,7 +16,7 @@ const MyContributions = () => {
         const fetchMyContent = async () => {
             if (!user?.username) return;
             try {
-                const response = await axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/content/user/${user.username}`);
+                const response = await axios.get(`${API_BASE_URL}/content/user/${user.username}`);
                 setContentList(response.data);
             } catch (err) {
                 console.error("Error fetching my contributions:", err);
@@ -31,7 +31,7 @@ const MyContributions = () => {
         e.stopPropagation();
         if (window.confirm("Are you sure you want to remove this experience? This action cannot be undone.")) {
             try {
-                await axios.delete(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/content/${id}`);
+                await axios.delete(`${API_BASE_URL}/content/${id}`);
                 setContentList(contentList.filter((item) => item.id !== id));
             } catch (err) {
                 console.error("Error deleting content:", err);
@@ -110,7 +110,7 @@ const MyContributions = () => {
                             <div className="rounded-3xl overflow-hidden mb-6 bg-slate-100 dark:bg-slate-950 aspect-video relative shadow-inner shrink-0">
                                 {item.fileType?.startsWith("image/") && (
                                     <img
-                                        src={`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/upload/${getFileName(item.filePath)}`}
+                                        src={`${API_BASE_URL}/upload/${getFileName(item.filePath)}`}
                                         alt={item.title}
                                         className="w-full h-full object-cover"
                                     />
@@ -118,7 +118,7 @@ const MyContributions = () => {
                                 {item.fileType?.startsWith("video/") && (
                                     <div className="relative w-full h-full bg-black">
                                         <video className="w-full h-full object-cover opacity-60">
-                                            <source src={`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/upload/${getFileName(item.filePath)}`} type={item.fileType} />
+                                            <source src={`${API_BASE_URL}/upload/${getFileName(item.filePath)}`} type={item.fileType} />
                                         </video>
                                         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                                             <FaPlay className="text-xl" />

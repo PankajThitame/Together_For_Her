@@ -109,7 +109,7 @@ const CombinedUserForm = ({ existingData, onCancel, onSuccess }) => {
 
     try {
       setUploading(true);
-      const url = `${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/auth/update/${userId}`;
+      const url = `${API_BASE_URL}/auth/update/${userId}`;
       await axios.put(url, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });

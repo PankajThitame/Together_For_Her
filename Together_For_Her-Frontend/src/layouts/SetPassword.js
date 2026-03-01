@@ -75,11 +75,11 @@ const SetPassword = () => {
       volunteer: passwordData.role === "VOLUNTEER" ? userData : null,
     };
 
-    let apiUrl = `${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/auth/register`;
+    let apiUrl = `${API_BASE_URL}/auth/register`;
     if (passwordData.role === "VOLUNTEER") {
-      apiUrl = `${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/volunteers/register`;
+      apiUrl = `${API_BASE_URL}/volunteers/register`;
     } else if (passwordData.role === "ADMIN") {
-      apiUrl = `${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/admin/register`;
+      apiUrl = `${API_BASE_URL}/admin/register`;
     }
 
     try {

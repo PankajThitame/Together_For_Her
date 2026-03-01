@@ -9,7 +9,7 @@ const ContentModeration = () => {
   useEffect(() => {
     const fetchContent = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/content/pending`);
+        const response = await axios.get(`${API_BASE_URL}/content/pending`);
         setContentList(response.data);
       } catch (err) {
         setError("Error fetching content.");
@@ -26,7 +26,7 @@ const ContentModeration = () => {
 
   const handleApprove = async (id) => {
     try {
-      await axios.post(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/content/approve/${id}`);
+      await axios.post(`${API_BASE_URL}/content/approve/${id}`);
       setContentList(contentList.filter((item) => item.id !== id));
       alert("Content approved successfully!");
     } catch (err) {
@@ -37,7 +37,7 @@ const ContentModeration = () => {
 
   const handleReject = async (id) => {
     try {
-      await axios.post(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/content/reject/${id}`);
+      await axios.post(`${API_BASE_URL}/content/reject/${id}`);
       setContentList(contentList.filter((item) => item.id !== id));
       alert("Content rejected successfully!");
     } catch (err) {
@@ -85,20 +85,20 @@ const ContentModeration = () => {
               <div className="relative rounded-2xl overflow-hidden shadow-inner bg-black/5 mb-8 aspect-video flex items-center justify-center">
                 {item.fileType.startsWith("image/") && (
                   <img
-                    src={`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/upload/${getFileName(item.filePath)}`}
+                    src={`${API_BASE_URL}/upload/${getFileName(item.filePath)}`}
                     alt="Uploaded Content"
                     className="w-full h-full object-contain transition-transform group-hover:scale-105"
                   />
                 )}
                 {item.fileType.startsWith("video/") && (
                   <video controls className="w-full h-full">
-                    <source src={`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/upload/${getFileName(item.filePath)}`} type={item.fileType} />
+                    <source src={`${API_BASE_URL}/upload/${getFileName(item.filePath)}`} type={item.fileType} />
                     Your browser does not support video.
                   </video>
                 )}
                 {item.fileType === "application/pdf" && (
                   <iframe
-                    src={`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/upload/${getFileName(item.filePath)}`}
+                    src={`${API_BASE_URL}/upload/${getFileName(item.filePath)}`}
                     className="w-full h-full"
                     title="PDF Preview"
                   />

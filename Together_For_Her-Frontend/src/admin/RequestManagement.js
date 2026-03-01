@@ -17,7 +17,7 @@ const RequestManagement = () => {
 
   const fetchRequests = async () => {
     try {
-      const response = await axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/requests`);
+      const response = await axios.get(`${API_BASE_URL}/requests`);
       setRequests(response.data);
     } catch (error) {
       console.error("Error fetching requests:", error);
@@ -30,7 +30,7 @@ const RequestManagement = () => {
   const updateRequestStatus = async (id, status) => {
     try {
       console.log(`Updating request ID: ${id} with status: ${status}`);
-      await axios.put(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/requests/${id}/status`, { status });
+      await axios.put(`${API_BASE_URL}/requests/${id}/status`, { status });
 
       setRequests((prevRequests) =>
         prevRequests.map((request) =>

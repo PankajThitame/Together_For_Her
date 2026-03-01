@@ -30,7 +30,7 @@ const Community = () => {
 
   const handleLike = async (id, index) => {
     try {
-      await fetch(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/community/like/${id}`, { method: "PUT" });
+      await fetch(`${API_BASE_URL}/community/like/${id}`, { method: "PUT" });
       const updatedMessages = [...messages];
       updatedMessages[index].likes += 1;
       setMessages(updatedMessages);
@@ -59,7 +59,7 @@ const Community = () => {
     };
 
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/community/post`, {
+      const response = await axios.post(`${API_BASE_URL}/community/post`, {
         message: newMessage,
         category: selectedCategory,
         timestamp: newPost.timestamp,
@@ -80,7 +80,7 @@ const Community = () => {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/community/all`);
+        const response = await axios.get(`${API_BASE_URL}/community/all`);
         const data = response.data.map((item) => ({
           id: item.id,
           text: item.message,

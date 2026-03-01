@@ -11,7 +11,7 @@ const Reviews = () => {
 
   const renderFile = (filePath, fileType) => {
     const fileName = filePath.split("\\").pop().split("/").pop();
-    const fullPath = `${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/files/${encodeURIComponent(fileName)}`;
+    const fullPath = `${API_BASE_URL}/files/${encodeURIComponent(fileName)}`;
 
     if (fileType.startsWith("image/")) {
       return (

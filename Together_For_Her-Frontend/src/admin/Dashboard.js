@@ -21,11 +21,11 @@ const AdminPanel = () => {
           feedbackResponse,
           contentResponse,
         ] = await Promise.all([
-          axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/requests/count`),
-          axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/auth/count`),
-          axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/volunteers/count`),
-          axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/count`),
-          axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/content/stats`),
+          axios.get(`${API_BASE_URL}/requests/count`),
+          axios.get(`${API_BASE_URL}/auth/count`),
+          axios.get(`${API_BASE_URL}/volunteers/count`),
+          axios.get(`${API_BASE_URL}/count`),
+          axios.get(`${API_BASE_URL}/content/stats`),
         ]);
 
         setUserStats(userResponse.data);

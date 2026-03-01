@@ -14,7 +14,7 @@ const Marketplace = () => {
     const fetchProducts = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/admin/marketplace/all`);
+        const response = await axios.get(`${API_BASE_URL}/admin/marketplace/all`);
         setProducts(response.data);
       } catch (error) {
         console.error("Failed to fetch products:", error);

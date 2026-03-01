@@ -21,7 +21,7 @@ const Donate = () => {
         amount = parseInt(customAmount) * 100;
       }
 
-      const response = await axios.post(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/payments/create`, { amount });
+      const response = await axios.post(`${API_BASE_URL}/payments/create`, { amount });
       const { id: orderId, amount: razorAmount, currency } = response.data;
 
       const options = {

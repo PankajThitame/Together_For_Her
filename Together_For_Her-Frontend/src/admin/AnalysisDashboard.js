@@ -28,7 +28,7 @@ const AnalyticsDashboard = () => {
   useEffect(() => {
     const fetchAnalyticsData = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/admin/analytics`);
+        const response = await axios.get(`${API_BASE_URL}/admin/analytics`);
         setAnalyticsData(response.data);
       } catch (error) {
         console.error("Error fetching analytics data:", error);

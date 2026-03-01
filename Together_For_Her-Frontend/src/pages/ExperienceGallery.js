@@ -13,7 +13,7 @@ const ExperienceGallery = () => {
     useEffect(() => {
         const fetchApprovedContent = async () => {
             try {
-                const response = await axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/content/approved`);
+                const response = await axios.get(`${API_BASE_URL}/content/approved`);
                 setContentList(response.data);
             } catch (err) {
                 console.error("Error fetching gallery content:", err);
@@ -71,7 +71,7 @@ const ExperienceGallery = () => {
                             <div className="rounded-3xl overflow-hidden mb-6 bg-slate-100 dark:bg-slate-950 aspect-video relative shadow-inner shrink-0">
                                 {item.fileType?.startsWith("image/") && (
                                     <img
-                                        src={`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/upload/${getFileName(item.filePath)}`}
+                                        src={`${API_BASE_URL}/upload/${getFileName(item.filePath)}`}
                                         alt={item.title}
                                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
@@ -79,7 +79,7 @@ const ExperienceGallery = () => {
                                 {item.fileType?.startsWith("video/") && (
                                     <div className="relative w-full h-full bg-black">
                                         <video className="w-full h-full object-cover opacity-60">
-                                            <source src={`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/upload/${getFileName(item.filePath)}`} type={item.fileType} />
+                                            <source src={`${API_BASE_URL}/upload/${getFileName(item.filePath)}`} type={item.fileType} />
                                         </video>
                                         <div className="absolute inset-0 flex items-center justify-center opacity-100 group-hover:bg-black/40 transition-all">
                                             <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white text-lg border border-white/30 transform group-hover:scale-110 transition-transform">

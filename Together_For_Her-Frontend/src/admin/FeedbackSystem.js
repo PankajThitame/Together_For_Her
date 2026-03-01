@@ -11,7 +11,7 @@ const FeedbackSystem = () => {
   useEffect(() => {
     const fetchFeedback = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/reviews/get/all`);
+        const response = await axios.get(`${API_BASE_URL}/reviews/get/all`);
         setFeedbacks(response.data);
       } catch (error) {
         console.error("Error fetching feedback:", error);
@@ -27,7 +27,7 @@ const FeedbackSystem = () => {
   const submitResponse = async (id) => {
     try {
       const updatedResponse = response[id] || "";
-      await axios.put(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/response/${id}`, {
+      await axios.put(`${API_BASE_URL}/response/${id}`, {
         response: updatedResponse,
         status: "RESPONDED",
       });

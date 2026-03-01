@@ -43,8 +43,8 @@ const AddressMap = () => {
   useEffect(() => {
     const fetchLocations = async () => {
       try {
-        const userResponse = await axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/auth/`);
-        const volunteerResponse = await axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/volunteers/`);
+        const userResponse = await axios.get(`${API_BASE_URL}/auth/`);
+        const volunteerResponse = await axios.get(`${API_BASE_URL}/volunteers/`);
         setUsers(userResponse.data);
         setVolunteers(volunteerResponse.data);
       } catch (err) {

@@ -12,7 +12,7 @@ const FundManagement = () => {
   useEffect(() => {
     const fetchFundData = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL || "${API_BASE_URL}"}/funds`);
+        const response = await axios.get(`${API_BASE_URL}/funds`);
         setFunds(response.data);
       } catch (err) {
         setError("Error fetching fund data.");
