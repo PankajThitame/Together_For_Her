@@ -37,39 +37,29 @@ INSERT INTO volunteers (id, name, email, contact_number, status, volunteer_type,
 (9, 'Mithali Raj', 'mithali@example.com', '8888888894', 'APPROVED', 'PART_TIME', 5, 'Weekends'),
 (10, 'Neeraj Chopra', 'neeraj@example.com', '8888888895', 'APPROVED', 'FULL_TIME', 3, 'Always');
 
--- 3. Insert Credentials (Password for all: together123)
--- Linking by IDs
-INSERT INTO user_credentials (username, password, role, user_id, volunteer_id) VALUES 
-('sunita@example.com', 'together123', 'ADMIN', 3, NULL),
-('shubham@example.com', 'together123', 'VOLUNTEER', NULL, 3),
-('anjali@example.com', 'together123', 'USER', 1, NULL),
-('priya@example.com', 'together123', 'USER', 2, NULL),
-('rahul@example.com', 'together123', 'VOLUNTEER', NULL, 1),
-('sneha@example.com', 'together123', 'VOLUNTEER', NULL, 2),
-('meera@example.com', 'together123', 'USER', 4, NULL),
-('kavita@example.com', 'together123', 'USER', 5, NULL),
-('rani@example.com', 'together123', 'USER', 6, NULL),
-('rahul', 'together123', 'VOLUNTEER', NULL, 1); -- Supporting short name too if preferred
-
--- Adding more credentials for the remaining 10+10
-INSERT INTO user_credentials (username, password, role, user_id, volunteer_id) VALUES 
-('amit@example.com', 'together123', 'VOLUNTEER', NULL, 4),
-('deepa@example.com', 'together123', 'VOLUNTEER', NULL, 5),
-('vikram@example.com', 'together123', 'VOLUNTEER', NULL, 6),
-('pooja@example.com', 'together123', 'VOLUNTEER', NULL, 7),
-('suresh@example.com', 'together123', 'VOLUNTEER', NULL, 8),
-('mithali@example.com', 'together123', 'VOLUNTEER', NULL, 9),
-('neeraj@example.com', 'together123', 'VOLUNTEER', NULL, 10),
-('sita@example.com', 'together123', 'USER', 7, NULL),
-('geeta@example.com', 'together123', 'USER', 8, NULL),
-('lata@example.com', 'together123', 'USER', 9, NULL),
-('asha@example.com', 'together123', 'USER', 10, NULL);
-
--- Legacy short usernames for convenience
+-- 3. Insert Credentials (ONE credential per user/volunteer to avoid UNIQUE constraint violations)
+-- Using SHORT NAMES as the primary username for ease of login
 INSERT INTO user_credentials (username, password, role, user_id, volunteer_id) VALUES 
 ('sunita', 'together123', 'ADMIN', 3, NULL),
 ('shubham', 'together123', 'VOLUNTEER', NULL, 3),
-('anjali', 'together123', 'USER', 1, NULL);
+('anjali', 'together123', 'USER', 1, NULL),
+('priya', 'together123', 'USER', 2, NULL),
+('meera', 'together123', 'USER', 4, NULL),
+('kavita', 'together123', 'USER', 5, NULL),
+('rani', 'together123', 'USER', 6, NULL),
+('sita', 'together123', 'USER', 7, NULL),
+('geeta', 'together123', 'USER', 8, NULL),
+('lata', 'together123', 'USER', 9, NULL),
+('asha', 'together123', 'USER', 10, NULL),
+('rahul', 'together123', 'VOLUNTEER', NULL, 1),
+('sneha', 'together123', 'VOLUNTEER', NULL, 2),
+('amit', 'together123', 'VOLUNTEER', NULL, 4),
+('deepa', 'together123', 'VOLUNTEER', NULL, 5),
+('vikram', 'together123', 'VOLUNTEER', NULL, 6),
+('pooja', 'together123', 'VOLUNTEER', NULL, 7),
+('suresh', 'together123', 'VOLUNTEER', NULL, 8),
+('mithali', 'together123', 'VOLUNTEER', NULL, 9),
+('neeraj', 'together123', 'VOLUNTEER', NULL, 10);
 
 -- 4. Insert Products
 INSERT INTO product (product_name, description, price, category, stock, availability, image_url) VALUES 
