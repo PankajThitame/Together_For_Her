@@ -22,6 +22,11 @@ const Donate = () => {
       }
 
       const response = await axios.post(`${API_BASE_URL}/payments/create`, { amount });
+
+      if (response.data.error) {
+        throw new Error(response.data.error);
+      }
+
       const { id: orderId, amount: razorAmount, currency } = response.data;
 
       const options = {
@@ -45,10 +50,14 @@ const Donate = () => {
       };
 
       const razor = new window.Razorpay(options);
+      razor.on('payment.failed', function (response) {
+        alert("Payment Failed: " + response.error.description);
+      });
       razor.open();
     } catch (error) {
       console.error("Error in Razorpay payment:", error);
-      alert("Payment failed. Please try again!");
+      const errorMsg = error.response?.data?.message || error.response?.data?.error || error.message;
+      alert(`Payment failed: ${errorMsg}. Please check if Razorpay keys are set correctly.`);
     }
   };
 
