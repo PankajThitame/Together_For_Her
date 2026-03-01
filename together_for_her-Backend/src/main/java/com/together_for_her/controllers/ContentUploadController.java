@@ -21,12 +21,13 @@ import java.util.List;
 public class ContentUploadController {
 
     private final UserContentRepository contentRepository;
+    private final Path uploadDir;
 
-    // Ensure the upload directory is defined and created
-    private final Path uploadDir = Paths.get("D:/uploads");
-
-    public ContentUploadController(UserContentRepository contentRepository) throws IOException {
+    public ContentUploadController(UserContentRepository contentRepository,
+            @org.springframework.beans.factory.annotation.Value("${file.upload-dir}") String uploadDirPath)
+            throws IOException {
         this.contentRepository = contentRepository;
+        this.uploadDir = Paths.get(uploadDirPath).toAbsolutePath().normalize();
         // Ensure the upload directory exists
         Files.createDirectories(uploadDir);
     }

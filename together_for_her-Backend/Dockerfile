@@ -18,6 +18,7 @@ RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
 
 # Create a non-root user and group
 RUN addgroup --system spring && adduser --system spring --ingroup spring
+RUN chown -R spring:spring /app
 
 # Explicitly copy the SNAPSHOT jar and give ownership to the spring user
 COPY --from=build --chown=spring:spring /app/target/together_for_her-0.0.1-SNAPSHOT.jar /app/app.jar
