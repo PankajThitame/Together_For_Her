@@ -16,27 +16,27 @@ import com.together_for_her.services.UserCredentialsService;
 @EnableWebSecurity
 public class SecurityConfig {
 
-//    @Autowired
-//    private UserCredentialsService userService; // Ensure this service exists
+    // @Autowired
+    // private UserCredentialsService userService; // Ensure this service exists
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-            .csrf(csrf -> csrf.disable())
-            .headers(headers -> headers
-                    .frameOptions(frame -> frame.sameOrigin()))
-            .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/auth/register", "/api/auth/login","/api/auth/login/*","/api/*").permitAll() // Allow public access
-                .anyRequest().permitAll()
-            )
-            .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-            .formLogin(login -> login.disable())
-            .httpBasic(basic -> basic.disable());
+                .csrf(csrf -> csrf.disable())
+                .headers(headers -> headers
+                        .frameOptions(frame -> frame.sameOrigin()))
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/api/auth/**", "/api/news/**", "/api/health/**", "/api/public/**").permitAll() // Broaden
+                                                                                                                         // permitAll
+                        .anyRequest().permitAll())
+                .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .formLogin(login -> login.disable())
+                .httpBasic(basic -> basic.disable());
 
         return http.build();
     }
 
-    
+    @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
         return authConfig.getAuthenticationManager();
     }
