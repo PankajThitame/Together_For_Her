@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../auth/AuthContext";
 import AdminNavLinks from "./AdminNavLinks";
 
 function AdminNavbar() {
@@ -16,9 +16,10 @@ function AdminNavbar() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const { logout } = useAuth();
+
   const handleLogout = () => {
-    localStorage.removeItem("token");
-    navigate("/login");
+    logout();
   };
 
   return (

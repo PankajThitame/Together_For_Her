@@ -79,15 +79,11 @@ const AppContent = () => {
   const isVolunteerPage = location.pathname.startsWith("/volunteer");
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    const handleUnload = () => {
-      if (!token) {
-        logout();
-      }
-    };
-    window.addEventListener("beforeunload", handleUnload);
-    return () => window.removeEventListener("beforeunload", handleUnload);
-  }, [logout]);
+    // Keep sidebar open by default on desktop
+    if (window.innerWidth < 768) {
+      setIsSidebarOpen(false);
+    }
+  }, []);
 
   return (
     <div className={`flex flex-col h-screen overflow-hidden ${isVolunteerPage ? 'bg-white dark:bg-slate-900' : 'bg-[#fff1f5] dark:bg-[#0f172a]'} selection:bg-pink-100 selection:text-pink-600 transition-colors duration-300`}>

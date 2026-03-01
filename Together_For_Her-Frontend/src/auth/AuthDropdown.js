@@ -25,9 +25,6 @@ const AuthDropdown = () => {
   const handleLogout = () => {
     logout();
     setIsOpen(false);
-    localStorage.removeItem("user");
-    localStorage.removeItem("token");
-    navigate("/");
   };
 
   const toggleTheme = () => {

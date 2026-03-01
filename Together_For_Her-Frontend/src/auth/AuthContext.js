@@ -15,7 +15,7 @@ const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  
+
 
   const login = (userData) => {
     setUser(userData);
@@ -24,10 +24,13 @@ const AuthProvider = ({ children }) => {
 
   const logout = () => {
     setUser(null);
-    //setToken(null);
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     localStorage.removeItem("userid");
+    localStorage.removeItem("userData");
+    localStorage.removeItem("redirectPath");
+    // Force a clean state by navigating to login or home
+    window.location.href = "/login";
   };
 
   return (
