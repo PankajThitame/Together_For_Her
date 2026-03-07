@@ -56,6 +56,10 @@ const ProfilePage = () => {
 
       if (response.data) {
         setProfile(response.data);
+        // Sync with local session
+        const currentUser = JSON.parse(localStorage.getItem("user") || "{}");
+        const updatedUser = { ...currentUser, ...response.data, name: response.data.firstName || response.data.name };
+        localStorage.setItem("user", JSON.stringify(updatedUser));
       }
     } catch (error) {
       console.error("Error fetching profile:", error);

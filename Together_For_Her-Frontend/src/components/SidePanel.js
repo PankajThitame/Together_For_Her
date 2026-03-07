@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { AuthContext } from "../auth/AuthContext";
+import { getProfileImageUrl } from "../apiConfig";
 import {
   FaUser, FaUsers, FaDonate, FaClipboardList, FaHandsHelping,
   FaStore, FaChartBar, FaShieldAlt, FaUserCheck, FaComments,
@@ -7,8 +9,14 @@ import {
 } from "react-icons/fa";
 
 const SidePanel = ({ isOpen, setIsOpen }) => {
-  const [role] = useState("user");
+  const { user } = useContext(AuthContext);
   const location = useLocation();
+
+  const initials = user?.name
+    ? user.name.split(" ").map(n => n[0]).join("").toUpperCase()
+    : user?.username
+      ? user.username.split(" ").map(n => n[0]).join("").toUpperCase()
+      : "TH";
 
   const menuItems = [
     { label: "Awareness", to: "/awareness", icon: <FaInfoCircle /> },
@@ -120,17 +128,21 @@ const SidePanel = ({ isOpen, setIsOpen }) => {
           } transition-all`}>
           {isOpen ? (
             <div className="flex items-center gap-4">
-              <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center text-white text-xs font-black shadow-lg shadow-pink-200">
-                TH
+              <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center text-white text-xs font-black shadow-lg shadow-pink-200 overflow-hidden">
+                {user?.profilePhoto ? (
+                  <img src={getProfileImageUrl(user.profilePhoto)} alt="Profile" className="w-full h-full object-cover" />
+                ) : initials}
               </div>
               <div className="flex flex-col">
-                <span className="text-xs font-black text-slate-900 dark:text-slate-100 leading-none">Her Community</span>
-                <span className="text-[10px] text-pink-400 font-bold mt-1 uppercase tracking-tighter">Verified Portal</span>
+                <span className="text-xs font-black text-slate-900 dark:text-slate-100 leading-none truncate max-w-[120px]">{user?.name || "Her Community"}</span>
+                <span className="text-[10px] text-pink-400 font-bold mt-1 uppercase tracking-tighter">{user?.role || "Verified Portal"}</span>
               </div>
             </div>
           ) : (
-            <div className="w-10 h-10 rounded-2xl bg-pink-100/50 dark:bg-slate-800/50 flex items-center justify-center text-pink-600 text-xs font-black mx-auto border border-pink-200/20">
-              TH
+            <div className="w-10 h-10 rounded-2xl bg-pink-100/50 dark:bg-slate-800/50 flex items-center justify-center text-pink-600 text-xs font-black mx-auto border border-pink-200/20 overflow-hidden">
+              {user?.profilePhoto ? (
+                <img src={getProfileImageUrl(user.profilePhoto)} alt="Profile" className="w-full h-full object-cover" />
+              ) : initials}
             </div>
           )}
         </div>

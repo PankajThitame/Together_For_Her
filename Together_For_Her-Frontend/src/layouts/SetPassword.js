@@ -50,6 +50,17 @@ const SetPassword = () => {
     setPasswordData({ ...passwordData, [e.target.name]: e.target.value });
   };
 
+  const [file, setFile] = useState(null);
+  const [preview, setPreview] = useState(null);
+
+  const handleFileChange = (e) => {
+    const selectedFile = e.target.files[0];
+    if (selectedFile) {
+      setFile(selectedFile);
+      setPreview(URL.createObjectURL(selectedFile));
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -84,6 +95,29 @@ const SetPassword = () => {
 
     try {
       const response = await axios.post(apiUrl, finalData);
+
+      // Handle Profile Photo Upload if present
+      if (file) {
+        let userId = "";
+        if (passwordData.role === "VOLUNTEER") {
+          // For volunteers, we might need to find the ID from response or another way
+          // But usually register returns the created object
+          userId = response.data.volunteer?.id || response.data.id;
+        } else {
+          userId = response.data.user?.id || response.data.id;
+        }
+
+        if (userId) {
+          const photoData = new FormData();
+          photoData.append("file", file);
+          let photoUrl = `${API_BASE_URL}/auth/profile-photo/${userId}`;
+          if (passwordData.role === "VOLUNTEER") {
+            photoUrl = `${API_BASE_URL}/volunteers/profile-photo/${userId}`;
+          }
+          await axios.post(photoUrl, photoData);
+        }
+      }
+
       alert(`${passwordData.role} Registered Successfully!`);
       localStorage.removeItem("userData");
       localStorage.removeItem("redirectPath");
@@ -98,6 +132,24 @@ const SetPassword = () => {
     <div className="max-w-sm mx-auto mt-12 bg-white p-6 rounded-xl shadow-md text-center">
       <h2 className="text-xl font-semibold text-gray-800 mb-4">Set Your Username & Password</h2>
       <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
+        {/* Profile Photo Preview */}
+        <div className="flex flex-col items-center mb-2">
+          <div className="w-20 h-20 rounded-full border-2 border-slate-200 dark:border-slate-800 overflow-hidden bg-slate-50 flex items-center justify-center mb-2 relative group">
+            {preview ? (
+              <img src={preview} alt="Profile Preview" className="w-full h-full object-cover" />
+            ) : (
+              <span className="text-slate-300 text-xs font-bold">Photo</span>
+            )}
+            <input
+              type="file"
+              onChange={handleFileChange}
+              className="absolute inset-0 opacity-0 cursor-pointer"
+              accept="image/*"
+            />
+          </div>
+          <p className="text-[9px] font-black uppercase tracking-widest text-slate-400">Set Profile Photo</p>
+        </div>
+
         <div className="text-left">
           <label className="block text-sm text-gray-600 mb-1">Username</label>
           <input

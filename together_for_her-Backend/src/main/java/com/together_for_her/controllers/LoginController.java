@@ -48,12 +48,15 @@ public class LoginController {
                 if (user.getUser() != null) {
                     userData.put("id", user.getUser().getId());
                     userData.put("name", user.getUser().getFirstName());
+                    userData.put("profilePhoto", user.getUser().getProfilePhoto());
                 } else if (user.getVolunteer() != null) {
                     userData.put("id", user.getVolunteer().getId());
                     userData.put("name", user.getVolunteer().getName());
+                    userData.put("profilePhoto", user.getVolunteer().getProfilePhoto());
                 } else {
                     userData.put("id", user.getId());
                     userData.put("name", user.getUsername());
+                    userData.put("profilePhoto", null);
                 }
 
                 userData.put("username", user.getUsername());

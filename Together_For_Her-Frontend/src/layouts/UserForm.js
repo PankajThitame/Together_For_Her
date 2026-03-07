@@ -90,6 +90,15 @@ const CombinedUserForm = ({ existingData, onCancel, onSuccess }) => {
     setUploading(true);
     setError("");
 
+    if (!userId) {
+      // Registration Flow
+      localStorage.setItem("userData", JSON.stringify(formData));
+      localStorage.setItem("redirectPath", "/login");
+      navigate("/set-password");
+      setUploading(false);
+      return;
+    }
+
     try {
       const data = new FormData();
       Object.entries(formData).forEach(([key, value]) => {
@@ -112,10 +121,16 @@ const CombinedUserForm = ({ existingData, onCancel, onSuccess }) => {
         if (role === "VOLUNTEER") {
           photoUrl = `${API_BASE_URL}/volunteers/profile-photo/${userId}`;
         }
-        await axios.post(photoUrl, data, {
+        const photoRes = await axios.post(photoUrl, data, {
           headers: { "Content-Type": "multipart/form-data" }
         });
+        // Update user in session with new photo
+        const currentUser = JSON.parse(localStorage.getItem("user") || "{}");
+        localStorage.setItem("user", JSON.stringify({ ...currentUser, profilePhoto: photoRes.data.profilePhoto }));
       }
+
+      const currentUser = JSON.parse(localStorage.getItem("user") || "{}");
+      localStorage.setItem("user", JSON.stringify({ ...currentUser, ...formData }));
 
       if (onSuccess) onSuccess();
       else navigate("/profile");

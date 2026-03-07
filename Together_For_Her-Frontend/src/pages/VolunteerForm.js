@@ -21,6 +21,7 @@ const VolunteerForm = () => {
     location: "",
     latitude: "",
     longitude: "",
+    profilePhoto: "", // Added
   });
 
   const handleChange = (e) =>
