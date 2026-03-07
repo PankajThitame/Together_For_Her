@@ -12,7 +12,7 @@ const CombinedUserForm = ({ existingData, onCancel, onSuccess }) => {
   const [error, setError] = useState("");
 
   const [userData, setUserData] = useState({
-    firstName: existingData?.firstName || "",
+    firstName: existingData?.firstName || existingData?.name || "",
     age: existingData?.age || "",
     contactNumber: existingData?.contactNumber || "",
     email: existingData?.email || "",
@@ -81,7 +81,7 @@ const CombinedUserForm = ({ existingData, onCancel, onSuccess }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!userData.firstName || (!file && !existingData?.profilePhoto)) {
+    if (!(userData.firstName || userData.name) || (!file && !existingData?.profilePhoto)) {
       alert("Please fill all required fields and upload a profile picture.");
       return;
     }
@@ -118,20 +118,43 @@ const CombinedUserForm = ({ existingData, onCancel, onSuccess }) => {
       return;
     }
 
+    // Prepare JSON data for update (excluding file related fields)
+    const { title, description, ...updateData } = userData;
+
     try {
       setUploading(true);
-      const url = `${API_BASE_URL}/auth/update/${userId}`;
-      await axios.put(url, formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+      const userRole = existingData?.volunteerType || existingData?.role === "VOLUNTEER" ? "VOLUNTEER" : "USER";
 
+      // 1. Update Profile Info
+      const infoUrl = userRole === "VOLUNTEER"
+        ? `${API_BASE_URL}/volunteers/${userId}`
+        : `${API_BASE_URL}/auth/${userId}`;
+
+      await axios.put(infoUrl, updateData);
+
+      // 2. Update Profile Photo if new file selected
+      if (file) {
+        const photoUrl = userRole === "VOLUNTEER"
+          ? `${API_BASE_URL}/volunteers/profile-photo/${userId}`
+          : `${API_BASE_URL}/auth/profile-photo/${userId}`;
+
+        const photoFormData = new FormData();
+        photoFormData.append("file", file);
+
+        await axios.post(photoUrl, photoFormData, {
+          headers: { "Content-Type": "multipart/form-data" },
+        });
+      }
+
+      alert("Profile updated successfully!");
       if (onSuccess) {
         onSuccess();
       } else {
-        navigate("/");
+        navigate("/profile");
       }
     } catch (err) {
-      setError("Operation failed. Please try again.");
+      console.error("Update failed:", err);
+      setError("Operation failed. " + (err.response?.data?.message || err.message));
     } finally {
       setUploading(false);
     }
