@@ -8,7 +8,9 @@ RUN npm install --frozen-lockfile || npm install
 
 # Build-time environment variables
 ARG REACT_APP_API_URL
+ARG REACT_APP_RAZORPAY_KEY_ID
 ENV REACT_APP_API_URL=${REACT_APP_API_URL}
+ENV REACT_APP_RAZORPAY_KEY_ID=${REACT_APP_RAZORPAY_KEY_ID}
 
 COPY . .
 RUN npm run build
