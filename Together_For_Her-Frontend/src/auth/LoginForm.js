@@ -36,7 +36,8 @@ const LoginForm = () => {
       if (response.ok) {
         localStorage.setItem("token", data.token);
         localStorage.setItem("user", JSON.stringify(data.user));
-        localStorage.setItem("userid", JSON.stringify(data.user.id));
+        localStorage.setItem("userId", data.user.id); // Store raw ID
+        localStorage.setItem("userid", data.user.id); // Support legacy lowercase key temporarily
 
         login(data.user, data.token);
 

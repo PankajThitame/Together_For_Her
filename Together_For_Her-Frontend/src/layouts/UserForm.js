@@ -96,7 +96,7 @@ const CombinedUserForm = ({ existingData, onCancel, onSuccess }) => {
     formData.append("uploadTime", new Date().toISOString());
 
     // Add userid to formData
-    const userId = localStorage.getItem("userid");
+    const userId = localStorage.getItem("userId") || localStorage.getItem("userid");
     if (userId) formData.append("userId", userId);
 
     if (!existingData) {

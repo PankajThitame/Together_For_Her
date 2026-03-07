@@ -11,10 +11,14 @@ const ProfilePage = () => {
   const fetchProfile = async () => {
     try {
       const token = localStorage.getItem("token");
-      const userId = localStorage.getItem("userid");
-      if (!userId) return;
+      const userId = localStorage.getItem("userId") || localStorage.getItem("userid");
+      if (!userId) {
+        setLoading(false);
+        return;
+      }
 
-      const response = await fetch(`${API_BASE_URL}/auth/${userId}`, {
+      const cleanUserId = userId.toString().replace(/['"]+/g, '');
+      const response = await fetch(`${API_BASE_URL}/auth/${cleanUserId}`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
