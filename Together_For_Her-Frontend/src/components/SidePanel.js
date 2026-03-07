@@ -11,6 +11,7 @@ import {
 const SidePanel = ({ isOpen, setIsOpen }) => {
   const { user } = useContext(AuthContext);
   const location = useLocation();
+  const role = user?.role || "USER"; // Explicitly define role to prevent ReferenceError
 
   const initials = user?.name
     ? user.name.split(" ").map(n => n[0]).join("").toUpperCase()
@@ -94,7 +95,7 @@ const SidePanel = ({ isOpen, setIsOpen }) => {
 
         <div className="my-6 mx-2 h-px bg-slate-200/50 dark:bg-slate-800/50" />
 
-        {user?.role === "ADMIN" && (
+        {role === "ADMIN" && (
           <div className="mt-4">
             {isOpen && (
               <p className="px-5 text-[10px] font-black text-pink-300 mb-4 tracking-[0.2em] uppercase">
@@ -135,7 +136,7 @@ const SidePanel = ({ isOpen, setIsOpen }) => {
               </div>
               <div className="flex flex-col">
                 <span className="text-xs font-black text-slate-900 dark:text-slate-100 leading-none truncate max-w-[120px]">{user?.name || "Her Community"}</span>
-                <span className="text-[10px] text-pink-400 font-bold mt-1 uppercase tracking-tighter">{user?.role || "Verified Portal"}</span>
+                <span className="text-[10px] text-pink-400 font-bold mt-1 uppercase tracking-tighter">{role}</span>
               </div>
             </div>
           ) : (
