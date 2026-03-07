@@ -6,6 +6,7 @@ import { FaPhone, FaWhatsapp, FaMapMarkerAlt, FaCheckCircle, FaTimesCircle, FaEn
 const UserManagement = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [updatingId, setUpdatingId] = useState(null);
 
   useEffect(() => {
     fetchUsers();
@@ -19,6 +20,28 @@ const UserManagement = () => {
       console.error("Error fetching users:", error);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleStatusChange = async (userId, newStatus) => {
+    try {
+      setUpdatingId(userId);
+      // Get the full user object to send in the PUT request as required by the backend DTO
+      const userToUpdate = users.find(u => u.id === userId);
+      const updatedData = { ...userToUpdate, status: newStatus };
+
+      const token = localStorage.getItem("token");
+      await axios.put(`${API_BASE_URL}/auth/${userId}`, updatedData, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+
+      // Update local state
+      setUsers(users.map(u => u.id === userId ? { ...u, status: newStatus } : u));
+    } catch (error) {
+      console.error("Error updating status:", error);
+      alert("Failed to update status. Please try again.");
+    } finally {
+      setUpdatingId(null);
     }
   };
 
@@ -49,7 +72,7 @@ const UserManagement = () => {
                 className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-md rounded-[2.5rem] p-8 shadow-xl border border-white/60 dark:border-slate-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden"
               >
                 <div className="absolute top-0 right-0 p-6">
-                  {user.verificationStatus?.toLowerCase() === "verified" ? (
+                  {user.status === "APPROVED" || user.verificationStatus?.toLowerCase() === "verified" ? (
                     <div className="bg-green-100 text-green-600 p-2 rounded-full shadow-inner" title="Verified">
                       <FaCheckCircle size={20} />
                     </div>
@@ -99,8 +122,8 @@ const UserManagement = () => {
                 <div className="grid grid-cols-2 gap-4 pt-6 border-t border-pink-100/30 dark:border-slate-700">
                   <div className="space-y-1">
                     <p className="text-[10px] uppercase tracking-widest text-gray-600 dark:text-slate-500 font-black">Location</p>
-                    <p className="text-sm font-bold text-gray-700 dark:text-slate-300 flex items-center gap-1">
-                      <FaMapMarkerAlt className="text-pink-500" /> {user.location}
+                    <p className="text-sm font-bold text-gray-700 dark:text-slate-300 flex items-center gap-1 text-ellipsis overflow-hidden">
+                      <FaMapMarkerAlt className="text-pink-500 shrink-0" /> {user.location}
                     </p>
                   </div>
                   <div className="space-y-1">
@@ -112,8 +135,24 @@ const UserManagement = () => {
                     <p className="text-sm font-bold text-gray-700 dark:text-slate-300 truncate">{user.healthConcerns}</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-[10px] uppercase tracking-widest text-gray-600 dark:text-slate-500 font-black">Status</p>
-                    <p className="text-sm font-bold text-pink-600 dark:text-pink-500">{user.status}</p>
+                    <p className="text-[10px] uppercase tracking-widest text-gray-600 dark:text-slate-500 font-black">User Status</p>
+                    <div className="relative">
+                      {updatingId === user.id ? (
+                        <div className="w-4 h-4 border-2 border-pink-500 border-t-transparent rounded-full animate-spin" />
+                      ) : (
+                        <select
+                          value={user.status}
+                          onChange={(e) => handleStatusChange(user.id, e.target.value)}
+                          className={`text-xs font-black uppercase tracking-widest bg-transparent border-none focus:ring-0 cursor-pointer transition-colors ${user.status === "APPROVED" ? "text-emerald-500" :
+                              user.status === "REJECTED" ? "text-rose-500" : "text-amber-500"
+                            }`}
+                        >
+                          <option value="PENDING">Pending</option>
+                          <option value="APPROVED">Approved</option>
+                          <option value="REJECTED">Rejected</option>
+                        </select>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>

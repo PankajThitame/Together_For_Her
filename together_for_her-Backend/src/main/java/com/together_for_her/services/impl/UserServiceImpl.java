@@ -70,6 +70,7 @@ public class UserServiceImpl implements UserService {
 		user.setHealthConcerns(userDto.getHealthConcerns());
 		user.setModeOfReachability(userDto.getModeOfReachability());
 		user.setVerificationStatus(userDto.getVerificationStatus());
+		user.setStatus(userDto.getStatus());
 
 		User updatedUser = this.userRepo.save(user);
 
