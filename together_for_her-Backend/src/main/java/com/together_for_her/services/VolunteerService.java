@@ -40,17 +40,22 @@ public class VolunteerService {
         // Convert VolunteerDto to Volunteer Entity
         Volunteer volunteer = modelMapper.map(userReq.getVolunteer(), Volunteer.class);
         UserCredentials userCred = modelMapper.map(userReq.getCredentials(), UserCredentials.class);
+
         // Save Volunteer first
         Volunteer savedVolunteer = volunteerRepository.save(volunteer);
 
         // Convert UserCredentialsDto to UserCredentials Entity
-
-        userCred.setVolunteer(volunteer); // Associate credentials with the volunteer
+        userCred.setVolunteer(savedVolunteer); // Associate credentials with the saved volunteer
         userCred.setUser(null);
         // userCred.setRole(Role.VOLUNTEER); // Ensure role is set
 
         // Save UserCredentials
-        userCredentialsRepository.save(userCred);
+        UserCredentials savedCred = userCredentialsRepository.save(userCred);
+
+        // Map generated IDs back to the DTOs
+        if (userReq.getVolunteer() != null) {
+            userReq.getVolunteer().setId(savedVolunteer.getId());
+        }
 
         return userReq;
     }
