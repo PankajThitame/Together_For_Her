@@ -1,4 +1,5 @@
 import React from "react";
+import API_BASE_URL from "../apiConfig";
 import { useNavigate } from "react-router-dom";
 import {
   User,
@@ -32,25 +33,38 @@ const UserProfile = ({ user, onEdit }) => {
   );
 
   const {
-    age,
+    id,
     contactNumber,
-    firstName,
     email,
-    healthConcerns,
     location,
-    modeOfReachability,
     preferredLanguage,
+    healthConcerns,
     socialStatus,
+    volunteerType,
+    availability,
+    experience,
+    reason,
+    profilePhoto,
   } = user;
+
+  const displayName = user.firstName || user.name || user.username || "Member";
+  const displayRole = user.role || (volunteerType ? "Volunteer" : "User");
+  const displayId = socialStatus || volunteerType || "Member";
+  const displayBio = healthConcerns || reason || (volunteerType ? "Dedicated Volunteer" : "Member");
 
   const infoItems = [
     { icon: <Mail />, label: "Email Address", value: email, color: "blue" },
     { icon: <Phone />, label: "Contact Number", value: contactNumber, color: "green" },
-    { icon: <MapPin />, label: "Current Location", value: location, color: "rose" },
-    { icon: <Languages />, label: "Primary Language", value: preferredLanguage, color: "purple" },
-    { icon: <BadgeCheck />, label: "Social Identity", value: socialStatus || "Member", color: "amber" },
-    { icon: <Heart />, label: "Vital Interests", value: healthConcerns || "General Wellness", color: "pink" },
+    { icon: <MapPin />, label: "Current Location", value: location || "Assigned Remotely", color: "rose" },
+    { icon: <Languages />, label: "Primary Language", value: preferredLanguage || "English", color: "purple" },
+    { icon: <BadgeCheck />, label: "Identity", value: displayId, color: "amber" },
+    { icon: <Heart />, label: "Details", value: displayBio, color: "pink" },
   ];
+
+  if (volunteerType) {
+    if (experience) infoItems.push({ icon: <BadgeCheck />, label: "Experience", value: `${experience} Years`, color: "blue" });
+    if (availability) infoItems.push({ icon: <BadgeCheck />, label: "Availability", value: availability, color: "green" });
+  }
 
   return (
     <div className="max-w-5xl mx-auto space-y-8 animate-fadeIn">
@@ -63,7 +77,7 @@ const UserProfile = ({ user, onEdit }) => {
             <div className="absolute inset-0 bg-gradient-to-br from-pink-500 to-rose-600 rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-all duration-500 scale-110"></div>
             <div className="w-40 h-40 rounded-full border-[6px] border-white dark:border-slate-700 overflow-hidden shadow-2xl relative z-10 bg-slate-100 dark:bg-slate-900">
               <img
-                src={user.profilePhoto ? `${API_BASE_URL}/auth/images/${user.profilePhoto}` : "/images/Pads.png"}
+                src={user.profilePhoto ? `${API_BASE_URL}/upload/${user.profilePhoto}` : "/images/Pads.png"}
                 alt="Profile"
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-110"
               />
@@ -77,13 +91,13 @@ const UserProfile = ({ user, onEdit }) => {
             <div>
               <div className="inline-flex items-center gap-2 bg-pink-50 dark:bg-pink-900/20 text-pink-600 dark:text-pink-400 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-4 border border-pink-100/50 dark:border-pink-900/30">
                 <span className="w-1.5 h-1.5 bg-pink-500 rounded-full animate-pulse" />
-                Verified Community Member
+                Verified {displayRole}
               </div>
-              <h1 className="text-5xl font-black text-slate-900 dark:text-white tracking-tighter mb-2 italic">
-                {firstName}<span className="text-pink-500">.</span>
+              <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tighter leading-none mb-2 capitalize">
+                {displayName}
               </h1>
-              <p className="text-slate-500 dark:text-slate-400 font-medium text-lg leading-relaxed max-w-xl">
-                Empowering herself and those around her. Joined to make a difference in women's wellness.
+              <p className="text-slate-500 dark:text-slate-400 font-bold uppercase tracking-widest text-[10px]">
+                Global Member ID: #TFH-{String(id).padStart(4, '0')}
               </p>
             </div>
 

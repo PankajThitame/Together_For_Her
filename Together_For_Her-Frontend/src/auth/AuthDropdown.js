@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
+import API_BASE_URL from "../apiConfig";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthContext";
 import {
@@ -95,7 +96,7 @@ const AuthDropdown = () => {
                   <div className="flex items-center gap-4">
                     <div className="relative">
                       <img
-                        src={user.profilePhoto ? `${API_BASE_URL}/auth/images/${user.profilePhoto}` : "/images/Pads.png"}
+                        src={user.profilePhoto ? `${API_BASE_URL}/upload/${user.profilePhoto}` : "/images/Pads.png"}
                         alt="Profile"
                         className="w-12 h-12 rounded-2xl object-cover shadow-md"
                       />
@@ -104,7 +105,7 @@ const AuthDropdown = () => {
                       </div>
                     </div>
                     <div className="min-w-0">
-                      <p className="font-black text-slate-900 dark:text-white text-sm truncate tracking-tight">{user.username}</p>
+                      <p className="font-black text-slate-900 dark:text-white text-sm truncate tracking-tight">{user.name || user.firstName || user.username}</p>
                       <p className="text-[10px] text-slate-400 dark:text-slate-500 font-bold uppercase tracking-widest truncate">{user.email}</p>
                     </div>
                   </div>

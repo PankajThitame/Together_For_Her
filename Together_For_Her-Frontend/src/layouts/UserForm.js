@@ -33,7 +33,7 @@ const CombinedUserForm = ({ existingData, onCancel, onSuccess }) => {
         ...existingData,
       });
       if (existingData.profilePhoto) {
-        setPreview(existingData.profilePhoto);
+        setPreview(`${API_BASE_URL}/upload/${existingData.profilePhoto}`);
       }
     }
   }, [existingData]);
@@ -81,7 +81,7 @@ const CombinedUserForm = ({ existingData, onCancel, onSuccess }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!userData.firstName || (!file && !existingData?.profile_pic)) {
+    if (!userData.firstName || (!file && !existingData?.profilePhoto)) {
       alert("Please fill all required fields and upload a profile picture.");
       return;
     }
