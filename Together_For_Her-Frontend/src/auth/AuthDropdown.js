@@ -113,7 +113,7 @@ const AuthDropdown = () => {
 
                 <div className="p-3">
                   <Link
-                    to="/profile"
+                    to={user.role === 'VOLUNTEER' ? "/volunteer/profile" : "/profile"}
                     onClick={() => setIsOpen(false)}
                     className="flex items-center gap-3 px-4 py-3 rounded-[3rem] text-slate-600 dark:text-slate-300 hover:bg-pink-50 dark:hover:bg-pink-900/20 hover:text-pink-600 dark:hover:text-pink-400 transition-all font-bold text-[13px]"
                   >

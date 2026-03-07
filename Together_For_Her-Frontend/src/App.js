@@ -158,6 +158,7 @@ const AppContent = () => {
                   <Route path="/volunteer" element={<ProtectedRoute allowedRoles={["VOLUNTEER"]} />}>
                     <Route element={<VolunteerDashboard />}>
                       <Route path="dashboard" element={<VolunteerOverview />} />
+                      <Route path="profile" element={<Profile />} />
                       <Route path="requests" element={<NearbyRequests />} />
                       <Route path="tasks" element={<AssignedTasks />} />
                       <Route path="kits" element={<KitDistribution />} />
