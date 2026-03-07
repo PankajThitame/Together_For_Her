@@ -120,12 +120,12 @@ const ProfilePage = () => {
         <div className="absolute top-[40%] -right-[10%] w-[30%] h-[50%] bg-rose-500/10 rounded-full blur-[100px]"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
 
           {/* Left Sidebar - Profile Summary */}
-          <div className="lg:col-span-4 space-y-6">
-            <div className="bg-white/40 dark:bg-slate-900/40 backdrop-blur-2xl p-8 rounded-[3rem] border border-white/40 dark:border-slate-800/50 shadow-2xl overflow-hidden relative group">
+          <div className="lg:col-span-4 space-y-8 lg:sticky lg:top-8 lg:h-fit">
+            <div className="bg-white/40 dark:bg-slate-900/40 backdrop-blur-3xl p-8 rounded-[3rem] border border-white/40 dark:border-slate-800/50 shadow-2xl overflow-hidden relative group">
               <div className="absolute top-0 right-0 w-32 h-32 bg-pink-500/5 rounded-full -mr-16 -mt-16 blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
 
               <div className="flex flex-col items-center text-center space-y-6">
@@ -229,8 +229,8 @@ const ProfilePage = () => {
                     key={tab}
                     onClick={() => setActiveTab(tab)}
                     className={`px-6 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${activeTab === tab
-                        ? 'bg-pink-500 text-white shadow-lg shadow-pink-200 dark:shadow-none'
-                        : 'bg-white/40 dark:bg-slate-900/40 text-slate-400 dark:text-slate-500 border border-white/20 dark:border-slate-800 hover:text-slate-900 dark:hover:text-slate-200'
+                      ? 'bg-pink-500 text-white shadow-lg shadow-pink-200 dark:shadow-none'
+                      : 'bg-white/40 dark:bg-slate-900/40 text-slate-400 dark:text-slate-500 border border-white/20 dark:border-slate-800 hover:text-slate-900 dark:hover:text-slate-200'
                       }`}
                   >
                     {tab}
@@ -243,35 +243,39 @@ const ProfilePage = () => {
             <div className="bg-white/40 dark:bg-slate-900/40 backdrop-blur-2xl rounded-[3rem] p-10 border border-white/40 dark:border-slate-800/50 shadow-2xl relative min-h-[500px]">
 
               {activeTab === 'overview' && (
-                <div className="space-y-12 animate-fadeIn">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="space-y-6">
+                <div className="space-y-10 animate-fadeIn">
+                  <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
+                    <div className="xl:col-span-2 space-y-6">
                       <h2 className="text-4xl font-black text-slate-900 dark:text-white tracking-tighter leading-none italic">
                         Identity<br /><span className="text-pink-500 underline decoration-pink-500/20 underline-offset-8">Blueprint</span>.
                       </h2>
-                      <p className="text-slate-500 dark:text-slate-400 font-medium leading-relaxed max-w-sm">
+                      <p className="text-slate-500 dark:text-slate-400 font-medium leading-relaxed max-w-xl">
                         {profile?.reason || "A dedicated member of the Together For Her community, committed to collective growth and wellness."}
                       </p>
                     </div>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="bg-white/60 dark:bg-slate-950/40 p-5 rounded-3xl border border-white/40 dark:border-slate-800 shadow-sm flex flex-col justify-between">
-                        <Award size={20} className="text-pink-500 mb-4" />
+                    <div className="grid grid-cols-2 xl:grid-cols-1 gap-4">
+                      <div className="bg-white/60 dark:bg-slate-950/40 p-6 rounded-3xl border border-white/40 dark:border-slate-800 shadow-sm flex items-center gap-4">
+                        <div className="p-3 rounded-2xl bg-pink-50 dark:bg-pink-900/20 text-pink-500">
+                          <Award size={20} />
+                        </div>
                         <div>
                           <p className="text-[9px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest">Experience</p>
                           <p className="text-xl font-black text-slate-900 dark:text-white italic">{profile?.experience || profile?.age || "0"}<span className="text-xs text-slate-400 ml-1">yrs</span></p>
                         </div>
                       </div>
-                      <div className="bg-white/60 dark:bg-slate-950/40 p-5 rounded-3xl border border-white/40 dark:border-slate-800 shadow-sm flex flex-col justify-between">
-                        <Clock size={20} className="text-rose-500 mb-4" />
+                      <div className="bg-white/60 dark:bg-slate-950/40 p-6 rounded-3xl border border-white/40 dark:border-slate-800 shadow-sm flex items-center gap-4">
+                        <div className="p-3 rounded-2xl bg-rose-50 dark:bg-rose-900/20 text-rose-500">
+                          <Clock size={20} />
+                        </div>
                         <div>
                           <p className="text-[9px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest">Commitment</p>
-                          <p className="text-sm font-black text-slate-900 dark:text-white uppercase truncate">{profile?.availability || "Active Member"}</p>
+                          <p className="text-xs font-black text-slate-900 dark:text-white uppercase truncate">{profile?.availability || "Active Member"}</p>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="p-8 rounded-[2.5rem] bg-gradient-to-br from-slate-900 to-slate-800 text-white shadow-xl relative group/card overflow-hidden">
                       <ShieldCheck className="absolute top-6 right-6 text-pink-500 group-hover:rotate-12 transition-transform" size={24} />
                       <div className="space-y-1">
@@ -303,22 +307,24 @@ const ProfilePage = () => {
                 <div className="space-y-8 animate-fadeIn">
                   <h2 className="text-3xl font-black text-slate-900 dark:text-white tracking-tighter italic">Technical <span className="text-rose-500">Breakdown.</span></h2>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
                     {[
                       { icon: <MapPin />, label: "Geo-Location", value: profile?.location || "Not provided" },
                       { icon: <Languages />, label: "Native Lexicon", value: profile?.preferredLanguage || "English" },
-                      { icon: <Briefcase />, label: "Socio-Economic Tier", value: profile?.socialStatus || "Community Contributor" },
-                      { icon: <Heart />, label: "Health Resilience", value: profile?.healthConcerns || "Optimized Wellness" },
+                      { icon: <Briefcase />, label: "Social Tier", value: profile?.socialStatus || "Community Contributor" },
+                      { icon: <Heart />, label: "Resilience", value: profile?.healthConcerns || "General Wellness" },
                       { icon: <Calendar />, label: "Temporal Age", value: profile?.age ? `${profile.age} Cycles` : "N/A" },
-                      { icon: <ShieldCheck />, label: "Verification Tier", value: profile?.verificationStatus || "Pending Level 1" },
+                      { icon: <ShieldCheck />, label: "Verification", value: profile?.verificationStatus || "Level 1" },
                     ].map((detail, idx) => (
-                      <div key={idx} className="flex gap-4 items-start group">
-                        <div className="p-3 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 text-pink-500 group-hover:scale-110 transition-transform">
-                          {React.cloneElement(detail.icon, { size: 18 })}
-                        </div>
-                        <div>
-                          <p className="text-[9px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-1">{detail.label}</p>
-                          <p className="text-sm font-bold text-slate-900 dark:text-slate-200">{detail.value}</p>
+                      <div key={idx} className="bg-white/60 dark:bg-slate-950/40 p-6 rounded-3xl border border-white dark:border-slate-800 shadow-sm transition-all hover:-translate-y-1">
+                        <div className="flex flex-col gap-4">
+                          <div className="p-3 w-fit rounded-2xl bg-white dark:bg-slate-900 border border-slate-50 dark:border-slate-800 text-pink-500 shadow-inner">
+                            {React.cloneElement(detail.icon, { size: 18 })}
+                          </div>
+                          <div>
+                            <p className="text-[9px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-1">{detail.label}</p>
+                            <p className="text-sm font-bold text-slate-900 dark:text-slate-200 truncate">{detail.value}</p>
+                          </div>
                         </div>
                       </div>
                     ))}
@@ -338,23 +344,33 @@ const ProfilePage = () => {
               )}
 
               {activeTab === 'impact' && (
-                <div className="space-y-8 flex flex-col items-center justify-center h-full text-center animate-fadeIn py-12">
-                  <div className="w-32 h-32 rounded-full bg-pink-50 dark:bg-pink-900/10 flex items-center justify-center text-pink-500 relative mb-8">
-                    <div className="absolute inset-0 bg-pink-500/20 rounded-full animate-ping"></div>
-                    <Target size={64} />
-                  </div>
-                  <h2 className="text-5xl font-black text-slate-900 dark:text-white tracking-tighter italic">Total <span className="text-pink-500">Influence.</span></h2>
-                  <p className="text-slate-500 dark:text-slate-400 font-medium max-w-md">Your contributions are being calculated. You've consistently shown growth in your community interaction score.</p>
-
-                  <div className="flex gap-12 mt-8">
-                    <div className="text-center">
-                      <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-2">Projects</p>
-                      <p className="text-3xl font-black text-slate-900 dark:text-white italic">12+</p>
+                <div className="space-y-12 animate-fadeIn py-8 text-center">
+                  <div className="flex flex-col items-center">
+                    <div className="w-40 h-40 rounded-full bg-pink-500/10 dark:bg-pink-900/10 flex items-center justify-center text-pink-500 relative mb-8 group">
+                      <div className="absolute inset-0 bg-pink-500/20 rounded-full animate-ping opacity-20"></div>
+                      <div className="absolute inset-0 bg-gradient-to-tr from-pink-500 to-rose-400 rounded-full opacity-0 group-hover:opacity-10 dark:group-hover:opacity-20 transition-opacity duration-700"></div>
+                      <Target size={80} className="relative z-10 group-hover:scale-110 transition-transform duration-500" />
                     </div>
-                    <div className="w-px h-16 bg-slate-200 dark:bg-slate-800"></div>
-                    <div className="text-center">
-                      <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-2">Help Score</p>
-                      <p className="text-3xl font-black text-pink-500 italic">9.8</p>
+                    <h2 className="text-5xl font-black text-slate-900 dark:text-white tracking-tighter italic mb-4">Total <span className="text-pink-500">Influence.</span></h2>
+                    <p className="text-slate-500 dark:text-slate-400 font-medium max-w-lg mx-auto">Your contributions are reshaping the community. Every action you take adds a pulse to our collective mission.</p>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+                    <div className="bg-white/60 dark:bg-slate-950/40 p-10 rounded-[2.5rem] border border-white dark:border-slate-800 shadow-xl transition-all hover:scale-[1.02]">
+                      <p className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.3em] mb-4">Ecosystem Projects</p>
+                      <p className="text-6xl font-black text-slate-900 dark:text-white italic tracking-tighter">12<span className="text-pink-500">+</span></p>
+                      <div className="mt-6 flex justify-center gap-1">
+                        {[1, 2, 3, 4, 5].map(i => <div key={i} className="w-1 h-3 bg-pink-500 rounded-full"></div>)}
+                      </div>
+                    </div>
+                    <div className="bg-slate-900 dark:bg-slate-900/80 p-10 rounded-[2.5rem] border border-slate-800 shadow-2xl transition-all hover:scale-[1.02] text-white">
+                      <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] mb-4">Influence Score</p>
+                      <p className="text-6xl font-black text-white italic tracking-tighter">9.8</p>
+                      <div className="mt-6 flex justify-center gap-2 items-center">
+                        <div className="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden max-w-[120px]">
+                          <div className="h-full w-[98%] bg-gradient-to-r from-pink-500 to-rose-400"></div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
