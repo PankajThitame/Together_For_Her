@@ -7,7 +7,7 @@ import axios from "axios";
 const CombinedUserForm = ({ existingData, onCancel, onSuccess }) => {
   const navigate = useNavigate();
   const [file, setFile] = useState(null);
-  const [preview, setPreview] = useState(existingData?.profile_pic || null);
+  const [preview, setPreview] = useState(existingData?.profilePhoto || null);
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState("");
 
@@ -32,8 +32,8 @@ const CombinedUserForm = ({ existingData, onCancel, onSuccess }) => {
         ...userData,
         ...existingData,
       });
-      if (existingData.profile_pic) {
-        setPreview(existingData.profile_pic);
+      if (existingData.profilePhoto) {
+        setPreview(existingData.profilePhoto);
       }
     }
   }, [existingData]);
@@ -100,10 +100,21 @@ const CombinedUserForm = ({ existingData, onCancel, onSuccess }) => {
     if (userId) formData.append("userId", userId);
 
     if (!existingData) {
-      // Sign-up flow
-      localStorage.setItem("userData", JSON.stringify(userData));
-      localStorage.setItem("redirectPath", "/sign-up");
-      navigate("/set-password");
+      // Sign-up flow: Save photo as Base64 if exists
+      if (file) {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          localStorage.setItem("tempProfilePhoto", reader.result);
+          localStorage.setItem("userData", JSON.stringify(userData));
+          localStorage.setItem("redirectPath", "/sign-up");
+          navigate("/set-password");
+        };
+        reader.readAsDataURL(file);
+      } else {
+        localStorage.setItem("userData", JSON.stringify(userData));
+        localStorage.setItem("redirectPath", "/sign-up");
+        navigate("/set-password");
+      }
       return;
     }
 

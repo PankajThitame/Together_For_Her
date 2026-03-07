@@ -95,7 +95,7 @@ const AuthDropdown = () => {
                   <div className="flex items-center gap-4">
                     <div className="relative">
                       <img
-                        src={user.profilePic || "/images/Pads.png"}
+                        src={user.profilePhoto ? `${API_BASE_URL}/auth/images/${user.profilePhoto}` : "/images/Pads.png"}
                         alt="Profile"
                         className="w-12 h-12 rounded-2xl object-cover shadow-md"
                       />

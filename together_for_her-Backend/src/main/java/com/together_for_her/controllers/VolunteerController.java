@@ -31,37 +31,35 @@ public class VolunteerController {
 
     @PostMapping("/register")
     public ResponseEntity<?> registerVolunteer(@Valid @RequestBody RegisterUserRequest vol) {
-//        if (volunteerService.userExists(vol.getVolunteer().getEmail())) {
-//            return ResponseEntity.status(HttpStatus.CONFLICT).body("User already exists");
-//        }
-        RegisterUserRequest createUserDto=volunteerService.registerNewVolunteer(vol);
-		return new ResponseEntity<>(createUserDto, HttpStatus.CREATED);
-    }
-    
-    @GetMapping("/")
-	public ResponseEntity<List<VolunteerDto>> getAllUsers()
-	{
-		return ResponseEntity.ok(this.volunteerService.getAllVolunteers());
-	}
-    
-    @GetMapping("/count")
-    public ResponseEntity<VolunteerDto> getVolunteersCounts() {
-    	VolunteerDto counts = volunteerService.countVolunteers(new VolunteerDto());
-        return ResponseEntity.ok(counts);
-    }
-    
-    @PutMapping("/{id}")
-    public ResponseEntity<String> updateRequestStatus(@PathVariable Integer id, @RequestBody Map<String, String> payload) {
-    	volunteerService.updateVolunteerStatus(id, payload.get("status"));
-        return ResponseEntity.ok("Request status updated successfully");
+        // if (volunteerService.userExists(vol.getVolunteer().getEmail())) {
+        // return ResponseEntity.status(HttpStatus.CONFLICT).body("User already
+        // exists");
+        // }
+        RegisterUserRequest createUserDto = volunteerService.registerNewVolunteer(vol);
+        return new ResponseEntity<>(createUserDto, HttpStatus.CREATED);
     }
 
-//    @PutMapping("/update-role")
-//    public ResponseEntity<?> updateVolunteerRole(@RequestBody RoleUpdateDto roleUpdateDTO) {
-//        if (!volunteerService.userExists(roleUpdateDTO.getEmail())) {
-//            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
-//        }
-//        volunteerService.updateRole(roleUpdateDTO.getEmail(), roleUpdateDTO.getRole());
-//        return ResponseEntity.ok("User role updated successfully");
-//    }
+    @GetMapping("/")
+    public ResponseEntity<List<VolunteerDto>> getAllUsers() {
+        return ResponseEntity.ok(this.volunteerService.getAllVolunteers());
+    }
+
+    @GetMapping("/count")
+    public ResponseEntity<VolunteerDto> getVolunteersCounts() {
+        VolunteerDto counts = volunteerService.countVolunteers(new VolunteerDto());
+        return ResponseEntity.ok(counts);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<VolunteerDto> getSingleVolunteer(@PathVariable Integer id) {
+        return ResponseEntity.ok(volunteerService.getVolunteerById(id));
+    }
+
+    @PostMapping("/profile-photo/{volunteerId}")
+    public ResponseEntity<VolunteerDto> uploadProfilePhoto(@PathVariable Integer volunteerId,
+            @org.springframework.web.bind.annotation.RequestParam("file") org.springframework.web.multipart.MultipartFile file)
+            throws java.io.IOException {
+        VolunteerDto updatedVolunteer = volunteerService.uploadProfilePhoto(volunteerId, file);
+        return ResponseEntity.ok(updatedVolunteer);
+    }
 }

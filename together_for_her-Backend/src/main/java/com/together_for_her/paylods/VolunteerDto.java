@@ -10,21 +10,21 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class VolunteerDto {
-	private int id;
+    private int id;
     private String name;
     private String email;
     private String contactNumber;
     private String type;
     private VolunteerType volunteerType;
-    private Integer experience;  
-    private String availability; 
-    private String reason;       
+    private Integer experience;
+    private String availability;
+    private String reason;
     private Double latitude;
     private Double longitude;
     private String status = "PENDING"; // PENDING, APPROVED, REJECTED
+    private String profilePhoto;
 
     long totalVolunteers;
     long pendingApplications;
 
 }
-

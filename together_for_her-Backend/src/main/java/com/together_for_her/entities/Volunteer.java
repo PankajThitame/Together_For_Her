@@ -16,7 +16,7 @@ public class Volunteer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    
+
     private String name;
     private String email;
     private String contactNumber;
@@ -25,12 +25,14 @@ public class Volunteer {
     @Enumerated(EnumType.STRING)
     private VolunteerType volunteerType; // 🔹 Removed duplicate "type" field
 
-    private Integer experience;  
-    private String availability;  
-    private String reason;       
+    private Integer experience;
+    private String availability;
+    private String reason;
     private Double latitude;
     private Double longitude;
-    
+
+    private String profilePhoto;
+
     // ✅ Ensuring correct mapping
     @OneToOne(mappedBy = "volunteer", cascade = CascadeType.ALL)
     private UserCredentials userCredentials;
