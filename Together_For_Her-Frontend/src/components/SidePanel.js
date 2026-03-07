@@ -94,7 +94,7 @@ const SidePanel = ({ isOpen, setIsOpen }) => {
 
         <div className="my-6 mx-2 h-px bg-slate-200/50 dark:bg-slate-800/50" />
 
-        {role === "admin" && (
+        {user?.role === "ADMIN" && (
           <div className="mt-4">
             {isOpen && (
               <p className="px-5 text-[10px] font-black text-pink-300 mb-4 tracking-[0.2em] uppercase">
