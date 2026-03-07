@@ -43,7 +43,7 @@ const UserManagement = () => {
   };
 
   return (
-    <div className="min-h-screen bg-pink-50/20 dark:bg-slate-900/40 p-8 rounded-[3rem] shadow-2xl border border-white/60 dark:border-slate-800 backdrop-blur-sm animate-fadeIn transition-colors duration-300">
+    <div className="min-h-screen bg-pink-50/20 dark:bg-slate-900/40 p-8 rounded-[3rem] shadow-2xl border border-pink-300/80 dark:border-slate-600 backdrop-blur-sm animate-fadeIn transition-colors duration-300">
       <div className="mb-10 text-center relative">
         <h1 className="text-4xl font-extrabold bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent inline-block">
           User Management
@@ -59,14 +59,14 @@ const UserManagement = () => {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {users.length === 0 ? (
-            <div className="col-span-full py-20 bg-white/40 dark:bg-slate-800/40 backdrop-blur-sm rounded-3xl border border-white/60 dark:border-slate-700 text-center">
+            <div className="col-span-full py-20 bg-white/40 dark:bg-slate-800/40 backdrop-blur-sm rounded-3xl border border-pink-300/80 dark:border-slate-500 text-center">
               <p className="text-gray-700 dark:text-slate-400 text-lg font-bold italic">No users found in the system.</p>
             </div>
           ) : (
             users.map((user) => (
               <div
                 key={user.id}
-                className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-md rounded-[2.5rem] p-8 shadow-xl border border-white/60 dark:border-slate-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden"
+                className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-md rounded-[2.5rem] p-8 shadow-xl border border-pink-300/80 dark:border-slate-500 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden"
               >
                 <div className="absolute top-0 right-0 p-6">
                   {user.status === "APPROVED" || user.verificationStatus?.toLowerCase() === "verified" ? (
@@ -116,7 +116,7 @@ const UserManagement = () => {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 pt-6 border-t border-pink-100/30 dark:border-slate-700">
+                <div className="grid grid-cols-2 gap-4 pt-6 border-t border-pink-100/30 dark:border-slate-500">
                   <div className="space-y-1">
                     <p className="text-[10px] uppercase tracking-widest text-gray-600 dark:text-slate-500 font-black">Location</p>
                     <p className="text-sm font-bold text-gray-700 dark:text-slate-300 flex items-center gap-1 text-ellipsis overflow-hidden">

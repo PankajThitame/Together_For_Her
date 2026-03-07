@@ -106,10 +106,10 @@ const ManageContent = () => {
                 </div>
             </div>
 
-            <div className="bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl rounded-[2.5rem] border border-white/20 dark:border-slate-700/20 shadow-2xl overflow-hidden">
+            <div className="bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl rounded-[2.5rem] border border-pink-200/50 dark:border-slate-500/20 shadow-2xl overflow-hidden">
                 <table className="w-full text-left">
                     <thead>
-                        <tr className="border-b border-slate-100 dark:border-slate-700/50">
+                        <tr className="border-b border-slate-100 dark:border-slate-500/50">
                             <th className="px-8 py-6 text-[10px] font-black text-slate-400 uppercase tracking-widest">Preview</th>
                             <th className="px-8 py-6 text-[10px] font-black text-slate-400 uppercase tracking-widest">Content Info</th>
                             <th className="px-8 py-6 text-[10px] font-black text-slate-400 uppercase tracking-widest text-center">Status</th>

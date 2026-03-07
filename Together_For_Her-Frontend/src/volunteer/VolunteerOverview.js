@@ -50,7 +50,7 @@ const VolunteerOverview = () => {
 
                 <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                     <div className="space-y-2">
-                        <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest border border-white/20">
+                        <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest border border-pink-200/50">
                             <FaStar className="text-yellow-300" /> Volunteer Level 3
                         </div>
                         <h1 className="text-4xl md:text-5xl font-black italic tracking-tighter">
@@ -82,7 +82,7 @@ const VolunteerOverview = () => {
                     { icon: <FaBox />, label: "Kits Available", value: "25", sub: "Restock in 4d", color: "text-emerald-500", bg: "bg-emerald-500" },
                     { icon: <FaHandsHelping />, label: "Community Hours", value: "18h", sub: "This Week", color: "text-purple-500", bg: "bg-purple-500" },
                 ].map((stat, idx) => (
-                    <div key={idx} className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-6 rounded-[2.5rem] border border-white/50 dark:border-slate-700/50 shadow-xl hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 group">
+                    <div key={idx} className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-6 rounded-[2.5rem] border border-pink-300/70 dark:border-slate-500/50 shadow-xl hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 group">
                         <div className="flex justify-between items-start mb-4">
                             <div className={`w-12 h-12 rounded-2xl ${stat.bg}/10 flex items-center justify-center ${stat.color} text-xl shadow-sm group-hover:scale-110 transition-transform`}>
                                 {stat.icon}
@@ -100,7 +100,7 @@ const VolunteerOverview = () => {
             {/* Analytics & Timeline Split */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {/* Left: Impact Chart */}
-                <div className="lg:col-span-2 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-8 rounded-[2.5rem] border border-white/50 dark:border-slate-700/50 shadow-xl">
+                <div className="lg:col-span-2 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-8 rounded-[2.5rem] border border-pink-300/70 dark:border-slate-500/50 shadow-xl">
                     <div className="flex items-center justify-between mb-8">
                         <div>
                             <h2 className="text-2xl font-black text-slate-800 dark:text-white tracking-tight">Weekly Impact</h2>
@@ -134,7 +134,7 @@ const VolunteerOverview = () => {
                 </div>
 
                 {/* Right: Timeline */}
-                <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-8 rounded-[2.5rem] border border-white/50 dark:border-slate-700/50 shadow-xl">
+                <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-8 rounded-[2.5rem] border border-pink-300/70 dark:border-slate-500/50 shadow-xl">
                     <h2 className="text-2xl font-black text-slate-800 dark:text-white tracking-tight mb-8">Recent Activity</h2>
 
                     <div className="space-y-8 relative before:absolute before:left-3.5 before:top-2 before:h-full before:w-0.5 before:bg-slate-200 dark:before:bg-slate-700">
@@ -162,7 +162,7 @@ const VolunteerOverview = () => {
                         ))}
                     </div>
 
-                    <button className="w-full mt-8 py-4 rounded-2xl border-2 border-dashed border-slate-300 dark:border-slate-700 text-slate-400 font-bold uppercase text-xs tracking-widest hover:border-pink-500 hover:text-pink-500 transition-all">
+                    <button className="w-full mt-8 py-4 rounded-2xl border-2 border-dashed border-slate-300 dark:border-slate-500 text-slate-400 font-bold uppercase text-xs tracking-widest hover:border-pink-500 hover:text-pink-500 transition-all">
                         Load More History
                     </button>
                 </div>

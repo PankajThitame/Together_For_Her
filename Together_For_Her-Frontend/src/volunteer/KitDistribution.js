@@ -34,7 +34,7 @@ const KitDistribution = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* Form Section */}
-                <div className="md:col-span-2 bg-white/60 dark:bg-slate-800/60 backdrop-blur-2xl p-8 rounded-[2.5rem] border border-white/50 dark:border-slate-700/50 shadow-xl relative overflow-hidden">
+                <div className="md:col-span-2 bg-white/60 dark:bg-slate-800/60 backdrop-blur-2xl p-8 rounded-[2.5rem] border border-pink-300/70 dark:border-slate-500/50 shadow-xl relative overflow-hidden">
                     {submitted && (
                         <div className="absolute inset-0 z-10 bg-emerald-500/90 backdrop-blur-sm flex flex-col items-center justify-center text-white animate-fadeIn">
                             <FaCheckCircle className="text-6xl mb-4 drop-shadow-lg" />
@@ -125,13 +125,13 @@ const KitDistribution = () => {
                         </div>
                     </div>
 
-                    <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-6 rounded-[2.5rem] border border-white/50 dark:border-slate-700/50 shadow-xl">
+                    <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-6 rounded-[2.5rem] border border-pink-300/70 dark:border-slate-500/50 shadow-xl">
                         <h3 className="text-slate-800 dark:text-white font-black text-lg mb-4 flex items-center gap-2">
                             <FaClipboardList className="text-pink-500" /> Recent Logs
                         </h3>
                         <ul className="space-y-4">
                             {[1, 2, 3].map((_, i) => (
-                                <li key={i} className="flex items-start gap-3 pb-3 border-b border-dashed border-slate-200 dark:border-slate-700 last:border-0 last:pb-0">
+                                <li key={i} className="flex items-start gap-3 pb-3 border-b border-dashed border-slate-200 dark:border-slate-500 last:border-0 last:pb-0">
                                     <div className="mt-1 w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
                                     <div>
                                         <p className="text-sm font-bold text-slate-700 dark:text-slate-300">Hygiene Kit #882{i}</p>

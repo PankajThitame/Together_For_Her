@@ -26,10 +26,10 @@ const Messages = () => {
     };
 
     return (
-        <div className="h-[calc(100vh-8rem)] rounded-[2.5rem] bg-white/60 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/50 dark:border-slate-700/50 shadow-xl overflow-hidden flex animate-fadeIn">
+        <div className="h-[calc(100vh-8rem)] rounded-[2.5rem] bg-white/60 dark:bg-slate-800/60 backdrop-blur-2xl border border-pink-300/70 dark:border-slate-500/50 shadow-xl overflow-hidden flex animate-fadeIn">
             {/* Sidebar List */}
-            <div className="w-1/3 border-r border-white/20 dark:border-slate-700/50 flex flex-col">
-                <div className="p-6 border-b border-white/20 dark:border-slate-700/50">
+            <div className="w-1/3 border-r border-pink-200/50 dark:border-slate-500/50 flex flex-col">
+                <div className="p-6 border-b border-pink-200/50 dark:border-slate-500/50">
                     <h2 className="text-2xl font-black text-slate-800 dark:text-white tracking-tight mb-4">Messages</h2>
                     <div className="relative">
                         <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
@@ -69,7 +69,7 @@ const Messages = () => {
             {/* Chat Area */}
             <div className="flex-1 flex flex-col bg-white/30 dark:bg-slate-900/30">
                 {/* Header */}
-                <div className="h-20 border-b border-white/20 dark:border-slate-700/50 flex items-center px-8 justify-between">
+                <div className="h-20 border-b border-pink-200/50 dark:border-slate-500/50 flex items-center px-8 justify-between">
                     <div className="flex items-center gap-4">
                         <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white font-black text-lg">
                             S
@@ -102,7 +102,7 @@ const Messages = () => {
                 </div>
 
                 {/* Input */}
-                <div className="p-6 border-t border-white/20 dark:border-slate-700/50">
+                <div className="p-6 border-t border-pink-200/50 dark:border-slate-500/50">
                     <form onSubmit={handleSend} className="relative">
                         <input
                             type="text"

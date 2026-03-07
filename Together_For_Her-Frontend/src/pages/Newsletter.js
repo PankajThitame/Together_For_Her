@@ -46,7 +46,7 @@ const Newsletter = () => {
           {/* Form Side */}
           <div className="relative group/form">
             <div className="absolute inset-0 bg-gradient-to-r from-pink-500/20 to-rose-600/20 rounded-[3.5rem] blur-3xl opacity-0 group-hover/form:opacity-100 transition-opacity duration-700" />
-            <Card className="border-none shadow-2xl bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl rounded-[3rem] p-2 relative z-10 border border-white/20">
+            <Card className="border-none shadow-2xl bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl rounded-[3rem] p-2 relative z-10 border border-pink-200/50">
               <CardBody className="p-8 md:p-10 space-y-8">
                 <div className="w-20 h-20 bg-gradient-to-br from-pink-500 to-rose-600 rounded-3xl flex items-center justify-center text-white shadow-xl shadow-pink-500/30 transform rotate-3 hover:rotate-0 transition-transform duration-500">
                   <FaRegEnvelope size={32} />
@@ -103,7 +103,7 @@ const Newsletter = () => {
         </div>
 
         {/* Social Proof */}
-        <div className="mt-24 pt-12 border-t border-slate-200 dark:border-slate-800 text-center">
+        <div className="mt-24 pt-12 border-t border-slate-200 dark:border-slate-600 text-center">
           <p className="text-[10px] text-slate-400 font-black uppercase tracking-[0.4em]">Integrated with over 5,000 global guardians</p>
         </div>
       </div>

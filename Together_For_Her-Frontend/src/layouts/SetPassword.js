@@ -134,7 +134,7 @@ const SetPassword = () => {
       <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
         {/* Profile Photo Preview */}
         <div className="flex flex-col items-center mb-2">
-          <div className="w-20 h-20 rounded-full border-2 border-slate-200 dark:border-slate-800 overflow-hidden bg-slate-50 flex items-center justify-center mb-2 relative group">
+          <div className="w-20 h-20 rounded-full border-2 border-slate-200 dark:border-slate-600 overflow-hidden bg-slate-50 flex items-center justify-center mb-2 relative group">
             {preview ? (
               <img src={preview} alt="Profile Preview" className="w-full h-full object-cover" />
             ) : (

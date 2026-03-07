@@ -48,7 +48,7 @@ const AnalyticsDashboard = () => {
 
       <div className="grid gap-6 md:grid-cols-2 auto-rows-fr">
         {/* Total Donations Chart */}
-        <div className="bg-gray-100 border border-gray-200 rounded-xl shadow-sm p-6 transition-transform hover:-translate-y-1 duration-300">
+        <div className="bg-gray-100 border border-pink-300 rounded-xl shadow-sm p-6 transition-transform hover:-translate-y-1 duration-300">
           <h3 className="text-xl text-gray-700 font-semibold mb-4">
             Total Donations (Monthly)
           </h3>
@@ -65,7 +65,7 @@ const AnalyticsDashboard = () => {
         </div>
 
         {/* User Activity Chart */}
-        <div className="bg-gray-100 border border-gray-200 rounded-xl shadow-sm p-6 transition-transform hover:-translate-y-1 duration-300">
+        <div className="bg-gray-100 border border-pink-300 rounded-xl shadow-sm p-6 transition-transform hover:-translate-y-1 duration-300">
           <h3 className="text-xl text-gray-700 font-semibold mb-4">
             User Activity (Daily)
           </h3>
@@ -83,7 +83,7 @@ const AnalyticsDashboard = () => {
         </div>
 
         {/* Volunteer Applications Pie Chart */}
-        <div className="bg-gray-100 border border-gray-200 rounded-xl shadow-sm p-6 transition-transform hover:-translate-y-1 duration-300">
+        <div className="bg-gray-100 border border-pink-300 rounded-xl shadow-sm p-6 transition-transform hover:-translate-y-1 duration-300">
           <h3 className="text-xl text-gray-700 font-semibold mb-4">
             Volunteer Applications
           </h3>
@@ -112,7 +112,7 @@ const AnalyticsDashboard = () => {
         </div>
 
         {/* Service Requests Chart */}
-        <div className="bg-gray-100 border border-gray-200 rounded-xl shadow-sm p-6 transition-transform hover:-translate-y-1 duration-300">
+        <div className="bg-gray-100 border border-pink-300 rounded-xl shadow-sm p-6 transition-transform hover:-translate-y-1 duration-300">
           <h3 className="text-xl text-gray-700 font-semibold mb-4">
             Service Requests (By Type)
           </h3>

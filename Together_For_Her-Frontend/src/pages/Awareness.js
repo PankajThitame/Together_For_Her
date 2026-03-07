@@ -30,7 +30,7 @@ const Awareness = () => {
   return (
     <div className="flex flex-col gap-16 pb-20 animate-fadeIn">
       {/* Premium Awareness Hero */}
-      <header className="relative min-h-[450px] flex items-center justify-center overflow-hidden bg-white/40 dark:bg-slate-800/40 backdrop-blur-2xl rounded-[3.5rem] p-12 border border-white/20 dark:border-slate-700/20 shadow-[0_20px_80px_rgba(0,0,0,0.03)] group/hero">
+      <header className="relative min-h-[450px] flex items-center justify-center overflow-hidden bg-white/40 dark:bg-slate-800/40 backdrop-blur-2xl rounded-[3.5rem] p-12 border border-pink-200/50 dark:border-slate-500/20 shadow-[0_20px_80px_rgba(0,0,0,0.03)] group/hero">
         <div className="absolute top-0 left-0 w-96 h-96 bg-rose-500/5 rounded-full -ml-32 -mt-32 blur-3xl"></div>
         <div className="absolute bottom-0 right-0 w-80 h-80 bg-pink-500/5 rounded-full -mr-32 -mb-32 blur-3xl"></div>
 
@@ -49,14 +49,14 @@ const Awareness = () => {
 
       {/* Motivational & Hygiene Flow */}
       <div className="grid lg:grid-cols-5 gap-8">
-        <div className="lg:col-span-2 bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl p-8 md:p-12 rounded-[3.5rem] border border-white/20 dark:border-slate-700/20 flex flex-col justify-center relative overflow-hidden group">
+        <div className="lg:col-span-2 bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl p-8 md:p-12 rounded-[3.5rem] border border-pink-200/50 dark:border-slate-500/20 flex flex-col justify-center relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-32 h-32 bg-pink-500/5 rounded-full blur-3xl group-hover:bg-pink-500/10 transition-colors"></div>
           <MotivationalQuotes />
         </div>
-        <div className="lg:col-span-3 bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl p-8 md:p-12 rounded-[3.5rem] border border-white/20 dark:border-slate-700/20">
+        <div className="lg:col-span-3 bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl p-8 md:p-12 rounded-[3.5rem] border border-pink-200/50 dark:border-slate-500/20">
           <div className="flex items-center justify-between mb-10">
             <h3 className="text-2xl font-black italic tracking-tight">Hygiene Rituals<span className="text-pink-500">.</span></h3>
-            <div className="bg-slate-50 dark:bg-slate-900 px-4 py-2 rounded-2xl text-[10px] font-black uppercase tracking-widest text-slate-400 border border-slate-100 dark:border-slate-800">
+            <div className="bg-slate-50 dark:bg-slate-900 px-4 py-2 rounded-2xl text-[10px] font-black uppercase tracking-widest text-slate-400 border border-slate-100 dark:border-slate-600">
               Safe & Proven
             </div>
           </div>
@@ -119,7 +119,7 @@ const Awareness = () => {
             { id: "zcvo9VLVHWc", title: "Hygiene Essentials" },
             { id: "c72EmEwZ5Qk", title: "Myths & Realities" }
           ].map((video, idx) => (
-            <div key={idx} className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl p-4 rounded-[2.5rem] border border-white/20 dark:border-slate-700/20 shadow-sm overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+            <div key={idx} className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl p-4 rounded-[2.5rem] border border-pink-200/50 dark:border-slate-500/20 shadow-sm overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
               <div className="aspect-video relative rounded-[1.5rem] overflow-hidden shadow-lg mb-6">
                 <iframe
                   className="absolute inset-0 w-full h-full"

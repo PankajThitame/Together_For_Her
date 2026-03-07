@@ -57,7 +57,7 @@ const UserContentUpload = () => {
   if (uploadSuccess) {
     return (
       <div className="min-h-[60vh] flex items-center justify-center p-4">
-        <div className="bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl rounded-[3.5rem] p-12 text-center max-w-lg w-full border border-white/20 dark:border-slate-700/20 shadow-2xl animate-fadeIn">
+        <div className="bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl rounded-[3.5rem] p-12 text-center max-w-lg w-full border border-pink-200/50 dark:border-slate-500/20 shadow-2xl animate-fadeIn">
           <div className="w-24 h-24 bg-emerald-500/10 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-8 text-5xl">
             <FaCheckCircle />
           </div>
@@ -74,7 +74,7 @@ const UserContentUpload = () => {
             </button>
             <button
               onClick={() => navigate("/")}
-              className="h-14 px-8 bg-white/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-300 rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-white dark:hover:bg-slate-700 transition-all active:scale-95 border border-slate-200 dark:border-slate-700"
+              className="h-14 px-8 bg-white/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-300 rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-white dark:hover:bg-slate-700 transition-all active:scale-95 border border-slate-200 dark:border-slate-500"
             >
               Back to Home
             </button>
@@ -98,7 +98,7 @@ const UserContentUpload = () => {
 
       <div className="grid lg:grid-cols-5 gap-12 text-black dark:text-white">
         <div className="lg:col-span-3">
-          <form onSubmit={handleSubmit} className="bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl p-10 rounded-[3.5rem] border border-white/20 dark:border-slate-700/20 shadow-2xl space-y-8">
+          <form onSubmit={handleSubmit} className="bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl p-10 rounded-[3.5rem] border border-pink-200/50 dark:border-slate-500/20 shadow-2xl space-y-8">
             <div className="space-y-2">
               <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Experience Title</label>
               <input
@@ -107,7 +107,7 @@ const UserContentUpload = () => {
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 required
-                className="w-full h-16 px-6 bg-white/50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 rounded-2xl focus:outline-none focus:ring-2 focus:ring-pink-500/20 text-sm font-bold transition-all"
+                className="w-full h-16 px-6 bg-white/50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-600 rounded-2xl focus:outline-none focus:ring-2 focus:ring-pink-500/20 text-sm font-bold transition-all"
               />
             </div>
 
@@ -117,7 +117,7 @@ const UserContentUpload = () => {
                 placeholder="Describe your thoughts or context..."
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                className="w-full h-40 p-6 bg-white/50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 rounded-2xl focus:outline-none focus:ring-2 focus:ring-pink-500/20 text-sm font-bold transition-all resize-none"
+                className="w-full h-40 p-6 bg-white/50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-600 rounded-2xl focus:outline-none focus:ring-2 focus:ring-pink-500/20 text-sm font-bold transition-all resize-none"
               />
             </div>
 
@@ -129,7 +129,7 @@ const UserContentUpload = () => {
                 required
                 className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
               />
-              <div className="h-32 border-2 border-dashed border-slate-200 dark:border-slate-700 group-hover/upload:border-pink-300 rounded-2xl flex flex-col items-center justify-center gap-3 transition-all bg-slate-50/30 dark:bg-slate-900/30">
+              <div className="h-32 border-2 border-dashed border-slate-200 dark:border-slate-500 group-hover/upload:border-pink-300 rounded-2xl flex flex-col items-center justify-center gap-3 transition-all bg-slate-50/30 dark:bg-slate-900/30">
                 <FaCloudUploadAlt className="text-3xl text-slate-300 group-hover/upload:text-pink-400 transition-colors" />
                 <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 group-hover/upload:text-slate-600 transition-colors">
                   {file ? file.name : "Choose File or Media"}
@@ -143,18 +143,18 @@ const UserContentUpload = () => {
               className="w-full h-16 bg-gradient-to-r from-pink-500 to-rose-600 text-white rounded-2xl font-black text-xs uppercase tracking-[0.25em] shadow-2xl shadow-pink-500/40 hover:scale-[1.02] transition-all transform active:scale-95 disabled:opacity-50 disabled:scale-100 flex items-center justify-center gap-3"
             >
               {uploading ? (
-                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                <div className="w-5 h-5 border-2 border-pink-200/60 border-t-white rounded-full animate-spin" />
               ) : "Contribute to Collective"}
             </button>
           </form>
         </div>
 
         <div className="lg:col-span-2 space-y-8 ">
-          <div className="bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl p-8 rounded-[2.5rem] border border-white/20 dark:border-slate-700/20 shadow-xl">
+          <div className="bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl p-8 rounded-[2.5rem] border border-pink-200/50 dark:border-slate-500/20 shadow-xl">
             <h3 className="text-lg font-black italic tracking-tight mb-6 flex items-center gap-3">
               Media Preview<div className="w-1.5 h-1.5 rounded-full bg-pink-500"></div>
             </h3>
-            <div className="aspect-square rounded-3xl overflow-hidden bg-slate-100 dark:bg-slate-900 flex items-center justify-center relative border border-slate-100 dark:border-slate-800 shadow-inner">
+            <div className="aspect-square rounded-3xl overflow-hidden bg-slate-100 dark:bg-slate-900 flex items-center justify-center relative border border-slate-100 dark:border-slate-600 shadow-inner">
               {preview ? (
                 file?.type?.startsWith("image") ? (
                   <img src={preview} alt="Preview" className="w-full h-full object-cover" />

@@ -47,7 +47,7 @@ const ContentModeration = () => {
   };
 
   return (
-    <div className="min-h-screen bg-pink-50/20 dark:bg-slate-900/40 p-8 rounded-[3rem] shadow-2xl border border-white/60 dark:border-slate-800 backdrop-blur-sm animate-fadeIn transition-colors duration-300">
+    <div className="min-h-screen bg-pink-50/20 dark:bg-slate-900/40 p-8 rounded-[3rem] shadow-2xl border border-pink-300/80 dark:border-slate-600 backdrop-blur-sm animate-fadeIn transition-colors duration-300">
       <div className="mb-10 text-center relative">
         <h1 className="text-4xl font-extrabold bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent inline-block">
           Content Moderation
@@ -62,7 +62,7 @@ const ContentModeration = () => {
       )}
 
       {contentList.length === 0 ? (
-        <div className="py-20 bg-white/40 dark:bg-slate-800/40 backdrop-blur-sm rounded-3xl border border-white/60 dark:border-slate-700 text-center transition-colors">
+        <div className="py-20 bg-white/40 dark:bg-slate-800/40 backdrop-blur-sm rounded-3xl border border-pink-300/80 dark:border-slate-500 text-center transition-colors">
           <p className="text-gray-700 dark:text-slate-400 text-lg font-black italic">No pending content for moderation at this time.</p>
         </div>
       ) : (
@@ -70,7 +70,7 @@ const ContentModeration = () => {
           {contentList.map((item) => (
             <div
               key={item.id}
-              className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-md rounded-[2.5rem] p-8 shadow-xl border border-white/60 dark:border-slate-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden flex flex-col"
+              className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-md rounded-[2.5rem] p-8 shadow-xl border border-pink-300/80 dark:border-slate-500 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden flex flex-col"
             >
               <div className="mb-6">
                 <h3 className="text-2xl font-black text-gray-900 dark:text-slate-100 mb-2 group-hover:text-pink-600 transition-colors uppercase tracking-tight">

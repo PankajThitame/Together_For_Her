@@ -55,7 +55,7 @@ const NearbyRequests = () => {
                     <p className="text-slate-500 dark:text-slate-400 font-bold">Find and help women in need near you.</p>
                 </div>
 
-                <div className="flex bg-white/50 dark:bg-slate-800/50 backdrop-blur-md p-1 rounded-xl border border-white/20 dark:border-slate-700/50">
+                <div className="flex bg-white/50 dark:bg-slate-800/50 backdrop-blur-md p-1 rounded-xl border border-pink-200/50 dark:border-slate-500/50">
                     <button
                         onClick={() => setViewMode("map")}
                         className={`px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-all ${viewMode === "map" ? "bg-pink-500 text-white shadow-lg" : "text-slate-500 hover:text-pink-500"
@@ -73,7 +73,7 @@ const NearbyRequests = () => {
                 </div>
             </div>
 
-            <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl rounded-[2.5rem] border border-white/50 dark:border-slate-700/50 shadow-xl overflow-hidden min-h-[500px] relative">
+            <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl rounded-[2.5rem] border border-pink-300/70 dark:border-slate-500/50 shadow-xl overflow-hidden min-h-[500px] relative">
                 {loading ? (
                     <div className="flex items-center justify-center h-full text-slate-400 font-bold">Finding requests...</div>
                 ) : viewMode === "map" ? (
@@ -109,7 +109,7 @@ const NearbyRequests = () => {
                 ) : (
                     <div className="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {requests.map(req => (
-                            <div key={req.id} className="bg-white/80 dark:bg-slate-900/80 p-6 rounded-3xl border border-white/50 dark:border-slate-700 hover:shadow-lg transition-all group">
+                            <div key={req.id} className="bg-white/80 dark:bg-slate-900/80 p-6 rounded-3xl border border-pink-300/70 dark:border-slate-500 hover:shadow-lg transition-all group">
                                 <div className="flex justify-between items-start mb-4">
                                     <div className="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-500">
                                         <FaUser />

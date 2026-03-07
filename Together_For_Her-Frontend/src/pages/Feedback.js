@@ -69,7 +69,7 @@ const Reviews = () => {
             <p className="text-gray-500 italic">Streaming contributions...</p>
           </div>
         ) : userContent.length === 0 ? (
-          <div className="text-center py-20 bg-white/40 backdrop-blur-sm rounded-3xl border border-white/60">
+          <div className="text-center py-20 bg-white/40 backdrop-blur-sm rounded-3xl border border-pink-300/80">
             <FaInfoCircle className="text-4xl text-pink-200 mx-auto mb-4" />
             <p className="text-gray-500 italic">No contributions have been shared yet. Be the first!</p>
           </div>

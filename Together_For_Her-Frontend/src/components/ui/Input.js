@@ -16,7 +16,7 @@ const Input = ({
             <div className="relative">
                 <input
                     className={`
-            w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl
+            w-full px-4 py-2.5 bg-white border border-pink-300 rounded-xl
             text-gray-900 placeholder-gray-400
             transition-all duration-200 outline-none
             focus:ring-2 focus:ring-pink-500/20 focus:border-pink-500

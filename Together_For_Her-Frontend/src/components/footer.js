@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="footer-root bg-white/40 dark:bg-slate-900/40 backdrop-blur-3xl text-slate-600 dark:text-slate-400 mt-20 border-t border-pink-100/50 dark:border-slate-800 transition-all duration-300">
+    <footer className="footer-root bg-white/40 dark:bg-slate-900/40 backdrop-blur-3xl text-slate-600 dark:text-slate-400 mt-20 border-t border-pink-100/50 dark:border-slate-600 transition-all duration-300">
       <div className="max-w-[1400px] mx-auto px-10 py-[60px] box-border space-y-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr] gap-[60px] items-start">
           {/* COLUMN 1: Brand Section */}
@@ -85,7 +85,7 @@ const Footer = () => {
         </div>
 
         {/* SEPARATE: Contact Us Section */}
-        <div className="pt-16 border-t border-slate-100 dark:border-slate-800/50">
+        <div className="pt-16 border-t border-slate-100 dark:border-slate-600/50">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
             <div className="space-y-6">
               <h3 className="text-slate-900 dark:text-white font-black text-sm uppercase tracking-widest">
@@ -132,7 +132,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-[60px] pt-10 border-t border-slate-100 dark:border-slate-800/50 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="mt-[60px] pt-10 border-t border-slate-100 dark:border-slate-600/50 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
             © {new Date().getFullYear()} Together for Her. Crafted with <Heart size={10} className="inline text-rose-500 animate-pulse mx-1" /> for Change.
           </p>

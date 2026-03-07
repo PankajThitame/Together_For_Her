@@ -56,14 +56,14 @@ const Marketplace = () => {
               <p className="text-slate-400 font-black text-xs uppercase tracking-widest italic">Curating best-of-class...</p>
             </div>
           ) : products.length === 0 ? (
-            <div className="text-center py-24 bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl rounded-[3.5rem] border border-white/20 dark:border-slate-700/20">
+            <div className="text-center py-24 bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl rounded-[3.5rem] border border-pink-200/50 dark:border-slate-500/20">
               <FaStore className="text-5xl text-pink-200 mx-auto mb-6 opacity-30" />
               <p className="text-slate-400 font-black text-xs uppercase tracking-widest italic">Inventory currently in genesis...</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
               {products.map((item, index) => (
-                <div key={index} className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl rounded-[2.5rem] border border-white/20 dark:border-slate-700/20 overflow-hidden hover:shadow-2xl transition-all duration-500">
+                <div key={index} className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl rounded-[2.5rem] border border-pink-200/50 dark:border-slate-500/20 overflow-hidden hover:shadow-2xl transition-all duration-500">
                   <div className="aspect-square relative p-8 flex items-center justify-center group-hover:scale-105 transition-transform duration-700">
                     <img
                       src={item.imageUrl}
@@ -103,8 +103,8 @@ const Marketplace = () => {
         </div>
 
         {/* The Cart Summary Container */}
-        <div className="w-full max-w-4xl mx-auto border-t border-slate-100 dark:border-slate-800/50 pt-16">
-          <div className="bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl p-8 md:p-12 rounded-[3.5rem] border border-white/20 dark:border-slate-700/20 shadow-2xl space-y-10">
+        <div className="w-full max-w-4xl mx-auto border-t border-slate-100 dark:border-slate-600/50 pt-16">
+          <div className="bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl p-8 md:p-12 rounded-[3.5rem] border border-pink-200/50 dark:border-slate-500/20 shadow-2xl space-y-10">
             <div className="flex items-center justify-between">
               <h3 className="text-3xl font-black italic tracking-tight">Your Collection Summary<span className="text-pink-500">.</span></h3>
               <div className="bg-pink-500 text-white text-[12px] font-black px-6 py-2 rounded-full uppercase tracking-widest">

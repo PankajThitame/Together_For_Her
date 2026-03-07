@@ -24,12 +24,12 @@ const AdminSidePanel = ({ isOpen, setIsOpen }) => {
   return (
     <div
       className={`h-full transition-all duration-300 ease-in-out relative flex flex-col 
-      ${isOpen ? "w-72" : "w-20"} bg-white/60 dark:bg-slate-900/80 backdrop-blur-xl border-r border-white/20 dark:border-slate-800 shadow-2xl overflow-hidden group`}
+      ${isOpen ? "w-72" : "w-20"} bg-white/60 dark:bg-slate-900/80 backdrop-blur-xl border-r border-pink-200/50 dark:border-slate-600 shadow-2xl overflow-hidden group`}
     >
       {/* Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="absolute -right-5 top-12 bg-white dark:bg-slate-800 text-pink-600 p-2 rounded-xl shadow-xl hover:bg-pink-50 dark:hover:bg-slate-700 border border-pink-50 dark:border-slate-700 transition-all z-[100] group/btn"
+        className="absolute -right-5 top-12 bg-white dark:bg-slate-800 text-pink-600 p-2 rounded-xl shadow-xl hover:bg-pink-50 dark:hover:bg-slate-700 border border-pink-50 dark:border-slate-500 transition-all z-[100] group/btn"
       >
         <div className="group-hover/btn:scale-125 transition-transform">
           {isOpen ? <FaArrowLeft size={12} /> : <FaArrowRight size={12} />}

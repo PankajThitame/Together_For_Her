@@ -18,7 +18,7 @@ const ExperienceDetailModal = ({ item, onClose }) => {
                 onClick={onClose}
             />
 
-            <div className="relative w-full max-w-5xl bg-white dark:bg-slate-900 rounded-[3rem] shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[90vh] animate-slideUp border border-white/20 dark:border-slate-800">
+            <div className="relative w-full max-w-5xl bg-white dark:bg-slate-900 rounded-[3rem] shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[90vh] animate-slideUp border border-pink-200/50 dark:border-slate-600">
                 {/* Media Section */}
                 <div className="md:w-1/2 bg-slate-100 dark:bg-slate-950 flex items-center justify-center p-0 relative">
                     {item.fileType?.startsWith("image/") && (
@@ -42,7 +42,7 @@ const ExperienceDetailModal = ({ item, onClose }) => {
                                     <div className="space-y-6 flex flex-col items-center">
                                         <iframe
                                             src={`${API_BASE_URL}/upload/${getFileName(item.filePath)}#toolbar=0`}
-                                            className="w-full h-[250px] rounded-xl border border-white/20 shadow-lg"
+                                            className="w-full h-[250px] rounded-xl border border-pink-200/50 shadow-lg"
                                             title="PDF Preview"
                                         />
                                         <a
@@ -89,7 +89,7 @@ const ExperienceDetailModal = ({ item, onClose }) => {
                             </h2>
                         </div>
 
-                        <div className="flex flex-wrap gap-4 py-4 border-y border-slate-100 dark:border-slate-800">
+                        <div className="flex flex-wrap gap-4 py-4 border-y border-slate-100 dark:border-slate-600">
                             <div className="flex items-center gap-2">
                                 <div className="w-8 h-8 rounded-lg bg-pink-100 dark:bg-slate-800 flex items-center justify-center text-pink-500 text-xs">
                                     <FaUser />

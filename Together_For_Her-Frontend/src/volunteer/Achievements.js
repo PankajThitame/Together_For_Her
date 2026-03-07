@@ -20,8 +20,8 @@ const Achievements = () => {
                 {badges.map(badge => (
                     <div key={badge.id} className={`relative p-8 rounded-[2.5rem] overflow-hidden group transition-all duration-300 hover:-translate-y-2
             ${badge.unlocked
-                            ? "bg-white dark:bg-slate-800 shadow-xl border border-white/50 dark:border-slate-700"
-                            : "bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 opacity-70 grayscale"}`}
+                            ? "bg-white dark:bg-slate-800 shadow-xl border border-pink-300/70 dark:border-slate-500"
+                            : "bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-600 opacity-70 grayscale"}`}
                     >
                         {/* Background Gradient Blob */}
                         {badge.unlocked && (

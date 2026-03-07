@@ -29,9 +29,9 @@ const VolunteerSidebar = ({ isOpen }) => {
     ];
 
     return (
-        <div className={`h-full flex flex-col bg-white/40 dark:bg-slate-900/40 backdrop-blur-2xl border-r border-white/20 dark:border-slate-700/20 transition-all duration-300 ${isOpen ? "w-64" : "w-20"}`}>
+        <div className={`h-full flex flex-col bg-white/40 dark:bg-slate-900/40 backdrop-blur-2xl border-r border-pink-200/50 dark:border-slate-500/20 transition-all duration-300 ${isOpen ? "w-64" : "w-20"}`}>
             {/* Header */}
-            <div className="h-20 flex items-center justify-center border-b border-white/10 dark:border-slate-700/10">
+            <div className="h-20 flex items-center justify-center border-b border-white/10 dark:border-slate-500/10">
                 <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-rose-600 rounded-xl flex items-center justify-center text-white font-black text-xl shadow-lg shadow-pink-500/20">
                     V
                 </div>
@@ -69,7 +69,7 @@ const VolunteerSidebar = ({ isOpen }) => {
             </nav>
 
             {/* Footer / Settings */}
-            <div className="p-3 border-t border-white/10 dark:border-slate-700/10 space-y-2">
+            <div className="p-3 border-t border-white/10 dark:border-slate-500/10 space-y-2">
                 <NavLink
                     to="/volunteer/settings"
                     className={({ isActive }) =>

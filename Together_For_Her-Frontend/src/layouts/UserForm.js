@@ -145,7 +145,7 @@ const CombinedUserForm = ({ existingData, onCancel, onSuccess }) => {
 
   return (
     <div className="w-full max-w-4xl mx-auto animate-fadeIn">
-      <form onSubmit={handleSubmit} className="bg-white/40 dark:bg-slate-900/40 backdrop-blur-3xl p-10 rounded-[3rem] border border-white/40 dark:border-slate-800/50 shadow-2xl relative overflow-hidden group">
+      <form onSubmit={handleSubmit} className="bg-white/40 dark:bg-slate-900/40 backdrop-blur-3xl p-10 rounded-[3rem] border border-pink-200/70 dark:border-slate-600/50 shadow-2xl relative overflow-hidden group">
 
         {/* Header Section */}
         <div className="flex justify-between items-start mb-12">
@@ -159,7 +159,7 @@ const CombinedUserForm = ({ existingData, onCancel, onSuccess }) => {
             </h2>
           </div>
           {onCancel && (
-            <button type="button" onClick={onCancel} className="p-3 bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-700 text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">
+            <button type="button" onClick={onCancel} className="p-3 bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-500 text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">
               <X size={20} />
             </button>
           )}
@@ -169,7 +169,7 @@ const CombinedUserForm = ({ existingData, onCancel, onSuccess }) => {
         <div className="mb-12 flex flex-col items-center sm:flex-row gap-8">
           <div className="relative group/avatar">
             <div className="absolute inset-0 bg-pink-500/20 rounded-full blur-2xl group-hover/avatar:scale-110 transition-transform"></div>
-            <div className="w-28 h-28 rounded-full border-4 border-white dark:border-slate-800 shadow-2xl overflow-hidden relative z-10 bg-slate-100 dark:bg-slate-950 flex items-center justify-center">
+            <div className="w-28 h-28 rounded-full border-4 border-white dark:border-slate-600 shadow-2xl overflow-hidden relative z-10 bg-slate-100 dark:bg-slate-950 flex items-center justify-center">
               {preview ? (
                 <img src={preview} alt="Preview" className="w-full h-full object-cover" />
               ) : (
@@ -304,7 +304,7 @@ const CombinedUserForm = ({ existingData, onCancel, onSuccess }) => {
                     value={formData.location}
                     onChange={handleChange}
                     placeholder="City, Sector"
-                    className="w-full bg-slate-50/50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-800/50 px-5 py-3.5 rounded-2xl outline-none focus:border-pink-300 dark:focus:border-pink-900/50 transition-all font-bold text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-300"
+                    className="w-full bg-slate-50/50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-600/50 px-5 py-3.5 rounded-2xl outline-none focus:border-pink-300 dark:focus:border-pink-900/50 transition-all font-bold text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-300"
                   />
                   <button type="button" onClick={getLocation} className="p-3.5 bg-pink-500 text-white rounded-2xl shadow-lg border border-pink-400 active:scale-95 transition-all">
                     <MapPin size={18} />
@@ -326,7 +326,7 @@ const CombinedUserForm = ({ existingData, onCancel, onSuccess }) => {
             onChange={handleChange}
             rows={4}
             placeholder={role === "VOLUNTEER" ? "Why do you wish to join our mission?" : "Tell us about your wellness needs..."}
-            className="w-full bg-slate-50/50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-800/50 px-5 py-4 rounded-3xl outline-none focus:border-pink-300 dark:focus:border-pink-900/50 transition-all font-medium text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-300 resize-none"
+            className="w-full bg-slate-50/50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-600/50 px-5 py-4 rounded-3xl outline-none focus:border-pink-300 dark:focus:border-pink-900/50 transition-all font-medium text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-300 resize-none"
           />
         </div>
 
@@ -368,7 +368,7 @@ const InputField = ({ label, name, value, onChange, placeholder, type = "text", 
       onChange={onChange}
       placeholder={placeholder}
       disabled={disabled}
-      className={`w-full bg-slate-50/50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-800/50 px-5 py-3.5 rounded-2xl outline-none focus:border-pink-300 dark:focus:border-pink-900/50 transition-all font-bold text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-300 ${disabled ? 'opacity-50 cursor-not-allowed bg-slate-200/20' : ''}`}
+      className={`w-full bg-slate-50/50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-600/50 px-5 py-3.5 rounded-2xl outline-none focus:border-pink-300 dark:focus:border-pink-900/50 transition-all font-bold text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-300 ${disabled ? 'opacity-50 cursor-not-allowed bg-slate-200/20' : ''}`}
     />
   </div>
 );
@@ -380,7 +380,7 @@ const SelectField = ({ label, name, value, onChange, options }) => (
       name={name}
       value={value}
       onChange={onChange}
-      className="w-full bg-slate-50/50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-800/50 px-5 py-3.5 rounded-2xl outline-none focus:border-pink-300 dark:focus:border-pink-900/50 transition-all font-bold text-sm text-slate-900 dark:text-slate-100 cursor-pointer appearance-none"
+      className="w-full bg-slate-50/50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-600/50 px-5 py-3.5 rounded-2xl outline-none focus:border-pink-300 dark:focus:border-pink-900/50 transition-all font-bold text-sm text-slate-900 dark:text-slate-100 cursor-pointer appearance-none"
     >
       <option value="">Select Variant</option>
       {options.map(opt => <option key={opt} value={opt}>{opt}</option>)}

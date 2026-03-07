@@ -102,7 +102,7 @@ const Donate = () => {
               { icon: <FaShieldAlt />, title: "Fortified Support", desc: "100% encrypted and secure processing." },
               { icon: <FaHandHoldingHeart />, title: "Direct Impact", desc: "Straight to grassroots empowerment kits." }
             ].map((item, idx) => (
-              <div key={idx} className="bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl p-8 rounded-[2.5rem] border border-white/20 dark:border-slate-700/20 shadow-sm flex items-start gap-4">
+              <div key={idx} className="bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl p-8 rounded-[2.5rem] border border-pink-200/50 dark:border-slate-500/20 shadow-sm flex items-start gap-4">
                 <div className="p-4 bg-pink-50 dark:bg-pink-900/20 text-pink-500 rounded-2xl">
                   {React.cloneElement(item.icon, { size: 20 })}
                 </div>
@@ -117,7 +117,7 @@ const Donate = () => {
 
         {/* Transactional Side */}
         <div className="lg:col-span-2 group/donation">
-          <div className="relative bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl p-8 md:p-12 rounded-[3.5rem] border border-white/20 dark:border-slate-700/20 shadow-2xl space-y-10 overflow-hidden">
+          <div className="relative bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl p-8 md:p-12 rounded-[3.5rem] border border-pink-200/50 dark:border-slate-500/20 shadow-2xl space-y-10 overflow-hidden">
             <div className="absolute top-0 right-0 w-48 h-48 bg-pink-500/5 rounded-full blur-3xl group-hover/donation:scale-125 transition-transform duration-1000"></div>
 
             <div className="text-center space-y-6 relative z-10">
@@ -132,7 +132,7 @@ const Donate = () => {
                 <button
                   key={amt.label}
                   onClick={() => handleRazorpayDonate(amt.raw)}
-                  className="py-4 border-2 border-slate-100 dark:border-slate-700 rounded-[1.5rem] text-slate-600 dark:text-slate-400 font-black text-[11px] uppercase tracking-widest hover:bg-pink-500 hover:text-white hover:border-pink-500 transition-all active:scale-95 shadow-sm"
+                  className="py-4 border-2 border-slate-100 dark:border-slate-500 rounded-[1.5rem] text-slate-600 dark:text-slate-400 font-black text-[11px] uppercase tracking-widest hover:bg-pink-500 hover:text-white hover:border-pink-500 transition-all active:scale-95 shadow-sm"
                 >
                   {amt.label}
                 </button>
@@ -157,7 +157,7 @@ const Donate = () => {
               </button>
             </div>
 
-            <div className="pt-6 border-t border-slate-100 dark:border-slate-800/50 text-center relative z-10">
+            <div className="pt-6 border-t border-slate-100 dark:border-slate-600/50 text-center relative z-10">
               <Link to="/join-volunteer" className="text-[10px] text-slate-400 hover:text-pink-500 font-black uppercase tracking-widest transition-colors flex items-center justify-center gap-2">
                 Giving Time Instead? <span className="underline italic">Join as Volunteer</span>
               </Link>

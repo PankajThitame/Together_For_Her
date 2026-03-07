@@ -43,7 +43,7 @@ const AdminPanel = () => {
   }, []);
 
   return (
-    <div className="min-h-[calc(100vh-8rem)] bg-pink-50/20 dark:bg-slate-900/40 p-8 rounded-[3rem] shadow-2xl border border-white/60 dark:border-slate-800 backdrop-blur-sm animate-fadeIn transition-colors duration-300">
+    <div className="min-h-[calc(100vh-8rem)] bg-pink-50/20 dark:bg-slate-900/40 p-8 rounded-[3rem] shadow-2xl border border-pink-300/80 dark:border-slate-600 backdrop-blur-sm animate-fadeIn transition-colors duration-300">
       <div className="mb-10 text-center relative">
         <h1 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent inline-block">
           Admin Overview
@@ -125,7 +125,7 @@ const AdminPanel = () => {
 };
 
 const StatCard = ({ title, stats, gradient }) => (
-  <div className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-md rounded-[2.5rem] p-8 shadow-xl border border-white/60 dark:border-slate-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden relative">
+  <div className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-md rounded-[2.5rem] p-8 shadow-xl border border-pink-300/80 dark:border-slate-500 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden relative">
     <div className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br ${gradient} rounded-full blur-3xl opacity-10 group-hover:opacity-20 transition-opacity`} />
 
     <h2 className="text-xl font-bold text-gray-800 dark:text-slate-100 mb-6 flex items-center justify-between">
@@ -135,7 +135,7 @@ const StatCard = ({ title, stats, gradient }) => (
 
     <div className="space-y-4">
       {stats.map((s, idx) => (
-        <div key={idx} className="flex justify-between items-end border-b border-pink-100/30 dark:border-slate-700 pb-2">
+        <div key={idx} className="flex justify-between items-end border-b border-pink-100/30 dark:border-slate-500 pb-2">
           <span className="text-gray-700 dark:text-slate-400 font-bold tracking-tight">{s.label}</span>
           <span className={`text-2xl font-black ${s.color || "text-gray-900 dark:text-slate-100"} ${s.sub ? "text-[11px] uppercase italic font-black text-pink-400 dark:text-pink-500" : ""}`}>
             {s.value}

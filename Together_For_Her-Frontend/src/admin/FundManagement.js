@@ -23,7 +23,7 @@ const FundManagement = () => {
   }, []);
 
   return (
-    <div className="min-h-[calc(100vh-8rem)] bg-pink-50/20 dark:bg-slate-900/40 p-8 rounded-[3rem] shadow-2xl border border-white/60 dark:border-slate-800 backdrop-blur-sm animate-fadeIn transition-colors duration-300">
+    <div className="min-h-[calc(100vh-8rem)] bg-pink-50/20 dark:bg-slate-900/40 p-8 rounded-[3rem] shadow-2xl border border-pink-300/80 dark:border-slate-600 backdrop-blur-sm animate-fadeIn transition-colors duration-300">
       <div className="mb-10 text-center relative">
         <h1 className="text-4xl font-extrabold bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent inline-block">
           Fund Management
@@ -53,7 +53,7 @@ const FundManagement = () => {
         </div>
 
         {/* Recent Donors */}
-        <div className="bg-white/40 dark:bg-slate-800/40 backdrop-blur-md rounded-[2.5rem] p-8 shadow-xl border border-white/60 dark:border-slate-700">
+        <div className="bg-white/40 dark:bg-slate-800/40 backdrop-blur-md rounded-[2.5rem] p-8 shadow-xl border border-pink-300/80 dark:border-slate-500">
           <h3 className="text-2xl font-bold text-gray-800 dark:text-slate-100 mb-8 flex items-center gap-3">
             Recent Benefactors
             <span className="h-2 w-2 rounded-full bg-emerald-500" />
@@ -68,7 +68,7 @@ const FundManagement = () => {
               {funds.recentDonors.map((donor, index) => (
                 <div
                   key={index}
-                  className="flex items-center justify-between bg-white/60 dark:bg-slate-700/60 hover:bg-white dark:hover:bg-slate-700 p-5 rounded-2xl shadow-sm border border-white/40 dark:border-slate-600 transition-all hover:shadow-md group"
+                  className="flex items-center justify-between bg-white/60 dark:bg-slate-700/60 hover:bg-white dark:hover:bg-slate-700 p-5 rounded-2xl shadow-sm border border-pink-200/70 dark:border-slate-600 transition-all hover:shadow-md group"
                 >
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center text-pink-600 font-bold group-hover:bg-pink-500 group-hover:text-white transition-colors">

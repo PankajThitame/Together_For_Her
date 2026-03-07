@@ -24,7 +24,7 @@ const AssignedTasks = () => {
                     </h2>
 
                     {tasks.filter(t => t.status === "In Progress").map(task => (
-                        <div key={task.id} className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-6 rounded-[2rem] border border-white/50 dark:border-slate-700/50 shadow-xl relative group hover:border-blue-300 transition-all">
+                        <div key={task.id} className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-6 rounded-[2rem] border border-pink-300/70 dark:border-slate-500/50 shadow-xl relative group hover:border-blue-300 transition-all">
                             <div className="absolute top-6 right-6 text-blue-500">
                                 <FaClock className="text-xl" />
                             </div>
@@ -55,7 +55,7 @@ const AssignedTasks = () => {
                     </h2>
 
                     {tasks.filter(t => t.status === "Pending Proof").map(task => (
-                        <div key={task.id} className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-6 rounded-[2rem] border border-white/50 dark:border-slate-700/50 shadow-xl relative group hover:border-amber-300 transition-all">
+                        <div key={task.id} className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-6 rounded-[2rem] border border-pink-300/70 dark:border-slate-500/50 shadow-xl relative group hover:border-amber-300 transition-all">
                             <div className="absolute top-6 right-6 text-amber-500">
                                 <FaBox className="text-xl" />
                             </div>
@@ -77,7 +77,7 @@ const AssignedTasks = () => {
                     ))}
 
                     {/* Completed History Teaser */}
-                    <div className="p-6 rounded-[2rem] border-2 border-dashed border-slate-200 dark:border-slate-700 text-center opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
+                    <div className="p-6 rounded-[2rem] border-2 border-dashed border-slate-200 dark:border-slate-500 text-center opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
                         <FaCheckCircle className="text-3xl text-emerald-500 mx-auto mb-2" />
                         <span className="font-bold text-slate-400 text-sm uppercase tracking-wide">View 124 Completed Tasks</span>
                     </div>

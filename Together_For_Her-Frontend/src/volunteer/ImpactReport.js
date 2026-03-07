@@ -39,7 +39,7 @@ const ImpactReport = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Monthly Activity Chart */}
-                <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-8 rounded-[2.5rem] border border-white/50 dark:border-slate-700/50 shadow-xl">
+                <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-8 rounded-[2.5rem] border border-pink-300/70 dark:border-slate-500/50 shadow-xl">
                     <h2 className="text-xl font-black text-slate-800 dark:text-white mb-6">Monthly Activity</h2>
                     <div className="h-[350px] w-full">
                         <ResponsiveContainer width="100%" height="100%">
@@ -60,7 +60,7 @@ const ImpactReport = () => {
                 </div>
 
                 {/* Impact Distribution Pie Chart */}
-                <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-8 rounded-[2.5rem] border border-white/50 dark:border-slate-700/50 shadow-xl">
+                <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-8 rounded-[2.5rem] border border-pink-300/70 dark:border-slate-500/50 shadow-xl">
                     <h2 className="text-xl font-black text-slate-800 dark:text-white mb-6">Impact Distribution</h2>
                     <div className="h-[350px] w-full flex items-center justify-center">
                         <ResponsiveContainer width="100%" height="100%">

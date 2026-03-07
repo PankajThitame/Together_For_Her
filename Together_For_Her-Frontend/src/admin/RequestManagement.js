@@ -43,7 +43,7 @@ const RequestManagement = () => {
   };
 
   return (
-    <div className="min-h-screen bg-pink-50/20 dark:bg-slate-900/40 p-8 rounded-[3rem] shadow-2xl border border-white/60 dark:border-slate-800 backdrop-blur-sm animate-fadeIn transition-colors duration-300">
+    <div className="min-h-screen bg-pink-50/20 dark:bg-slate-900/40 p-8 rounded-[3rem] shadow-2xl border border-pink-300/80 dark:border-slate-600 backdrop-blur-sm animate-fadeIn transition-colors duration-300">
       <div className="mb-10 text-center relative">
         <h1 className="text-4xl font-extrabold bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent inline-block">
           Request Management
@@ -61,7 +61,7 @@ const RequestManagement = () => {
           <span className="text-xl">⚠️</span> {error}
         </div>
       ) : (
-        <div className="overflow-hidden rounded-[2.5rem] border border-white/60 dark:border-slate-700 shadow-xl bg-white/40 dark:bg-slate-800/40 backdrop-blur-md">
+        <div className="overflow-hidden rounded-[2.5rem] border border-pink-300/80 dark:border-slate-500 shadow-xl bg-white/40 dark:bg-slate-800/40 backdrop-blur-md">
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>

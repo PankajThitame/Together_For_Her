@@ -128,13 +128,13 @@ const ProfilePage = () => {
       <div className="max-w-4xl mx-auto px-4 pt-12 relative z-10 space-y-8">
 
         {/* 1. Header Hero Card */}
-        <section className="bg-white/40 dark:bg-slate-900/40 backdrop-blur-3xl p-10 rounded-[3rem] border border-white/40 dark:border-slate-800/50 shadow-2xl relative overflow-hidden group">
+        <section className="bg-white/40 dark:bg-slate-900/40 backdrop-blur-3xl p-10 rounded-[3rem] border border-pink-200/70 dark:border-slate-600/50 shadow-2xl relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-64 h-64 bg-slate-100/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
 
           <div className="flex flex-col md:flex-row items-center gap-10">
             <div className="relative shrink-0">
               <div className="absolute inset-0 bg-pink-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
-              <div className="w-44 h-44 rounded-[2.5rem] border-4 border-white dark:border-slate-800 shadow-2xl relative z-10 overflow-hidden bg-slate-50 dark:bg-slate-950">
+              <div className="w-44 h-44 rounded-[2.5rem] border-4 border-white dark:border-slate-600 shadow-2xl relative z-10 overflow-hidden bg-slate-50 dark:bg-slate-950">
                 {profile?.profilePhoto ? (
                   <img src={getProfileImageUrl(profile.profilePhoto)} alt={displayName} className="w-full h-full object-cover" />
                 ) : (
@@ -162,7 +162,7 @@ const ProfilePage = () => {
                 <span className="text-slate-500 dark:text-slate-400 font-bold flex items-center gap-2">
                   <Briefcase size={16} className="text-pink-500" /> {displayRole}
                 </span>
-                <span className="text-slate-500 dark:text-slate-400 font-bold flex items-center gap-2 border-l border-slate-200 dark:border-slate-800 pl-4">
+                <span className="text-slate-500 dark:text-slate-400 font-bold flex items-center gap-2 border-l border-slate-200 dark:border-slate-600 pl-4">
                   <MapPin size={16} className="text-rose-500" /> {profile?.location || "Region Unset"}
                 </span>
               </div>
@@ -178,7 +178,7 @@ const ProfilePage = () => {
             { icon: <Heart size={22} />, label: "Vibe", val: "Glue", unit: "" },
             { icon: <Target size={22} />, label: "Impact", val: "9.8", unit: "" },
           ].map((stat, i) => (
-            <div key={i} className="bg-white/40 dark:bg-slate-900/40 backdrop-blur-3xl p-6 rounded-[2rem] border border-white/40 dark:border-slate-800/50 flex flex-col items-center text-center group hover:-translate-y-1 transition-all">
+            <div key={i} className="bg-white/40 dark:bg-slate-900/40 backdrop-blur-3xl p-6 rounded-[2rem] border border-pink-200/70 dark:border-slate-600/50 flex flex-col items-center text-center group hover:-translate-y-1 transition-all">
               <div className="p-3 bg-slate-50 dark:bg-slate-800 rounded-2xl text-pink-500 mb-4 group-hover:scale-110 transition-transform">
                 {stat.icon}
               </div>
@@ -191,8 +191,8 @@ const ProfilePage = () => {
         </section>
 
         {/* 3. Identity Breakdown */}
-        <section className="bg-white/40 dark:bg-slate-900/40 backdrop-blur-3xl p-10 rounded-[3rem] border border-white/40 dark:border-slate-800/50 shadow-xl space-y-10">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b border-slate-100 dark:border-slate-800 pb-8">
+        <section className="bg-white/40 dark:bg-slate-900/40 backdrop-blur-3xl p-10 rounded-[3rem] border border-pink-200/70 dark:border-slate-600/50 shadow-xl space-y-10">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b border-slate-100 dark:border-slate-600 pb-8">
             <h2 className="text-3xl font-black text-slate-900 dark:text-white tracking-tighter italic">Technical <span className="text-pink-500">Matrix.</span></h2>
             <div className="flex gap-2">
               <button onClick={() => setIsEditing(true)} className="px-6 py-2.5 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-pink-600 dark:hover:bg-pink-500 hover:text-white shadow-xl transition-all">Edit Details</button>
@@ -265,7 +265,7 @@ const ProfilePage = () => {
         <section className="flex flex-col sm:flex-row gap-6">
           <button
             onClick={() => navigate("/")}
-            className="flex-1 p-6 rounded-[2rem] bg-white/40 dark:bg-slate-800/40 border border-white dark:border-slate-700 flex items-center justify-center gap-4 group hover:bg-pink-50 dark:hover:bg-slate-800 transition-all font-black text-[11px] uppercase tracking-widest text-slate-600 dark:text-slate-400"
+            className="flex-1 p-6 rounded-[2rem] bg-white/40 dark:bg-slate-800/40 border border-white dark:border-slate-500 flex items-center justify-center gap-4 group hover:bg-pink-50 dark:hover:bg-slate-800 transition-all font-black text-[11px] uppercase tracking-widest text-slate-600 dark:text-slate-400"
           >
             <div className="p-2 bg-slate-100 dark:bg-slate-700 rounded-lg group-hover:bg-white dark:group-hover:bg-slate-600 text-slate-500 group-hover:text-pink-500"><Settings size={18} /></div>
             Access Dashboard

@@ -61,7 +61,7 @@ const LoginForm = () => {
 
   return (
     <div className="w-full max-w-md mx-auto">
-      <div className="bg-white/70 dark:bg-slate-800/60 backdrop-blur-2xl p-8 sm:p-10 rounded-[2.5rem] shadow-2xl border border-white dark:border-slate-700 transition-all duration-300">
+      <div className="bg-white/70 dark:bg-slate-800/60 backdrop-blur-2xl p-8 sm:p-10 rounded-[2.5rem] shadow-2xl border border-white dark:border-slate-500 transition-all duration-300">
         <div className="flex flex-col items-center mb-10">
           <div className="bg-gradient-to-br from-pink-500 to-rose-600 p-4 rounded-3xl shadow-lg shadow-pink-200 dark:shadow-none mb-6">
             <ShieldCheck size={32} className="text-white" />
@@ -139,7 +139,7 @@ const LoginForm = () => {
           </button>
         </form>
 
-        <div className="mt-8 text-center pt-8 border-t border-pink-50 dark:border-slate-700">
+        <div className="mt-8 text-center pt-8 border-t border-pink-50 dark:border-slate-500">
           <p className="text-gray-400 dark:text-slate-500 text-xs font-bold">
             Not a member yet?{" "}
             <Link to="/sign-up" className="text-pink-600 dark:text-pink-400 hover:text-rose-700 transition-colors">

@@ -20,7 +20,7 @@ const Empowerment = () => {
                 <Button size="lg" className="bg-white text-pink-600 hover:bg-pink-50 shadow-xl">Support Our Mission</Button>
               </Link>
               <Link to="/community">
-                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10">Join the Movement</Button>
+                <Button size="lg" variant="outline" className="border-pink-200/60 text-white hover:bg-white/10">Join the Movement</Button>
               </Link>
             </div>
           </div>
@@ -127,7 +127,7 @@ const Empowerment = () => {
 
           <Card className="border-none shadow-xl bg-gradient-to-br from-pink-600 to-rose-700 text-white p-2">
             <CardBody className="p-8">
-              <h3 className="text-xl font-bold mb-8 flex items-center gap-3 border-b border-white/20 pb-4">
+              <h3 className="text-xl font-bold mb-8 flex items-center gap-3 border-b border-pink-200/50 pb-4">
                 Resources & Helplines
               </h3>
               <div className="space-y-6">

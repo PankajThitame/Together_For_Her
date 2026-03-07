@@ -58,7 +58,7 @@ const RightSidePanel = () => {
         ref={newsRef}
       >
         {news.length === 0 ? (
-          <div className="flex flex-col items-center justify-center py-20 text-slate-400 bg-white/40 dark:bg-slate-800/20 rounded-3xl border border-white/20 dark:border-slate-700/20">
+          <div className="flex flex-col items-center justify-center py-20 text-slate-400 bg-white/40 dark:bg-slate-800/20 rounded-3xl border border-pink-200/50 dark:border-slate-500/20">
             <div className="w-8 h-8 rounded-full border-2 border-pink-100 border-t-pink-500 animate-spin mb-4" />
             <p className="text-[10px] font-bold uppercase tracking-widest opacity-50">Syncing Intelligence...</p>
           </div>

@@ -55,7 +55,7 @@ const ExperienceGallery = () => {
             </div>
 
             {contentList.length === 0 ? (
-                <div className="bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl rounded-[3.5rem] p-20 text-center border border-white/20 dark:border-slate-700/20 shadow-2xl">
+                <div className="bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl rounded-[3.5rem] p-20 text-center border border-pink-200/50 dark:border-slate-500/20 shadow-2xl">
                     <FaInfoCircle className="text-5xl text-pink-200 mx-auto mb-6" />
                     <p className="text-slate-400 font-black uppercase tracking-widest italic">The gallery is getting ready. Check back soon for new stories.</p>
                 </div>
@@ -65,7 +65,7 @@ const ExperienceGallery = () => {
                         <div
                             key={item.id}
                             onClick={() => setSelectedItem(item)}
-                            className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl rounded-[2.5rem] p-6 border border-white/20 dark:border-slate-700/20 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 relative overflow-hidden cursor-pointer flex flex-col h-full"
+                            className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl rounded-[2.5rem] p-6 border border-pink-200/50 dark:border-slate-500/20 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 relative overflow-hidden cursor-pointer flex flex-col h-full"
                         >
                             {/* Uniform Media Section */}
                             <div className="rounded-3xl overflow-hidden mb-6 bg-slate-100 dark:bg-slate-950 aspect-video relative shadow-inner shrink-0">
@@ -82,7 +82,7 @@ const ExperienceGallery = () => {
                                             <source src={`${API_BASE_URL}/upload/${getFileName(item.filePath)}`} type={item.fileType} />
                                         </video>
                                         <div className="absolute inset-0 flex items-center justify-center opacity-100 group-hover:bg-black/40 transition-all">
-                                            <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white text-lg border border-white/30 transform group-hover:scale-110 transition-transform">
+                                            <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white text-lg border border-pink-200/60 transform group-hover:scale-110 transition-transform">
                                                 <FaPlay className="ml-1" />
                                             </div>
                                         </div>
@@ -108,7 +108,7 @@ const ExperienceGallery = () => {
                                     </p>
                                 )}
 
-                                <div className="mt-auto pt-6 border-t border-white/20 dark:border-slate-700/20 flex items-center justify-between">
+                                <div className="mt-auto pt-6 border-t border-pink-200/50 dark:border-slate-500/20 flex items-center justify-between">
                                     <div className="flex items-center gap-2">
                                         <div className="w-8 h-8 rounded-lg bg-pink-100 dark:bg-slate-800 flex items-center justify-center text-pink-500">
                                             <FaUser size={10} />

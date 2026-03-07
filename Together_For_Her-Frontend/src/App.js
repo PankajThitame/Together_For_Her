@@ -203,7 +203,7 @@ const AppContent = () => {
 
         {/* Right Insights Sidebar - Hide on Volunteer Pages */}
         {!isAdmin && !isVolunteerPage && (
-          <aside className="hidden lg:block w-[320px] flex-shrink-0 z-30 bg-white/10 dark:bg-slate-900/10 backdrop-blur-3xl overflow-hidden border-l border-white/20 dark:border-slate-800/20">
+          <aside className="hidden lg:block w-[320px] flex-shrink-0 z-30 bg-white/10 dark:bg-slate-900/10 backdrop-blur-3xl overflow-hidden border-l border-pink-200/50 dark:border-slate-600/50">
             <div className="h-full px-6 py-8 overflow-y-auto custom-scrollbar">
               <RightSidePanel />
             </div>

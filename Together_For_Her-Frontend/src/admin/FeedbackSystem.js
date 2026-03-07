@@ -52,7 +52,7 @@ const FeedbackSystem = () => {
     filter === "All" ? feedbacks : feedbacks.filter((fb) => fb.status === filter);
 
   return (
-    <div className="min-h-screen bg-pink-50/20 dark:bg-slate-900/40 p-8 rounded-[3rem] shadow-2xl border border-white/60 dark:border-slate-800 backdrop-blur-sm animate-fadeIn transition-colors duration-300">
+    <div className="min-h-screen bg-pink-50/20 dark:bg-slate-900/40 p-8 rounded-[3rem] shadow-2xl border border-pink-300/80 dark:border-slate-600 backdrop-blur-sm animate-fadeIn transition-colors duration-300">
       <div className="mb-10 text-center relative">
         <h1 className="text-4xl font-extrabold bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent inline-block">
           Feedback Management
@@ -69,7 +69,7 @@ const FeedbackSystem = () => {
           id="statusFilter"
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
-          className="px-6 py-3 bg-white/60 dark:bg-slate-800/60 backdrop-blur-md rounded-2xl border border-pink-100/50 dark:border-slate-700 focus:ring-2 focus:ring-pink-500 focus:outline-none text-gray-800 dark:text-slate-200 font-medium transition-all shadow-inner"
+          className="px-6 py-3 bg-white/60 dark:bg-slate-800/60 backdrop-blur-md rounded-2xl border border-pink-100/50 dark:border-slate-500 focus:ring-2 focus:ring-pink-500 focus:outline-none text-gray-800 dark:text-slate-200 font-medium transition-all shadow-inner"
         >
           <option value="All" className="dark:bg-slate-800">All Feedbacks</option>
           <option value="PENDING" className="dark:bg-slate-800">Pending</option>
@@ -78,11 +78,11 @@ const FeedbackSystem = () => {
       </div>
 
       {filteredFeedbacks.length === 0 ? (
-        <div className="py-20 bg-white/40 dark:bg-slate-800/40 backdrop-blur-sm rounded-3xl border border-white/60 dark:border-slate-700 text-center transition-colors">
+        <div className="py-20 bg-white/40 dark:bg-slate-800/40 backdrop-blur-sm rounded-3xl border border-pink-300/80 dark:border-slate-500 text-center transition-colors">
           <p className="text-gray-700 dark:text-slate-400 text-lg font-bold italic">No feedback entries found matching your criteria.</p>
         </div>
       ) : (
-        <div className="overflow-hidden rounded-[2.5rem] border border-white/60 dark:border-slate-700 shadow-xl bg-white/40 dark:bg-slate-800/40 backdrop-blur-md">
+        <div className="overflow-hidden rounded-[2.5rem] border border-pink-300/80 dark:border-slate-500 shadow-xl bg-white/40 dark:bg-slate-800/40 backdrop-blur-md">
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
@@ -118,7 +118,7 @@ const FeedbackSystem = () => {
                         <textarea
                           value={response[fb.id] !== undefined ? response[fb.id] : ""}
                           onChange={(e) => handleResponseChange(fb.id, e.target.value)}
-                          className="w-full p-4 bg-white/80 dark:bg-slate-800 border border-pink-100 dark:border-slate-700 rounded-2xl text-sm focus:ring-2 focus:ring-pink-500 focus:outline-none min-h-[100px] text-gray-800 dark:text-slate-200"
+                          className="w-full p-4 bg-white/80 dark:bg-slate-800 border border-pink-100 dark:border-slate-500 rounded-2xl text-sm focus:ring-2 focus:ring-pink-500 focus:outline-none min-h-[100px] text-gray-800 dark:text-slate-200"
                           placeholder="Craft your response..."
                         />
                       ) : fb.status === "RESPONDED" ? (
@@ -127,7 +127,7 @@ const FeedbackSystem = () => {
                         <textarea
                           value={response[fb.id] !== undefined ? response[fb.id] : ""}
                           onChange={(e) => handleResponseChange(fb.id, e.target.value)}
-                          className="w-full p-4 bg-white/20 dark:bg-slate-800/40 border border-pink-100/30 dark:border-slate-700 rounded-2xl text-sm focus:ring-2 focus:ring-pink-500 focus:outline-none min-h-[100px] placeholder:italic text-gray-800 dark:text-slate-200"
+                          className="w-full p-4 bg-white/20 dark:bg-slate-800/40 border border-pink-100/30 dark:border-slate-500 rounded-2xl text-sm focus:ring-2 focus:ring-pink-500 focus:outline-none min-h-[100px] placeholder:italic text-gray-800 dark:text-slate-200"
                           placeholder="Type your response here..."
                         />
                       )}

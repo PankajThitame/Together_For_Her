@@ -39,12 +39,12 @@ const SidePanel = ({ isOpen, setIsOpen }) => {
   return (
     <div
       className={`h-full transition-all duration-500 ease-in-out relative flex flex-col ${isOpen ? "w-[250px]" : "w-24"
-        } bg-white/40 dark:bg-slate-900/40 backdrop-blur-xl border-r border-white/20 dark:border-slate-800/20 shadow-none group overflow-hidden`}
+        } bg-white/40 dark:bg-slate-900/40 backdrop-blur-xl border-r border-pink-200/50 dark:border-slate-600/50 shadow-none group overflow-hidden`}
     >
       {/* Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="absolute -right-4 top-12 bg-white dark:bg-slate-800 text-pink-500 p-2 rounded-xl shadow-lg hover:bg-pink-50 dark:hover:bg-slate-700 border border-pink-100 dark:border-slate-700 transition-all z-[100] group/btn"
+        className="absolute -right-4 top-12 bg-white dark:bg-slate-800 text-pink-500 p-2 rounded-xl shadow-lg hover:bg-pink-50 dark:hover:bg-slate-700 border border-pink-100 dark:border-slate-500 transition-all z-[100] group/btn"
       >
         <div className="group-hover/btn:scale-125 transition-transform">
           {isOpen ? <FaChevronLeft size={12} /> : <FaChevronRight size={12} />}
@@ -125,7 +125,7 @@ const SidePanel = ({ isOpen, setIsOpen }) => {
 
       {/* User Status Card */}
       <div className="p-6 mt-auto">
-        <div className={`p-4 rounded-[1.5rem] ${isOpen ? "bg-white/40 dark:bg-slate-800/40 border border-white/20 dark:border-slate-700/20 shadow-sm" : "bg-transparent"
+        <div className={`p-4 rounded-[1.5rem] ${isOpen ? "bg-white/40 dark:bg-slate-800/40 border border-pink-200/50 dark:border-slate-500/20 shadow-sm" : "bg-transparent"
           } transition-all`}>
           {isOpen ? (
             <div className="flex items-center gap-4">

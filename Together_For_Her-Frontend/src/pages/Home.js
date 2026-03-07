@@ -8,7 +8,7 @@ function Home() {
   return (
     <div className="flex flex-col gap-16 pb-20 animate-fadeIn">
       {/* Hero Header */}
-      <header className="relative min-h-[500px] flex items-center justify-center overflow-hidden bg-white/40 dark:bg-slate-800/40 backdrop-blur-2xl rounded-[3.5rem] p-12 lg:p-20 border border-white/20 dark:border-slate-700/20 shadow-[0_20px_80px_rgba(0,0,0,0.03)] group/hero">
+      <header className="relative min-h-[500px] flex items-center justify-center overflow-hidden bg-white/40 dark:bg-slate-800/40 backdrop-blur-2xl rounded-[3.5rem] p-12 lg:p-20 border border-pink-200/50 dark:border-slate-500/20 shadow-[0_20px_80px_rgba(0,0,0,0.03)] group/hero">
         {/* Background Elements */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-pink-500/5 rounded-full -mr-32 -mt-32 blur-3xl group-hover/hero:scale-110 transition-transform duration-1000"></div>
         <div className="absolute bottom-0 left-0 w-80 h-80 bg-rose-500/5 rounded-full -ml-32 -mb-32 blur-3xl group-hover/hero:scale-110 transition-transform duration-1000"></div>
@@ -35,7 +35,7 @@ function Home() {
               </button>
             </Link>
             <Link to="/community">
-              <button className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-md text-slate-600 dark:text-slate-300 px-10 py-4 rounded-2xl font-black text-xs uppercase tracking-widest border border-white dark:border-slate-700 hover:bg-white dark:hover:bg-slate-700 transition-all active:scale-95">
+              <button className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-md text-slate-600 dark:text-slate-300 px-10 py-4 rounded-2xl font-black text-xs uppercase tracking-widest border border-white dark:border-slate-500 hover:bg-white dark:hover:bg-slate-700 transition-all active:scale-95">
                 Join Circle
               </button>
             </Link>
@@ -68,7 +68,7 @@ function Home() {
             accent: "purple"
           }
         ].map((item, idx) => (
-          <div key={idx} className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl p-8 rounded-[2.5rem] border border-white/20 dark:border-slate-700/20 shadow-sm hover:shadow-2xl hover:shadow-pink-100/10 dark:hover:shadow-pink-900/5 transition-all duration-500 hover:-translate-y-2">
+          <div key={idx} className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl p-8 rounded-[2.5rem] border border-pink-200/50 dark:border-slate-500/20 shadow-sm hover:shadow-2xl hover:shadow-pink-100/10 dark:hover:shadow-pink-900/5 transition-all duration-500 hover:-translate-y-2">
             <div className="relative mb-8">
               <div className="absolute inset-0 bg-pink-100 dark:bg-pink-900/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-40 transition-all duration-500"></div>
               <img src={item.img} alt={item.title} className="w-20 h-20 mx-auto object-contain relative z-10 group-hover:scale-110 transition-transform duration-500" />
@@ -143,7 +143,7 @@ function Home() {
               </button>
             </Link>
             <Link to="/join-volunteer">
-              <button className="bg-transparent text-white border-2 border-white/30 px-12 py-4 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-white/10 transition-all active:scale-95">
+              <button className="bg-transparent text-white border-2 border-pink-200/60 px-12 py-4 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-white/10 transition-all active:scale-95">
                 Start Impact
               </button>
             </Link>

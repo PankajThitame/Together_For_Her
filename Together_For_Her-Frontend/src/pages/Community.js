@@ -111,7 +111,7 @@ const Community = () => {
         </div>
 
         {/* Post Creation Area */}
-        <div className="bg-white dark:bg-slate-800/60 backdrop-blur-md rounded-[2rem] p-8 shadow-[0_10px_40px_rgba(236,72,153,0.05)] border border-white/20 dark:border-slate-700/20 mb-10 group/post transition-all hover:shadow-[0_20px_60px_rgba(236,72,153,0.1)]">
+        <div className="bg-white dark:bg-slate-800/60 backdrop-blur-md rounded-[2rem] p-8 shadow-[0_10px_40px_rgba(236,72,153,0.05)] border border-pink-200/50 dark:border-slate-500/20 mb-10 group/post transition-all hover:shadow-[0_20px_60px_rgba(236,72,153,0.1)]">
           <div className="flex gap-6">
             <div className="w-14 h-14 rounded-full bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center text-white text-lg font-black shrink-0 shadow-lg shadow-pink-200/50">
               {(user?.name || user?.username || "Anonymous").charAt(0).toUpperCase()}
@@ -148,7 +148,7 @@ const Community = () => {
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-6 py-3 rounded-full text-[13px] font-bold transition-all duration-300 border shadow-sm ${selectedCategory === cat
                   ? "bg-gradient-to-r from-[#ec4899] to-[#f472b6] text-white border-transparent shadow-pink-200/50"
-                  : "bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-400 border-white/20 dark:border-slate-700/20 hover:bg-[#fce7f3] dark:hover:bg-pink-900/20 hover:text-[#ec4899]"
+                  : "bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-400 border-pink-200/50 dark:border-slate-500/20 hover:bg-[#fce7f3] dark:hover:bg-pink-900/20 hover:text-[#ec4899]"
                   }`}
               >
                 {cat}
@@ -160,7 +160,7 @@ const Community = () => {
         {/* Messages Feed */}
         <div className="space-y-6">
           {messages.length === 0 ? (
-            <div className="text-center py-24 bg-white/20 dark:bg-slate-800/10 backdrop-blur-sm rounded-[3rem] border border-white/20 dark:border-slate-800/50">
+            <div className="text-center py-24 bg-white/20 dark:bg-slate-800/10 backdrop-blur-sm rounded-[3rem] border border-pink-200/50 dark:border-slate-600/50">
               <div className="w-20 h-20 rounded-full bg-pink-50 dark:bg-pink-900/10 flex items-center justify-center mx-auto mb-6">
                 <FaRegCommentDots className="text-3xl text-pink-200 dark:text-pink-500/30" />
               </div>
@@ -171,7 +171,7 @@ const Community = () => {
             messages.map((msg, index) => (
               <div
                 key={msg.id}
-                className="bg-white dark:bg-slate-800/50 backdrop-blur-xl rounded-[2rem] p-8 border border-white/40 dark:border-slate-700/30 shadow-[0_10px_30px_rgba(236,72,153,0.03)] hover:shadow-[0_20px_50px_rgba(236,72,153,0.08)] hover:-translate-y-1 transition-all duration-300 group"
+                className="bg-white dark:bg-slate-800/50 backdrop-blur-xl rounded-[2rem] p-8 border border-pink-200/70 dark:border-slate-500/30 shadow-[0_10px_30px_rgba(236,72,153,0.03)] hover:shadow-[0_20px_50px_rgba(236,72,153,0.08)] hover:-translate-y-1 transition-all duration-300 group"
               >
                 <div className="flex justify-between items-start mb-6">
                   <div className="flex items-center gap-4">

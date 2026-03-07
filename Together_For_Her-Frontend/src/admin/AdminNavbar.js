@@ -24,7 +24,7 @@ function AdminNavbar() {
   };
 
   return (
-    <nav className="bg-white/70 dark:bg-slate-900/80 backdrop-blur-md border-b border-white/20 dark:border-slate-800 px-6 py-4 flex items-center justify-between sticky top-0 z-50 transition-colors duration-300">
+    <nav className="bg-white/70 dark:bg-slate-900/80 backdrop-blur-md border-b border-pink-200/50 dark:border-slate-600 px-6 py-4 flex items-center justify-between sticky top-0 z-50 transition-colors duration-300">
       {/* Logo */}
       <div className="flex items-center space-x-3 group cursor-pointer" onClick={() => navigate("/admin/dashboard")}>
         <div className="bg-pink-500 p-2 rounded-xl group-hover:rotate-12 transition-transform duration-300">
@@ -45,7 +45,7 @@ function AdminNavbar() {
 
       {/* Navigation Links */}
       <div
-        className={`absolute top-full left-0 w-full bg-white/90 dark:bg-slate-900/95 backdrop-blur-lg border-b border-pink-100 dark:border-slate-800 md:static md:w-auto md:bg-transparent md:border-none md:flex transition-all duration-300 ease-in-out z-50 ${menuOpen ? "block" : "hidden"
+        className={`absolute top-full left-0 w-full bg-white/90 dark:bg-slate-900/95 backdrop-blur-lg border-b border-pink-100 dark:border-slate-600 md:static md:w-auto md:bg-transparent md:border-none md:flex transition-all duration-300 ease-in-out z-50 ${menuOpen ? "block" : "hidden"
           }`}
       >
         <AdminNavLinks setMenuOpen={setMenuOpen} handleLogout={handleLogout} />

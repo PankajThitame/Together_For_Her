@@ -118,7 +118,7 @@ const NearbyHelp = () => {
                   ))}
                 </div>
               ) : (
-                <div className="text-center py-16 bg-white/40 rounded-3xl border border-white/60">
+                <div className="text-center py-16 bg-white/40 rounded-3xl border border-pink-300/80">
                   <p className="text-gray-500 italic">No specialist doctors currently available in this range.</p>
                 </div>
               )}
@@ -137,7 +137,7 @@ const NearbyHelp = () => {
                   ))}
                 </div>
               ) : (
-                <div className="text-center py-16 bg-white/40 rounded-3xl border border-white/60">
+                <div className="text-center py-16 bg-white/40 rounded-3xl border border-pink-300/80">
                   <p className="text-gray-500 italic">Searching for more volunteers to assist you...</p>
                 </div>
               )}

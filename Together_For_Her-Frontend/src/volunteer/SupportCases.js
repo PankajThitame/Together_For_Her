@@ -27,7 +27,7 @@ const SupportCases = () => {
                     <input
                         type="text"
                         placeholder="Search cases..."
-                        className="pl-10 pr-4 py-2.5 bg-white/50 dark:bg-slate-800/50 border border-white dark:border-slate-700 rounded-xl font-medium text-slate-700 dark:text-slate-200 outline-none focus:ring-2 focus:ring-pink-500 transition-all w-64"
+                        className="pl-10 pr-4 py-2.5 bg-white/50 dark:bg-slate-800/50 border border-white dark:border-slate-500 rounded-xl font-medium text-slate-700 dark:text-slate-200 outline-none focus:ring-2 focus:ring-pink-500 transition-all w-64"
                     />
                 </div>
             </div>
@@ -54,7 +54,7 @@ const SupportCases = () => {
                     <div className="text-center py-20 opacity-50 font-bold text-slate-500">No {activeTab.toLowerCase()} cases found.</div>
                 ) : (
                     filteredCases.map(ticket => (
-                        <div key={ticket.id} className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-6 rounded-[2rem] border border-white/50 dark:border-slate-700/50 shadow-sm hover:shadow-xl transition-all group flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                        <div key={ticket.id} className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-6 rounded-[2rem] border border-pink-300/70 dark:border-slate-500/50 shadow-sm hover:shadow-xl transition-all group flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                             <div className="flex items-start gap-4">
                                 <div className={`w-12 h-12 rounded-2xl flex items-center justify-center text-xl shrink-0 
                    ${ticket.priority === 'High' ? 'bg-red-100 text-red-500' :

@@ -95,7 +95,7 @@ const RequestKit = () => {
                     onChange={handleChange}
                     required
                     rows={4}
-                    className="w-full pl-11 pr-4 py-4 bg-white border border-gray-200 rounded-xl text-gray-900 text-sm transition-all duration-200 outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-500 resize-none"
+                    className="w-full pl-11 pr-4 py-4 bg-white border border-pink-300 rounded-xl text-gray-900 text-sm transition-all duration-200 outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-500 resize-none"
                   />
                 </div>
               </div>

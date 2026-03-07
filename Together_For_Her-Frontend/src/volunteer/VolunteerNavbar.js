@@ -6,7 +6,7 @@ import { FaBars } from 'react-icons/fa';
 
 const VolunteerNavbar = ({ isSidebarOpen, setSidebarOpen }) => {
     return (
-        <nav className="bg-white/70 dark:bg-slate-900/80 backdrop-blur-xl border-b border-white/20 dark:border-slate-800 px-6 py-4 flex items-center justify-between sticky top-0 z-40 transition-all duration-300">
+        <nav className="bg-white/70 dark:bg-slate-900/80 backdrop-blur-xl border-b border-pink-200/50 dark:border-slate-600 px-6 py-4 flex items-center justify-between sticky top-0 z-40 transition-all duration-300">
             <div className="flex items-center gap-4">
                 <button
                     onClick={() => setSidebarOpen(!isSidebarOpen)}
@@ -31,7 +31,7 @@ const VolunteerNavbar = ({ isSidebarOpen, setSidebarOpen }) => {
 
             <div className="flex items-center gap-6">
                 <ThemeToggle />
-                <div className="border-l border-pink-100/50 pl-6 dark:border-slate-700">
+                <div className="border-l border-pink-100/50 pl-6 dark:border-slate-500">
                     <AuthDropdown />
                 </div>
             </div>

@@ -13,7 +13,7 @@ const HygieneTips = () => {
       {tips.map((tip, index) => (
         <div
           key={index}
-          className="group bg-white/60 dark:bg-slate-900/40 backdrop-blur-sm p-6 rounded-[2rem] border border-white/40 dark:border-slate-800/40 hover:bg-pink-500/5 transition-all duration-300"
+          className="group bg-white/60 dark:bg-slate-900/40 backdrop-blur-sm p-6 rounded-[2rem] border border-pink-200/70 dark:border-slate-600/70 hover:bg-pink-500/5 transition-all duration-300"
         >
           <div className="flex items-center gap-5">
             <div className="w-14 h-14 bg-white dark:bg-slate-900 rounded-2xl shadow-sm flex items-center justify-center text-3xl group-hover:scale-110 transition-transform duration-500 shrink-0">

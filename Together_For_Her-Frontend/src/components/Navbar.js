@@ -25,7 +25,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white/70 dark:bg-slate-900/80 backdrop-blur-xl border-b border-pink-100/30 dark:border-slate-800 px-6 py-4 flex items-center justify-between sticky top-0 z-50 transition-all duration-300">
+    <nav className="bg-white/70 dark:bg-slate-900/80 backdrop-blur-xl border-b border-pink-100/30 dark:border-slate-600 px-6 py-4 flex items-center justify-between sticky top-0 z-50 transition-all duration-300">
       <div className="max-w-7xl mx-auto flex items-center justify-between w-full">
         {/* Logo and Brand */}
         <Link to="/" className="flex items-center gap-3 group">
@@ -80,7 +80,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       <div
-        className={`lg:hidden absolute top-full left-0 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl border-b border-pink-100 dark:border-slate-800 shadow-2xl transition-all duration-500 ease-out transform ${menuOpen ? "translate-y-0 opacity-100" : "-translate-y-10 opacity-0 pointer-events-none"
+        className={`lg:hidden absolute top-full left-0 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl border-b border-pink-100 dark:border-slate-600 shadow-2xl transition-all duration-500 ease-out transform ${menuOpen ? "translate-y-0 opacity-100" : "-translate-y-10 opacity-0 pointer-events-none"
           }`}
       >
         <div className="p-8 flex flex-col gap-8">
@@ -105,7 +105,7 @@ const Navbar = () => {
             </div>
             <button
               onClick={() => handleLoginClick("admin")}
-              className="w-full px-6 py-4 border-2 border-pink-100 dark:border-slate-800 text-pink-600 rounded-3xl text-sm font-black hover:bg-pink-50 dark:hover:bg-slate-800 transition-all"
+              className="w-full px-6 py-4 border-2 border-pink-100 dark:border-slate-600 text-pink-600 rounded-3xl text-sm font-black hover:bg-pink-50 dark:hover:bg-slate-800 transition-all"
             >
               Admin Gateway
             </button>

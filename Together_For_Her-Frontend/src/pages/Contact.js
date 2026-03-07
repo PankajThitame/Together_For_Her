@@ -23,7 +23,7 @@ function Contact() {
       <div className="grid lg:grid-cols-5 gap-12 items-start max-w-7xl mx-auto px-4">
         {/* Contact Form Portal */}
         <div className="lg:col-span-3">
-          <Card className="p-8 md:p-12 rounded-[2.5rem] relative overflow-hidden bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl border border-white/20 dark:border-slate-700/20 shadow-2xl">
+          <Card className="p-8 md:p-12 rounded-[2.5rem] relative overflow-hidden bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl border border-pink-200/50 dark:border-slate-500/20 shadow-2xl">
             <div className="absolute top-0 right-0 w-64 h-64 bg-pink-500/5 rounded-full blur-3xl -mr-12 -mt-12 pointer-events-none"></div>
             <form className="space-y-8 relative z-10">
               <div className="grid md:grid-cols-2 gap-8">
@@ -51,7 +51,7 @@ function Contact() {
                 <textarea
                   rows="6"
                   placeholder="Share your thoughts with the community guardians..."
-                  className="w-full p-4 bg-white/60 dark:bg-slate-900/60 border border-gray-200 dark:border-slate-700 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 transition-all duration-200 outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-500 resize-none font-medium italic"
+                  className="w-full p-4 bg-white/60 dark:bg-slate-900/60 border border-pink-300 dark:border-slate-500 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 transition-all duration-200 outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-500 resize-none font-medium italic"
                   required
                 ></textarea>
               </div>
@@ -66,8 +66,8 @@ function Contact() {
 
         {/* Info Grid Sidebar */}
         <div className="lg:col-span-2 space-y-8">
-          <Card className="p-10 rounded-[2.5rem] space-y-10 bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl border border-white/20 dark:border-slate-700/20 shadow-xl">
-            <h3 className="text-2xl font-black italic tracking-tight border-b border-slate-100 dark:border-slate-800/50 pb-6">Direct Channels<span className="text-pink-500">.</span></h3>
+          <Card className="p-10 rounded-[2.5rem] space-y-10 bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl border border-pink-200/50 dark:border-slate-500/20 shadow-xl">
+            <h3 className="text-2xl font-black italic tracking-tight border-b border-slate-100 dark:border-slate-600/50 pb-6">Direct Channels<span className="text-pink-500">.</span></h3>
 
             <div className="space-y-8">
               {[

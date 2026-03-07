@@ -12,7 +12,7 @@ const About = () => {
   return (
     <div className="flex flex-col gap-16 pb-20 animate-fadeIn">
       {/* Premium Hero Header */}
-      <header className="relative min-h-[450px] flex items-center justify-center overflow-hidden bg-white/40 dark:bg-slate-800/40 backdrop-blur-2xl rounded-[3.5rem] p-12 border border-white/20 dark:border-slate-700/20 shadow-[0_20px_80px_rgba(0,0,0,0.03)] group/hero">
+      <header className="relative min-h-[450px] flex items-center justify-center overflow-hidden bg-white/40 dark:bg-slate-800/40 backdrop-blur-2xl rounded-[3.5rem] p-12 border border-pink-200/50 dark:border-slate-500/20 shadow-[0_20px_80px_rgba(0,0,0,0.03)] group/hero">
         <div className="absolute top-0 right-0 w-96 h-96 bg-pink-500/5 rounded-full -mr-32 -mt-32 blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-80 h-80 bg-rose-500/5 rounded-full -ml-32 -mb-32 blur-3xl"></div>
 
@@ -45,7 +45,7 @@ const About = () => {
             accent: "from-purple-500/10 to-pink-500/10"
           }
         ].map((item, idx) => (
-          <div key={idx} className={`p-10 rounded-[2.5rem] bg-gradient-to-br ${item.accent} backdrop-blur-xl border border-white/20 dark:border-slate-700/20 shadow-sm hover:shadow-xl transition-all duration-500 group`}>
+          <div key={idx} className={`p-10 rounded-[2.5rem] bg-gradient-to-br ${item.accent} backdrop-blur-xl border border-pink-200/50 dark:border-slate-500/20 shadow-sm hover:shadow-xl transition-all duration-500 group`}>
             <div className="w-16 h-16 bg-white dark:bg-slate-800 rounded-2xl flex items-center justify-center text-pink-500 mb-8 shadow-lg shadow-pink-100/50 group-hover:scale-110 transition-transform">
               {React.cloneElement(item.icon, { size: 24 })}
             </div>
@@ -72,7 +72,7 @@ const About = () => {
                 <img
                   src={member.img}
                   alt={member.name}
-                  className="w-56 h-56 object-cover rounded-full border-8 border-white dark:border-slate-800 shadow-2xl relative z-10 grayscale group-hover:grayscale-0 transition-all duration-700 hover:scale-105"
+                  className="w-56 h-56 object-cover rounded-full border-8 border-white dark:border-slate-600 shadow-2xl relative z-10 grayscale group-hover:grayscale-0 transition-all duration-700 hover:scale-105"
                 />
               </div>
               <h3 className="text-xl font-black text-slate-900 dark:text-white tracking-tight italic">{member.name}</h3>

@@ -76,7 +76,7 @@ const MyContributions = () => {
             </div>
 
             {contentList.length === 0 ? (
-                <div className="bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl rounded-[3.5rem] p-20 text-center border border-white/20 dark:border-slate-700/20 shadow-2xl">
+                <div className="bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl rounded-[3.5rem] p-20 text-center border border-pink-200/50 dark:border-slate-500/20 shadow-2xl">
                     <FaInfoCircle className="text-5xl text-pink-200 mx-auto mb-6" />
                     <p className="text-slate-400 font-black uppercase tracking-widest italic mb-8">You haven't shared any experiences yet.</p>
                     <button
@@ -92,7 +92,7 @@ const MyContributions = () => {
                         <div
                             key={item.id}
                             onClick={() => setSelectedItem(item)}
-                            className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl rounded-[2.5rem] p-6 border border-white/20 dark:border-slate-700/20 shadow-xl hover:shadow-2xl transition-all duration-500 relative flex flex-col cursor-pointer"
+                            className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl rounded-[2.5rem] p-6 border border-pink-200/50 dark:border-slate-500/20 shadow-xl hover:shadow-2xl transition-all duration-500 relative flex flex-col cursor-pointer"
                         >
                             {/* Status Header */}
                             <div className="flex items-center justify-between mb-6">
@@ -144,7 +144,7 @@ const MyContributions = () => {
                                 )}
                             </div>
 
-                            <div className="mt-auto pt-6 border-t border-white/20 dark:border-slate-700/20 flex items-center justify-between text-slate-400">
+                            <div className="mt-auto pt-6 border-t border-pink-200/50 dark:border-slate-500/20 flex items-center justify-between text-slate-400">
                                 <span className="text-[9px] font-black uppercase tracking-widest italic">
                                     ID: #{item.id}
                                 </span>

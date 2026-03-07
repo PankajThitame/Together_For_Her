@@ -44,7 +44,7 @@ const VolunteerManagement = () => {
   };
 
   return (
-    <div className="min-h-screen bg-pink-50/20 dark:bg-slate-900/40 p-8 rounded-[3rem] shadow-2xl border border-white/60 dark:border-slate-800 backdrop-blur-sm animate-fadeIn transition-colors duration-300">
+    <div className="min-h-screen bg-pink-50/20 dark:bg-slate-900/40 p-8 rounded-[3rem] shadow-2xl border border-pink-300/80 dark:border-slate-600 backdrop-blur-sm animate-fadeIn transition-colors duration-300">
       <div className="mb-10 text-center relative">
         <h1 className="text-4xl font-extrabold bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent inline-block">
           Volunteer Management
@@ -52,7 +52,7 @@ const VolunteerManagement = () => {
         <div className="h-1.5 w-24 bg-gradient-to-r from-pink-500 to-rose-500 mx-auto mt-4 rounded-full opacity-50 dark:opacity-30" />
       </div>
 
-      <div className="overflow-hidden rounded-[2.5rem] border border-white/60 dark:border-slate-700 shadow-xl bg-white/40 dark:bg-slate-800/40 backdrop-blur-md">
+      <div className="overflow-hidden rounded-[2.5rem] border border-pink-300/80 dark:border-slate-500 shadow-xl bg-white/40 dark:bg-slate-800/40 backdrop-blur-md">
         <div className="overflow-x-auto">
           {volunteers.length === 0 ? (
             <div className="py-20 text-center text-gray-700 dark:text-slate-400 font-bold italic transition-colors">

@@ -85,14 +85,14 @@ const AuthDropdown = () => {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-4 w-72 bg-white/90 dark:bg-slate-900/95 backdrop-blur-2xl border border-white/40 dark:border-slate-800/50 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] z-[100] overflow-hidden animate-fadeIn origin-top-right">
+        <div className="absolute right-0 mt-4 w-72 bg-white/90 dark:bg-slate-900/95 backdrop-blur-2xl border border-pink-200/70 dark:border-slate-600/50 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] z-[100] overflow-hidden animate-fadeIn origin-top-right">
           {/* Internal Glow */}
           <div className="absolute -top-10 -right-10 w-32 h-32 bg-pink-500/5 rounded-full blur-3xl"></div>
 
           <div className="relative z-10">
             {user ? (
               <>
-                <div className="p-6 border-b border-slate-100 dark:border-slate-800/50">
+                <div className="p-6 border-b border-slate-100 dark:border-slate-600/50">
                   <div className="flex items-center gap-4">
                     <div className="relative">
                       <img
