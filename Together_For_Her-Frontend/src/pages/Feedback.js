@@ -15,7 +15,7 @@ const Reviews = () => {
 
     if (fileType.startsWith("image/")) {
       return (
-        <div className="rounded-2xl overflow-hidden border border-pink-50 shadow-inner bg-pink-50/30 mb-6">
+        <div className="rounded-[3rem] overflow-hidden border border-pink-50 shadow-inner bg-pink-50/30 mb-6">
           <img src={fullPath} alt="Contribution" className="w-full h-auto object-cover max-h-[500px] hover:scale-105 transition-transform duration-700" />
         </div>
       );
@@ -23,7 +23,7 @@ const Reviews = () => {
 
     if (fileType.startsWith("video/")) {
       return (
-        <div className="rounded-2xl overflow-hidden border border-pink-50 shadow-inner bg-black mb-6">
+        <div className="rounded-[3rem] overflow-hidden border border-pink-50 shadow-inner bg-black mb-6">
           <video controls className="w-full h-auto max-h-[500px]">
             <source src={fullPath} type={fileType} />
             Your browser does not support the video tag.
@@ -34,7 +34,7 @@ const Reviews = () => {
 
     if (fileType === "application/pdf") {
       return (
-        <div className="rounded-2xl overflow-hidden border border-pink-50 bg-white mb-6 h-[400px]">
+        <div className="rounded-[3rem] overflow-hidden border border-pink-50 bg-white mb-6 h-[400px]">
           <iframe src={fullPath} title="PDF Preview" className="w-full h-full">
             <a href={fullPath} download className="text-pink-600 font-bold p-4 block">Download PDF Document</a>
           </iframe>
@@ -43,7 +43,7 @@ const Reviews = () => {
     }
 
     return (
-      <a href={fullPath} download className="inline-flex items-center gap-2 bg-pink-100/50 text-pink-600 px-6 py-3 rounded-xl font-bold text-sm hover:bg-pink-600 hover:text-white transition-all mb-6">
+      <a href={fullPath} download className="inline-flex items-center gap-2 bg-pink-100/50 text-pink-600 px-6 py-3 rounded-[3rem] font-bold text-sm hover:bg-pink-600 hover:text-white transition-all mb-6">
         <FaFileDownload /> Download Resource File
       </a>
     );
@@ -69,7 +69,7 @@ const Reviews = () => {
             <p className="text-gray-500 italic">Streaming contributions...</p>
           </div>
         ) : userContent.length === 0 ? (
-          <div className="text-center py-20 bg-white/40 backdrop-blur-sm rounded-3xl border border-pink-300/80">
+          <div className="text-center py-20 bg-white/40 backdrop-blur-sm rounded-[3rem] border border-pink-300/80">
             <FaInfoCircle className="text-4xl text-pink-200 mx-auto mb-4" />
             <p className="text-gray-500 italic">No contributions have been shared yet. Be the first!</p>
           </div>

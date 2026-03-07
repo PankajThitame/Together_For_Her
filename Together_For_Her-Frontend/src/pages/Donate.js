@@ -75,7 +75,7 @@ const Donate = () => {
           onClick={() => navigate(-1)}
           className="flex items-center gap-3 text-slate-400 font-black text-[10px] uppercase tracking-widest hover:text-pink-500 transition-colors group"
         >
-          <div className="p-2 bg-white dark:bg-slate-800 rounded-lg group-hover:bg-pink-50 transition-colors">
+          <div className="p-2 bg-white dark:bg-slate-800 rounded-[3rem] group-hover:bg-pink-50 transition-colors">
             <FaChevronLeft size={10} />
           </div>
           Portal Retreat
@@ -102,8 +102,8 @@ const Donate = () => {
               { icon: <FaShieldAlt />, title: "Fortified Support", desc: "100% encrypted and secure processing." },
               { icon: <FaHandHoldingHeart />, title: "Direct Impact", desc: "Straight to grassroots empowerment kits." }
             ].map((item, idx) => (
-              <div key={idx} className="bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl p-8 rounded-[2.5rem] border border-pink-200/50 dark:border-slate-500/20 shadow-sm flex items-start gap-4">
-                <div className="p-4 bg-pink-50 dark:bg-pink-900/20 text-pink-500 rounded-2xl">
+              <div key={idx} className="bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl p-8 rounded-[3rem] border border-pink-200/50 dark:border-slate-500/20 shadow-sm flex items-start gap-4">
+                <div className="p-4 bg-pink-50 dark:bg-pink-900/20 text-pink-500 rounded-[3rem]">
                   {React.cloneElement(item.icon, { size: 20 })}
                 </div>
                 <div>
@@ -132,7 +132,7 @@ const Donate = () => {
                 <button
                   key={amt.label}
                   onClick={() => handleRazorpayDonate(amt.raw)}
-                  className="py-4 border-2 border-slate-100 dark:border-slate-500 rounded-[1.5rem] text-slate-600 dark:text-slate-400 font-black text-[11px] uppercase tracking-widest hover:bg-pink-500 hover:text-white hover:border-pink-500 transition-all active:scale-95 shadow-sm"
+                  className="py-4 border-2 border-slate-100 dark:border-slate-500 rounded-[2rem] text-slate-600 dark:text-slate-400 font-black text-[11px] uppercase tracking-widest hover:bg-pink-500 hover:text-white hover:border-pink-500 transition-all active:scale-95 shadow-sm"
                 >
                   {amt.label}
                 </button>
@@ -146,12 +146,12 @@ const Donate = () => {
                   placeholder="Bespoke Amount (₹)"
                   value={customAmount}
                   onChange={(e) => setCustomAmount(e.target.value)}
-                  className="w-full h-16 px-6 bg-slate-50 dark:bg-slate-900 border border-transparent rounded-[1.5rem] text-slate-900 dark:text-white text-sm font-bold focus:ring-4 focus:ring-pink-500/10 focus:border-pink-500 outline-none placeholder-slate-300 dark:placeholder-slate-600 transition-all font-poppins"
+                  className="w-full h-16 px-6 bg-slate-50 dark:bg-slate-900 border border-transparent rounded-[2rem] text-slate-900 dark:text-white text-sm font-bold focus:ring-4 focus:ring-pink-500/10 focus:border-pink-500 outline-none placeholder-slate-300 dark:placeholder-slate-600 transition-all font-poppins"
                 />
               </div>
               <button
                 onClick={() => handleRazorpayDonate(0)}
-                className="w-full h-16 bg-gradient-to-r from-pink-500 to-rose-600 text-white rounded-[1.5rem] font-black text-xs uppercase tracking-[0.2em] shadow-2xl shadow-pink-500/30 hover:translate-y-[-2px] transition-all active:scale-95"
+                className="w-full h-16 bg-gradient-to-r from-pink-500 to-rose-600 text-white rounded-[2rem] font-black text-xs uppercase tracking-[0.2em] shadow-2xl shadow-pink-500/30 hover:translate-y-[-2px] transition-all active:scale-95"
               >
                 Spark Impact Now
               </button>

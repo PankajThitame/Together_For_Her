@@ -101,7 +101,7 @@ const VolunteerForm = () => {
                   placeholder="Jane Doe"
                   required
                   onChange={handleChange}
-                  className="w-full h-14 px-6 bg-white/50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-600 rounded-2xl focus:ring-4 focus:ring-pink-500/10 focus:border-pink-500 outline-none transition-all font-bold text-sm italic"
+                  className="w-full h-14 px-6 bg-white/50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-600 rounded-[3rem] focus:ring-4 focus:ring-pink-500/10 focus:border-pink-500 outline-none transition-all font-bold text-sm italic"
                 />
               </div>
               <div className="space-y-2">
@@ -112,7 +112,7 @@ const VolunteerForm = () => {
                   placeholder="jane@example.com"
                   required
                   onChange={handleChange}
-                  className="w-full h-14 px-6 bg-white/50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-600 rounded-2xl focus:ring-4 focus:ring-pink-500/10 focus:border-pink-500 outline-none transition-all font-bold text-sm italic"
+                  className="w-full h-14 px-6 bg-white/50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-600 rounded-[3rem] focus:ring-4 focus:ring-pink-500/10 focus:border-pink-500 outline-none transition-all font-bold text-sm italic"
                 />
               </div>
             </div>
@@ -126,7 +126,7 @@ const VolunteerForm = () => {
                   placeholder="+91 00000 00000"
                   required
                   onChange={handleChange}
-                  className="w-full h-14 px-6 bg-white/50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-600 rounded-2xl focus:ring-4 focus:ring-pink-500/10 focus:border-pink-500 outline-none transition-all font-bold text-sm italic"
+                  className="w-full h-14 px-6 bg-white/50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-600 rounded-[3rem] focus:ring-4 focus:ring-pink-500/10 focus:border-pink-500 outline-none transition-all font-bold text-sm italic"
                 />
               </div>
               <div className="space-y-2">
@@ -135,7 +135,7 @@ const VolunteerForm = () => {
                   name="volunteerType"
                   onChange={handleChange}
                   required
-                  className="w-full h-14 px-6 bg-white/50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-600 rounded-2xl focus:ring-4 focus:ring-pink-500/10 focus:border-pink-500 outline-none transition-all font-bold text-sm italic appearance-none"
+                  className="w-full h-14 px-6 bg-white/50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-600 rounded-[3rem] focus:ring-4 focus:ring-pink-500/10 focus:border-pink-500 outline-none transition-all font-bold text-sm italic appearance-none"
                 >
                   <option value="">Select your role</option>
                   <option value="PHARMACIST">Pharmacist</option>
@@ -155,21 +155,21 @@ const VolunteerForm = () => {
                 onChange={handleChange}
                 placeholder="What drives your spirit to join our sisterhood?"
                 rows={4}
-                className="w-full p-6 bg-white/50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-600 rounded-3xl focus:ring-4 focus:ring-pink-500/10 focus:border-pink-500 outline-none transition-all font-bold text-sm italic resize-none"
+                className="w-full p-6 bg-white/50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-600 rounded-[3rem] focus:ring-4 focus:ring-pink-500/10 focus:border-pink-500 outline-none transition-all font-bold text-sm italic resize-none"
               />
             </div>
 
             <div className="pt-8 border-t border-slate-50 dark:border-slate-600/50 flex flex-col md:flex-row items-center gap-6">
               <button
                 type="submit"
-                className="flex-1 w-full h-16 bg-gradient-to-r from-pink-500 to-rose-600 text-white rounded-[1.5rem] font-black text-xs uppercase tracking-[0.2em] shadow-2xl shadow-pink-500/30 hover:translate-y-[-2px] transition-all active:scale-95 flex items-center justify-center gap-3"
+                className="flex-1 w-full h-16 bg-gradient-to-r from-pink-500 to-rose-600 text-white rounded-[2rem] font-black text-xs uppercase tracking-[0.2em] shadow-2xl shadow-pink-500/30 hover:translate-y-[-2px] transition-all active:scale-95 flex items-center justify-center gap-3"
               >
                 Engrave Membership <FaHandsHelping />
               </button>
               <button
                 type="button"
                 onClick={getLocation}
-                className="h-16 px-8 bg-slate-900 text-white rounded-[1.5rem] font-black text-[10px] uppercase tracking-widest hover:bg-black transition-all flex items-center justify-center gap-2"
+                className="h-16 px-8 bg-slate-900 text-white rounded-[2rem] font-black text-[10px] uppercase tracking-widest hover:bg-black transition-all flex items-center justify-center gap-2"
               >
                 📍 Anchor Location
               </button>

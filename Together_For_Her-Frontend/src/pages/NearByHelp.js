@@ -66,12 +66,12 @@ const NearbyHelp = () => {
                 rel="noopener noreferrer"
                 className="flex-1 min-w-[140px]"
               >
-                <button className="w-full flex items-center justify-center gap-2 bg-emerald-50 text-emerald-600 hover:bg-emerald-600 hover:text-white px-4 py-2.5 rounded-xl font-bold text-xs transition-all ring-1 ring-emerald-100 hover:ring-0">
+                <button className="w-full flex items-center justify-center gap-2 bg-emerald-50 text-emerald-600 hover:bg-emerald-600 hover:text-white px-4 py-2.5 rounded-[3rem] font-bold text-xs transition-all ring-1 ring-emerald-100 hover:ring-0">
                   <FaWhatsapp size={14} /> WhatsApp
                 </button>
               </a>
               <a href={`tel:${helper.contactNumber}`} className="flex-1 min-w-[140px]">
-                <button className="w-full flex items-center justify-center gap-2 bg-pink-50 text-pink-600 hover:bg-pink-600 hover:text-white px-4 py-2.5 rounded-xl font-bold text-xs transition-all ring-1 ring-pink-100 hover:ring-0">
+                <button className="w-full flex items-center justify-center gap-2 bg-pink-50 text-pink-600 hover:bg-pink-600 hover:text-white px-4 py-2.5 rounded-[3rem] font-bold text-xs transition-all ring-1 ring-pink-100 hover:ring-0">
                   Call Support
                 </button>
               </a>
@@ -118,7 +118,7 @@ const NearbyHelp = () => {
                   ))}
                 </div>
               ) : (
-                <div className="text-center py-16 bg-white/40 rounded-3xl border border-pink-300/80">
+                <div className="text-center py-16 bg-white/40 rounded-[3rem] border border-pink-300/80">
                   <p className="text-gray-500 italic">No specialist doctors currently available in this range.</p>
                 </div>
               )}
@@ -137,7 +137,7 @@ const NearbyHelp = () => {
                   ))}
                 </div>
               ) : (
-                <div className="text-center py-16 bg-white/40 rounded-3xl border border-pink-300/80">
+                <div className="text-center py-16 bg-white/40 rounded-[3rem] border border-pink-300/80">
                   <p className="text-gray-500 italic">Searching for more volunteers to assist you...</p>
                 </div>
               )}

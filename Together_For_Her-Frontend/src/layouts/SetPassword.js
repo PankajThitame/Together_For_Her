@@ -129,7 +129,7 @@ const SetPassword = () => {
   };
 
   return (
-    <div className="max-w-sm mx-auto mt-12 bg-white p-6 rounded-xl shadow-md text-center">
+    <div className="max-w-sm mx-auto mt-12 bg-white p-6 rounded-[3rem] shadow-md text-center">
       <h2 className="text-xl font-semibold text-gray-800 mb-4">Set Your Username & Password</h2>
       <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
         {/* Profile Photo Preview */}
@@ -158,7 +158,7 @@ const SetPassword = () => {
             value={passwordData.username}
             onChange={handleChange}
             required
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 text-sm"
+            className="w-full px-3 py-2 border border-gray-300 rounded-[3rem] focus:outline-none focus:border-blue-500 text-sm"
           />
         </div>
         <div className="text-left">
@@ -168,7 +168,7 @@ const SetPassword = () => {
             name="password"
             onChange={handleChange}
             required
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 text-sm"
+            className="w-full px-3 py-2 border border-gray-300 rounded-[3rem] focus:outline-none focus:border-blue-500 text-sm"
           />
         </div>
         <div className="text-left">
@@ -178,13 +178,13 @@ const SetPassword = () => {
             name="confirmPassword"
             onChange={handleChange}
             required
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 text-sm"
+            className="w-full px-3 py-2 border border-gray-300 rounded-[3rem] focus:outline-none focus:border-blue-500 text-sm"
           />
         </div>
         {error && <p className="text-red-600 text-sm -mt-2">{error}</p>}
         <button
           type="submit"
-          className="bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md text-sm font-medium transition-colors"
+          className="bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-[3rem] text-sm font-medium transition-colors"
         >
           Register
         </button>

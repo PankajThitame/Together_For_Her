@@ -18,7 +18,7 @@ const Achievements = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {badges.map(badge => (
-                    <div key={badge.id} className={`relative p-8 rounded-[2.5rem] overflow-hidden group transition-all duration-300 hover:-translate-y-2
+                    <div key={badge.id} className={`relative p-8 rounded-[3rem] overflow-hidden group transition-all duration-300 hover:-translate-y-2
             ${badge.unlocked
                             ? "bg-white dark:bg-slate-800 shadow-xl border border-pink-300/70 dark:border-slate-500"
                             : "bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-600 opacity-70 grayscale"}`}
@@ -28,7 +28,7 @@ const Achievements = () => {
                             <div className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br ${badge.bg} rounded-full blur-3xl opacity-50`} />
                         )}
 
-                        <div className={`w-20 h-20 mx-auto rounded-3xl flex items-center justify-center text-4xl mb-6 shadow-lg 
+                        <div className={`w-20 h-20 mx-auto rounded-[3rem] flex items-center justify-center text-4xl mb-6 shadow-lg 
               ${badge.unlocked ? `bg-white ${badge.color}` : "bg-slate-200 text-slate-400"}`}>
                             {badge.unlocked ? badge.icon : <FaLock className="text-2xl" />}
                         </div>

@@ -29,7 +29,7 @@ const Users = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto p-6 bg-gray-50 rounded-lg shadow-md mt-8">
+    <div className="max-w-6xl mx-auto p-6 bg-gray-50 rounded-[3rem] shadow-md mt-8">
       <h2 className="text-2xl font-bold text-center text-gray-800 border-b-2 border-blue-500 pb-2 mb-6">
         Manage Users
       </h2>
@@ -39,7 +39,7 @@ const Users = () => {
       )}
 
       <div className="overflow-x-auto">
-        <table className="min-w-full bg-white rounded-lg shadow-md">
+        <table className="min-w-full bg-white rounded-[3rem] shadow-md">
           <thead>
             <tr className="bg-pink-500 text-white">
               <th className="py-3 px-4 text-left">Name</th>
@@ -58,13 +58,13 @@ const Users = () => {
                   <td className="py-2 px-4 space-x-2">
                     <button
                       onClick={() => handleBanUser(user.id)}
-                      className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-md text-sm"
+                      className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-[3rem] text-sm"
                     >
                       Ban
                     </button>
                     <button
                       onClick={() => handleUnbanUser(user.id)}
-                      className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-md text-sm"
+                      className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-[3rem] text-sm"
                     >
                       Unban
                     </button>

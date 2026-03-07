@@ -13,12 +13,12 @@ const Donations = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-slate-900/40 py-10 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
-      <div className="max-w-6xl mx-auto bg-white dark:bg-slate-800/40 backdrop-blur-md p-8 rounded-[2.5rem] shadow-2xl border border-pink-300/80 dark:border-slate-600 transition-all duration-300">
+      <div className="max-w-6xl mx-auto bg-white dark:bg-slate-800/40 backdrop-blur-md p-8 rounded-[3rem] shadow-2xl border border-pink-300/80 dark:border-slate-600 transition-all duration-300">
         <h2 className="text-4xl font-black bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent mb-10 text-center uppercase tracking-tighter">
           Donation Management
         </h2>
 
-        <div className="overflow-hidden rounded-[2rem] border border-pink-100/50 dark:border-slate-500 shadow-xl">
+        <div className="overflow-hidden rounded-[3rem] border border-pink-100/50 dark:border-slate-500 shadow-xl">
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-gradient-to-r from-pink-500 to-rose-600 text-white">

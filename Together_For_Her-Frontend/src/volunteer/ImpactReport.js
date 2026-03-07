@@ -39,7 +39,7 @@ const ImpactReport = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Monthly Activity Chart */}
-                <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-8 rounded-[2.5rem] border border-pink-300/70 dark:border-slate-500/50 shadow-xl">
+                <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-8 rounded-[3rem] border border-pink-300/70 dark:border-slate-500/50 shadow-xl">
                     <h2 className="text-xl font-black text-slate-800 dark:text-white mb-6">Monthly Activity</h2>
                     <div className="h-[350px] w-full">
                         <ResponsiveContainer width="100%" height="100%">
@@ -60,7 +60,7 @@ const ImpactReport = () => {
                 </div>
 
                 {/* Impact Distribution Pie Chart */}
-                <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-8 rounded-[2.5rem] border border-pink-300/70 dark:border-slate-500/50 shadow-xl">
+                <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-8 rounded-[3rem] border border-pink-300/70 dark:border-slate-500/50 shadow-xl">
                     <h2 className="text-xl font-black text-slate-800 dark:text-white mb-6">Impact Distribution</h2>
                     <div className="h-[350px] w-full flex items-center justify-center">
                         <ResponsiveContainer width="100%" height="100%">
@@ -92,7 +92,7 @@ const ImpactReport = () => {
                         { label: "Lives Impacted", value: "850+", color: "from-pink-500 to-rose-600" },
                         { label: "Communities Served", value: "12", color: "from-emerald-500 to-teal-600" }
                     ].map((stat, idx) => (
-                        <div key={idx} className={`bg-gradient-to-br ${stat.color} p-6 rounded-[2rem] text-white shadow-lg flex flex-col items-center justify-center text-center transform hover:scale-105 transition-transform duration-300`}>
+                        <div key={idx} className={`bg-gradient-to-br ${stat.color} p-6 rounded-[3rem] text-white shadow-lg flex flex-col items-center justify-center text-center transform hover:scale-105 transition-transform duration-300`}>
                             <h3 className="text-4xl font-black tracking-tighter mb-1">{stat.value}</h3>
                             <p className="font-bold uppercase text-xs tracking-widest opacity-80">{stat.label}</p>
                         </div>

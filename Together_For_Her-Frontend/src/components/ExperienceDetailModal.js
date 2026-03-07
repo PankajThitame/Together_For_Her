@@ -42,14 +42,14 @@ const ExperienceDetailModal = ({ item, onClose }) => {
                                     <div className="space-y-6 flex flex-col items-center">
                                         <iframe
                                             src={`${API_BASE_URL}/upload/${getFileName(item.filePath)}#toolbar=0`}
-                                            className="w-full h-[250px] rounded-xl border border-pink-200/50 shadow-lg"
+                                            className="w-full h-[250px] rounded-[3rem] border border-pink-200/50 shadow-lg"
                                             title="PDF Preview"
                                         />
                                         <a
                                             href={`${API_BASE_URL}/upload/${getFileName(item.filePath)}`}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-2 px-6 py-3 bg-pink-500 text-white rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-rose-600 transition-all shadow-xl shadow-pink-200"
+                                            className="inline-flex items-center gap-2 px-6 py-3 bg-pink-500 text-white rounded-[3rem] font-black text-[10px] uppercase tracking-widest hover:bg-rose-600 transition-all shadow-xl shadow-pink-200"
                                         >
                                             View Full Document
                                         </a>
@@ -75,7 +75,7 @@ const ExperienceDetailModal = ({ item, onClose }) => {
                         </div>
                         <button
                             onClick={onClose}
-                            className="hidden md:flex w-10 h-10 bg-slate-100 dark:bg-slate-800 text-slate-400 rounded-xl items-center justify-center hover:bg-pink-500 hover:text-white transition-all transform hover:rotate-90"
+                            className="hidden md:flex w-10 h-10 bg-slate-100 dark:bg-slate-800 text-slate-400 rounded-[3rem] items-center justify-center hover:bg-pink-500 hover:text-white transition-all transform hover:rotate-90"
                         >
                             <FaTimes />
                         </button>
@@ -91,7 +91,7 @@ const ExperienceDetailModal = ({ item, onClose }) => {
 
                         <div className="flex flex-wrap gap-4 py-4 border-y border-slate-100 dark:border-slate-600">
                             <div className="flex items-center gap-2">
-                                <div className="w-8 h-8 rounded-lg bg-pink-100 dark:bg-slate-800 flex items-center justify-center text-pink-500 text-xs">
+                                <div className="w-8 h-8 rounded-[3rem] bg-pink-100 dark:bg-slate-800 flex items-center justify-center text-pink-500 text-xs">
                                     <FaUser />
                                 </div>
                                 <div>
@@ -100,7 +100,7 @@ const ExperienceDetailModal = ({ item, onClose }) => {
                                 </div>
                             </div>
                             <div className="flex items-center gap-2">
-                                <div className="w-8 h-8 rounded-lg bg-rose-100 dark:bg-slate-800 flex items-center justify-center text-rose-500 text-xs">
+                                <div className="w-8 h-8 rounded-[3rem] bg-rose-100 dark:bg-slate-800 flex items-center justify-center text-rose-500 text-xs">
                                     <FaCalendarAlt />
                                 </div>
                                 <div>
@@ -119,7 +119,7 @@ const ExperienceDetailModal = ({ item, onClose }) => {
                     </div>
 
                     <div className="mt-auto pt-12">
-                        <div className="p-6 rounded-[2rem] bg-gradient-to-br from-pink-500 to-rose-600 text-white shadow-xl">
+                        <div className="p-6 rounded-[3rem] bg-gradient-to-br from-pink-500 to-rose-600 text-white shadow-xl">
                             <p className="text-xs font-bold opacity-90 italic">
                                 "Your stories are the threads that weave our community together. Thank you for sharing your light."
                             </p>

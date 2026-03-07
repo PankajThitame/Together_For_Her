@@ -159,7 +159,7 @@ const CombinedUserForm = ({ existingData, onCancel, onSuccess }) => {
             </h2>
           </div>
           {onCancel && (
-            <button type="button" onClick={onCancel} className="p-3 bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-500 text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">
+            <button type="button" onClick={onCancel} className="p-3 bg-white dark:bg-slate-800 rounded-[3rem] shadow-lg border border-slate-100 dark:border-slate-500 text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">
               <X size={20} />
             </button>
           )}
@@ -182,7 +182,7 @@ const CombinedUserForm = ({ existingData, onCancel, onSuccess }) => {
               className="absolute inset-0 opacity-0 cursor-pointer z-20"
               accept="image/*"
             />
-            <div className="absolute -bottom-2 -right-2 bg-pink-500 text-white p-2.5 rounded-xl shadow-lg z-20 group-hover/avatar:scale-110 transition-transform pointer-events-none">
+            <div className="absolute -bottom-2 -right-2 bg-pink-500 text-white p-2.5 rounded-[3rem] shadow-lg z-20 group-hover/avatar:scale-110 transition-transform pointer-events-none">
               <Upload size={14} />
             </div>
           </div>
@@ -304,9 +304,9 @@ const CombinedUserForm = ({ existingData, onCancel, onSuccess }) => {
                     value={formData.location}
                     onChange={handleChange}
                     placeholder="City, Sector"
-                    className="w-full bg-slate-50/50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-600/50 px-5 py-3.5 rounded-2xl outline-none focus:border-pink-300 dark:focus:border-pink-900/50 transition-all font-bold text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-300"
+                    className="w-full bg-slate-50/50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-600/50 px-5 py-3.5 rounded-[3rem] outline-none focus:border-pink-300 dark:focus:border-pink-900/50 transition-all font-bold text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-300"
                   />
-                  <button type="button" onClick={getLocation} className="p-3.5 bg-pink-500 text-white rounded-2xl shadow-lg border border-pink-400 active:scale-95 transition-all">
+                  <button type="button" onClick={getLocation} className="p-3.5 bg-pink-500 text-white rounded-[3rem] shadow-lg border border-pink-400 active:scale-95 transition-all">
                     <MapPin size={18} />
                   </button>
                 </div>
@@ -326,12 +326,12 @@ const CombinedUserForm = ({ existingData, onCancel, onSuccess }) => {
             onChange={handleChange}
             rows={4}
             placeholder={role === "VOLUNTEER" ? "Why do you wish to join our mission?" : "Tell us about your wellness needs..."}
-            className="w-full bg-slate-50/50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-600/50 px-5 py-4 rounded-3xl outline-none focus:border-pink-300 dark:focus:border-pink-900/50 transition-all font-medium text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-300 resize-none"
+            className="w-full bg-slate-50/50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-600/50 px-5 py-4 rounded-[3rem] outline-none focus:border-pink-300 dark:focus:border-pink-900/50 transition-all font-medium text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-300 resize-none"
           />
         </div>
 
         {error && (
-          <div className="mt-8 p-4 bg-red-50 dark:bg-red-900/10 border border-red-100 dark:border-red-900/20 rounded-2xl text-red-600 dark:text-red-400 text-xs font-bold animate-shake">
+          <div className="mt-8 p-4 bg-red-50 dark:bg-red-900/10 border border-red-100 dark:border-red-900/20 rounded-[3rem] text-red-600 dark:text-red-400 text-xs font-bold animate-shake">
             {error}
           </div>
         )}
@@ -340,7 +340,7 @@ const CombinedUserForm = ({ existingData, onCancel, onSuccess }) => {
           <button
             type="submit"
             disabled={uploading}
-            className="flex-1 py-5 bg-gradient-to-r from-pink-500 to-rose-600 text-white rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-xl shadow-pink-200/50 hover:-translate-y-1 active:scale-[0.98] transition-all disabled:opacity-70 disabled:pointer-events-none flex items-center justify-center gap-3"
+            className="flex-1 py-5 bg-gradient-to-r from-pink-500 to-rose-600 text-white rounded-[3rem] font-black text-xs uppercase tracking-[0.2em] shadow-xl shadow-pink-200/50 hover:-translate-y-1 active:scale-[0.98] transition-all disabled:opacity-70 disabled:pointer-events-none flex items-center justify-center gap-3"
           >
             {uploading ? <Loader2 className="animate-spin" size={20} /> : "Finalize Modification"}
           </button>
@@ -368,7 +368,7 @@ const InputField = ({ label, name, value, onChange, placeholder, type = "text", 
       onChange={onChange}
       placeholder={placeholder}
       disabled={disabled}
-      className={`w-full bg-slate-50/50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-600/50 px-5 py-3.5 rounded-2xl outline-none focus:border-pink-300 dark:focus:border-pink-900/50 transition-all font-bold text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-300 ${disabled ? 'opacity-50 cursor-not-allowed bg-slate-200/20' : ''}`}
+      className={`w-full bg-slate-50/50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-600/50 px-5 py-3.5 rounded-[3rem] outline-none focus:border-pink-300 dark:focus:border-pink-900/50 transition-all font-bold text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-300 ${disabled ? 'opacity-50 cursor-not-allowed bg-slate-200/20' : ''}`}
     />
   </div>
 );
@@ -380,7 +380,7 @@ const SelectField = ({ label, name, value, onChange, options }) => (
       name={name}
       value={value}
       onChange={onChange}
-      className="w-full bg-slate-50/50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-600/50 px-5 py-3.5 rounded-2xl outline-none focus:border-pink-300 dark:focus:border-pink-900/50 transition-all font-bold text-sm text-slate-900 dark:text-slate-100 cursor-pointer appearance-none"
+      className="w-full bg-slate-50/50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-600/50 px-5 py-3.5 rounded-[3rem] outline-none focus:border-pink-300 dark:focus:border-pink-900/50 transition-all font-bold text-sm text-slate-900 dark:text-slate-100 cursor-pointer appearance-none"
     >
       <option value="">Select Variant</option>
       {options.map(opt => <option key={opt} value={opt}>{opt}</option>)}

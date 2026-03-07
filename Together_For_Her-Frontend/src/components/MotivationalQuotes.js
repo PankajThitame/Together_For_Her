@@ -19,7 +19,7 @@ const MotivationalQuotes = () => {
 
   return (
     <div className="flex flex-col items-center justify-center space-y-4 py-6 px-4 text-center">
-      <div className="bg-pink-500/10 p-3 rounded-2xl mb-2">
+      <div className="bg-pink-500/10 p-3 rounded-[3rem] mb-2">
         <span className="text-2xl italic font-black text-pink-500 font-serif">"</span>
       </div>
       <p className="text-2xl md:text-3xl font-black text-slate-900 dark:text-white italic tracking-tight leading-tight max-w-sm">

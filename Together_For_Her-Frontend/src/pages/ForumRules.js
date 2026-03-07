@@ -38,7 +38,7 @@ const ForumRules = () => {
 
             <div className="grid sm:grid-cols-2 gap-6">
               {primaryRules.map((rule, idx) => (
-                <div key={idx} className="flex items-center gap-4 p-6 bg-pink-50/30 rounded-2xl border border-pink-50/50 group hover:bg-white transition-all cursor-default">
+                <div key={idx} className="flex items-center gap-4 p-6 bg-pink-50/30 rounded-[3rem] border border-pink-50/50 group hover:bg-white transition-all cursor-default">
                   <div className="text-xl shrink-0 transform group-hover:scale-110 transition-transform">
                     {rule.icon}
                   </div>
@@ -59,7 +59,7 @@ const ForumRules = () => {
             </div>
 
             {expanded && (
-              <div className="animate-slideUp bg-slate-50 p-8 rounded-[2rem] border border-slate-100">
+              <div className="animate-slideUp bg-slate-50 p-8 rounded-[3rem] border border-slate-100">
                 <div className="flex items-center gap-3 mb-8">
                   <FaShieldAlt className="text-slate-400" />
                   <h3 className="text-sm font-black uppercase tracking-widest text-slate-500">Enhanced Protections</h3>

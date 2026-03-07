@@ -85,7 +85,7 @@ const ManageContent = () => {
                         <input
                             type="text"
                             placeholder="Search by title or author..."
-                            className="pl-11 pr-6 py-3 bg-white dark:bg-slate-800 border-none rounded-2xl text-xs font-bold outline-none ring-1 ring-slate-200 dark:ring-slate-700 focus:ring-2 focus:ring-pink-500 transition-all w-64"
+                            className="pl-11 pr-6 py-3 bg-white dark:bg-slate-800 border-none rounded-[3rem] text-xs font-bold outline-none ring-1 ring-slate-200 dark:ring-slate-700 focus:ring-2 focus:ring-pink-500 transition-all w-64"
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                         />
@@ -93,7 +93,7 @@ const ManageContent = () => {
 
                     <div className="relative">
                         <select
-                            className="appearance-none pl-6 pr-10 py-3 bg-white dark:bg-slate-800 border-none rounded-2xl text-[10px] font-black uppercase tracking-widest outline-none ring-1 ring-slate-200 dark:ring-slate-700 focus:ring-2 focus:ring-pink-500 transition-all cursor-pointer"
+                            className="appearance-none pl-6 pr-10 py-3 bg-white dark:bg-slate-800 border-none rounded-[3rem] text-[10px] font-black uppercase tracking-widest outline-none ring-1 ring-slate-200 dark:ring-slate-700 focus:ring-2 focus:ring-pink-500 transition-all cursor-pointer"
                             value={statusFilter}
                             onChange={(e) => setStatusFilter(e.target.value)}
                         >
@@ -106,7 +106,7 @@ const ManageContent = () => {
                 </div>
             </div>
 
-            <div className="bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl rounded-[2.5rem] border border-pink-200/50 dark:border-slate-500/20 shadow-2xl overflow-hidden">
+            <div className="bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl rounded-[3rem] border border-pink-200/50 dark:border-slate-500/20 shadow-2xl overflow-hidden">
                 <table className="w-full text-left">
                     <thead>
                         <tr className="border-b border-slate-100 dark:border-slate-500/50">
@@ -120,7 +120,7 @@ const ManageContent = () => {
                         {filteredList.map((item) => (
                             <tr key={item.id} className="group hover:bg-white/50 dark:hover:bg-slate-700/20 transition-all">
                                 <td className="px-8 py-6">
-                                    <div className="w-20 h-12 rounded-xl bg-slate-100 dark:bg-slate-900 overflow-hidden shadow-inner flex items-center justify-center">
+                                    <div className="w-20 h-12 rounded-[3rem] bg-slate-100 dark:bg-slate-900 overflow-hidden shadow-inner flex items-center justify-center">
                                         {item.fileType?.startsWith("image/") ? (
                                             <img src={`${API_BASE_URL}/upload/${item.filePath.split(/[/\\]/).pop()}`} alt="" className="w-full h-full object-cover" />
                                         ) : (
@@ -143,14 +143,14 @@ const ManageContent = () => {
                                     <div className="flex items-center justify-end gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
                                         <button
                                             onClick={() => window.open(`${API_BASE_URL}/upload/${item.filePath.split(/[/\\]/).pop()}`, '_blank')}
-                                            className="w-10 h-10 bg-slate-100 dark:bg-slate-700 text-slate-500 rounded-xl flex items-center justify-center hover:bg-pink-500 hover:text-white transition-all shadow-sm"
+                                            className="w-10 h-10 bg-slate-100 dark:bg-slate-700 text-slate-500 rounded-[3rem] flex items-center justify-center hover:bg-pink-500 hover:text-white transition-all shadow-sm"
                                             title="View File"
                                         >
                                             <FaExternalLinkAlt size={12} />
                                         </button>
                                         <button
                                             onClick={() => handleDelete(item.id)}
-                                            className="w-10 h-10 bg-rose-500/10 text-rose-500 rounded-xl flex items-center justify-center hover:bg-rose-500 hover:text-white transition-all shadow-sm"
+                                            className="w-10 h-10 bg-rose-500/10 text-rose-500 rounded-[3rem] flex items-center justify-center hover:bg-rose-500 hover:text-white transition-all shadow-sm"
                                             title="Delete Content"
                                         >
                                             <FaTrash size={12} />

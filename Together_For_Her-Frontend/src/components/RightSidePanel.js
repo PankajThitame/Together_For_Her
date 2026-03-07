@@ -40,7 +40,7 @@ const RightSidePanel = () => {
     <div className="flex flex-col h-full gap-8 animate-fadeIn">
       {/* Header */}
       <div className="flex items-center gap-4 mb-2">
-        <div className="w-12 h-12 rounded-2xl bg-pink-50 dark:bg-pink-900/20 flex items-center justify-center text-pink-500 shadow-sm border border-pink-100/50">
+        <div className="w-12 h-12 rounded-[3rem] bg-pink-50 dark:bg-pink-900/20 flex items-center justify-center text-pink-500 shadow-sm border border-pink-100/50">
           <FaNewspaper size={18} />
         </div>
         <div>
@@ -58,7 +58,7 @@ const RightSidePanel = () => {
         ref={newsRef}
       >
         {news.length === 0 ? (
-          <div className="flex flex-col items-center justify-center py-20 text-slate-400 bg-white/40 dark:bg-slate-800/20 rounded-3xl border border-pink-200/50 dark:border-slate-500/20">
+          <div className="flex flex-col items-center justify-center py-20 text-slate-400 bg-white/40 dark:bg-slate-800/20 rounded-[3rem] border border-pink-200/50 dark:border-slate-500/20">
             <div className="w-8 h-8 rounded-full border-2 border-pink-100 border-t-pink-500 animate-spin mb-4" />
             <p className="text-[10px] font-bold uppercase tracking-widest opacity-50">Syncing Intelligence...</p>
           </div>
@@ -71,18 +71,18 @@ const RightSidePanel = () => {
               rel="noopener noreferrer"
               className="block group"
             >
-              <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-md border border-pink-100/50 dark:border-pink-900/30 p-4 rounded-2xl transition-all duration-500 hover:shadow-xl hover:shadow-pink-200/40 dark:hover:shadow-pink-500/10 hover:border-pink-300/50 hover:-translate-y-1 flex gap-4 group/card">
+              <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-md border border-pink-100/50 dark:border-pink-900/30 p-4 rounded-[3rem] transition-all duration-500 hover:shadow-xl hover:shadow-pink-200/40 dark:hover:shadow-pink-500/10 hover:border-pink-300/50 hover:-translate-y-1 flex gap-4 group/card">
                 {article.urlToImage ? (
                   <div className="relative shrink-0">
                     <img
                       src={article.urlToImage}
                       alt=""
-                      className="w-16 h-16 rounded-xl object-cover transition-transform duration-700 group-hover/card:scale-110 shadow-md"
+                      className="w-16 h-16 rounded-[3rem] object-cover transition-transform duration-700 group-hover/card:scale-110 shadow-md"
                     />
-                    <div className="absolute inset-0 rounded-xl ring-1 ring-inset ring-black/5" />
+                    <div className="absolute inset-0 rounded-[3rem] ring-1 ring-inset ring-black/5" />
                   </div>
                 ) : (
-                  <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-pink-50 to-rose-50 dark:from-pink-900/40 dark:to-rose-900/40 flex items-center justify-center text-pink-300 shrink-0 border border-pink-100 dark:border-pink-800">
+                  <div className="w-16 h-16 rounded-[3rem] bg-gradient-to-br from-pink-50 to-rose-50 dark:from-pink-900/40 dark:to-rose-900/40 flex items-center justify-center text-pink-300 shrink-0 border border-pink-100 dark:border-pink-800">
                     <FaNewspaper size={20} />
                   </div>
                 )}

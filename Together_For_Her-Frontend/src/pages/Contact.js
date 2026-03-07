@@ -23,7 +23,7 @@ function Contact() {
       <div className="grid lg:grid-cols-5 gap-12 items-start max-w-7xl mx-auto px-4">
         {/* Contact Form Portal */}
         <div className="lg:col-span-3">
-          <Card className="p-8 md:p-12 rounded-[2.5rem] relative overflow-hidden bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl border border-pink-200/50 dark:border-slate-500/20 shadow-2xl">
+          <Card className="p-8 md:p-12 rounded-[3rem] relative overflow-hidden bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl border border-pink-200/50 dark:border-slate-500/20 shadow-2xl">
             <div className="absolute top-0 right-0 w-64 h-64 bg-pink-500/5 rounded-full blur-3xl -mr-12 -mt-12 pointer-events-none"></div>
             <form className="space-y-8 relative z-10">
               <div className="grid md:grid-cols-2 gap-8">
@@ -51,12 +51,12 @@ function Contact() {
                 <textarea
                   rows="6"
                   placeholder="Share your thoughts with the community guardians..."
-                  className="w-full p-4 bg-white/60 dark:bg-slate-900/60 border border-pink-300 dark:border-slate-500 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 transition-all duration-200 outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-500 resize-none font-medium italic"
+                  className="w-full p-4 bg-white/60 dark:bg-slate-900/60 border border-pink-300 dark:border-slate-500 rounded-[3rem] text-gray-900 dark:text-white placeholder-gray-400 transition-all duration-200 outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-500 resize-none font-medium italic"
                   required
                 ></textarea>
               </div>
               <Button
-                className="w-full md:w-auto h-14 px-10 rounded-xl font-black text-xs uppercase tracking-[0.2em] shadow-lg hover:translate-y-[-2px] gap-3 bg-gradient-to-r from-pink-500 to-rose-600 border-none"
+                className="w-full md:w-auto h-14 px-10 rounded-[3rem] font-black text-xs uppercase tracking-[0.2em] shadow-lg hover:translate-y-[-2px] gap-3 bg-gradient-to-r from-pink-500 to-rose-600 border-none"
               >
                 Send Message <FaPaperPlane size={14} className="opacity-80" />
               </Button>
@@ -66,7 +66,7 @@ function Contact() {
 
         {/* Info Grid Sidebar */}
         <div className="lg:col-span-2 space-y-8">
-          <Card className="p-10 rounded-[2.5rem] space-y-10 bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl border border-pink-200/50 dark:border-slate-500/20 shadow-xl">
+          <Card className="p-10 rounded-[3rem] space-y-10 bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl border border-pink-200/50 dark:border-slate-500/20 shadow-xl">
             <h3 className="text-2xl font-black italic tracking-tight border-b border-slate-100 dark:border-slate-600/50 pb-6">Direct Channels<span className="text-pink-500">.</span></h3>
 
             <div className="space-y-8">
@@ -76,7 +76,7 @@ function Contact() {
                 { icon: <FaMapMarkerAlt />, title: "The Sanctuary", detail: "Pune Hub, MH 411045", color: "text-purple-600 bg-purple-100 dark:bg-purple-900/20" }
               ].map((item, idx) => (
                 <div key={idx} className="flex gap-5 group items-start">
-                  <div className={`${item.color} w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-sm`}>
+                  <div className={`${item.color} w-14 h-14 rounded-[3rem] flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-sm`}>
                     {React.cloneElement(item.icon, { size: 20 })}
                   </div>
                   <div>
@@ -88,17 +88,17 @@ function Contact() {
             </div>
           </Card>
 
-          <div className="bg-slate-900 dark:bg-slate-950 rounded-[2.5rem] p-10 text-white shadow-2xl relative overflow-hidden group/sos">
+          <div className="bg-slate-900 dark:bg-slate-950 rounded-[3rem] p-10 text-white shadow-2xl relative overflow-hidden group/sos">
             <div className="absolute top-0 right-0 w-32 h-32 bg-pink-500/20 rounded-full blur-3xl"></div>
             <div className="relative z-10">
-              <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-6 text-white">
+              <div className="w-12 h-12 bg-white/10 rounded-[3rem] flex items-center justify-center mb-6 text-white">
                 <FaHeadset size={24} />
               </div>
               <h3 className="text-2xl font-black italic mb-3">SOS Support?</h3>
               <p className="text-slate-400 font-medium mb-8 leading-relaxed text-sm">
                 Our sanctuary helpline is active 24/7 for critical emergencies. You are never alone.
               </p>
-              <button className="w-full h-12 bg-white text-slate-900 rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-pink-50 transition-all shadow-lg flex items-center justify-center gap-2">
+              <button className="w-full h-12 bg-white text-slate-900 rounded-[3rem] font-black text-[10px] uppercase tracking-widest hover:bg-pink-50 transition-all shadow-lg flex items-center justify-center gap-2">
                 Call Guardians Now
               </button>
             </div>

@@ -34,7 +34,7 @@ const KitDistribution = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* Form Section */}
-                <div className="md:col-span-2 bg-white/60 dark:bg-slate-800/60 backdrop-blur-2xl p-8 rounded-[2.5rem] border border-pink-300/70 dark:border-slate-500/50 shadow-xl relative overflow-hidden">
+                <div className="md:col-span-2 bg-white/60 dark:bg-slate-800/60 backdrop-blur-2xl p-8 rounded-[3rem] border border-pink-300/70 dark:border-slate-500/50 shadow-xl relative overflow-hidden">
                     {submitted && (
                         <div className="absolute inset-0 z-10 bg-emerald-500/90 backdrop-blur-sm flex flex-col items-center justify-center text-white animate-fadeIn">
                             <FaCheckCircle className="text-6xl mb-4 drop-shadow-lg" />
@@ -55,7 +55,7 @@ const KitDistribution = () => {
                                         value={formData.recipientName}
                                         onChange={handleChange}
                                         required
-                                        className="w-full pl-10 pr-4 py-3.5 bg-white/50 dark:bg-slate-900/50 border border-white dark:border-slate-600 rounded-xl font-bold text-slate-700 dark:text-slate-200 outline-none focus:ring-2 focus:ring-pink-500 transition-all"
+                                        className="w-full pl-10 pr-4 py-3.5 bg-white/50 dark:bg-slate-900/50 border border-white dark:border-slate-600 rounded-[3rem] font-bold text-slate-700 dark:text-slate-200 outline-none focus:ring-2 focus:ring-pink-500 transition-all"
                                         placeholder="Jane Doe"
                                     />
                                 </div>
@@ -71,7 +71,7 @@ const KitDistribution = () => {
                                         value={formData.kitId}
                                         onChange={handleChange}
                                         required
-                                        className="w-full pl-10 pr-4 py-3.5 bg-white/50 dark:bg-slate-900/50 border border-white dark:border-slate-600 rounded-xl font-bold text-slate-700 dark:text-slate-200 outline-none focus:ring-2 focus:ring-pink-500 transition-all"
+                                        className="w-full pl-10 pr-4 py-3.5 bg-white/50 dark:bg-slate-900/50 border border-white dark:border-slate-600 rounded-[3rem] font-bold text-slate-700 dark:text-slate-200 outline-none focus:ring-2 focus:ring-pink-500 transition-all"
                                         placeholder="KIT-2024-XXXX"
                                     />
                                 </div>
@@ -86,7 +86,7 @@ const KitDistribution = () => {
                                 value={formData.location}
                                 onChange={handleChange}
                                 required
-                                className="w-full px-4 py-3.5 bg-white/50 dark:bg-slate-900/50 border border-white dark:border-slate-600 rounded-xl font-bold text-slate-700 dark:text-slate-200 outline-none focus:ring-2 focus:ring-pink-500 transition-all"
+                                className="w-full px-4 py-3.5 bg-white/50 dark:bg-slate-900/50 border border-white dark:border-slate-600 rounded-[3rem] font-bold text-slate-700 dark:text-slate-200 outline-none focus:ring-2 focus:ring-pink-500 transition-all"
                                 placeholder="Sector 4, Community Center"
                             />
                         </div>
@@ -98,14 +98,14 @@ const KitDistribution = () => {
                                 value={formData.notes}
                                 onChange={handleChange}
                                 rows="3"
-                                className="w-full px-4 py-3.5 bg-white/50 dark:bg-slate-900/50 border border-white dark:border-slate-600 rounded-xl font-medium text-slate-700 dark:text-slate-200 outline-none focus:ring-2 focus:ring-pink-500 transition-all resize-none"
+                                className="w-full px-4 py-3.5 bg-white/50 dark:bg-slate-900/50 border border-white dark:border-slate-600 rounded-[3rem] font-medium text-slate-700 dark:text-slate-200 outline-none focus:ring-2 focus:ring-pink-500 transition-all resize-none"
                                 placeholder="Recipient requested follow-up..."
                             ></textarea>
                         </div>
 
                         <button
                             type="submit"
-                            className="w-full py-4 bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 text-white rounded-xl font-black uppercase tracking-widest shadow-lg shadow-pink-500/30 transition-all transform hover:scale-[1.02]"
+                            className="w-full py-4 bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 text-white rounded-[3rem] font-black uppercase tracking-widest shadow-lg shadow-pink-500/30 transition-all transform hover:scale-[1.02]"
                         >
                             Log Distribution
                         </button>
@@ -114,18 +114,18 @@ const KitDistribution = () => {
 
                 {/* Stats / Info Section */}
                 <div className="space-y-6">
-                    <div className="bg-gradient-to-br from-emerald-400 to-teal-500 p-6 rounded-[2.5rem] text-white shadow-xl relative overflow-hidden group">
+                    <div className="bg-gradient-to-br from-emerald-400 to-teal-500 p-6 rounded-[3rem] text-white shadow-xl relative overflow-hidden group">
                         <FaBoxOpen className="absolute -bottom-5 -right-5 text-9xl opacity-20 group-hover:scale-110 transition-transform duration-700" />
                         <div className="relative z-10">
                             <h3 className="text-lg font-black uppercase tracking-wide opacity-90 mb-2">Total Distributed</h3>
                             <div className="text-6xl font-black tracking-tighter mb-2">128</div>
-                            <p className="font-bold text-sm bg-white/20 inline-block px-3 py-1 rounded-lg backdrop-blur-md">
+                            <p className="font-bold text-sm bg-white/20 inline-block px-3 py-1 rounded-[3rem] backdrop-blur-md">
                                 +12 this week
                             </p>
                         </div>
                     </div>
 
-                    <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-6 rounded-[2.5rem] border border-pink-300/70 dark:border-slate-500/50 shadow-xl">
+                    <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-6 rounded-[3rem] border border-pink-300/70 dark:border-slate-500/50 shadow-xl">
                         <h3 className="text-slate-800 dark:text-white font-black text-lg mb-4 flex items-center gap-2">
                             <FaClipboardList className="text-pink-500" /> Recent Logs
                         </h3>

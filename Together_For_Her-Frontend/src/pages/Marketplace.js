@@ -63,14 +63,14 @@ const Marketplace = () => {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
               {products.map((item, index) => (
-                <div key={index} className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl rounded-[2.5rem] border border-pink-200/50 dark:border-slate-500/20 overflow-hidden hover:shadow-2xl transition-all duration-500">
+                <div key={index} className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl rounded-[3rem] border border-pink-200/50 dark:border-slate-500/20 overflow-hidden hover:shadow-2xl transition-all duration-500">
                   <div className="aspect-square relative p-8 flex items-center justify-center group-hover:scale-105 transition-transform duration-700">
                     <img
                       src={item.imageUrl}
                       alt={item.productName}
                       className="w-full h-full object-contain mix-blend-multiply dark:mix-blend-normal"
                     />
-                    <div className="absolute top-6 right-6 bg-white/90 dark:bg-slate-900/90 p-3 rounded-2xl shadow-lg">
+                    <div className="absolute top-6 right-6 bg-white/90 dark:bg-slate-900/90 p-3 rounded-[3rem] shadow-lg">
                       <FaTag className="text-pink-600" size={14} />
                     </div>
                   </div>
@@ -91,7 +91,7 @@ const Marketplace = () => {
                     </div>
                     <button
                       onClick={() => handleAddToCart(item)}
-                      className="w-full h-14 bg-slate-900 text-white rounded-[1.5rem] font-black text-xs uppercase tracking-[0.2em] hover:bg-pink-500 transition-all active:scale-95 shadow-xl"
+                      className="w-full h-14 bg-slate-900 text-white rounded-[2rem] font-black text-xs uppercase tracking-[0.2em] hover:bg-pink-500 transition-all active:scale-95 shadow-xl"
                     >
                       Add to Collection
                     </button>
@@ -113,7 +113,7 @@ const Marketplace = () => {
             </div>
 
             {cart.length === 0 ? (
-              <div className="text-center py-16 bg-slate-50/50 dark:bg-slate-900/30 rounded-[2.5rem] space-y-4">
+              <div className="text-center py-16 bg-slate-50/50 dark:bg-slate-900/30 rounded-[3rem] space-y-4">
                 <FaShoppingBag className="text-5xl text-slate-200 dark:text-slate-700 mx-auto" />
                 <p className="text-xs text-slate-400 font-black uppercase tracking-[0.3em] italic">Your curations are pending...</p>
               </div>
@@ -121,15 +121,15 @@ const Marketplace = () => {
               <div className="grid md:grid-cols-2 gap-12 divide-y md:divide-y-0 md:divide-x divide-slate-100 dark:divide-slate-800/50">
                 <div className="space-y-6 max-h-[400px] overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-pink-500/20 scrollbar-track-transparent">
                   {cart.map((item, index) => (
-                    <div key={index} className="flex gap-6 items-center p-4 rounded-[2rem] hover:bg-white/40 dark:hover:bg-slate-900/40 transition-all">
-                      <div className="w-20 h-20 bg-white dark:bg-slate-900 rounded-2xl p-3 shrink-0 shadow-lg">
+                    <div key={index} className="flex gap-6 items-center p-4 rounded-[3rem] hover:bg-white/40 dark:hover:bg-slate-900/40 transition-all">
+                      <div className="w-20 h-20 bg-white dark:bg-slate-900 rounded-[3rem] p-3 shrink-0 shadow-lg">
                         <img src={item.imageUrl} alt="" className="w-full h-full object-contain mix-blend-multiply dark:mix-blend-normal" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <h4 className="text-sm font-black italic tracking-tight truncate">{item.productName}</h4>
                         <div className="flex items-center gap-2 mt-2">
                           <span className="text-pink-600 font-black text-sm italic">₹{item.price}</span>
-                          <span className="text-[10px] text-slate-400 font-bold uppercase tracking-widest px-2 py-1 bg-slate-100 dark:bg-slate-900 rounded-lg">Verified Item</span>
+                          <span className="text-[10px] text-slate-400 font-bold uppercase tracking-widest px-2 py-1 bg-slate-100 dark:bg-slate-900 rounded-[3rem]">Verified Item</span>
                         </div>
                       </div>
                     </div>

@@ -44,7 +44,7 @@ const SidePanel = ({ isOpen, setIsOpen }) => {
       {/* Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="absolute -right-4 top-12 bg-white dark:bg-slate-800 text-pink-500 p-2 rounded-xl shadow-lg hover:bg-pink-50 dark:hover:bg-slate-700 border border-pink-100 dark:border-slate-500 transition-all z-[100] group/btn"
+        className="absolute -right-4 top-12 bg-white dark:bg-slate-800 text-pink-500 p-2 rounded-[3rem] shadow-lg hover:bg-pink-50 dark:hover:bg-slate-700 border border-pink-100 dark:border-slate-500 transition-all z-[100] group/btn"
       >
         <div className="group-hover/btn:scale-125 transition-transform">
           {isOpen ? <FaChevronLeft size={12} /> : <FaChevronRight size={12} />}
@@ -59,7 +59,7 @@ const SidePanel = ({ isOpen, setIsOpen }) => {
             <div className="h-1 w-10 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full" />
           </div>
         ) : (
-          <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-pink-500/10 to-rose-500/10 flex items-center justify-center">
+          <div className="w-10 h-10 rounded-[3rem] bg-gradient-to-br from-pink-500/10 to-rose-500/10 flex items-center justify-center">
             <div className="w-1.5 h-1.5 bg-pink-500 rounded-full animate-pulse" />
           </div>
         )}
@@ -71,7 +71,7 @@ const SidePanel = ({ isOpen, setIsOpen }) => {
           <Link
             key={item.to}
             to={item.to}
-            className={`flex items-center gap-4 px-5 py-3.5 rounded-2xl transition-all duration-300 group ${location.pathname === item.to
+            className={`flex items-center gap-4 px-5 py-3.5 rounded-[3rem] transition-all duration-300 group ${location.pathname === item.to
               ? "bg-gradient-to-r from-[#ec4899] to-[#f472b6] text-white shadow-lg shadow-pink-200/50"
               : "text-slate-500 dark:text-slate-400 hover:bg-[#fce7f3] dark:hover:bg-pink-900/20 hover:text-[#ec4899]"
               }`}
@@ -86,7 +86,7 @@ const SidePanel = ({ isOpen, setIsOpen }) => {
               </span>
             )}
             {!isOpen && (
-              <div className="absolute left-24 bg-slate-900 text-white text-[10px] font-black px-3 py-2 rounded-xl opacity-0 group-hover:opacity-100 pointer-events-none transition-all uppercase tracking-widest whitespace-nowrap z-50">
+              <div className="absolute left-24 bg-slate-900 text-white text-[10px] font-black px-3 py-2 rounded-[3rem] opacity-0 group-hover:opacity-100 pointer-events-none transition-all uppercase tracking-widest whitespace-nowrap z-50">
                 {item.label}
               </div>
             )}
@@ -106,7 +106,7 @@ const SidePanel = ({ isOpen, setIsOpen }) => {
               <Link
                 key={item.to}
                 to={item.to}
-                className={`flex items-center gap-4 px-5 py-3.5 rounded-2xl transition-all duration-300 group ${location.pathname === item.to
+                className={`flex items-center gap-4 px-5 py-3.5 rounded-[3rem] transition-all duration-300 group ${location.pathname === item.to
                   ? "bg-slate-900 text-white shadow-xl"
                   : "text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
                   }`}
@@ -125,11 +125,11 @@ const SidePanel = ({ isOpen, setIsOpen }) => {
 
       {/* User Status Card */}
       <div className="p-6 mt-auto">
-        <div className={`p-4 rounded-[1.5rem] ${isOpen ? "bg-white/40 dark:bg-slate-800/40 border border-pink-200/50 dark:border-slate-500/20 shadow-sm" : "bg-transparent"
+        <div className={`p-4 rounded-[2rem] ${isOpen ? "bg-white/40 dark:bg-slate-800/40 border border-pink-200/50 dark:border-slate-500/20 shadow-sm" : "bg-transparent"
           } transition-all`}>
           {isOpen ? (
             <div className="flex items-center gap-4">
-              <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center text-white text-xs font-black shadow-lg shadow-pink-200 overflow-hidden">
+              <div className="w-10 h-10 rounded-[3rem] bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center text-white text-xs font-black shadow-lg shadow-pink-200 overflow-hidden">
                 {user?.profilePhoto ? (
                   <img src={getProfileImageUrl(user.profilePhoto)} alt="Profile" className="w-full h-full object-cover" />
                 ) : initials}
@@ -140,7 +140,7 @@ const SidePanel = ({ isOpen, setIsOpen }) => {
               </div>
             </div>
           ) : (
-            <div className="w-10 h-10 rounded-2xl bg-pink-100/50 dark:bg-slate-800/50 flex items-center justify-center text-pink-600 text-xs font-black mx-auto border border-pink-200/20 overflow-hidden">
+            <div className="w-10 h-10 rounded-[3rem] bg-pink-100/50 dark:bg-slate-800/50 flex items-center justify-center text-pink-600 text-xs font-black mx-auto border border-pink-200/20 overflow-hidden">
               {user?.profilePhoto ? (
                 <img src={getProfileImageUrl(user.profilePhoto)} alt="Profile" className="w-full h-full object-cover" />
               ) : initials}

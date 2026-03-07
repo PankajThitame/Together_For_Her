@@ -24,7 +24,7 @@ const Terms = () => {
 
             <div className="grid gap-12">
               <div className="flex gap-6 group">
-                <div className="w-14 h-14 shrink-0 bg-pink-50 rounded-2xl flex items-center justify-center text-pink-600 shadow-sm group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 shrink-0 bg-pink-50 rounded-[3rem] flex items-center justify-center text-pink-600 shadow-sm group-hover:scale-110 transition-transform">
                   <FaUserCheck size={24} />
                 </div>
                 <div>
@@ -36,7 +36,7 @@ const Terms = () => {
               </div>
 
               <div className="flex gap-6 group">
-                <div className="w-14 h-14 shrink-0 bg-rose-50 rounded-2xl flex items-center justify-center text-rose-600 shadow-sm group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 shrink-0 bg-rose-50 rounded-[3rem] flex items-center justify-center text-rose-600 shadow-sm group-hover:scale-110 transition-transform">
                   <FaShieldAlt size={24} />
                 </div>
                 <div>
@@ -48,14 +48,14 @@ const Terms = () => {
               </div>
 
               <div className="flex gap-6 group">
-                <div className="w-14 h-14 shrink-0 bg-slate-100 rounded-2xl flex items-center justify-center text-slate-600 shadow-sm group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 shrink-0 bg-slate-100 rounded-[3rem] flex items-center justify-center text-slate-600 shadow-sm group-hover:scale-110 transition-transform">
                   <FaExclamationTriangle size={24} />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2 tracking-tight uppercase tracking-widest text-xs font-black text-slate-600">3. Prohibited Conduct</h3>
                   <ul className="grid sm:grid-cols-2 gap-3 mt-4">
                     {["Spamming & Hacking", "Misinformation", "Harassment", "Illegal Activities"].map((item, idx) => (
-                      <li key={idx} className="flex items-center gap-3 text-sm text-gray-500 bg-slate-50 px-4 py-2 rounded-lg font-bold">
+                      <li key={idx} className="flex items-center gap-3 text-sm text-gray-500 bg-slate-50 px-4 py-2 rounded-[3rem] font-bold">
                         <div className="w-1.5 h-1.5 rounded-full bg-slate-300" /> {item}
                       </li>
                     ))}
@@ -64,7 +64,7 @@ const Terms = () => {
               </div>
 
               <div className="flex gap-6 group">
-                <div className="w-14 h-14 shrink-0 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 shadow-sm group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 shrink-0 bg-purple-50 rounded-[3rem] flex items-center justify-center text-purple-600 shadow-sm group-hover:scale-110 transition-transform">
                   <FaSyncAlt size={24} />
                 </div>
                 <div>

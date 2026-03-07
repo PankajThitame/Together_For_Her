@@ -29,7 +29,7 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="px-4 py-2 rounded-md text-sm font-medium bg-white text-black dark:bg-black dark:text-white hover:scale-105 transition-transform shadow"
+      className="px-4 py-2 rounded-[3rem] text-sm font-medium bg-white text-black dark:bg-black dark:text-white hover:scale-105 transition-transform shadow"
     >
       {darkMode ? "🌞 Light Mode" : "🌙 Dark Mode"}
     </button>

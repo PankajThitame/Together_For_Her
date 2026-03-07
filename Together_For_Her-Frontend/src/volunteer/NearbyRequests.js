@@ -55,17 +55,17 @@ const NearbyRequests = () => {
                     <p className="text-slate-500 dark:text-slate-400 font-bold">Find and help women in need near you.</p>
                 </div>
 
-                <div className="flex bg-white/50 dark:bg-slate-800/50 backdrop-blur-md p-1 rounded-xl border border-pink-200/50 dark:border-slate-500/50">
+                <div className="flex bg-white/50 dark:bg-slate-800/50 backdrop-blur-md p-1 rounded-[3rem] border border-pink-200/50 dark:border-slate-500/50">
                     <button
                         onClick={() => setViewMode("map")}
-                        className={`px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-all ${viewMode === "map" ? "bg-pink-500 text-white shadow-lg" : "text-slate-500 hover:text-pink-500"
+                        className={`px-4 py-2 rounded-[3rem] text-sm font-bold flex items-center gap-2 transition-all ${viewMode === "map" ? "bg-pink-500 text-white shadow-lg" : "text-slate-500 hover:text-pink-500"
                             }`}
                     >
                         <FaMapMarkedAlt /> Map View
                     </button>
                     <button
                         onClick={() => setViewMode("list")}
-                        className={`px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-all ${viewMode === "list" ? "bg-pink-500 text-white shadow-lg" : "text-slate-500 hover:text-pink-500"
+                        className={`px-4 py-2 rounded-[3rem] text-sm font-bold flex items-center gap-2 transition-all ${viewMode === "list" ? "bg-pink-500 text-white shadow-lg" : "text-slate-500 hover:text-pink-500"
                             }`}
                     >
                         <FaListUl /> List View
@@ -73,7 +73,7 @@ const NearbyRequests = () => {
                 </div>
             </div>
 
-            <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl rounded-[2.5rem] border border-pink-300/70 dark:border-slate-500/50 shadow-xl overflow-hidden min-h-[500px] relative">
+            <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl rounded-[3rem] border border-pink-300/70 dark:border-slate-500/50 shadow-xl overflow-hidden min-h-[500px] relative">
                 {loading ? (
                     <div className="flex items-center justify-center h-full text-slate-400 font-bold">Finding requests...</div>
                 ) : viewMode === "map" ? (
@@ -93,10 +93,10 @@ const NearbyRequests = () => {
                                         <div className="p-2 min-w-[200px]">
                                             <h3 className="font-bold text-slate-800 mb-1">{req.user?.name || "Anonymous User"}</h3>
                                             <p className="text-xs text-slate-500 mb-2">{req.address}</p>
-                                            <div className="text-xs bg-pink-50 text-pink-600 p-2 rounded-lg mb-3 italic">"{req.reason}"</div>
+                                            <div className="text-xs bg-pink-50 text-pink-600 p-2 rounded-[3rem] mb-3 italic">"{req.reason}"</div>
                                             <button
                                                 onClick={() => handleAccept(req.id)}
-                                                className="w-full bg-slate-900 text-white py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider hover:bg-pink-600 transition-colors"
+                                                className="w-full bg-slate-900 text-white py-1.5 rounded-[3rem] text-xs font-bold uppercase tracking-wider hover:bg-pink-600 transition-colors"
                                             >
                                                 Accept Task
                                             </button>
@@ -109,7 +109,7 @@ const NearbyRequests = () => {
                 ) : (
                     <div className="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {requests.map(req => (
-                            <div key={req.id} className="bg-white/80 dark:bg-slate-900/80 p-6 rounded-3xl border border-pink-300/70 dark:border-slate-500 hover:shadow-lg transition-all group">
+                            <div key={req.id} className="bg-white/80 dark:bg-slate-900/80 p-6 rounded-[3rem] border border-pink-300/70 dark:border-slate-500 hover:shadow-lg transition-all group">
                                 <div className="flex justify-between items-start mb-4">
                                     <div className="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-500">
                                         <FaUser />
@@ -121,13 +121,13 @@ const NearbyRequests = () => {
                                 <h3 className="font-bold text-slate-800 dark:text-slate-200 text-lg mb-1">{req.user?.name || "Request #" + req.id}</h3>
                                 <p className="text-slate-500 text-sm mb-4 line-clamp-1">{req.address}</p>
 
-                                <div className="mb-6 p-3 bg-slate-50 dark:bg-slate-800 rounded-xl text-xs text-slate-600 dark:text-slate-400 italic">
+                                <div className="mb-6 p-3 bg-slate-50 dark:bg-slate-800 rounded-[3rem] text-xs text-slate-600 dark:text-slate-400 italic">
                                     "{req.reason}"
                                 </div>
 
                                 <button
                                     onClick={() => handleAccept(req.id)}
-                                    className="w-full py-3 bg-gradient-to-r from-slate-800 to-slate-900 hover:from-pink-500 hover:to-rose-600 text-white rounded-xl font-bold uppercase text-xs tracking-widest shadow-lg transition-all flex items-center justify-center gap-2 group-hover:scale-105"
+                                    className="w-full py-3 bg-gradient-to-r from-slate-800 to-slate-900 hover:from-pink-500 hover:to-rose-600 text-white rounded-[3rem] font-bold uppercase text-xs tracking-widest shadow-lg transition-all flex items-center justify-center gap-2 group-hover:scale-105"
                                 >
                                     <FaCheck /> Accept Request
                                 </button>

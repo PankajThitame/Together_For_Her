@@ -62,11 +62,11 @@ const VolunteerOverview = () => {
                     </div>
 
                     <div className="flex items-center gap-4">
-                        <div className="text-center bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/10 min-w-[100px]">
+                        <div className="text-center bg-white/10 backdrop-blur-md rounded-[3rem] p-4 border border-white/10 min-w-[100px]">
                             <div className="text-3xl font-black">128</div>
                             <div className="text-[10px] uppercase font-bold tracking-widest opacity-80">Total Kits</div>
                         </div>
-                        <div className="text-center bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/10 min-w-[100px]">
+                        <div className="text-center bg-white/10 backdrop-blur-md rounded-[3rem] p-4 border border-white/10 min-w-[100px]">
                             <div className="text-3xl font-black">4.9</div>
                             <div className="text-[10px] uppercase font-bold tracking-widest opacity-80">Rating</div>
                         </div>
@@ -82,9 +82,9 @@ const VolunteerOverview = () => {
                     { icon: <FaBox />, label: "Kits Available", value: "25", sub: "Restock in 4d", color: "text-emerald-500", bg: "bg-emerald-500" },
                     { icon: <FaHandsHelping />, label: "Community Hours", value: "18h", sub: "This Week", color: "text-purple-500", bg: "bg-purple-500" },
                 ].map((stat, idx) => (
-                    <div key={idx} className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-6 rounded-[2.5rem] border border-pink-300/70 dark:border-slate-500/50 shadow-xl hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 group">
+                    <div key={idx} className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-6 rounded-[3rem] border border-pink-300/70 dark:border-slate-500/50 shadow-xl hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 group">
                         <div className="flex justify-between items-start mb-4">
-                            <div className={`w-12 h-12 rounded-2xl ${stat.bg}/10 flex items-center justify-center ${stat.color} text-xl shadow-sm group-hover:scale-110 transition-transform`}>
+                            <div className={`w-12 h-12 rounded-[3rem] ${stat.bg}/10 flex items-center justify-center ${stat.color} text-xl shadow-sm group-hover:scale-110 transition-transform`}>
                                 {stat.icon}
                             </div>
                             <div className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${stat.bg}/10 ${stat.color}`}>
@@ -100,13 +100,13 @@ const VolunteerOverview = () => {
             {/* Analytics & Timeline Split */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {/* Left: Impact Chart */}
-                <div className="lg:col-span-2 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-8 rounded-[2.5rem] border border-pink-300/70 dark:border-slate-500/50 shadow-xl">
+                <div className="lg:col-span-2 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-8 rounded-[3rem] border border-pink-300/70 dark:border-slate-500/50 shadow-xl">
                     <div className="flex items-center justify-between mb-8">
                         <div>
                             <h2 className="text-2xl font-black text-slate-800 dark:text-white tracking-tight">Weekly Impact</h2>
                             <p className="text-slate-500 dark:text-slate-400 text-sm font-bold">Kits Distributed vs Hours Spent</p>
                         </div>
-                        <button className="px-5 py-2 bg-pink-50 dark:bg-pink-900/20 text-pink-600 dark:text-pink-400 rounded-xl text-xs font-black uppercase tracking-widest hover:bg-pink-100 dark:hover:bg-pink-900/30 transition-colors">
+                        <button className="px-5 py-2 bg-pink-50 dark:bg-pink-900/20 text-pink-600 dark:text-pink-400 rounded-[3rem] text-xs font-black uppercase tracking-widest hover:bg-pink-100 dark:hover:bg-pink-900/30 transition-colors">
                             View Report
                         </button>
                     </div>
@@ -134,7 +134,7 @@ const VolunteerOverview = () => {
                 </div>
 
                 {/* Right: Timeline */}
-                <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-8 rounded-[2.5rem] border border-pink-300/70 dark:border-slate-500/50 shadow-xl">
+                <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-8 rounded-[3rem] border border-pink-300/70 dark:border-slate-500/50 shadow-xl">
                     <h2 className="text-2xl font-black text-slate-800 dark:text-white tracking-tight mb-8">Recent Activity</h2>
 
                     <div className="space-y-8 relative before:absolute before:left-3.5 before:top-2 before:h-full before:w-0.5 before:bg-slate-200 dark:before:bg-slate-700">
@@ -151,7 +151,7 @@ const VolunteerOverview = () => {
                                     <h4 className="font-bold text-slate-800 dark:text-slate-200 text-sm leading-tight mb-1">{act.desc}</h4>
                                     <div className="flex items-center gap-3">
                                         <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{act.time}</span>
-                                        <span className={`text-[9px] px-2 py-0.5 rounded-md font-black uppercase tracking-widest
+                                        <span className={`text-[9px] px-2 py-0.5 rounded-[3rem] font-black uppercase tracking-widest
                       ${act.status === 'Verified' ? 'bg-emerald-100 text-emerald-600' :
                                                 act.status === 'New' ? 'bg-pink-100 text-pink-600' : 'bg-blue-100 text-blue-600'}`}>
                                             {act.status}
@@ -162,7 +162,7 @@ const VolunteerOverview = () => {
                         ))}
                     </div>
 
-                    <button className="w-full mt-8 py-4 rounded-2xl border-2 border-dashed border-slate-300 dark:border-slate-500 text-slate-400 font-bold uppercase text-xs tracking-widest hover:border-pink-500 hover:text-pink-500 transition-all">
+                    <button className="w-full mt-8 py-4 rounded-[3rem] border-2 border-dashed border-slate-300 dark:border-slate-500 text-slate-400 font-bold uppercase text-xs tracking-widest hover:border-pink-500 hover:text-pink-500 transition-all">
                         Load More History
                     </button>
                 </div>

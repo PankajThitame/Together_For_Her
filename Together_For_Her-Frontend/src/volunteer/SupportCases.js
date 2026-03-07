@@ -27,18 +27,18 @@ const SupportCases = () => {
                     <input
                         type="text"
                         placeholder="Search cases..."
-                        className="pl-10 pr-4 py-2.5 bg-white/50 dark:bg-slate-800/50 border border-white dark:border-slate-500 rounded-xl font-medium text-slate-700 dark:text-slate-200 outline-none focus:ring-2 focus:ring-pink-500 transition-all w-64"
+                        className="pl-10 pr-4 py-2.5 bg-white/50 dark:bg-slate-800/50 border border-white dark:border-slate-500 rounded-[3rem] font-medium text-slate-700 dark:text-slate-200 outline-none focus:ring-2 focus:ring-pink-500 transition-all w-64"
                     />
                 </div>
             </div>
 
             {/* Tabs */}
-            <div className="flex space-x-2 bg-white/40 dark:bg-slate-800/40 p-1.5 rounded-2xl w-fit backdrop-blur-md">
+            <div className="flex space-x-2 bg-white/40 dark:bg-slate-800/40 p-1.5 rounded-[3rem] w-fit backdrop-blur-md">
                 {["Open", "Resolved"].map(tab => (
                     <button
                         key={tab}
                         onClick={() => setActiveTab(tab)}
-                        className={`px-8 py-2.5 rounded-xl font-black text-sm uppercase tracking-widest transition-all ${activeTab === tab
+                        className={`px-8 py-2.5 rounded-[3rem] font-black text-sm uppercase tracking-widest transition-all ${activeTab === tab
                                 ? "bg-white dark:bg-slate-700 text-pink-600 shadow-lg"
                                 : "text-slate-500 dark:text-slate-400 hover:text-pink-500"
                             }`}
@@ -54,9 +54,9 @@ const SupportCases = () => {
                     <div className="text-center py-20 opacity-50 font-bold text-slate-500">No {activeTab.toLowerCase()} cases found.</div>
                 ) : (
                     filteredCases.map(ticket => (
-                        <div key={ticket.id} className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-6 rounded-[2rem] border border-pink-300/70 dark:border-slate-500/50 shadow-sm hover:shadow-xl transition-all group flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                        <div key={ticket.id} className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-6 rounded-[3rem] border border-pink-300/70 dark:border-slate-500/50 shadow-sm hover:shadow-xl transition-all group flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                             <div className="flex items-start gap-4">
-                                <div className={`w-12 h-12 rounded-2xl flex items-center justify-center text-xl shrink-0 
+                                <div className={`w-12 h-12 rounded-[3rem] flex items-center justify-center text-xl shrink-0 
                    ${ticket.priority === 'High' ? 'bg-red-100 text-red-500' :
                                         ticket.priority === 'Medium' ? 'bg-amber-100 text-amber-500' : 'bg-blue-100 text-blue-500'}`}>
                                     <FaHeadset />
@@ -65,7 +65,7 @@ const SupportCases = () => {
                                 <div>
                                     <div className="flex items-center gap-3 mb-1">
                                         <h3 className="text-lg font-black text-slate-800 dark:text-white">#{ticket.id} • {ticket.user}</h3>
-                                        <span className={`px-2 py-0.5 rounded-md text-[10px] font-black uppercase tracking-widest 
+                                        <span className={`px-2 py-0.5 rounded-[3rem] text-[10px] font-black uppercase tracking-widest 
                        ${ticket.priority === 'High' ? 'bg-red-50 text-red-600 border border-red-100' :
                                                 ticket.priority === 'Medium' ? 'bg-amber-50 text-amber-600 border border-amber-100' : 'bg-blue-50 text-blue-600 border border-blue-100'}`}>
                                             {ticket.priority} Priority
@@ -79,15 +79,15 @@ const SupportCases = () => {
                             <div className="flex gap-3 w-full md:w-auto">
                                 {ticket.status === 'Open' ? (
                                     <>
-                                        <button className="flex-1 md:flex-none px-6 py-3 bg-white dark:bg-slate-700 hover:bg-slate-50 dark:hover:bg-slate-600 border border-slate-200 dark:border-slate-600 rounded-xl font-bold text-slate-600 dark:text-slate-200 text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-all">
+                                        <button className="flex-1 md:flex-none px-6 py-3 bg-white dark:bg-slate-700 hover:bg-slate-50 dark:hover:bg-slate-600 border border-slate-200 dark:border-slate-600 rounded-[3rem] font-bold text-slate-600 dark:text-slate-200 text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-all">
                                             <FaReply /> Reply
                                         </button>
-                                        <button className="flex-1 md:flex-none px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl font-bold text-xs uppercase tracking-widest shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2 transition-all">
+                                        <button className="flex-1 md:flex-none px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white rounded-[3rem] font-bold text-xs uppercase tracking-widest shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2 transition-all">
                                             <FaCheck /> Resolve
                                         </button>
                                     </>
                                 ) : (
-                                    <button className="px-6 py-3 bg-slate-100 dark:bg-slate-800 text-slate-400 rounded-xl font-bold text-xs uppercase tracking-widest cursor-default">
+                                    <button className="px-6 py-3 bg-slate-100 dark:bg-slate-800 text-slate-400 rounded-[3rem] font-bold text-xs uppercase tracking-widest cursor-default">
                                         Resolved
                                     </button>
                                 )}

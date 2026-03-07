@@ -57,11 +57,11 @@ const RequestManagement = () => {
           <p className="text-pink-600 font-medium animate-pulse">Loading requests...</p>
         </div>
       ) : error ? (
-        <div className="bg-red-50 border border-red-100 text-red-600 px-6 py-4 rounded-2xl mb-8 flex items-center gap-3">
+        <div className="bg-red-50 border border-red-100 text-red-600 px-6 py-4 rounded-[3rem] mb-8 flex items-center gap-3">
           <span className="text-xl">⚠️</span> {error}
         </div>
       ) : (
-        <div className="overflow-hidden rounded-[2.5rem] border border-pink-300/80 dark:border-slate-500 shadow-xl bg-white/40 dark:bg-slate-800/40 backdrop-blur-md">
+        <div className="overflow-hidden rounded-[3rem] border border-pink-300/80 dark:border-slate-500 shadow-xl bg-white/40 dark:bg-slate-800/40 backdrop-blur-md">
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
@@ -110,7 +110,7 @@ const RequestManagement = () => {
                           <button
                             onClick={() => updateRequestStatus(request.request_id, "APPROVED")}
                             disabled={request.status === "APPROVED"}
-                            className="p-2.5 bg-emerald-500 text-white rounded-xl hover:bg-emerald-600 transition-all shadow-lg shadow-emerald-200 disabled:opacity-30 disabled:shadow-none translate-y-0 hover:-translate-y-1"
+                            className="p-2.5 bg-emerald-500 text-white rounded-[3rem] hover:bg-emerald-600 transition-all shadow-lg shadow-emerald-200 disabled:opacity-30 disabled:shadow-none translate-y-0 hover:-translate-y-1"
                             title="Approve"
                           >
                             ✅
@@ -118,7 +118,7 @@ const RequestManagement = () => {
                           <button
                             onClick={() => updateRequestStatus(request.request_id, "REJECTED")}
                             disabled={request.status === "REJECTED"}
-                            className="p-2.5 bg-rose-500 text-white rounded-xl hover:bg-rose-600 transition-all shadow-lg shadow-rose-200 disabled:opacity-30 disabled:shadow-none translate-y-0 hover:-translate-y-1"
+                            className="p-2.5 bg-rose-500 text-white rounded-[3rem] hover:bg-rose-600 transition-all shadow-lg shadow-rose-200 disabled:opacity-30 disabled:shadow-none translate-y-0 hover:-translate-y-1"
                             title="Reject"
                           >
                             ❌

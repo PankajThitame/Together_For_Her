@@ -41,7 +41,7 @@ const ExperienceGallery = () => {
         <div className="max-w-7xl mx-auto py-12 px-4 animate-fadeIn">
             {/* Header Section */}
             <div className="text-center mb-16 relative">
-                <div className="inline-block p-1 bg-gradient-to-r from-pink-500 to-rose-500 rounded-2xl mb-6 shadow-xl shadow-pink-200/50">
+                <div className="inline-block p-1 bg-gradient-to-r from-pink-500 to-rose-500 rounded-[3rem] mb-6 shadow-xl shadow-pink-200/50">
                     <div className="bg-white dark:bg-slate-900 px-6 py-2 rounded-[0.9rem]">
                         <span className="text-[10px] font-black uppercase tracking-[0.4em] text-pink-500 italic">Collective Wisdom</span>
                     </div>
@@ -65,10 +65,10 @@ const ExperienceGallery = () => {
                         <div
                             key={item.id}
                             onClick={() => setSelectedItem(item)}
-                            className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl rounded-[2.5rem] p-6 border border-pink-200/50 dark:border-slate-500/20 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 relative overflow-hidden cursor-pointer flex flex-col h-full"
+                            className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl rounded-[3rem] p-6 border border-pink-200/50 dark:border-slate-500/20 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 relative overflow-hidden cursor-pointer flex flex-col h-full"
                         >
                             {/* Uniform Media Section */}
-                            <div className="rounded-3xl overflow-hidden mb-6 bg-slate-100 dark:bg-slate-950 aspect-video relative shadow-inner shrink-0">
+                            <div className="rounded-[3rem] overflow-hidden mb-6 bg-slate-100 dark:bg-slate-950 aspect-video relative shadow-inner shrink-0">
                                 {item.fileType?.startsWith("image/") && (
                                     <img
                                         src={`${API_BASE_URL}/upload/${getFileName(item.filePath)}`}
@@ -110,7 +110,7 @@ const ExperienceGallery = () => {
 
                                 <div className="mt-auto pt-6 border-t border-pink-200/50 dark:border-slate-500/20 flex items-center justify-between">
                                     <div className="flex items-center gap-2">
-                                        <div className="w-8 h-8 rounded-lg bg-pink-100 dark:bg-slate-800 flex items-center justify-center text-pink-500">
+                                        <div className="w-8 h-8 rounded-[3rem] bg-pink-100 dark:bg-slate-800 flex items-center justify-center text-pink-500">
                                             <FaUser size={10} />
                                         </div>
                                         <span className="text-[10px] font-black text-slate-900 dark:text-slate-100 uppercase tracking-tighter italic">
@@ -140,7 +140,7 @@ const ExperienceGallery = () => {
 
             {/* Footer Note */}
             <div className="mt-20 text-center">
-                <div className="max-w-xl mx-auto p-8 rounded-[2rem] bg-slate-900 text-white shadow-2xl relative overflow-hidden group">
+                <div className="max-w-xl mx-auto p-8 rounded-[3rem] bg-slate-900 text-white shadow-2xl relative overflow-hidden group">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-pink-500/10 rounded-full blur-3xl group-hover:bg-pink-500/20 transition-all"></div>
                     <p className="text-sm font-bold opacity-80 italic leading-relaxed relative z-10">
                         "Your story is your strength. By sharing, you light the way for someone else."

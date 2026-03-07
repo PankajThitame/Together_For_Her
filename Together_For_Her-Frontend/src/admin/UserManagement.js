@@ -59,14 +59,14 @@ const UserManagement = () => {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {users.length === 0 ? (
-            <div className="col-span-full py-20 bg-white/40 dark:bg-slate-800/40 backdrop-blur-sm rounded-3xl border border-pink-300/80 dark:border-slate-500 text-center">
+            <div className="col-span-full py-20 bg-white/40 dark:bg-slate-800/40 backdrop-blur-sm rounded-[3rem] border border-pink-300/80 dark:border-slate-500 text-center">
               <p className="text-gray-700 dark:text-slate-400 text-lg font-bold italic">No users found in the system.</p>
             </div>
           ) : (
             users.map((user) => (
               <div
                 key={user.id}
-                className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-md rounded-[2.5rem] p-8 shadow-xl border border-pink-300/80 dark:border-slate-500 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden"
+                className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-md rounded-[3rem] p-8 shadow-xl border border-pink-300/80 dark:border-slate-500 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden"
               >
                 <div className="absolute top-0 right-0 p-6">
                   {user.status === "APPROVED" || user.verificationStatus?.toLowerCase() === "verified" ? (
@@ -92,7 +92,7 @@ const UserManagement = () => {
                     href={`mailto:${user.email}`}
                     className="flex items-center gap-3 text-gray-700 dark:text-slate-400 hover:text-pink-600 transition-colors group/item"
                   >
-                    <div className="p-2 bg-pink-50 dark:bg-slate-700 rounded-xl group-hover/item:bg-pink-500 group-hover/item:text-white transition-all">
+                    <div className="p-2 bg-pink-50 dark:bg-slate-700 rounded-[3rem] group-hover/item:bg-pink-500 group-hover/item:text-white transition-all">
                       <FaEnvelope size={14} />
                     </div>
                     <span className="font-bold truncate text-gray-800 dark:text-slate-200">{user.email}</span>
@@ -101,7 +101,7 @@ const UserManagement = () => {
                   <div className="flex gap-4">
                     <a
                       href={`tel:${user.contactNumber}`}
-                      className="flex-1 flex items-center justify-center gap-2 p-3 bg-pink-500 text-white rounded-2xl hover:bg-pink-600 transition-all font-bold shadow-lg shadow-pink-200"
+                      className="flex-1 flex items-center justify-center gap-2 p-3 bg-pink-500 text-white rounded-[3rem] hover:bg-pink-600 transition-all font-bold shadow-lg shadow-pink-200"
                     >
                       <FaPhone size={14} /> Call
                     </a>
@@ -109,7 +109,7 @@ const UserManagement = () => {
                       href={`https://wa.me/${user.contactNumber}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 p-3 bg-emerald-500 text-white rounded-2xl hover:bg-emerald-600 transition-all font-bold shadow-lg shadow-emerald-200"
+                      className="flex-1 flex items-center justify-center gap-2 p-3 bg-emerald-500 text-white rounded-[3rem] hover:bg-emerald-600 transition-all font-bold shadow-lg shadow-emerald-200"
                     >
                       <FaWhatsapp size={18} /> WhatsApp
                     </a>

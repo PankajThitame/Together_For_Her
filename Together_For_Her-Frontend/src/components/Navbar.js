@@ -29,7 +29,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between w-full">
         {/* Logo and Brand */}
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="bg-pink-500 p-2 rounded-2xl group-hover:rotate-6 transition-transform duration-300 shadow-lg shadow-pink-200">
+          <div className="bg-pink-500 p-2 rounded-[3rem] group-hover:rotate-6 transition-transform duration-300 shadow-lg shadow-pink-200">
             <img
               src="/images/logo.png"
               alt="Logo"
@@ -67,7 +67,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden p-3 text-pink-600 hover:bg-pink-50 rounded-2xl transition-colors"
+          className="lg:hidden p-3 text-pink-600 hover:bg-pink-50 rounded-[3rem] transition-colors"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? (
@@ -105,13 +105,13 @@ const Navbar = () => {
             </div>
             <button
               onClick={() => handleLoginClick("admin")}
-              className="w-full px-6 py-4 border-2 border-pink-100 dark:border-slate-600 text-pink-600 rounded-3xl text-sm font-black hover:bg-pink-50 dark:hover:bg-slate-800 transition-all"
+              className="w-full px-6 py-4 border-2 border-pink-100 dark:border-slate-600 text-pink-600 rounded-[3rem] text-sm font-black hover:bg-pink-50 dark:hover:bg-slate-800 transition-all"
             >
               Admin Gateway
             </button>
             <button
               onClick={() => handleLoginClick("user")}
-              className="w-full px-6 py-4 bg-gradient-to-r from-pink-500 to-rose-600 text-white rounded-3xl text-sm font-black shadow-xl shadow-pink-200"
+              className="w-full px-6 py-4 bg-gradient-to-r from-pink-500 to-rose-600 text-white rounded-[3rem] text-sm font-black shadow-xl shadow-pink-200"
             >
               Member Login
             </button>

@@ -42,7 +42,7 @@ const Empowerment = () => {
             ].map((stat, idx) => (
               <Card key={idx} className="border-none shadow-xl bg-white/80 backdrop-blur-sm text-center group">
                 <CardBody className="p-10">
-                  <div className={`${stat.color} w-16 h-16 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6 group-hover:scale-110 transition-transform`}>
+                  <div className={`${stat.color} w-16 h-16 rounded-[3rem] flex items-center justify-center text-2xl mx-auto mb-6 group-hover:scale-110 transition-transform`}>
                     {stat.icon}
                   </div>
                   <h3 className="text-4xl font-extrabold text-gray-900 mb-2 truncate">{stat.val}</h3>
@@ -141,7 +141,7 @@ const Empowerment = () => {
                       <h4 className="font-bold text-pink-100 text-xs uppercase tracking-widest mb-1">{item.label}</h4>
                       <p className="text-[10px] text-white/60 italic">{item.desc}</p>
                     </div>
-                    <span className="text-lg font-extrabold bg-white/10 px-4 py-2 rounded-xl group-hover:bg-white group-hover:text-pink-600 transition-all">{item.val}</span>
+                    <span className="text-lg font-extrabold bg-white/10 px-4 py-2 rounded-[3rem] group-hover:bg-white group-hover:text-pink-600 transition-all">{item.val}</span>
                   </div>
                 ))}
               </div>

@@ -56,13 +56,13 @@ const ContentModeration = () => {
       </div>
 
       {error && (
-        <div className="bg-red-50 border border-red-100 text-red-600 px-6 py-4 rounded-2xl mb-8 flex items-center gap-3 animate-shake">
+        <div className="bg-red-50 border border-red-100 text-red-600 px-6 py-4 rounded-[3rem] mb-8 flex items-center gap-3 animate-shake">
           <span className="text-xl">⚠️</span> {error}
         </div>
       )}
 
       {contentList.length === 0 ? (
-        <div className="py-20 bg-white/40 dark:bg-slate-800/40 backdrop-blur-sm rounded-3xl border border-pink-300/80 dark:border-slate-500 text-center transition-colors">
+        <div className="py-20 bg-white/40 dark:bg-slate-800/40 backdrop-blur-sm rounded-[3rem] border border-pink-300/80 dark:border-slate-500 text-center transition-colors">
           <p className="text-gray-700 dark:text-slate-400 text-lg font-black italic">No pending content for moderation at this time.</p>
         </div>
       ) : (
@@ -70,7 +70,7 @@ const ContentModeration = () => {
           {contentList.map((item) => (
             <div
               key={item.id}
-              className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-md rounded-[2.5rem] p-8 shadow-xl border border-pink-300/80 dark:border-slate-500 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden flex flex-col"
+              className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-md rounded-[3rem] p-8 shadow-xl border border-pink-300/80 dark:border-slate-500 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden flex flex-col"
             >
               <div className="mb-6">
                 <h3 className="text-2xl font-black text-gray-900 dark:text-slate-100 mb-2 group-hover:text-pink-600 transition-colors uppercase tracking-tight">
@@ -82,7 +82,7 @@ const ContentModeration = () => {
               </div>
 
               {/* Media Preview */}
-              <div className="relative rounded-2xl overflow-hidden shadow-inner bg-black/5 mb-8 aspect-video flex items-center justify-center">
+              <div className="relative rounded-[3rem] overflow-hidden shadow-inner bg-black/5 mb-8 aspect-video flex items-center justify-center">
                 {item.fileType.startsWith("image/") && (
                   <img
                     src={`${API_BASE_URL}/upload/${getFileName(item.filePath)}`}
@@ -109,13 +109,13 @@ const ContentModeration = () => {
               <div className="mt-auto grid grid-cols-2 gap-4">
                 <button
                   onClick={() => handleApprove(item.id)}
-                  className="flex items-center justify-center gap-2 py-4 bg-emerald-500 text-white rounded-2xl font-bold hover:bg-emerald-600 transition-all shadow-lg shadow-emerald-200 translate-y-0 hover:-translate-y-1"
+                  className="flex items-center justify-center gap-2 py-4 bg-emerald-500 text-white rounded-[3rem] font-bold hover:bg-emerald-600 transition-all shadow-lg shadow-emerald-200 translate-y-0 hover:-translate-y-1"
                 >
                   <span className="text-xl">✅</span> Approve
                 </button>
                 <button
                   onClick={() => handleReject(item.id)}
-                  className="flex items-center justify-center gap-2 py-4 bg-rose-500 text-white rounded-2xl font-bold hover:bg-rose-600 transition-all shadow-lg shadow-rose-200 translate-y-0 hover:-translate-y-1"
+                  className="flex items-center justify-center gap-2 py-4 bg-rose-500 text-white rounded-[3rem] font-bold hover:bg-rose-600 transition-all shadow-lg shadow-rose-200 translate-y-0 hover:-translate-y-1"
                 >
                   <span className="text-xl">❌</span> Reject
                 </button>

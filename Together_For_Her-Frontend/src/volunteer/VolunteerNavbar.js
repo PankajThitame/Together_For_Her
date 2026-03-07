@@ -10,13 +10,13 @@ const VolunteerNavbar = ({ isSidebarOpen, setSidebarOpen }) => {
             <div className="flex items-center gap-4">
                 <button
                     onClick={() => setSidebarOpen(!isSidebarOpen)}
-                    className="p-2 rounded-xl hover:bg-pink-50 dark:hover:bg-slate-800 text-pink-600 transition-colors"
+                    className="p-2 rounded-[3rem] hover:bg-pink-50 dark:hover:bg-slate-800 text-pink-600 transition-colors"
                     aria-label="Toggle Sidebar"
                 >
                     <FaBars size={20} />
                 </button>
                 <div className="flex items-center gap-3">
-                    <div className="bg-pink-500 p-1.5 rounded-lg rotate-3">
+                    <div className="bg-pink-500 p-1.5 rounded-[3rem] rotate-3">
                         <img
                             src="/images/logo.png"
                             alt="Logo"

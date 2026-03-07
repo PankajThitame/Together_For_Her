@@ -26,7 +26,7 @@ const DonationSuccess = () => {
             </p>
           </div>
 
-          <div className="bg-pink-50/50 rounded-3xl p-8 border border-pink-100 text-left space-y-6">
+          <div className="bg-pink-50/50 rounded-[3rem] p-8 border border-pink-100 text-left space-y-6">
             <h3 className="text-sm font-bold text-pink-600 uppercase tracking-widest text-center">Your Impact</h3>
             <div className="space-y-4">
               {[

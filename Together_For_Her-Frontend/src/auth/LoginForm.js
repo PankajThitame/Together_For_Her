@@ -61,9 +61,9 @@ const LoginForm = () => {
 
   return (
     <div className="w-full max-w-md mx-auto">
-      <div className="bg-white/70 dark:bg-slate-800/60 backdrop-blur-2xl p-8 sm:p-10 rounded-[2.5rem] shadow-2xl border border-white dark:border-slate-500 transition-all duration-300">
+      <div className="bg-white/70 dark:bg-slate-800/60 backdrop-blur-2xl p-8 sm:p-10 rounded-[3rem] shadow-2xl border border-white dark:border-slate-500 transition-all duration-300">
         <div className="flex flex-col items-center mb-10">
-          <div className="bg-gradient-to-br from-pink-500 to-rose-600 p-4 rounded-3xl shadow-lg shadow-pink-200 dark:shadow-none mb-6">
+          <div className="bg-gradient-to-br from-pink-500 to-rose-600 p-4 rounded-[3rem] shadow-lg shadow-pink-200 dark:shadow-none mb-6">
             <ShieldCheck size={32} className="text-white" />
           </div>
           <h2 className="text-4xl font-black bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent uppercase tracking-tighter">
@@ -75,7 +75,7 @@ const LoginForm = () => {
         </div>
 
         {error && (
-          <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-100 dark:border-red-800 rounded-2xl text-red-600 dark:text-red-400 text-xs font-bold flex items-center gap-2 animate-shake">
+          <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-100 dark:border-red-800 rounded-[3rem] text-red-600 dark:text-red-400 text-xs font-bold flex items-center gap-2 animate-shake">
             <span className="w-1.5 h-1.5 bg-red-600 dark:bg-red-400 rounded-full" />
             {error}
           </div>
@@ -92,7 +92,7 @@ const LoginForm = () => {
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   placeholder="name@example.com"
-                  className="w-full bg-pink-50/30 dark:bg-slate-900/40 border border-transparent focus:border-pink-300 dark:focus:border-slate-600 pl-12 pr-4 py-4 rounded-2xl outline-none transition-all text-gray-900 dark:text-slate-100 font-bold text-sm"
+                  className="w-full bg-pink-50/30 dark:bg-slate-900/40 border border-transparent focus:border-pink-300 dark:focus:border-slate-600 pl-12 pr-4 py-4 rounded-[3rem] outline-none transition-all text-gray-900 dark:text-slate-100 font-bold text-sm"
                   required
                 />
               </div>
@@ -107,7 +107,7 @@ const LoginForm = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
-                  className="w-full bg-pink-50/30 dark:bg-slate-900/40 border border-transparent focus:border-pink-300 dark:focus:border-slate-600 pl-12 pr-4 py-4 rounded-2xl outline-none transition-all text-gray-900 dark:text-slate-100 font-bold text-sm"
+                  className="w-full bg-pink-50/30 dark:bg-slate-900/40 border border-transparent focus:border-pink-300 dark:focus:border-slate-600 pl-12 pr-4 py-4 rounded-[3rem] outline-none transition-all text-gray-900 dark:text-slate-100 font-bold text-sm"
                   required
                 />
               </div>
@@ -123,7 +123,7 @@ const LoginForm = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-gradient-to-r from-pink-500 to-rose-600 text-white py-4 px-6 rounded-2xl font-black uppercase tracking-widest text-xs shadow-xl shadow-pink-200 dark:shadow-none hover:-translate-y-1 active:scale-[0.98] transition-all disabled:opacity-70 disabled:pointer-events-none flex items-center justify-center gap-3"
+            className="w-full bg-gradient-to-r from-pink-500 to-rose-600 text-white py-4 px-6 rounded-[3rem] font-black uppercase tracking-widest text-xs shadow-xl shadow-pink-200 dark:shadow-none hover:-translate-y-1 active:scale-[0.98] transition-all disabled:opacity-70 disabled:pointer-events-none flex items-center justify-center gap-3"
           >
             {loading ? (
               <>

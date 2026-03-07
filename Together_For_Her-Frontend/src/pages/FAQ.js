@@ -43,7 +43,7 @@ const FAQ = () => {
                   <div className="w-1.5 bg-pink-600 group-hover:w-3 transition-all duration-500 shrink-0" />
 
                   <div className="p-8 md:p-10 flex flex-col md:flex-row gap-8">
-                    <div className="w-12 h-12 shrink-0 bg-pink-50 rounded-2xl flex items-center justify-center text-pink-500 shadow-inner group-hover:scale-110 transition-transform">
+                    <div className="w-12 h-12 shrink-0 bg-pink-50 rounded-[3rem] flex items-center justify-center text-pink-500 shadow-inner group-hover:scale-110 transition-transform">
                       <FaQuestionCircle size={20} />
                     </div>
                     <div>

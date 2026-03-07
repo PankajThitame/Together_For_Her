@@ -52,7 +52,7 @@ const VolunteerManagement = () => {
         <div className="h-1.5 w-24 bg-gradient-to-r from-pink-500 to-rose-500 mx-auto mt-4 rounded-full opacity-50 dark:opacity-30" />
       </div>
 
-      <div className="overflow-hidden rounded-[2.5rem] border border-pink-300/80 dark:border-slate-500 shadow-xl bg-white/40 dark:bg-slate-800/40 backdrop-blur-md">
+      <div className="overflow-hidden rounded-[3rem] border border-pink-300/80 dark:border-slate-500 shadow-xl bg-white/40 dark:bg-slate-800/40 backdrop-blur-md">
         <div className="overflow-x-auto">
           {volunteers.length === 0 ? (
             <div className="py-20 text-center text-gray-700 dark:text-slate-400 font-bold italic transition-colors">
@@ -82,7 +82,7 @@ const VolunteerManagement = () => {
                       </div>
                     </td>
                     <td className="px-8 py-6">
-                      <span className="bg-pink-100 text-pink-600 px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-tighter shadow-sm border border-pink-200/50">
+                      <span className="bg-pink-100 text-pink-600 px-3 py-1 rounded-[3rem] text-xs font-bold uppercase tracking-tighter shadow-sm border border-pink-200/50">
                         {volunteer.type}
                       </span>
                     </td>
@@ -101,13 +101,13 @@ const VolunteerManagement = () => {
                           <>
                             <button
                               onClick={() => updateVolunteerStatus(volunteer.id, "Approved")}
-                              className="px-6 py-2 bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-black uppercase tracking-widest rounded-xl transition-all shadow-lg shadow-emerald-200 hover:-translate-y-1 active:scale-95"
+                              className="px-6 py-2 bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-black uppercase tracking-widest rounded-[3rem] transition-all shadow-lg shadow-emerald-200 hover:-translate-y-1 active:scale-95"
                             >
                               Approve
                             </button>
                             <button
                               onClick={() => updateVolunteerStatus(volunteer.id, "Rejected")}
-                              className="px-6 py-2 bg-rose-500 hover:bg-rose-600 text-white text-xs font-black uppercase tracking-widest rounded-xl transition-all shadow-lg shadow-rose-200 hover:-translate-y-1 active:scale-95"
+                              className="px-6 py-2 bg-rose-500 hover:bg-rose-600 text-white text-xs font-black uppercase tracking-widest rounded-[3rem] transition-all shadow-lg shadow-rose-200 hover:-translate-y-1 active:scale-95"
                             >
                               Reject
                             </button>

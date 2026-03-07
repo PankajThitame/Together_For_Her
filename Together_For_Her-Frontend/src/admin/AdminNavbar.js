@@ -27,7 +27,7 @@ function AdminNavbar() {
     <nav className="bg-white/70 dark:bg-slate-900/80 backdrop-blur-md border-b border-pink-200/50 dark:border-slate-600 px-6 py-4 flex items-center justify-between sticky top-0 z-50 transition-colors duration-300">
       {/* Logo */}
       <div className="flex items-center space-x-3 group cursor-pointer" onClick={() => navigate("/admin/dashboard")}>
-        <div className="bg-pink-500 p-2 rounded-xl group-hover:rotate-12 transition-transform duration-300">
+        <div className="bg-pink-500 p-2 rounded-[3rem] group-hover:rotate-12 transition-transform duration-300">
           <img src="/images/logo.png" alt="Logo" className="h-8 w-auto brightness-200" />
         </div>
         <h1 className="text-2xl font-bold bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent">
@@ -37,7 +37,7 @@ function AdminNavbar() {
 
       {/* Hamburger Icon */}
       <div
-        className="md:hidden p-2 rounded-lg hover:bg-pink-50 dark:hover:bg-slate-800 text-pink-600 transition-colors cursor-pointer"
+        className="md:hidden p-2 rounded-[3rem] hover:bg-pink-50 dark:hover:bg-slate-800 text-pink-600 transition-colors cursor-pointer"
         onClick={() => setMenuOpen(!menuOpen)}
       >
         <span className="text-2xl">☰</span>

@@ -45,8 +45,8 @@ const About = () => {
             accent: "from-purple-500/10 to-pink-500/10"
           }
         ].map((item, idx) => (
-          <div key={idx} className={`p-10 rounded-[2.5rem] bg-gradient-to-br ${item.accent} backdrop-blur-xl border border-pink-200/50 dark:border-slate-500/20 shadow-sm hover:shadow-xl transition-all duration-500 group`}>
-            <div className="w-16 h-16 bg-white dark:bg-slate-800 rounded-2xl flex items-center justify-center text-pink-500 mb-8 shadow-lg shadow-pink-100/50 group-hover:scale-110 transition-transform">
+          <div key={idx} className={`p-10 rounded-[3rem] bg-gradient-to-br ${item.accent} backdrop-blur-xl border border-pink-200/50 dark:border-slate-500/20 shadow-sm hover:shadow-xl transition-all duration-500 group`}>
+            <div className="w-16 h-16 bg-white dark:bg-slate-800 rounded-[3rem] flex items-center justify-center text-pink-500 mb-8 shadow-lg shadow-pink-100/50 group-hover:scale-110 transition-transform">
               {React.cloneElement(item.icon, { size: 24 })}
             </div>
             <h2 className="text-2xl font-black text-slate-900 dark:text-white mb-4 italic tracking-tight">{item.title}<span className="text-pink-500">.</span></h2>

@@ -13,7 +13,7 @@ const VolunteerDashboard = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-6 text-center bg-pink-50 rounded-xl shadow-lg transition-transform duration-300 hover:scale-105">
+    <div className="max-w-2xl mx-auto p-6 text-center bg-pink-50 rounded-[3rem] shadow-lg transition-transform duration-300 hover:scale-105">
       <h2 className="text-pink-500 text-2xl font-bold mb-6 drop-shadow-md">
         Volunteer Dashboard
       </h2>
@@ -21,11 +21,11 @@ const VolunteerDashboard = () => {
         {tasks.map((task, index) => (
           <li
             key={index}
-            className="bg-white px-4 py-3 rounded-md shadow-md flex justify-between items-center transition-transform duration-300 hover:scale-105 hover:bg-pink-100 text-lg"
+            className="bg-white px-4 py-3 rounded-[3rem] shadow-md flex justify-between items-center transition-transform duration-300 hover:scale-105 hover:bg-pink-100 text-lg"
           >
             <span>{task.task}</span>
             <strong
-              className={`px-3 py-1 rounded-md text-sm ${getStatusStyles(
+              className={`px-3 py-1 rounded-[3rem] text-sm ${getStatusStyles(
                 task.status
               )}`}
             >

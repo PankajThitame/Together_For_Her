@@ -32,7 +32,7 @@ const VolunteerSidebar = ({ isOpen }) => {
         <div className={`h-full flex flex-col bg-white/40 dark:bg-slate-900/40 backdrop-blur-2xl border-r border-pink-200/50 dark:border-slate-500/20 transition-all duration-300 ${isOpen ? "w-64" : "w-20"}`}>
             {/* Header */}
             <div className="h-20 flex items-center justify-center border-b border-white/10 dark:border-slate-500/10">
-                <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-rose-600 rounded-xl flex items-center justify-center text-white font-black text-xl shadow-lg shadow-pink-500/20">
+                <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-rose-600 rounded-[3rem] flex items-center justify-center text-white font-black text-xl shadow-lg shadow-pink-500/20">
                     V
                 </div>
                 {isOpen && (
@@ -50,7 +50,7 @@ const VolunteerSidebar = ({ isOpen }) => {
                         to={item.path}
                         end={item.path === "/volunteer/dashboard"}
                         className={({ isActive }) =>
-                            `flex items-center px-4 py-3.5 rounded-2xl transition-all duration-300 group ${isActive
+                            `flex items-center px-4 py-3.5 rounded-[3rem] transition-all duration-300 group ${isActive
                                 ? "bg-gradient-to-r from-pink-500 to-rose-600 text-white shadow-lg shadow-pink-500/25"
                                 : "text-slate-500 dark:text-slate-400 hover:bg-white/50 dark:hover:bg-slate-800/50 hover:text-pink-600 dark:hover:text-pink-400"
                             }`
@@ -73,7 +73,7 @@ const VolunteerSidebar = ({ isOpen }) => {
                 <NavLink
                     to="/volunteer/settings"
                     className={({ isActive }) =>
-                        `flex items-center px-4 py-3.5 rounded-2xl transition-all duration-300 group ${isActive
+                        `flex items-center px-4 py-3.5 rounded-[3rem] transition-all duration-300 group ${isActive
                             ? "bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white"
                             : "text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-slate-600 dark:hover:text-slate-200"
                         }`
@@ -85,7 +85,7 @@ const VolunteerSidebar = ({ isOpen }) => {
 
                 <button
                     onClick={logout}
-                    className="w-full flex items-center px-4 py-3.5 rounded-2xl text-slate-400 hover:bg-red-50 dark:hover:bg-red-900/10 hover:text-red-500 transition-all duration-300 group"
+                    className="w-full flex items-center px-4 py-3.5 rounded-[3rem] text-slate-400 hover:bg-red-50 dark:hover:bg-red-900/10 hover:text-red-500 transition-all duration-300 group"
                 >
                     <FaSignOutAlt size={20} className="shrink-0 group-hover:-translate-x-1 transition-transform" />
                     {isOpen && <span className="ml-4 font-bold text-sm">Sign Out</span>}

@@ -52,7 +52,7 @@ const AdminPanel = () => {
       </div>
 
       {error && (
-        <div className="bg-red-50 border border-red-100 text-red-600 px-6 py-4 rounded-2xl mb-8 flex items-center gap-3 animate-shake">
+        <div className="bg-red-50 border border-red-100 text-red-600 px-6 py-4 rounded-[3rem] mb-8 flex items-center gap-3 animate-shake">
           <span className="text-xl">⚠️</span> {error}
         </div>
       )}
@@ -125,7 +125,7 @@ const AdminPanel = () => {
 };
 
 const StatCard = ({ title, stats, gradient }) => (
-  <div className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-md rounded-[2.5rem] p-8 shadow-xl border border-pink-300/80 dark:border-slate-500 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden relative">
+  <div className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-md rounded-[3rem] p-8 shadow-xl border border-pink-300/80 dark:border-slate-500 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden relative">
     <div className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br ${gradient} rounded-full blur-3xl opacity-10 group-hover:opacity-20 transition-opacity`} />
 
     <h2 className="text-xl font-bold text-gray-800 dark:text-slate-100 mb-6 flex items-center justify-between">

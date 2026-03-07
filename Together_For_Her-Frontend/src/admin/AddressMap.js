@@ -63,7 +63,7 @@ const AddressMap = () => {
   };
 
   return (
-    <div className="p-6 m-6 bg-white dark:bg-slate-900/40 backdrop-blur-md rounded-xl shadow-md text-center font-sans border border-transparent dark:border-slate-600 transition-colors duration-300">
+    <div className="p-6 m-6 bg-white dark:bg-slate-900/40 backdrop-blur-md rounded-[3rem] shadow-md text-center font-sans border border-transparent dark:border-slate-600 transition-colors duration-300">
       <h2 className="text-3xl font-bold text-[#2c3e50] dark:text-slate-100 mb-6 uppercase tracking-tight">📍 Address Visualization on Map (OpenStreetMap)</h2>
       {error && <p className="text-red-600 dark:text-red-400 font-semibold mb-4">{error}</p>}
 
@@ -71,14 +71,14 @@ const AddressMap = () => {
       <div className="flex justify-center gap-4 mb-6">
         <button
           onClick={() => setViewType("users")}
-          className={`px-6 py-2.5 rounded-xl font-black uppercase tracking-widest text-xs border ${viewType === "users" ? "bg-pink-600 text-white shadow-lg shadow-pink-200" : "bg-white dark:bg-slate-800 border-pink-200 dark:border-slate-500 text-pink-600"
+          className={`px-6 py-2.5 rounded-[3rem] font-black uppercase tracking-widest text-xs border ${viewType === "users" ? "bg-pink-600 text-white shadow-lg shadow-pink-200" : "bg-white dark:bg-slate-800 border-pink-200 dark:border-slate-500 text-pink-600"
             } transition-all duration-300 transform hover:-translate-y-0.5`}
         >
           View Users
         </button>
         <button
           onClick={() => setViewType("volunteers")}
-          className={`px-6 py-2.5 rounded-xl font-black uppercase tracking-widest text-xs border ${viewType === "volunteers" ? "bg-pink-600 text-white shadow-lg shadow-pink-200" : "bg-white dark:bg-slate-800 border-pink-200 dark:border-slate-500 text-pink-600"
+          className={`px-6 py-2.5 rounded-[3rem] font-black uppercase tracking-widest text-xs border ${viewType === "volunteers" ? "bg-pink-600 text-white shadow-lg shadow-pink-200" : "bg-white dark:bg-slate-800 border-pink-200 dark:border-slate-500 text-pink-600"
             } transition-all duration-300 transform hover:-translate-y-0.5`}
         >
           View Volunteers
@@ -86,7 +86,7 @@ const AddressMap = () => {
       </div>
 
       {/* Map Display */}
-      <div ref={mapContainerRef} className="rounded-xl overflow-hidden mb-6">
+      <div ref={mapContainerRef} className="rounded-[3rem] overflow-hidden mb-6">
         <MapContainer
           center={[18.5204, 73.8567]}
           zoom={12}
@@ -131,7 +131,7 @@ const AddressMap = () => {
                 <li
                   key={location.id}
                   onClick={() => handleLocationClick(location.latitude, location.longitude)}
-                  className="bg-gray-100 dark:bg-slate-800/60 rounded-2xl px-6 py-4 shadow-sm cursor-pointer hover:bg-pink-50 dark:hover:bg-slate-700 border border-transparent dark:border-slate-500 transition-all group"
+                  className="bg-gray-100 dark:bg-slate-800/60 rounded-[3rem] px-6 py-4 shadow-sm cursor-pointer hover:bg-pink-50 dark:hover:bg-slate-700 border border-transparent dark:border-slate-500 transition-all group"
                 >
                   <strong className="text-[#2c3e50] dark:text-slate-200 group-hover:text-pink-600 transition-colors uppercase text-xs tracking-widest">{location.name}:</strong>
                   <span className="ml-2 text-gray-700 dark:text-slate-400 font-medium italic">{location.type || "Volunteer"}</span>

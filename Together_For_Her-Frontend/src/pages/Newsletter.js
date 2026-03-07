@@ -48,7 +48,7 @@ const Newsletter = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-pink-500/20 to-rose-600/20 rounded-[3.5rem] blur-3xl opacity-0 group-hover/form:opacity-100 transition-opacity duration-700" />
             <Card className="border-none shadow-2xl bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl rounded-[3rem] p-2 relative z-10 border border-pink-200/50">
               <CardBody className="p-8 md:p-10 space-y-8">
-                <div className="w-20 h-20 bg-gradient-to-br from-pink-500 to-rose-600 rounded-3xl flex items-center justify-center text-white shadow-xl shadow-pink-500/30 transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                <div className="w-20 h-20 bg-gradient-to-br from-pink-500 to-rose-600 rounded-[3rem] flex items-center justify-center text-white shadow-xl shadow-pink-500/30 transform rotate-3 hover:rotate-0 transition-transform duration-500">
                   <FaRegEnvelope size={32} />
                 </div>
                 <div className="space-y-6">
@@ -59,19 +59,19 @@ const Newsletter = () => {
                       placeholder="guardian@example.com"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="h-14 bg-white/80 dark:bg-slate-900/50 border-none rounded-2xl text-lg font-bold"
+                      className="h-14 bg-white/80 dark:bg-slate-900/50 border-none rounded-[3rem] text-lg font-bold"
                     />
                   </div>
                   <Button
                     onClick={handleSubscribe}
-                    className="w-full h-14 bg-gradient-to-r from-pink-500 to-rose-600 hover:from-rose-600 hover:to-pink-500 text-white rounded-2xl font-black text-sm uppercase tracking-widest shadow-2xl shadow-pink-500/20 transform hover:-translate-y-1 active:scale-95 transition-all"
+                    className="w-full h-14 bg-gradient-to-r from-pink-500 to-rose-600 hover:from-rose-600 hover:to-pink-500 text-white rounded-[3rem] font-black text-sm uppercase tracking-widest shadow-2xl shadow-pink-500/20 transform hover:-translate-y-1 active:scale-95 transition-all"
                   >
                     Join the Circle <FaPaperPlane className="ml-3 text-xs" />
                   </Button>
                 </div>
 
                 {message && (
-                  <div className={`p-5 rounded-2xl text-sm font-black italic tracking-tight animate-slideUp border ${message.includes("Thank you") ? "bg-emerald-50/50 text-emerald-600 border-emerald-100" : "bg-rose-50/50 text-rose-600 border-rose-100"}`}>
+                  <div className={`p-5 rounded-[3rem] text-sm font-black italic tracking-tight animate-slideUp border ${message.includes("Thank you") ? "bg-emerald-50/50 text-emerald-600 border-emerald-100" : "bg-rose-50/50 text-rose-600 border-rose-100"}`}>
                     {message}
                   </div>
                 )}
@@ -89,7 +89,7 @@ const Newsletter = () => {
                 { icon: <FaGift />, title: "Resource Vault", desc: "Unlock exclusive educational blueprints and member-only treasures.", color: "bg-amber-500" }
               ].map((benefit, idx) => (
                 <div key={idx} className="flex gap-6 group/item">
-                  <div className={`w-14 h-14 shrink-0 bg-white dark:bg-slate-800 shadow-xl rounded-2xl flex items-center justify-center text-white scale-100 group-hover/item:scale-110 transition-all duration-500 ${benefit.color}`}>
+                  <div className={`w-14 h-14 shrink-0 bg-white dark:bg-slate-800 shadow-xl rounded-[3rem] flex items-center justify-center text-white scale-100 group-hover/item:scale-110 transition-all duration-500 ${benefit.color}`}>
                     {benefit.icon}
                   </div>
                   <div className="py-1">

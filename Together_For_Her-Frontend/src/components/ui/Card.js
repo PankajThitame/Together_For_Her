@@ -6,7 +6,7 @@ const Card = ({
     hoverable = true,
     glass = false
 }) => {
-    const baseStyles = "rounded-2xl overflow-hidden transition-all duration-300";
+    const baseStyles = "rounded-[3rem] overflow-hidden transition-all duration-300";
     const variants = glass
         ? "bg-white/70 backdrop-blur-md border border-pink-200/70 shadow-xl"
         : "bg-white border border-pink-200 shadow-sm";

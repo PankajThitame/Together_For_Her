@@ -53,14 +53,14 @@ const PrivacyPolicy = () => {
               {sections.map((section, idx) => (
                 <div
                   key={idx}
-                  className={`border border-pink-50 rounded-2xl overflow-hidden transition-all duration-300 ${openSection === idx ? "bg-pink-50/30 ring-1 ring-pink-100" : "bg-white hover:bg-pink-50/10"}`}
+                  className={`border border-pink-50 rounded-[3rem] overflow-hidden transition-all duration-300 ${openSection === idx ? "bg-pink-50/30 ring-1 ring-pink-100" : "bg-white hover:bg-pink-50/10"}`}
                 >
                   <button
                     onClick={() => toggleSection(idx)}
                     className="w-full flex items-center justify-between p-6 text-left"
                   >
                     <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 rounded-xl bg-white border border-pink-50 flex items-center justify-center shadow-sm">
+                      <div className="w-10 h-10 rounded-[3rem] bg-white border border-pink-50 flex items-center justify-center shadow-sm">
                         {section.icon}
                       </div>
                       <h3 className="font-bold text-gray-900 tracking-tight">{section.title}</h3>

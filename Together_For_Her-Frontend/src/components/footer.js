@@ -10,7 +10,7 @@ const Footer = () => {
           {/* COLUMN 1: Brand Section */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-3 group">
-              <div className="bg-gradient-to-br from-pink-500 to-rose-600 p-2.5 rounded-2xl group-hover:rotate-6 transition-all duration-300 shadow-lg shadow-pink-500/20">
+              <div className="bg-gradient-to-br from-pink-500 to-rose-600 p-2.5 rounded-[3rem] group-hover:rotate-6 transition-all duration-300 shadow-lg shadow-pink-500/20">
                 <img
                   src="/images/logo.png"
                   alt="Logo"

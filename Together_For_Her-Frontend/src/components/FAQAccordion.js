@@ -27,7 +27,7 @@ const FAQAccordion = () => {
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className="border border-pink-300 rounded-lg shadow-sm hover:shadow-md transition duration-300"
+            className="border border-pink-300 rounded-[3rem] shadow-sm hover:shadow-md transition duration-300"
           >
             <div
               className="cursor-pointer px-4 py-3 font-medium bg-pink-100 hover:bg-pink-200 text-pink-900 rounded-t-lg"

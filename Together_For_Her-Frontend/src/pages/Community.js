@@ -111,14 +111,14 @@ const Community = () => {
         </div>
 
         {/* Post Creation Area */}
-        <div className="bg-white dark:bg-slate-800/60 backdrop-blur-md rounded-[2rem] p-8 shadow-[0_10px_40px_rgba(236,72,153,0.05)] border border-pink-200/50 dark:border-slate-500/20 mb-10 group/post transition-all hover:shadow-[0_20px_60px_rgba(236,72,153,0.1)]">
+        <div className="bg-white dark:bg-slate-800/60 backdrop-blur-md rounded-[3rem] p-8 shadow-[0_10px_40px_rgba(236,72,153,0.05)] border border-pink-200/50 dark:border-slate-500/20 mb-10 group/post transition-all hover:shadow-[0_20px_60px_rgba(236,72,153,0.1)]">
           <div className="flex gap-6">
             <div className="w-14 h-14 rounded-full bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center text-white text-lg font-black shrink-0 shadow-lg shadow-pink-200/50">
               {(user?.name || user?.username || "Anonymous").charAt(0).toUpperCase()}
             </div>
             <div className="flex-1 space-y-4">
               <textarea
-                className="w-full h-24 p-5 bg-[#fff1f5] dark:bg-slate-900/50 border-none rounded-[1.5rem] text-slate-800 dark:text-slate-200 placeholder-slate-400 text-base font-medium transition-all duration-300 outline-none ring-2 ring-transparent focus:ring-pink-100 dark:focus:ring-pink-900/20 resize-none"
+                className="w-full h-24 p-5 bg-[#fff1f5] dark:bg-slate-900/50 border-none rounded-[2rem] text-slate-800 dark:text-slate-200 placeholder-slate-400 text-base font-medium transition-all duration-300 outline-none ring-2 ring-transparent focus:ring-pink-100 dark:focus:ring-pink-900/20 resize-none"
                 value={newMessage}
                 onChange={(e) => setNewMessage(e.target.value)}
                 placeholder="Share something on your heart today..."
@@ -171,11 +171,11 @@ const Community = () => {
             messages.map((msg, index) => (
               <div
                 key={msg.id}
-                className="bg-white dark:bg-slate-800/50 backdrop-blur-xl rounded-[2rem] p-8 border border-pink-200/70 dark:border-slate-500/30 shadow-[0_10px_30px_rgba(236,72,153,0.03)] hover:shadow-[0_20px_50px_rgba(236,72,153,0.08)] hover:-translate-y-1 transition-all duration-300 group"
+                className="bg-white dark:bg-slate-800/50 backdrop-blur-xl rounded-[3rem] p-8 border border-pink-200/70 dark:border-slate-500/30 shadow-[0_10px_30px_rgba(236,72,153,0.03)] hover:shadow-[0_20px_50px_rgba(236,72,153,0.08)] hover:-translate-y-1 transition-all duration-300 group"
               >
                 <div className="flex justify-between items-start mb-6">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-2xl bg-slate-50 dark:bg-slate-900 flex items-center justify-center text-slate-400 group-hover:bg-pink-50 dark:group-hover:bg-pink-900/20 group-hover:text-pink-500 transition-colors">
+                    <div className="w-12 h-12 rounded-[3rem] bg-slate-50 dark:bg-slate-900 flex items-center justify-center text-slate-400 group-hover:bg-pink-50 dark:group-hover:bg-pink-900/20 group-hover:text-pink-500 transition-colors">
                       <FaUser size={20} />
                     </div>
                     <div>
@@ -183,14 +183,14 @@ const Community = () => {
                         {msg.senderName || "Anonymous Sister"}
                       </h4>
                       <div className="flex items-center gap-3">
-                        <span className="bg-pink-50 dark:bg-pink-900/20 text-pink-500 text-[10px] font-black px-3 py-1 rounded-lg uppercase tracking-wider border border-pink-100/50 dark:border-pink-900/30">
+                        <span className="bg-pink-50 dark:bg-pink-900/20 text-pink-500 text-[10px] font-black px-3 py-1 rounded-[3rem] uppercase tracking-wider border border-pink-100/50 dark:border-pink-900/30">
                           {msg.category}
                         </span>
                         <span className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">{formatDate(msg.timestamp)}</span>
                       </div>
                     </div>
                   </div>
-                  <div className="p-3 bg-slate-50 dark:bg-slate-900 rounded-2xl text-slate-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="p-3 bg-slate-50 dark:bg-slate-900 rounded-[3rem] text-slate-400 opacity-0 group-hover:opacity-100 transition-opacity">
                     <FaShieldAlt size={14} />
                   </div>
                 </div>
@@ -200,7 +200,7 @@ const Community = () => {
                 <div className="flex items-center">
                   <button
                     onClick={() => handleLike(msg.id, index)}
-                    className="flex items-center gap-4 group/like px-6 py-3 bg-slate-50 dark:bg-slate-900/50 rounded-2xl hover:bg-pink-50 dark:hover:bg-pink-900/20 transition-all border border-transparent hover:border-pink-100 dark:hover:border-pink-900/30"
+                    className="flex items-center gap-4 group/like px-6 py-3 bg-slate-50 dark:bg-slate-900/50 rounded-[3rem] hover:bg-pink-50 dark:hover:bg-pink-900/20 transition-all border border-transparent hover:border-pink-100 dark:hover:border-pink-900/30"
                   >
                     <div className="text-pink-400 group-hover/like:scale-125 transition-transform">
                       <FaHeart size={18} />

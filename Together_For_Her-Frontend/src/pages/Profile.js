@@ -134,7 +134,7 @@ const ProfilePage = () => {
           <div className="flex flex-col md:flex-row items-center gap-10">
             <div className="relative shrink-0">
               <div className="absolute inset-0 bg-pink-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
-              <div className="w-44 h-44 rounded-[2.5rem] border-4 border-white dark:border-slate-600 shadow-2xl relative z-10 overflow-hidden bg-slate-50 dark:bg-slate-950">
+              <div className="w-44 h-44 rounded-[3rem] border-4 border-white dark:border-slate-600 shadow-2xl relative z-10 overflow-hidden bg-slate-50 dark:bg-slate-950">
                 {profile?.profilePhoto ? (
                   <img src={getProfileImageUrl(profile.profilePhoto)} alt={displayName} className="w-full h-full object-cover" />
                 ) : (
@@ -145,7 +145,7 @@ const ProfilePage = () => {
               </div>
               <button
                 onClick={() => setIsEditing(true)}
-                className="absolute -bottom-2 -right-2 bg-pink-500 text-white p-3.5 rounded-2xl shadow-xl hover:scale-110 active:scale-95 transition-all z-20 border-4 border-white dark:border-slate-900"
+                className="absolute -bottom-2 -right-2 bg-pink-500 text-white p-3.5 rounded-[3rem] shadow-xl hover:scale-110 active:scale-95 transition-all z-20 border-4 border-white dark:border-slate-900"
               >
                 <Edit3 size={20} />
               </button>
@@ -178,8 +178,8 @@ const ProfilePage = () => {
             { icon: <Heart size={22} />, label: "Vibe", val: "Glue", unit: "" },
             { icon: <Target size={22} />, label: "Impact", val: "9.8", unit: "" },
           ].map((stat, i) => (
-            <div key={i} className="bg-white/40 dark:bg-slate-900/40 backdrop-blur-3xl p-6 rounded-[2rem] border border-pink-200/70 dark:border-slate-600/50 flex flex-col items-center text-center group hover:-translate-y-1 transition-all">
-              <div className="p-3 bg-slate-50 dark:bg-slate-800 rounded-2xl text-pink-500 mb-4 group-hover:scale-110 transition-transform">
+            <div key={i} className="bg-white/40 dark:bg-slate-900/40 backdrop-blur-3xl p-6 rounded-[3rem] border border-pink-200/70 dark:border-slate-600/50 flex flex-col items-center text-center group hover:-translate-y-1 transition-all">
+              <div className="p-3 bg-slate-50 dark:bg-slate-800 rounded-[3rem] text-pink-500 mb-4 group-hover:scale-110 transition-transform">
                 {stat.icon}
               </div>
               <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">{stat.label}</p>
@@ -195,28 +195,28 @@ const ProfilePage = () => {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b border-slate-100 dark:border-slate-600 pb-8">
             <h2 className="text-3xl font-black text-slate-900 dark:text-white tracking-tighter italic">Technical <span className="text-pink-500">Matrix.</span></h2>
             <div className="flex gap-2">
-              <button onClick={() => setIsEditing(true)} className="px-6 py-2.5 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-pink-600 dark:hover:bg-pink-500 hover:text-white shadow-xl transition-all">Edit Details</button>
+              <button onClick={() => setIsEditing(true)} className="px-6 py-2.5 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-[3rem] text-[10px] font-black uppercase tracking-widest hover:bg-pink-600 dark:hover:bg-pink-500 hover:text-white shadow-xl transition-all">Edit Details</button>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-8">
               <div className="flex items-start gap-4">
-                <div className="p-3.5 bg-pink-50 dark:bg-pink-900/20 rounded-2xl text-pink-500"><Mail size={20} /></div>
+                <div className="p-3.5 bg-pink-50 dark:bg-pink-900/20 rounded-[3rem] text-pink-500"><Mail size={20} /></div>
                 <div>
                   <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Email Hash</p>
                   <p className="font-bold text-slate-700 dark:text-slate-200">{profile?.email || "Encrypted"}</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <div className="p-3.5 bg-rose-50 dark:bg-rose-900/20 rounded-2xl text-rose-500"><Phone size={20} /></div>
+                <div className="p-3.5 bg-rose-50 dark:bg-rose-900/20 rounded-[3rem] text-rose-500"><Phone size={20} /></div>
                 <div>
                   <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Secure Line</p>
                   <p className="font-bold text-slate-700 dark:text-slate-200">{profile?.contactNumber || "Offline"}</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <div className="p-3.5 bg-blue-50 dark:bg-blue-900/20 rounded-2xl text-blue-500"><Globe size={20} /></div>
+                <div className="p-3.5 bg-blue-50 dark:bg-blue-900/20 rounded-[3rem] text-blue-500"><Globe size={20} /></div>
                 <div>
                   <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Lexicon</p>
                   <p className="font-bold text-slate-700 dark:text-slate-200">{profile?.preferredLanguage || "Universal"}</p>
@@ -226,21 +226,21 @@ const ProfilePage = () => {
 
             <div className="space-y-8">
               <div className="flex items-start gap-4">
-                <div className="p-3.5 bg-amber-50 dark:bg-amber-900/20 rounded-2xl text-amber-500"><Calendar size={20} /></div>
+                <div className="p-3.5 bg-amber-50 dark:bg-amber-900/20 rounded-[3rem] text-amber-500"><Calendar size={20} /></div>
                 <div>
                   <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Lifecycle Age</p>
                   <p className="font-bold text-slate-700 dark:text-slate-200">{profile?.age ? `${profile.age} Revolutions` : "Ageless"}</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <div className="p-3.5 bg-indigo-50 dark:bg-indigo-900/20 rounded-2xl text-indigo-500"><Languages size={20} /></div>
+                <div className="p-3.5 bg-indigo-50 dark:bg-indigo-900/20 rounded-[3rem] text-indigo-500"><Languages size={20} /></div>
                 <div>
                   <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Social Rank</p>
                   <p className="font-bold text-slate-700 dark:text-slate-200">{profile?.socialStatus || "Citizen"}</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <div className="p-3.5 bg-emerald-50 dark:bg-emerald-900/20 rounded-2xl text-emerald-500"><ShieldCheck size={20} /></div>
+                <div className="p-3.5 bg-emerald-50 dark:bg-emerald-900/20 rounded-[3rem] text-emerald-500"><ShieldCheck size={20} /></div>
                 <div>
                   <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Availability</p>
                   <p className="font-bold text-slate-700 dark:text-slate-200">{profile?.availability || "On Call"}</p>
@@ -265,16 +265,16 @@ const ProfilePage = () => {
         <section className="flex flex-col sm:flex-row gap-6">
           <button
             onClick={() => navigate("/")}
-            className="flex-1 p-6 rounded-[2rem] bg-white/40 dark:bg-slate-800/40 border border-white dark:border-slate-500 flex items-center justify-center gap-4 group hover:bg-pink-50 dark:hover:bg-slate-800 transition-all font-black text-[11px] uppercase tracking-widest text-slate-600 dark:text-slate-400"
+            className="flex-1 p-6 rounded-[3rem] bg-white/40 dark:bg-slate-800/40 border border-white dark:border-slate-500 flex items-center justify-center gap-4 group hover:bg-pink-50 dark:hover:bg-slate-800 transition-all font-black text-[11px] uppercase tracking-widest text-slate-600 dark:text-slate-400"
           >
-            <div className="p-2 bg-slate-100 dark:bg-slate-700 rounded-lg group-hover:bg-white dark:group-hover:bg-slate-600 text-slate-500 group-hover:text-pink-500"><Settings size={18} /></div>
+            <div className="p-2 bg-slate-100 dark:bg-slate-700 rounded-[3rem] group-hover:bg-white dark:group-hover:bg-slate-600 text-slate-500 group-hover:text-pink-500"><Settings size={18} /></div>
             Access Dashboard
           </button>
           <button
             onClick={handleLogout}
-            className="flex-1 p-6 rounded-[2rem] bg-rose-500/5 hover:bg-rose-500 text-rose-500 hover:text-white border border-rose-500/20 flex items-center justify-center gap-4 transition-all font-black text-[11px] uppercase tracking-widest group shadow-lg shadow-rose-500/5"
+            className="flex-1 p-6 rounded-[3rem] bg-rose-500/5 hover:bg-rose-500 text-rose-500 hover:text-white border border-rose-500/20 flex items-center justify-center gap-4 transition-all font-black text-[11px] uppercase tracking-widest group shadow-lg shadow-rose-500/5"
           >
-            <div className="p-2 bg-rose-500/10 group-hover:bg-white/20 rounded-lg"><LogOut size={18} /></div>
+            <div className="p-2 bg-rose-500/10 group-hover:bg-white/20 rounded-[3rem]"><LogOut size={18} /></div>
             Terminate Session
           </button>
         </section>

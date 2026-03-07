@@ -29,7 +29,7 @@ const AdminSidePanel = ({ isOpen, setIsOpen }) => {
       {/* Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="absolute -right-5 top-12 bg-white dark:bg-slate-800 text-pink-600 p-2 rounded-xl shadow-xl hover:bg-pink-50 dark:hover:bg-slate-700 border border-pink-50 dark:border-slate-500 transition-all z-[100] group/btn"
+        className="absolute -right-5 top-12 bg-white dark:bg-slate-800 text-pink-600 p-2 rounded-[3rem] shadow-xl hover:bg-pink-50 dark:hover:bg-slate-700 border border-pink-50 dark:border-slate-500 transition-all z-[100] group/btn"
       >
         <div className="group-hover/btn:scale-125 transition-transform">
           {isOpen ? <FaArrowLeft size={12} /> : <FaArrowRight size={12} />}
@@ -49,7 +49,7 @@ const AdminSidePanel = ({ isOpen, setIsOpen }) => {
             <li key={item.to}>
               <Link
                 to={item.to}
-                className={`flex items-center gap-4 px-4 py-3.5 rounded-2xl transition-all duration-300 group/item relative ${location.pathname === item.to
+                className={`flex items-center gap-4 px-4 py-3.5 rounded-[3rem] transition-all duration-300 group/item relative ${location.pathname === item.to
                   ? "bg-pink-600 text-white shadow-lg shadow-pink-200"
                   : "text-gray-500 dark:text-slate-400 hover:bg-pink-50 dark:hover:bg-slate-800/50 hover:text-pink-600"
                   }`}
@@ -63,7 +63,7 @@ const AdminSidePanel = ({ isOpen, setIsOpen }) => {
                   </span>
                 )}
                 {!isOpen && (
-                  <div className="absolute left-16 bg-gray-900 text-white text-[10px] font-black px-3 py-2 rounded-xl opacity-0 group-hover/item:opacity-100 pointer-events-none transition-all uppercase tracking-widest whitespace-nowrap z-50">
+                  <div className="absolute left-16 bg-gray-900 text-white text-[10px] font-black px-3 py-2 rounded-[3rem] opacity-0 group-hover/item:opacity-100 pointer-events-none transition-all uppercase tracking-widest whitespace-nowrap z-50">
                     {item.label}
                   </div>
                 )}

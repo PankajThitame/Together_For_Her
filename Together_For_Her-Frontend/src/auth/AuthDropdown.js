@@ -85,7 +85,7 @@ const AuthDropdown = () => {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-4 w-72 bg-white/90 dark:bg-slate-900/95 backdrop-blur-2xl border border-pink-200/70 dark:border-slate-600/50 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] z-[100] overflow-hidden animate-fadeIn origin-top-right">
+        <div className="absolute right-0 mt-4 w-72 bg-white/90 dark:bg-slate-900/95 backdrop-blur-2xl border border-pink-200/70 dark:border-slate-600/50 rounded-[3rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] z-[100] overflow-hidden animate-fadeIn origin-top-right">
           {/* Internal Glow */}
           <div className="absolute -top-10 -right-10 w-32 h-32 bg-pink-500/5 rounded-full blur-3xl"></div>
 
@@ -98,9 +98,9 @@ const AuthDropdown = () => {
                       <img
                         src={getProfileImageUrl(user.profilePhoto || user.profilePic)}
                         alt="Profile"
-                        className="w-12 h-12 rounded-2xl object-cover shadow-md"
+                        className="w-12 h-12 rounded-[3rem] object-cover shadow-md"
                       />
-                      <div className="absolute -top-1.5 -right-1.5 bg-pink-500 text-[8px] font-black text-white px-1.5 py-0.5 rounded-md uppercase tracking-wider">
+                      <div className="absolute -top-1.5 -right-1.5 bg-pink-500 text-[8px] font-black text-white px-1.5 py-0.5 rounded-[3rem] uppercase tracking-wider">
                         {user.role}
                       </div>
                     </div>
@@ -115,19 +115,19 @@ const AuthDropdown = () => {
                   <Link
                     to="/profile"
                     onClick={() => setIsOpen(false)}
-                    className="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-pink-50 dark:hover:bg-pink-900/20 hover:text-pink-600 dark:hover:text-pink-400 transition-all font-bold text-[13px]"
+                    className="flex items-center gap-3 px-4 py-3 rounded-[3rem] text-slate-600 dark:text-slate-300 hover:bg-pink-50 dark:hover:bg-pink-900/20 hover:text-pink-600 dark:hover:text-pink-400 transition-all font-bold text-[13px]"
                   >
-                    <div className="p-2 bg-slate-50 dark:bg-slate-800 rounded-lg group-hover:bg-white transition-colors">
+                    <div className="p-2 bg-slate-50 dark:bg-slate-800 rounded-[3rem] group-hover:bg-white transition-colors">
                       <User size={16} />
                     </div>
                     My Identity
                   </Link>
 
                   <button
-                    className="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-pink-50 dark:hover:bg-pink-900/20 hover:text-pink-600 dark:hover:text-pink-400 transition-all font-bold text-[13px] w-full text-left"
+                    className="flex items-center gap-3 px-4 py-3 rounded-[3rem] text-slate-600 dark:text-slate-300 hover:bg-pink-50 dark:hover:bg-pink-900/20 hover:text-pink-600 dark:hover:text-pink-400 transition-all font-bold text-[13px] w-full text-left"
                     onClick={() => { toggleTheme(); setIsOpen(false); }}
                   >
-                    <div className="p-2 bg-slate-50 dark:bg-slate-800 rounded-lg group-hover:bg-white transition-colors">
+                    <div className="p-2 bg-slate-50 dark:bg-slate-800 rounded-[3rem] group-hover:bg-white transition-colors">
                       {darkMode ? <Sun size={16} /> : <Moon size={16} />}
                     </div>
                     {darkMode ? "Sunlight Mode" : "Moonlit Mode"}
@@ -136,10 +136,10 @@ const AuthDropdown = () => {
                   <div className="my-2 mx-4 h-px bg-slate-100 dark:bg-slate-800/50"></div>
 
                   <button
-                    className="flex items-center gap-3 px-4 py-3 rounded-xl text-rose-500 hover:bg-rose-50 dark:hover:bg-rose-900/20 transition-all font-black text-[11px] uppercase tracking-widest w-full text-left"
+                    className="flex items-center gap-3 px-4 py-3 rounded-[3rem] text-rose-500 hover:bg-rose-50 dark:hover:bg-rose-900/20 transition-all font-black text-[11px] uppercase tracking-widest w-full text-left"
                     onClick={handleLogout}
                   >
-                    <div className="p-2 bg-rose-50 dark:bg-rose-900/20 rounded-lg transition-colors">
+                    <div className="p-2 bg-rose-50 dark:bg-rose-900/20 rounded-[3rem] transition-colors">
                       <LogOut size={16} />
                     </div>
                     End Session
@@ -151,9 +151,9 @@ const AuthDropdown = () => {
                 <Link
                   to="/login"
                   onClick={() => setIsOpen(false)}
-                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-pink-50 dark:hover:bg-pink-900/20 hover:text-pink-600 dark:hover:text-pink-400 transition-all font-bold text-[13px]"
+                  className="flex items-center gap-3 px-4 py-3 rounded-[3rem] text-slate-600 dark:text-slate-300 hover:bg-pink-50 dark:hover:bg-pink-900/20 hover:text-pink-600 dark:hover:text-pink-400 transition-all font-bold text-[13px]"
                 >
-                  <div className="p-2 bg-slate-50 dark:bg-slate-800 rounded-lg transition-colors">
+                  <div className="p-2 bg-slate-50 dark:bg-slate-800 rounded-[3rem] transition-colors">
                     <LogIn size={16} />
                   </div>
                   Member Gateway
@@ -161,18 +161,18 @@ const AuthDropdown = () => {
                 <Link
                   to="/sign-up"
                   onClick={() => setIsOpen(false)}
-                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-white bg-gradient-to-r from-pink-500 to-rose-600 shadow-lg shadow-pink-200/50 hover:shadow-xl hover:translate-y-[-2px] transition-all font-bold text-[13px] my-1"
+                  className="flex items-center gap-3 px-4 py-3 rounded-[3rem] text-white bg-gradient-to-r from-pink-500 to-rose-600 shadow-lg shadow-pink-200/50 hover:shadow-xl hover:translate-y-[-2px] transition-all font-bold text-[13px] my-1"
                 >
-                  <div className="p-2 bg-white/20 rounded-lg transition-colors">
+                  <div className="p-2 bg-white/20 rounded-[3rem] transition-colors">
                     <UserPlus size={16} />
                   </div>
                   Join Community
                 </Link>
                 <button
-                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-pink-50 dark:hover:bg-pink-900/20 hover:text-pink-600 dark:hover:text-pink-400 transition-all font-bold text-[13px] w-full text-left"
+                  className="flex items-center gap-3 px-4 py-3 rounded-[3rem] text-slate-600 dark:text-slate-300 hover:bg-pink-50 dark:hover:bg-pink-900/20 hover:text-pink-600 dark:hover:text-pink-400 transition-all font-bold text-[13px] w-full text-left"
                   onClick={() => { toggleTheme(); setIsOpen(false); }}
                 >
-                  <div className="p-2 bg-slate-50 dark:bg-slate-800 rounded-lg transition-colors">
+                  <div className="p-2 bg-slate-50 dark:bg-slate-800 rounded-[3rem] transition-colors">
                     {darkMode ? <Sun size={16} /> : <Moon size={16} />}
                   </div>
                   Light / Dark

@@ -68,13 +68,13 @@ const UserContentUpload = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button
               onClick={() => { setUploadSuccess(false); setFile(null); setTitle(""); setDescription(""); }}
-              className="h-14 px-8 bg-slate-900 text-white rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-pink-500 transition-all active:scale-95 shadow-xl"
+              className="h-14 px-8 bg-slate-900 text-white rounded-[3rem] font-black text-xs uppercase tracking-[0.2em] hover:bg-pink-500 transition-all active:scale-95 shadow-xl"
             >
               Share Another
             </button>
             <button
               onClick={() => navigate("/")}
-              className="h-14 px-8 bg-white/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-300 rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-white dark:hover:bg-slate-700 transition-all active:scale-95 border border-slate-200 dark:border-slate-500"
+              className="h-14 px-8 bg-white/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-300 rounded-[3rem] font-black text-xs uppercase tracking-[0.2em] hover:bg-white dark:hover:bg-slate-700 transition-all active:scale-95 border border-slate-200 dark:border-slate-500"
             >
               Back to Home
             </button>
@@ -87,7 +87,7 @@ const UserContentUpload = () => {
   return (
     <div className="max-w-4xl mx-auto py-12 px-4 animate-fadeIn">
       <div className="flex items-center gap-4 mb-12">
-        <button onClick={() => navigate(-1)} className="p-3 bg-white/40 dark:bg-slate-800/40 rounded-2xl text-pink-500 hover:bg-pink-500 hover:text-white transition-all shadow-sm">
+        <button onClick={() => navigate(-1)} className="p-3 bg-white/40 dark:bg-slate-800/40 rounded-[3rem] text-pink-500 hover:bg-pink-500 hover:text-white transition-all shadow-sm">
           <FaArrowLeft size={14} />
         </button>
         <div>
@@ -107,7 +107,7 @@ const UserContentUpload = () => {
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 required
-                className="w-full h-16 px-6 bg-white/50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-600 rounded-2xl focus:outline-none focus:ring-2 focus:ring-pink-500/20 text-sm font-bold transition-all"
+                className="w-full h-16 px-6 bg-white/50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-600 rounded-[3rem] focus:outline-none focus:ring-2 focus:ring-pink-500/20 text-sm font-bold transition-all"
               />
             </div>
 
@@ -117,7 +117,7 @@ const UserContentUpload = () => {
                 placeholder="Describe your thoughts or context..."
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                className="w-full h-40 p-6 bg-white/50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-600 rounded-2xl focus:outline-none focus:ring-2 focus:ring-pink-500/20 text-sm font-bold transition-all resize-none"
+                className="w-full h-40 p-6 bg-white/50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-600 rounded-[3rem] focus:outline-none focus:ring-2 focus:ring-pink-500/20 text-sm font-bold transition-all resize-none"
               />
             </div>
 
@@ -129,7 +129,7 @@ const UserContentUpload = () => {
                 required
                 className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
               />
-              <div className="h-32 border-2 border-dashed border-slate-200 dark:border-slate-500 group-hover/upload:border-pink-300 rounded-2xl flex flex-col items-center justify-center gap-3 transition-all bg-slate-50/30 dark:bg-slate-900/30">
+              <div className="h-32 border-2 border-dashed border-slate-200 dark:border-slate-500 group-hover/upload:border-pink-300 rounded-[3rem] flex flex-col items-center justify-center gap-3 transition-all bg-slate-50/30 dark:bg-slate-900/30">
                 <FaCloudUploadAlt className="text-3xl text-slate-300 group-hover/upload:text-pink-400 transition-colors" />
                 <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 group-hover/upload:text-slate-600 transition-colors">
                   {file ? file.name : "Choose File or Media"}
@@ -140,7 +140,7 @@ const UserContentUpload = () => {
             <button
               type="submit"
               disabled={uploading}
-              className="w-full h-16 bg-gradient-to-r from-pink-500 to-rose-600 text-white rounded-2xl font-black text-xs uppercase tracking-[0.25em] shadow-2xl shadow-pink-500/40 hover:scale-[1.02] transition-all transform active:scale-95 disabled:opacity-50 disabled:scale-100 flex items-center justify-center gap-3"
+              className="w-full h-16 bg-gradient-to-r from-pink-500 to-rose-600 text-white rounded-[3rem] font-black text-xs uppercase tracking-[0.25em] shadow-2xl shadow-pink-500/40 hover:scale-[1.02] transition-all transform active:scale-95 disabled:opacity-50 disabled:scale-100 flex items-center justify-center gap-3"
             >
               {uploading ? (
                 <div className="w-5 h-5 border-2 border-pink-200/60 border-t-white rounded-full animate-spin" />
@@ -150,11 +150,11 @@ const UserContentUpload = () => {
         </div>
 
         <div className="lg:col-span-2 space-y-8 ">
-          <div className="bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl p-8 rounded-[2.5rem] border border-pink-200/50 dark:border-slate-500/20 shadow-xl">
+          <div className="bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl p-8 rounded-[3rem] border border-pink-200/50 dark:border-slate-500/20 shadow-xl">
             <h3 className="text-lg font-black italic tracking-tight mb-6 flex items-center gap-3">
               Media Preview<div className="w-1.5 h-1.5 rounded-full bg-pink-500"></div>
             </h3>
-            <div className="aspect-square rounded-3xl overflow-hidden bg-slate-100 dark:bg-slate-900 flex items-center justify-center relative border border-slate-100 dark:border-slate-600 shadow-inner">
+            <div className="aspect-square rounded-[3rem] overflow-hidden bg-slate-100 dark:bg-slate-900 flex items-center justify-center relative border border-slate-100 dark:border-slate-600 shadow-inner">
               {preview ? (
                 file?.type?.startsWith("image") ? (
                   <img src={preview} alt="Preview" className="w-full h-full object-cover" />
@@ -180,7 +180,7 @@ const UserContentUpload = () => {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-slate-900 to-slate-800 p-8 rounded-[2.5rem] text-white shadow-2xl relative overflow-hidden group">
+          <div className="bg-gradient-to-br from-slate-900 to-slate-800 p-8 rounded-[3rem] text-white shadow-2xl relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-32 h-32 bg-pink-500/10 rounded-full blur-3xl group-hover:bg-pink-500/20 transition-all"></div>
             <h4 className="text-sm font-black uppercase tracking-widest mb-4 flex items-center gap-2">
               <FaCheckCircle className="text-pink-500" /> Community Note

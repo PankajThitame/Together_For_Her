@@ -30,12 +30,12 @@ function Home() {
 
           <div className="flex flex-wrap justify-center gap-6 pt-6 animate-slideUp delay-200">
             <Link to="/empowerment">
-              <button className="bg-gradient-to-r from-[#ec4899] to-[#f472b6] text-white px-10 py-4 rounded-2xl font-black text-xs uppercase tracking-widest shadow-2xl shadow-pink-200/50 hover:translate-y-[-2px] hover:shadow-pink-300/60 transition-all active:scale-95 flex items-center gap-3 group/btn">
+              <button className="bg-gradient-to-r from-[#ec4899] to-[#f472b6] text-white px-10 py-4 rounded-[3rem] font-black text-xs uppercase tracking-widest shadow-2xl shadow-pink-200/50 hover:translate-y-[-2px] hover:shadow-pink-300/60 transition-all active:scale-95 flex items-center gap-3 group/btn">
                 Our Mission <FaArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
               </button>
             </Link>
             <Link to="/community">
-              <button className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-md text-slate-600 dark:text-slate-300 px-10 py-4 rounded-2xl font-black text-xs uppercase tracking-widest border border-white dark:border-slate-500 hover:bg-white dark:hover:bg-slate-700 transition-all active:scale-95">
+              <button className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-md text-slate-600 dark:text-slate-300 px-10 py-4 rounded-[3rem] font-black text-xs uppercase tracking-widest border border-white dark:border-slate-500 hover:bg-white dark:hover:bg-slate-700 transition-all active:scale-95">
                 Join Circle
               </button>
             </Link>
@@ -68,9 +68,9 @@ function Home() {
             accent: "purple"
           }
         ].map((item, idx) => (
-          <div key={idx} className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl p-8 rounded-[2.5rem] border border-pink-200/50 dark:border-slate-500/20 shadow-sm hover:shadow-2xl hover:shadow-pink-100/10 dark:hover:shadow-pink-900/5 transition-all duration-500 hover:-translate-y-2">
+          <div key={idx} className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl p-8 rounded-[3rem] border border-pink-200/50 dark:border-slate-500/20 shadow-sm hover:shadow-2xl hover:shadow-pink-100/10 dark:hover:shadow-pink-900/5 transition-all duration-500 hover:-translate-y-2">
             <div className="relative mb-8">
-              <div className="absolute inset-0 bg-pink-100 dark:bg-pink-900/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-40 transition-all duration-500"></div>
+              <div className="absolute inset-0 bg-pink-100 dark:bg-pink-900/20 rounded-[3rem] blur-2xl opacity-0 group-hover:opacity-40 transition-all duration-500"></div>
               <img src={item.img} alt={item.title} className="w-20 h-20 mx-auto object-contain relative z-10 group-hover:scale-110 transition-transform duration-500" />
             </div>
 
@@ -82,7 +82,7 @@ function Home() {
             </p>
 
             <Link to={item.link}>
-              <button className="w-full bg-slate-50 dark:bg-slate-900/50 text-slate-400 dark:group-hover:text-pink-400 group-hover:text-pink-500 group-hover:bg-pink-50 dark:group-hover:bg-pink-900/20 py-3.5 rounded-xl text-[10px] font-black uppercase tracking-widest border border-transparent group-hover:border-pink-100/50 dark:group-hover:border-pink-900/40 transition-all">
+              <button className="w-full bg-slate-50 dark:bg-slate-900/50 text-slate-400 dark:group-hover:text-pink-400 group-hover:text-pink-500 group-hover:bg-pink-50 dark:group-hover:bg-pink-900/20 py-3.5 rounded-[3rem] text-[10px] font-black uppercase tracking-widest border border-transparent group-hover:border-pink-100/50 dark:group-hover:border-pink-900/40 transition-all">
                 Explore Portal
               </button>
             </Link>
@@ -109,7 +109,7 @@ function Home() {
               { text: "This sanctuary redefined my health journey. The community support is unparalleled.", author: "Aradhya S.", role: "Member Since 2023" },
               { text: "Together For Her provides the safety and resources I've searched for years.", author: "Meera K.", role: "Verified Volunteer" }
             ].map((t, i) => (
-              <div key={i} className="bg-white/5 backdrop-blur-md p-8 rounded-[2rem] border border-white/5 hover:bg-white/10 transition-colors group/quote">
+              <div key={i} className="bg-white/5 backdrop-blur-md p-8 rounded-[3rem] border border-white/5 hover:bg-white/10 transition-colors group/quote">
                 <FaHeart size={20} className="text-pink-500 mb-6 group-hover/quote:scale-125 transition-transform" />
                 <p className="text-slate-200 font-semibold italic text-lg leading-relaxed mb-6">"{t.text}"</p>
                 <div>
@@ -138,12 +138,12 @@ function Home() {
 
           <div className="flex flex-wrap justify-center gap-6 pt-4">
             <Link to="/donate">
-              <button className="bg-white text-pink-600 px-12 py-4 rounded-2xl font-black text-xs uppercase tracking-widest shadow-xl hover:translate-y-[-2px] hover:shadow-2xl transition-all active:scale-95">
+              <button className="bg-white text-pink-600 px-12 py-4 rounded-[3rem] font-black text-xs uppercase tracking-widest shadow-xl hover:translate-y-[-2px] hover:shadow-2xl transition-all active:scale-95">
                 Support Cause
               </button>
             </Link>
             <Link to="/join-volunteer">
-              <button className="bg-transparent text-white border-2 border-pink-200/60 px-12 py-4 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-white/10 transition-all active:scale-95">
+              <button className="bg-transparent text-white border-2 border-pink-200/60 px-12 py-4 rounded-[3rem] font-black text-xs uppercase tracking-widest hover:bg-white/10 transition-all active:scale-95">
                 Start Impact
               </button>
             </Link>

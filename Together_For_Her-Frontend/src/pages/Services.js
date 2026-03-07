@@ -54,8 +54,8 @@ const Services = () => {
       {/* Services Grid Redesign */}
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-2">
         {servicesData.map((service, index) => (
-          <div key={index} className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl p-8 rounded-[2.5rem] border border-pink-200/50 dark:border-slate-500/20 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col items-center text-center">
-            <div className={`${service.color} w-20 h-20 rounded-[2rem] flex items-center justify-center text-3xl mb-8 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-xl shadow-pink-100/30`}>
+          <div key={index} className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl p-8 rounded-[3rem] border border-pink-200/50 dark:border-slate-500/20 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col items-center text-center">
+            <div className={`${service.color} w-20 h-20 rounded-[3rem] flex items-center justify-center text-3xl mb-8 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-xl shadow-pink-100/30`}>
               {service.icon}
             </div>
             <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4 tracking-tight italic group-hover:text-pink-600 transition-colors">
@@ -64,7 +64,7 @@ const Services = () => {
             <p className="text-slate-500 dark:text-slate-400 font-semibold text-sm leading-relaxed mb-8 flex-grow italic">
               {service.description}
             </p>
-            <Link to={service.link} className="inline-flex items-center gap-2 text-pink-500 font-black text-[11px] uppercase tracking-widest group/btn bg-pink-50 dark:bg-pink-900/20 px-6 py-3 rounded-xl hover:bg-pink-500 hover:text-white transition-all">
+            <Link to={service.link} className="inline-flex items-center gap-2 text-pink-500 font-black text-[11px] uppercase tracking-widest group/btn bg-pink-50 dark:bg-pink-900/20 px-6 py-3 rounded-[3rem] hover:bg-pink-500 hover:text-white transition-all">
               Explore Now
               <FaArrowRight size={12} className="group-hover/btn:translate-x-1 transition-transform" />
             </Link>
@@ -84,12 +84,12 @@ const Services = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-6 pt-4">
             <Link to="/donate">
-              <button className="bg-gradient-to-r from-pink-500 to-rose-600 border-none text-white px-10 py-4 rounded-2xl font-black text-xs uppercase tracking-widest shadow-2xl shadow-pink-200/20 hover:translate-y-[-2px] hover:shadow-pink-300/30 transition-all active:scale-95">
+              <button className="bg-gradient-to-r from-pink-500 to-rose-600 border-none text-white px-10 py-4 rounded-[3rem] font-black text-xs uppercase tracking-widest shadow-2xl shadow-pink-200/20 hover:translate-y-[-2px] hover:shadow-pink-300/30 transition-all active:scale-95">
                 Support Cause
               </button>
             </Link>
             <Link to="/contact">
-              <button className="bg-white/5 border border-white/10 text-white px-10 py-4 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-white/10 transition-all">
+              <button className="bg-white/5 border border-white/10 text-white px-10 py-4 rounded-[3rem] font-black text-xs uppercase tracking-widest hover:bg-white/10 transition-all">
                 Connect With Us
               </button>
             </Link>

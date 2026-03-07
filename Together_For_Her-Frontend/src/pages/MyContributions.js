@@ -81,7 +81,7 @@ const MyContributions = () => {
                     <p className="text-slate-400 font-black uppercase tracking-widest italic mb-8">You haven't shared any experiences yet.</p>
                     <button
                         onClick={() => window.location.href = '/content'}
-                        className="h-14 px-10 bg-slate-900 text-white rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-pink-500 transition-all shadow-xl"
+                        className="h-14 px-10 bg-slate-900 text-white rounded-[3rem] font-black text-xs uppercase tracking-[0.2em] hover:bg-pink-500 transition-all shadow-xl"
                     >
                         Share My First Story
                     </button>
@@ -92,14 +92,14 @@ const MyContributions = () => {
                         <div
                             key={item.id}
                             onClick={() => setSelectedItem(item)}
-                            className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl rounded-[2.5rem] p-6 border border-pink-200/50 dark:border-slate-500/20 shadow-xl hover:shadow-2xl transition-all duration-500 relative flex flex-col cursor-pointer"
+                            className="group bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl rounded-[3rem] p-6 border border-pink-200/50 dark:border-slate-500/20 shadow-xl hover:shadow-2xl transition-all duration-500 relative flex flex-col cursor-pointer"
                         >
                             {/* Status Header */}
                             <div className="flex items-center justify-between mb-6">
                                 {getStatusBadge(item.status)}
                                 <button
                                     onClick={(e) => handleDelete(e, item.id)}
-                                    className="w-10 h-10 bg-rose-500/10 text-rose-500 rounded-xl flex items-center justify-center hover:bg-rose-500 hover:text-white transition-all shadow-sm"
+                                    className="w-10 h-10 bg-rose-500/10 text-rose-500 rounded-[3rem] flex items-center justify-center hover:bg-rose-500 hover:text-white transition-all shadow-sm"
                                     title="Remove Experience"
                                 >
                                     <FaTrash size={12} />
@@ -107,7 +107,7 @@ const MyContributions = () => {
                             </div>
 
                             {/* Uniform Media Preview */}
-                            <div className="rounded-3xl overflow-hidden mb-6 bg-slate-100 dark:bg-slate-950 aspect-video relative shadow-inner shrink-0">
+                            <div className="rounded-[3rem] overflow-hidden mb-6 bg-slate-100 dark:bg-slate-950 aspect-video relative shadow-inner shrink-0">
                                 {item.fileType?.startsWith("image/") && (
                                     <img
                                         src={`${API_BASE_URL}/upload/${getFileName(item.filePath)}`}

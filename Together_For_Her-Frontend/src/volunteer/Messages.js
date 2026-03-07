@@ -26,7 +26,7 @@ const Messages = () => {
     };
 
     return (
-        <div className="h-[calc(100vh-8rem)] rounded-[2.5rem] bg-white/60 dark:bg-slate-800/60 backdrop-blur-2xl border border-pink-300/70 dark:border-slate-500/50 shadow-xl overflow-hidden flex animate-fadeIn">
+        <div className="h-[calc(100vh-8rem)] rounded-[3rem] bg-white/60 dark:bg-slate-800/60 backdrop-blur-2xl border border-pink-300/70 dark:border-slate-500/50 shadow-xl overflow-hidden flex animate-fadeIn">
             {/* Sidebar List */}
             <div className="w-1/3 border-r border-pink-200/50 dark:border-slate-500/50 flex flex-col">
                 <div className="p-6 border-b border-pink-200/50 dark:border-slate-500/50">
@@ -36,7 +36,7 @@ const Messages = () => {
                         <input
                             type="text"
                             placeholder="Search..."
-                            className="w-full pl-10 pr-4 py-3 bg-white/50 dark:bg-slate-900/50 border border-white dark:border-slate-600 rounded-xl font-bold text-slate-700 dark:text-slate-200 outline-none focus:ring-2 focus:ring-pink-500 transition-all"
+                            className="w-full pl-10 pr-4 py-3 bg-white/50 dark:bg-slate-900/50 border border-white dark:border-slate-600 rounded-[3rem] font-bold text-slate-700 dark:text-slate-200 outline-none focus:ring-2 focus:ring-pink-500 transition-all"
                         />
                     </div>
                 </div>
@@ -46,7 +46,7 @@ const Messages = () => {
                         <div
                             key={chat.id}
                             onClick={() => setSelectedChat(chat.id)}
-                            className={`p-4 rounded-2xl cursor-pointer transition-all hover:bg-white/50 dark:hover:bg-slate-700/50 
+                            className={`p-4 rounded-[3rem] cursor-pointer transition-all hover:bg-white/50 dark:hover:bg-slate-700/50 
                 ${selectedChat === chat.id ? "bg-white dark:bg-slate-700 shadow-md transform scale-[1.02]" : ""}`}
                         >
                             <div className="flex justify-between items-start mb-1">
@@ -88,7 +88,7 @@ const Messages = () => {
                 <div className="flex-1 overflow-y-auto p-8 space-y-6 custom-scrollbar flex flex-col-reverse">
                     {[...messages].reverse().map(msg => (
                         <div key={msg.id} className={`flex ${msg.sender === 'me' ? 'justify-end' : 'justify-start'}`}>
-                            <div className={`max-w-[70%] p-4 rounded-2xl shadow-sm text-sm font-medium leading-relaxed 
+                            <div className={`max-w-[70%] p-4 rounded-[3rem] shadow-sm text-sm font-medium leading-relaxed 
                 ${msg.sender === 'me'
                                     ? 'bg-gradient-to-br from-pink-500 to-rose-600 text-white rounded-tr-sm'
                                     : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 rounded-tl-sm'}`}>
@@ -109,11 +109,11 @@ const Messages = () => {
                             value={messageInput}
                             onChange={(e) => setMessageInput(e.target.value)}
                             placeholder="Type your message..."
-                            className="w-full pl-6 pr-14 py-4 bg-white dark:bg-slate-800 border-none rounded-2xl shadow-lg shadow-slate-200/50 dark:shadow-none font-medium text-slate-700 dark:text-slate-200 outline-none focus:ring-2 focus:ring-pink-500 transition-all"
+                            className="w-full pl-6 pr-14 py-4 bg-white dark:bg-slate-800 border-none rounded-[3rem] shadow-lg shadow-slate-200/50 dark:shadow-none font-medium text-slate-700 dark:text-slate-200 outline-none focus:ring-2 focus:ring-pink-500 transition-all"
                         />
                         <button
                             type="submit"
-                            className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-pink-500 text-white rounded-xl flex items-center justify-center shadow-lg hover:scale-105 active:scale-95 transition-all"
+                            className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-pink-500 text-white rounded-[3rem] flex items-center justify-center shadow-lg hover:scale-105 active:scale-95 transition-all"
                         >
                             <FaPaperPlane />
                         </button>
