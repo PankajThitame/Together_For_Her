@@ -19,10 +19,20 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOriginPatterns("*") // Allow all origins with patterns (supports credentials)
+                        .allowedOriginPatterns("*")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);
+            }
+
+            @Override
+            public void addResourceHandlers(
+                    org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry registry) {
+                String uploadDir = System.getProperty("user.dir") + "/uploads";
+                // Better yet, use the value from properties if possible, but for dynamic
+                // config:
+                registry.addResourceHandler("/uploads/**")
+                        .addResourceLocations("file:/app/uploads/", "file:uploads/");
             }
         };
     }

@@ -12,5 +12,11 @@ if (!API_BASE_URL || API_BASE_URL === "undefined") {
 }
 
 console.log("Using API Base URL:", API_BASE_URL);
+export const getProfileImageUrl = (photoName) => {
+    if (!photoName) return "/images/Pads.png";
+    if (photoName.startsWith("http")) return photoName;
+    const base = API_BASE_URL.replace("/api", "");
+    return `${base}/uploads/${photoName}`;
+};
 
 export default API_BASE_URL;

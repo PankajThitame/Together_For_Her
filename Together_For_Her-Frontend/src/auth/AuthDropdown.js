@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthContext";
+import { getProfileImageUrl } from "../apiConfig";
 import {
   ChevronDown,
   User,
@@ -66,7 +67,7 @@ const AuthDropdown = () => {
           <div className="absolute inset-0 bg-pink-500 rounded-full blur-[6px] opacity-0 group-hover:opacity-20 transition-opacity"></div>
           {user ? (
             <img
-              src={user.profilePic || "/images/Pads.png"}
+              src={getProfileImageUrl(user.profilePhoto || user.profilePic)}
               alt="User Avatar"
               className="w-10 h-10 rounded-full object-cover border-2 border-transparent group-hover:border-pink-200 dark:group-hover:border-pink-900 transition-all relative z-10"
             />
@@ -95,7 +96,7 @@ const AuthDropdown = () => {
                   <div className="flex items-center gap-4">
                     <div className="relative">
                       <img
-                        src={user.profilePic || "/images/Pads.png"}
+                        src={getProfileImageUrl(user.profilePhoto || user.profilePic)}
                         alt="Profile"
                         className="w-12 h-12 rounded-2xl object-cover shadow-md"
                       />

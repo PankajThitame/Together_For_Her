@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { getProfileImageUrl } from "../apiConfig";
 import {
   User,
   Phone,
@@ -63,7 +64,7 @@ const UserProfile = ({ user, onEdit }) => {
             <div className="absolute inset-0 bg-gradient-to-br from-pink-500 to-rose-600 rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-all duration-500 scale-110"></div>
             <div className="w-40 h-40 rounded-full border-[6px] border-white dark:border-slate-700 overflow-hidden shadow-2xl relative z-10 bg-slate-100 dark:bg-slate-900">
               <img
-                src={user.profile_pic || "/images/Pads.png"}
+                src={getProfileImageUrl(user.profilePhoto || user.profile_pic)}
                 alt="Profile"
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-110"
               />
