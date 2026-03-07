@@ -46,6 +46,13 @@ public class UserController {
 		return ResponseEntity.ok(updateUser);
 	}
 
+	@PutMapping("/{userId}/status")
+	public ResponseEntity<ApiResponse> updateUserStatus(@PathVariable("userId") Integer uid,
+			@RequestBody java.util.Map<String, String> payload) {
+		this.userService.updateUserStatus(uid, payload.get("status"));
+		return new ResponseEntity<>(new ApiResponse("User status updated successfully", true), HttpStatus.OK);
+	}
+
 	@GetMapping("/count")
 	public ResponseEntity<UserDto> getUserCounts() {
 		UserDto counts = userService.countUsers(new UserDto());

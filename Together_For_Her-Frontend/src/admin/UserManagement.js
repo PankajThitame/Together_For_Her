@@ -26,12 +26,9 @@ const UserManagement = () => {
   const handleStatusChange = async (userId, newStatus) => {
     try {
       setUpdatingId(userId);
-      // Get the full user object to send in the PUT request as required by the backend DTO
-      const userToUpdate = users.find(u => u.id === userId);
-      const updatedData = { ...userToUpdate, status: newStatus };
 
       const token = localStorage.getItem("token");
-      await axios.put(`${API_BASE_URL}/auth/${userId}`, updatedData, {
+      await axios.put(`${API_BASE_URL}/auth/${userId}/status`, { status: newStatus }, {
         headers: { Authorization: `Bearer ${token}` }
       });
 
@@ -144,7 +141,7 @@ const UserManagement = () => {
                           value={user.status}
                           onChange={(e) => handleStatusChange(user.id, e.target.value)}
                           className={`text-xs font-black uppercase tracking-widest bg-transparent border-none focus:ring-0 cursor-pointer transition-colors ${user.status === "APPROVED" ? "text-emerald-500" :
-                              user.status === "REJECTED" ? "text-rose-500" : "text-amber-500"
+                            user.status === "REJECTED" ? "text-rose-500" : "text-amber-500"
                             }`}
                         >
                           <option value="PENDING">Pending</option>

@@ -78,6 +78,14 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	public void updateUserStatus(Integer userId, String status) {
+		User user = this.userRepo.findById(userId)
+				.orElseThrow(() -> new ResourceNotFoundException("User", "Id", userId));
+		user.setStatus(status);
+		this.userRepo.save(user);
+	}
+
+	@Override
 	public UserDto getUser(Integer userId) {
 
 		User user = this.userRepo.findById(userId)

@@ -12,6 +12,8 @@ public interface UserService {
 
 	UserDto updateUser(UserDto user, Integer userId);
 
+	void updateUserStatus(Integer userId, String status);
+
 	UserDto getUser(Integer userId);
 
 	UserDto getUserById(Integer userId);
