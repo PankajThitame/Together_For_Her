@@ -109,7 +109,14 @@ const CombinedUserForm = ({ existingData, onCancel, onSuccess }) => {
 
     try {
       setUploading(true);
-      const url = `${API_BASE_URL}/auth/update/${userId}`;
+      const userObj = JSON.parse(localStorage.getItem("user") || "{}");
+      const role = userObj.role;
+
+      let url = `${API_BASE_URL}/auth/update/${userId}`;
+      if (role === "VOLUNTEER") {
+        url = `${API_BASE_URL}/volunteers/update/${userId}`;
+      }
+
       await axios.put(url, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });

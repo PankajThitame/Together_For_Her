@@ -12,13 +12,22 @@ const ProfilePage = () => {
     try {
       const token = localStorage.getItem("token");
       const userId = localStorage.getItem("userId") || localStorage.getItem("userid");
+      const userObj = JSON.parse(localStorage.getItem("user") || "{}");
+      const role = userObj.role;
+
       if (!userId) {
         setLoading(false);
         return;
       }
 
       const cleanUserId = userId.toString().replace(/['"]+/g, '');
-      const response = await fetch(`${API_BASE_URL}/auth/${cleanUserId}`, {
+
+      let apiUrl = `${API_BASE_URL}/auth/${cleanUserId}`;
+      if (role === "VOLUNTEER") {
+        apiUrl = `${API_BASE_URL}/volunteers/${cleanUserId}`;
+      }
+
+      const response = await fetch(apiUrl, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
