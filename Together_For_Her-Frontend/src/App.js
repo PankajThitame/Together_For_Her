@@ -40,7 +40,6 @@ import UserForm from "./layouts/UserForm";
 import Donations from "./pages/Donations";
 import SetPassword from "./layouts/SetPassword";
 import UserContentUpload from "./components/UserContentUpload";
-import UserProfile from "./layouts/UserProfile";
 import ExperienceGallery from "./pages/ExperienceGallery";
 import MyContributions from "./pages/MyContributions";
 import VolunteerDashboard from "./volunteer/VolunteerDashboard";
