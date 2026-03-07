@@ -18,10 +18,6 @@ public class PaymentService {
     private String razorpayKeySecret;
 
     public String createOrder(int amount) throws RazorpayException {
-        if (razorpayKeyId == null || razorpayKeyId.contains("PLACEHOLDER") ||
-                razorpayKeySecret == null || razorpayKeySecret.equals("YOUR_KEY_SECRET_HERE")) {
-            throw new RazorpayException("Razorpay keys are not configured. Please update your .env file.");
-        }
         RazorpayClient client = new RazorpayClient(razorpayKeyId, razorpayKeySecret);
 
         JSONObject orderRequest = new JSONObject();

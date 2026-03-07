@@ -33,7 +33,6 @@ services:
       context: ./Together_For_Her-Frontend
       args:
         - REACT_APP_API_URL=${REACT_APP_API_URL:-http://localhost:8080/api}
-        - REACT_APP_RAZORPAY_KEY_ID=${REACT_APP_RAZORPAY_KEY_ID}
     container_name: together-frontend
     restart: always
     ports:

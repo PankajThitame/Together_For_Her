@@ -59,34 +59,11 @@ const VolunteerForm = () => {
     );
   };
 
-  const [file, setFile] = useState(null);
-  const [preview, setPreview] = useState(null);
-
-  const handleFileChange = (e) => {
-    const selectedFile = e.target.files[0];
-    if (selectedFile) {
-      setFile(selectedFile);
-      setPreview(URL.createObjectURL(selectedFile));
-    }
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        localStorage.setItem("tempProfilePhoto", reader.result);
-        localStorage.setItem("userData", JSON.stringify(formData));
-        localStorage.setItem("redirectPath", "/volunteer-registration");
-        navigate("/set-password");
-      };
-      reader.readAsDataURL(file);
-    } else {
-      localStorage.setItem("userData", JSON.stringify(formData));
-      localStorage.setItem("redirectPath", "/volunteer-registration");
-      navigate("/set-password");
-    }
+    localStorage.setItem("userData", JSON.stringify(formData));
+    localStorage.setItem("redirectPath", "/login");
+    navigate("/set-password");
   };
 
   return (
@@ -179,31 +156,6 @@ const VolunteerForm = () => {
                 rows={4}
                 className="w-full p-6 bg-white/50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 rounded-3xl focus:ring-4 focus:ring-pink-500/10 focus:border-pink-500 outline-none transition-all font-bold text-sm italic resize-none"
               />
-            </div>
-
-            <div className="space-y-4">
-              <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Profile Masterpiece</label>
-              <div className="flex items-center gap-6">
-                <div className="relative group/avatar">
-                  <div className="w-24 h-24 rounded-2xl bg-white/50 dark:bg-slate-900/50 overflow-hidden border border-slate-100 dark:border-slate-800 flex items-center justify-center">
-                    {preview ? (
-                      <img src={preview} alt="Avatar" className="w-full h-full object-cover" />
-                    ) : (
-                      <FaUserPlus size={24} className="text-pink-300" />
-                    )}
-                  </div>
-                  <input
-                    type="file"
-                    accept="image/*"
-                    onChange={handleFileChange}
-                    className="absolute inset-0 opacity-0 cursor-pointer z-10"
-                  />
-                </div>
-                <div className="space-y-1">
-                  <p className="text-sm font-bold text-slate-700 dark:text-slate-200 italic">Verify your identity</p>
-                  <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">JPG or PNG. High resolution preferred.</p>
-                </div>
-              </div>
             </div>
 
             <div className="pt-8 border-t border-slate-50 dark:border-slate-800/50 flex flex-col md:flex-row items-center gap-6">

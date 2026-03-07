@@ -12,16 +12,9 @@ const ProfilePage = () => {
     try {
       const token = localStorage.getItem("token");
       const userId = localStorage.getItem("userid");
-      const userObj = JSON.parse(localStorage.getItem("user"));
-      if (!userId || !userObj) return;
+      if (!userId) return;
 
-      const role = userObj.role?.toLowerCase();
-      let endpoint = `${API_BASE_URL}/auth/${userId}`;
-      if (role === "volunteer") {
-        endpoint = `${API_BASE_URL}/volunteers/${userId}`;
-      }
-
-      const response = await fetch(endpoint, {
+      const response = await fetch(`${API_BASE_URL}/auth/${userId}`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,

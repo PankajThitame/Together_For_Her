@@ -22,7 +22,6 @@ public class VolunteerDto {
     private Double latitude;
     private Double longitude;
     private String status = "PENDING"; // PENDING, APPROVED, REJECTED
-    private String profilePhoto;
 
     long totalVolunteers;
     long pendingApplications;

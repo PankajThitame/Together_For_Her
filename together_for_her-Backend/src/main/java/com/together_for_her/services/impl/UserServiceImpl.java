@@ -37,12 +37,10 @@ public class UserServiceImpl implements UserService {
 		UserCredentials userCred = this.modelMapper.map(userReq.getCredentials(), UserCredentials.class);
 
 		User saveUser = this.userRepo.save(user);
-		userCred.setUser(saveUser);
+		userCred.setUser(user);
 		userCred.setVolunteer(null);
 		UserCredentials saveUserCred = this.userCredentialsRepository.save(userCred);
 
-		// Populate the ID back into the response DTO
-		userReq.getUser().setId(saveUser.getId());
 		return userReq;
 	}
 

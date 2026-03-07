@@ -7,12 +7,12 @@ import axios from "axios";
 const CombinedUserForm = ({ existingData, onCancel, onSuccess }) => {
   const navigate = useNavigate();
   const [file, setFile] = useState(null);
-  const [preview, setPreview] = useState(existingData?.profilePhoto || null);
+  const [preview, setPreview] = useState(existingData?.profile_pic || null);
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState("");
 
   const [userData, setUserData] = useState({
-    firstName: existingData?.firstName || existingData?.name || "",
+    firstName: existingData?.firstName || "",
     age: existingData?.age || "",
     contactNumber: existingData?.contactNumber || "",
     email: existingData?.email || "",
@@ -32,8 +32,8 @@ const CombinedUserForm = ({ existingData, onCancel, onSuccess }) => {
         ...userData,
         ...existingData,
       });
-      if (existingData.profilePhoto) {
-        setPreview(`${API_BASE_URL}/upload/${existingData.profilePhoto}`);
+      if (existingData.profile_pic) {
+        setPreview(existingData.profile_pic);
       }
     }
   }, [existingData]);
@@ -81,7 +81,7 @@ const CombinedUserForm = ({ existingData, onCancel, onSuccess }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!(userData.firstName || userData.name) || (!file && !existingData?.profilePhoto)) {
+    if (!userData.firstName || (!file && !existingData?.profile_pic)) {
       alert("Please fill all required fields and upload a profile picture.");
       return;
     }
@@ -100,61 +100,27 @@ const CombinedUserForm = ({ existingData, onCancel, onSuccess }) => {
     if (userId) formData.append("userId", userId);
 
     if (!existingData) {
-      // Sign-up flow: Save photo as Base64 if exists
-      if (file) {
-        const reader = new FileReader();
-        reader.onloadend = () => {
-          localStorage.setItem("tempProfilePhoto", reader.result);
-          localStorage.setItem("userData", JSON.stringify(userData));
-          localStorage.setItem("redirectPath", "/sign-up");
-          navigate("/set-password");
-        };
-        reader.readAsDataURL(file);
-      } else {
-        localStorage.setItem("userData", JSON.stringify(userData));
-        localStorage.setItem("redirectPath", "/sign-up");
-        navigate("/set-password");
-      }
+      // Sign-up flow
+      localStorage.setItem("userData", JSON.stringify(userData));
+      localStorage.setItem("redirectPath", "/sign-up");
+      navigate("/set-password");
       return;
     }
 
-    // Prepare JSON data for update (excluding file related fields)
-    const { title, description, ...updateData } = userData;
-
     try {
       setUploading(true);
-      const userRole = existingData?.volunteerType || existingData?.role === "VOLUNTEER" ? "VOLUNTEER" : "USER";
+      const url = `${API_BASE_URL}/auth/update/${userId}`;
+      await axios.put(url, formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
 
-      // 1. Update Profile Info
-      const infoUrl = userRole === "VOLUNTEER"
-        ? `${API_BASE_URL}/volunteers/${userId}`
-        : `${API_BASE_URL}/auth/${userId}`;
-
-      await axios.put(infoUrl, updateData);
-
-      // 2. Update Profile Photo if new file selected
-      if (file) {
-        const photoUrl = userRole === "VOLUNTEER"
-          ? `${API_BASE_URL}/volunteers/profile-photo/${userId}`
-          : `${API_BASE_URL}/auth/profile-photo/${userId}`;
-
-        const photoFormData = new FormData();
-        photoFormData.append("file", file);
-
-        await axios.post(photoUrl, photoFormData, {
-          headers: { "Content-Type": "multipart/form-data" },
-        });
-      }
-
-      alert("Profile updated successfully!");
       if (onSuccess) {
         onSuccess();
       } else {
-        navigate("/profile");
+        navigate("/");
       }
     } catch (err) {
-      console.error("Update failed:", err);
-      setError("Operation failed. " + (err.response?.data?.message || err.message));
+      setError("Operation failed. Please try again.");
     } finally {
       setUploading(false);
     }

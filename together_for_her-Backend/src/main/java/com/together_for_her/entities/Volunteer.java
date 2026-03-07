@@ -31,8 +31,6 @@ public class Volunteer {
     private Double latitude;
     private Double longitude;
 
-    private String profilePhoto;
-
     // ✅ Ensuring correct mapping
     @OneToOne(mappedBy = "volunteer", cascade = CascadeType.ALL)
     private UserCredentials userCredentials;

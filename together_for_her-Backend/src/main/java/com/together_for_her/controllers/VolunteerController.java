@@ -50,16 +50,21 @@ public class VolunteerController {
         return ResponseEntity.ok(counts);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<VolunteerDto> getSingleVolunteer(@PathVariable Integer id) {
-        return ResponseEntity.ok(volunteerService.getVolunteerById(id));
+    @PutMapping("/{id}")
+    public ResponseEntity<String> updateRequestStatus(@PathVariable Integer id,
+            @RequestBody Map<String, String> payload) {
+        volunteerService.updateVolunteerStatus(id, payload.get("status"));
+        return ResponseEntity.ok("Request status updated successfully");
     }
 
-    @PostMapping("/profile-photo/{volunteerId}")
-    public ResponseEntity<VolunteerDto> uploadProfilePhoto(@PathVariable Integer volunteerId,
-            @org.springframework.web.bind.annotation.RequestParam("file") org.springframework.web.multipart.MultipartFile file)
-            throws java.io.IOException {
-        VolunteerDto updatedVolunteer = volunteerService.uploadProfilePhoto(volunteerId, file);
-        return ResponseEntity.ok(updatedVolunteer);
-    }
+    // @PutMapping("/update-role")
+    // public ResponseEntity<?> updateVolunteerRole(@RequestBody RoleUpdateDto
+    // roleUpdateDTO) {
+    // if (!volunteerService.userExists(roleUpdateDTO.getEmail())) {
+    // return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
+    // }
+    // volunteerService.updateRole(roleUpdateDTO.getEmail(),
+    // roleUpdateDTO.getRole());
+    // return ResponseEntity.ok("User role updated successfully");
+    // }
 }

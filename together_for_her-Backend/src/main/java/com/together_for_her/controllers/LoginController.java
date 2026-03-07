@@ -48,14 +48,9 @@ public class LoginController {
                 if (user.getUser() != null) {
                     userData.put("id", user.getUser().getId());
                     userData.put("name", user.getUser().getFirstName());
-                    userData.put("email", user.getUser().getEmail());
-                    userData.put("profilePhoto", user.getUser().getProfilePhoto());
-                    userData.put("location", user.getUser().getLocation());
                 } else if (user.getVolunteer() != null) {
                     userData.put("id", user.getVolunteer().getId());
                     userData.put("name", user.getVolunteer().getName());
-                    userData.put("email", user.getVolunteer().getEmail());
-                    userData.put("profilePhoto", user.getVolunteer().getProfilePhoto());
                 } else {
                     userData.put("id", user.getId());
                     userData.put("name", user.getUsername());

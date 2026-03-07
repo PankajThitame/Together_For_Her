@@ -84,55 +84,14 @@ const SetPassword = () => {
 
     try {
       const response = await axios.post(apiUrl, finalData);
-
-      // Handle Profile Photo Upload if exists
-      const tempPhoto = localStorage.getItem("tempProfilePhoto");
-      if (tempPhoto) {
-        try {
-          const newUserId = passwordData.role === "VOLUNTEER"
-            ? response.data.volunteer?.id
-            : response.data.user?.id;
-
-          if (newUserId) {
-            const blob = dataURLtoBlob(tempPhoto);
-            const formData = new FormData();
-            formData.append("file", blob, "profile_photo.png");
-
-            const photoUrl = passwordData.role === "VOLUNTEER"
-              ? `${API_BASE_URL}/volunteers/profile-photo/${newUserId}`
-              : `${API_BASE_URL}/auth/profile-photo/${newUserId}`;
-
-            await axios.post(photoUrl, formData, {
-              headers: { "Content-Type": "multipart/form-data" }
-            });
-            console.log("Profile photo uploaded successfully");
-          }
-        } catch (photoError) {
-          console.error("Failed to upload profile photo:", photoError);
-        }
-      }
-
       alert(`${passwordData.role} Registered Successfully!`);
       localStorage.removeItem("userData");
       localStorage.removeItem("redirectPath");
-      localStorage.removeItem("tempProfilePhoto");
       navigate(redirectPath);
     } catch (error) {
       console.error("Error sending data:", error.response?.data || error.message);
       alert("Failed to register user.");
     }
-  };
-
-  const dataURLtoBlob = (dataurl) => {
-    let arr = dataurl.split(","),
-      mime = arr[0].match(/:(.*?);/)[1],
-      bstr = atob(arr[1]),
-      n = bstr.length,
-      u8arr = new Uint8Array(n);
-    while (n--) {
-      u8arr[n] = bstr.charCodeAt(n);
-    }
-    return new Blob([u8arr], { type: mime });
   };
 
   return (

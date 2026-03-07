@@ -43,44 +43,16 @@ public class VolunteerService {
         // Save Volunteer first
         Volunteer savedVolunteer = volunteerRepository.save(volunteer);
 
-        userCred.setVolunteer(savedVolunteer); // Associate credentials with the volunteer
+        // Convert UserCredentialsDto to UserCredentials Entity
+
+        userCred.setVolunteer(volunteer); // Associate credentials with the volunteer
         userCred.setUser(null);
+        // userCred.setRole(Role.VOLUNTEER); // Ensure role is set
 
         // Save UserCredentials
         userCredentialsRepository.save(userCred);
 
-        // Populate the ID back into the response DTO
-        userReq.getVolunteer().setId(savedVolunteer.getId());
         return userReq;
-    }
-
-    public VolunteerDto getVolunteerById(Integer id) {
-        Volunteer volunteer = volunteerRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Volunteer not found"));
-        return modelMapper.map(volunteer, VolunteerDto.class);
-    }
-
-    @org.springframework.beans.factory.annotation.Value("${file.upload-dir}")
-    private String uploadDir;
-
-    public VolunteerDto uploadProfilePhoto(Integer volunteerId, org.springframework.web.multipart.MultipartFile file)
-            throws java.io.IOException {
-        Volunteer volunteer = volunteerRepository.findById(volunteerId)
-                .orElseThrow(() -> new RuntimeException("Volunteer not found"));
-
-        java.nio.file.Path path = java.nio.file.Paths.get(uploadDir);
-        if (!java.nio.file.Files.exists(path)) {
-            java.nio.file.Files.createDirectories(path);
-        }
-
-        String fileName = System.currentTimeMillis() + "_" + file.getOriginalFilename();
-        java.nio.file.Path filePath = path.resolve(fileName);
-        java.nio.file.Files.copy(file.getInputStream(), filePath, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
-
-        volunteer.setProfilePhoto(fileName);
-        Volunteer updatedVolunteer = volunteerRepository.save(volunteer);
-
-        return modelMapper.map(updatedVolunteer, VolunteerDto.class);
     }
 
     public VolunteerDto countVolunteers(VolunteerDto volunteerDto) {
